@@ -15,7 +15,8 @@
 		E20163F01D7B2F7100949826 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20163EE1D7B2F7100949826 /* LaunchScreen.storyboard */; };
 		E20163FB1D7B2F7100949826 /* CoignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20163FA1D7B2F7100949826 /* CoignTests.swift */; };
 		E20164061D7B2F7100949826 /* CoignUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20164051D7B2F7100949826 /* CoignUITests.swift */; };
-		E20164141D7B55B900949826 /* CreateNewUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20164131D7B55B900949826 /* CreateNewUser.storyboard */; };
+		E20164171D7B5D4900949826 /* NewUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20164151D7B5D4900949826 /* NewUser.storyboard */; };
+		E201641A1D7B5D6100949826 /* ExistingUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20164181D7B5D6100949826 /* ExistingUser.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,8 @@
 		E20164011D7B2F7100949826 /* CoignUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoignUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E20164051D7B2F7100949826 /* CoignUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoignUITests.swift; sourceTree = "<group>"; };
 		E20164071D7B2F7100949826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E20164131D7B55B900949826 /* CreateNewUser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateNewUser.storyboard; sourceTree = "<group>"; };
+		E20164161D7B5D4900949826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewUser.storyboard; sourceTree = "<group>"; };
+		E20164191D7B5D6100949826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ExistingUser.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +105,8 @@
 			children = (
 				E20163E21D7B2F7100949826 /* AppDelegate.swift */,
 				E20163E41D7B2F7100949826 /* ViewController.swift */,
-				E20163E61D7B2F7100949826 /* Main.storyboard */,
-				E20164131D7B55B900949826 /* CreateNewUser.storyboard */,
+				E201641B1D7B5DCF00949826 /* Storyboards */,
 				E20163EC1D7B2F7100949826 /* Assets.xcassets */,
-				E20163EE1D7B2F7100949826 /* LaunchScreen.storyboard */,
 				E20163F11D7B2F7100949826 /* Info.plist */,
 				E20163E91D7B2F7100949826 /* Coign.xcdatamodeld */,
 			);
@@ -129,6 +129,25 @@
 				E20164071D7B2F7100949826 /* Info.plist */,
 			);
 			path = CoignUITests;
+			sourceTree = "<group>";
+		};
+		E201641B1D7B5DCF00949826 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E201641C1D7B5E2E00949826 /* Login Screens */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		E201641C1D7B5E2E00949826 /* Login Screens */ = {
+			isa = PBXGroup;
+			children = (
+				E20163E61D7B2F7100949826 /* Main.storyboard */,
+				E20164181D7B5D6100949826 /* ExistingUser.storyboard */,
+				E20164151D7B5D4900949826 /* NewUser.storyboard */,
+				E20163EE1D7B2F7100949826 /* LaunchScreen.storyboard */,
+			);
+			name = "Login Screens";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +254,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E20164141D7B55B900949826 /* CreateNewUser.storyboard in Resources */,
+				E20164171D7B5D4900949826 /* NewUser.storyboard in Resources */,
 				E20163F01D7B2F7100949826 /* LaunchScreen.storyboard in Resources */,
 				E20163ED1D7B2F7100949826 /* Assets.xcassets in Resources */,
+				E201641A1D7B5D6100949826 /* ExistingUser.storyboard in Resources */,
 				E20163E81D7B2F7100949826 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +335,22 @@
 				E20163EF1D7B2F7100949826 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E20164151D7B5D4900949826 /* NewUser.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E20164161D7B5D4900949826 /* Base */,
+			);
+			name = NewUser.storyboard;
+			sourceTree = "<group>";
+		};
+		E20164181D7B5D6100949826 /* ExistingUser.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E20164191D7B5D6100949826 /* Base */,
+			);
+			name = ExistingUser.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
