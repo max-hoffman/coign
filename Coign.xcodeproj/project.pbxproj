@@ -20,6 +20,7 @@
 		E20164261D7CD98400949826 /* NewUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20164251D7CD98400949826 /* NewUserController.swift */; };
 		E20164281D7CDA0A00949826 /* ExistingUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20164271D7CDA0A00949826 /* ExistingUserViewController.swift */; };
 		E201642A1D7CDADA00949826 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20164291D7CDADA00949826 /* Welcome.storyboard */; };
+		E24F77DE1D7DE69600936AAE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F77DD1D7DE69600936AAE /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		E20164251D7CD98400949826 /* NewUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserController.swift; sourceTree = "<group>"; };
 		E20164271D7CDA0A00949826 /* ExistingUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingUserViewController.swift; sourceTree = "<group>"; };
 		E20164291D7CDADA00949826 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Welcome.storyboard; path = ../../../.Trash/Welcome.storyboard; sourceTree = "<group>"; };
+		E24F77DD1D7DE69600936AAE /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				E20163E21D7B2F7100949826 /* AppDelegate.swift */,
+				E24F77DC1D7DE4DA00936AAE /* Custom Classes */,
 				E201641B1D7B5DCF00949826 /* Storyboards */,
 				E20163EC1D7B2F7100949826 /* Assets.xcassets */,
 				E20163F11D7B2F7100949826 /* Info.plist */,
@@ -139,9 +142,8 @@
 		E201641B1D7B5DCF00949826 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				E20164241D7CD66700949826 /* Welcome */,
-				E20164231D7B65A600949826 /* Functional App */,
-				E201641C1D7B5E2E00949826 /* Login Screens */,
+				E24F77DB1D7DE41200936AAE /* Intro Screens */,
+				E20164231D7B65A600949826 /* Functional Screens */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -157,12 +159,13 @@
 			name = "Login Screens";
 			sourceTree = "<group>";
 		};
-		E20164231D7B65A600949826 /* Functional App */ = {
+		E20164231D7B65A600949826 /* Functional Screens */ = {
 			isa = PBXGroup;
 			children = (
 				E20164201D7B653A00949826 /* Root.storyboard */,
+				E24F77DD1D7DE69600936AAE /* RootViewController.swift */,
 			);
-			name = "Functional App";
+			name = "Functional Screens";
 			sourceTree = "<group>";
 		};
 		E20164241D7CD66700949826 /* Welcome */ = {
@@ -173,6 +176,22 @@
 				E20163EE1D7B2F7100949826 /* LaunchScreen.storyboard */,
 			);
 			name = Welcome;
+			sourceTree = "<group>";
+		};
+		E24F77DB1D7DE41200936AAE /* Intro Screens */ = {
+			isa = PBXGroup;
+			children = (
+				E20164241D7CD66700949826 /* Welcome */,
+				E201641C1D7B5E2E00949826 /* Login Screens */,
+			);
+			name = "Intro Screens";
+			sourceTree = "<group>";
+		};
+		E24F77DC1D7DE4DA00936AAE /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Custom Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +330,7 @@
 			files = (
 				E20163EB1D7B2F7100949826 /* Coign.xcdatamodeld in Sources */,
 				E20163E51D7B2F7100949826 /* WelcomeController.swift in Sources */,
+				E24F77DE1D7DE69600936AAE /* RootViewController.swift in Sources */,
 				E20164261D7CD98400949826 /* NewUserController.swift in Sources */,
 				E20164281D7CDA0A00949826 /* ExistingUserViewController.swift in Sources */,
 				E20163E31D7B2F7100949826 /* AppDelegate.swift in Sources */,
