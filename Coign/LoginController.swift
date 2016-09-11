@@ -12,8 +12,7 @@ class LoginController: UIViewController {
 
     //MARK: - Stand-in for facebook login
     @IBAction func loginButtonPressed(sender: UIButton) {
-        print("login pressed")
-        let storyboard = UIStoryboard(name: "MainMenu", bundle: nil)
+        let storyboard = UIStoryboard(name: "MainApp", bundle: nil)
         let controller  = storyboard.instantiateInitialViewController()!
         self.presentViewController(controller, animated: true, completion: nil)
         

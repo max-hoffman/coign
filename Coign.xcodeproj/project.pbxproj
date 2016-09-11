@@ -13,11 +13,12 @@
 		E20163ED1D7B2F7100949826 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E20163EC1D7B2F7100949826 /* Assets.xcassets */; };
 		E20163FB1D7B2F7100949826 /* CoignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20163FA1D7B2F7100949826 /* CoignTests.swift */; };
 		E20164061D7B2F7100949826 /* CoignUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20164051D7B2F7100949826 /* CoignUITests.swift */; };
-		E20164221D7B653A00949826 /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20164201D7B653A00949826 /* MainMenu.storyboard */; };
+		E20164221D7B653A00949826 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20164201D7B653A00949826 /* MainApp.storyboard */; };
 		E24F77E51D84E29800936AAE /* HamburgerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F77E41D84E29800936AAE /* HamburgerButton.swift */; };
 		E24F77EA1D84FBB000936AAE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24F77E91D84FBB000936AAE /* SWRevealViewController.m */; };
 		E2C397EA1D850220000D35F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */; };
 		E2C397EC1D850D8D000D35F4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397EB1D850D8D000D35F4 /* Login.storyboard */; };
+		E2C397EE1D85B07E000D35F4 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C397ED1D85B07E000D35F4 /* MainMenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,13 +51,14 @@
 		E20164011D7B2F7100949826 /* CoignUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoignUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E20164051D7B2F7100949826 /* CoignUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoignUITests.swift; sourceTree = "<group>"; };
 		E20164071D7B2F7100949826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E20164211D7B653A00949826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainMenu.storyboard; sourceTree = "<group>"; };
+		E20164211D7B653A00949826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainApp.storyboard; sourceTree = "<group>"; };
 		E24F77E41D84E29800936AAE /* HamburgerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerButton.swift; sourceTree = "<group>"; };
 		E24F77E81D84FBB000936AAE /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		E24F77E91D84FBB000936AAE /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		E24F77EB1D84FBDD00936AAE /* Coign-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coign-Bridging-Header.h"; sourceTree = "<group>"; };
 		E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2C397EB1D850D8D000D35F4 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		E2C397ED1D85B07E000D35F4 /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +151,8 @@
 			children = (
 				E24F77EC1D84FBFD00936AAE /* Side-bar */,
 				E24F77E41D84E29800936AAE /* HamburgerButton.swift */,
-				E20164201D7B653A00949826 /* MainMenu.storyboard */,
+				E20164201D7B653A00949826 /* MainApp.storyboard */,
+				E2C397ED1D85B07E000D35F4 /* MainMenuController.swift */,
 			);
 			name = "Main App";
 			sourceTree = "<group>";
@@ -285,7 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E20164221D7B653A00949826 /* MainMenu.storyboard in Resources */,
+				E20164221D7B653A00949826 /* MainApp.storyboard in Resources */,
 				E2C397EC1D850D8D000D35F4 /* Login.storyboard in Resources */,
 				E20163ED1D7B2F7100949826 /* Assets.xcassets in Resources */,
 				E2C397EA1D850220000D35F4 /* LaunchScreen.storyboard in Resources */,
@@ -318,6 +321,7 @@
 				E20163E51D7B2F7100949826 /* LoginController.swift in Sources */,
 				E20163E31D7B2F7100949826 /* AppDelegate.swift in Sources */,
 				E24F77EA1D84FBB000936AAE /* SWRevealViewController.m in Sources */,
+				E2C397EE1D85B07E000D35F4 /* MainMenuController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,12 +357,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E20164201D7B653A00949826 /* MainMenu.storyboard */ = {
+		E20164201D7B653A00949826 /* MainApp.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E20164211D7B653A00949826 /* Base */,
 			);
-			name = MainMenu.storyboard;
+			name = MainApp.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
