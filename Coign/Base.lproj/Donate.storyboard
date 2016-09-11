@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wAo-Ny-fJX">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Donate VC-->
+        <scene sceneID="o7y-cq-VSM">
+            <objects>
+                <viewController title="Donate VC" id="yBd-dO-8Ee" customClass="DonateController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PL2-Su-ZyT"/>
+                        <viewControllerLayoutGuide type="bottom" id="IJF-yA-ckk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1sQ-YR-Gsk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Donate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oI-FT-6qk">
+                                <rect key="frame" x="279" y="289" width="65" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3oI-FT-6qk" firstAttribute="centerY" secondItem="1sQ-YR-Gsk" secondAttribute="centerY" id="jJ6-gU-VIQ"/>
+                            <constraint firstItem="3oI-FT-6qk" firstAttribute="centerX" secondItem="1sQ-YR-Gsk" secondAttribute="centerX" id="vgX-ze-q1G"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JXA-rU-JCt">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="cub-xh-43A"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="cub-xh-43A" id="vkP-fS-6FT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6YX-HJ-s8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6204" y="1613"/>
+        </scene>
+        <!--Donate NC-->
+        <scene sceneID="STw-ug-BXt">
+            <objects>
+                <navigationController title="Donate NC" automaticallyAdjustsScrollViewInsets="NO" id="wAo-Ny-fJX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0QR-lp-fb4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yBd-dO-8Ee" kind="relationship" relationship="rootViewController" id="W24-b9-4Wr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cpT-4e-VNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6204" y="709"/>
+        </scene>
+    </scenes>
+</document>

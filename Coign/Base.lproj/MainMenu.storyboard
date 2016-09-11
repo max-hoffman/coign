@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FaJ-OH-j7q">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Main Menu VC-->
+        <scene sceneID="XsZ-Hq-3Iy">
+            <objects>
+                <viewController storyboardIdentifier="MainMenu" title="Main Menu VC" id="VyG-g7-eoE" customClass="MainMenuController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hxc-g8-HSu"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Fz-Tw-zF3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IsR-Ub-VxL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epC-JK-jLp">
+                                <rect key="frame" x="258" y="289" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="network animation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="db0-DM-dLo">
+                                <rect key="frame" x="230" y="164" width="141" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="network table-view feed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMS-Iq-is3">
+                                <rect key="frame" x="208" y="407" width="185" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nMS-Iq-is3" firstAttribute="centerX" secondItem="epC-JK-jLp" secondAttribute="centerX" id="09j-dm-9uU"/>
+                            <constraint firstItem="epC-JK-jLp" firstAttribute="centerY" secondItem="IsR-Ub-VxL" secondAttribute="centerY" id="GxW-6f-UZV"/>
+                            <constraint firstItem="nMS-Iq-is3" firstAttribute="top" secondItem="epC-JK-jLp" secondAttribute="bottom" constant="97" id="aar-y1-kY8"/>
+                            <constraint firstItem="db0-DM-dLo" firstAttribute="top" secondItem="Hxc-g8-HSu" secondAttribute="bottom" constant="100" id="gsn-Lu-POI"/>
+                            <constraint firstItem="db0-DM-dLo" firstAttribute="centerX" secondItem="IsR-Ub-VxL" secondAttribute="centerX" id="iZi-uM-U9D"/>
+                            <constraint firstItem="db0-DM-dLo" firstAttribute="centerX" secondItem="epC-JK-jLp" secondAttribute="centerX" id="tgW-au-Eno"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="IMi-KM-cUj">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="OC5-Ph-Uxc">
+                            <connections>
+                                <action selector="menuButtonPressed:" destination="VyG-g7-eoE" id="egq-i5-GGL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="OC5-Ph-Uxc" id="7Vw-ZW-GXM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2YA-fJ-NgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5434" y="1597"/>
+        </scene>
+        <!--Main Menu NC-->
+        <scene sceneID="SfC-Ae-SNL">
+            <objects>
+                <navigationController storyboardIdentifier="UINavigationController-FaJ-OH-j7q" title="Main Menu NC" automaticallyAdjustsScrollViewInsets="NO" id="FaJ-OH-j7q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FFw-cS-oLs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VyG-g7-eoE" kind="relationship" relationship="rootViewController" id="Npl-Af-VSd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DQ3-lg-Iiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5426" y="717"/>
+        </scene>
+    </scenes>
+</document>
