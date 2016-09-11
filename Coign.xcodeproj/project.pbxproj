@@ -8,19 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		E20163E31D7B2F7100949826 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20163E21D7B2F7100949826 /* AppDelegate.swift */; };
-		E20163E51D7B2F7100949826 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20163E41D7B2F7100949826 /* WelcomeController.swift */; };
+		E20163E51D7B2F7100949826 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20163E41D7B2F7100949826 /* LoginController.swift */; };
 		E20163EB1D7B2F7100949826 /* Coign.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E20163E91D7B2F7100949826 /* Coign.xcdatamodeld */; };
 		E20163ED1D7B2F7100949826 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E20163EC1D7B2F7100949826 /* Assets.xcassets */; };
-		E20163F01D7B2F7100949826 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20163EE1D7B2F7100949826 /* LaunchScreen.storyboard */; };
 		E20163FB1D7B2F7100949826 /* CoignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20163FA1D7B2F7100949826 /* CoignTests.swift */; };
 		E20164061D7B2F7100949826 /* CoignUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20164051D7B2F7100949826 /* CoignUITests.swift */; };
-		E20164171D7B5D4900949826 /* NewUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20164151D7B5D4900949826 /* NewUser.storyboard */; };
-		E201641A1D7B5D6100949826 /* ExistingUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20164181D7B5D6100949826 /* ExistingUser.storyboard */; };
-		E20164221D7B653A00949826 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20164201D7B653A00949826 /* Root.storyboard */; };
-		E20164261D7CD98400949826 /* NewUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20164251D7CD98400949826 /* NewUserController.swift */; };
-		E20164281D7CDA0A00949826 /* ExistingUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20164271D7CDA0A00949826 /* ExistingUserViewController.swift */; };
-		E201642A1D7CDADA00949826 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20164291D7CDADA00949826 /* Welcome.storyboard */; };
-		E24F77DE1D7DE69600936AAE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F77DD1D7DE69600936AAE /* RootViewController.swift */; };
+		E20164221D7B653A00949826 /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20164201D7B653A00949826 /* MainMenu.storyboard */; };
+		E24F77E51D84E29800936AAE /* HamburgerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F77E41D84E29800936AAE /* HamburgerButton.swift */; };
+		E24F77EA1D84FBB000936AAE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24F77E91D84FBB000936AAE /* SWRevealViewController.m */; };
+		E2C397EA1D850220000D35F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */; };
+		E2C397EC1D850D8D000D35F4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397EB1D850D8D000D35F4 /* Login.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,10 +40,9 @@
 /* Begin PBXFileReference section */
 		E20163DF1D7B2F7100949826 /* Coign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E20163E21D7B2F7100949826 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E20163E41D7B2F7100949826 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
+		E20163E41D7B2F7100949826 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		E20163EA1D7B2F7100949826 /* Coign.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Coign.xcdatamodel; sourceTree = "<group>"; };
 		E20163EC1D7B2F7100949826 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E20163EF1D7B2F7100949826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E20163F11D7B2F7100949826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E20163F61D7B2F7100949826 /* CoignTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoignTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E20163FA1D7B2F7100949826 /* CoignTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoignTests.swift; sourceTree = "<group>"; };
@@ -54,13 +50,13 @@
 		E20164011D7B2F7100949826 /* CoignUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoignUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E20164051D7B2F7100949826 /* CoignUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoignUITests.swift; sourceTree = "<group>"; };
 		E20164071D7B2F7100949826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E20164161D7B5D4900949826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewUser.storyboard; sourceTree = "<group>"; };
-		E20164191D7B5D6100949826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ExistingUser.storyboard; sourceTree = "<group>"; };
-		E20164211D7B653A00949826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Root.storyboard; sourceTree = "<group>"; };
-		E20164251D7CD98400949826 /* NewUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserController.swift; sourceTree = "<group>"; };
-		E20164271D7CDA0A00949826 /* ExistingUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingUserViewController.swift; sourceTree = "<group>"; };
-		E20164291D7CDADA00949826 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Welcome.storyboard; path = ../../../.Trash/Welcome.storyboard; sourceTree = "<group>"; };
-		E24F77DD1D7DE69600936AAE /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		E20164211D7B653A00949826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainMenu.storyboard; sourceTree = "<group>"; };
+		E24F77E41D84E29800936AAE /* HamburgerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerButton.swift; sourceTree = "<group>"; };
+		E24F77E81D84FBB000936AAE /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		E24F77E91D84FBB000936AAE /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		E24F77EB1D84FBDD00936AAE /* Coign-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coign-Bridging-Header.h"; sourceTree = "<group>"; };
+		E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E2C397EB1D850D8D000D35F4 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,49 +138,30 @@
 		E201641B1D7B5DCF00949826 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				E24F77DB1D7DE41200936AAE /* Intro Screens */,
-				E20164231D7B65A600949826 /* Functional Screens */,
+				E24F77DB1D7DE41200936AAE /* Login */,
+				E20164231D7B65A600949826 /* Main App */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
-		E201641C1D7B5E2E00949826 /* Login Screens */ = {
+		E20164231D7B65A600949826 /* Main App */ = {
 			isa = PBXGroup;
 			children = (
-				E20164271D7CDA0A00949826 /* ExistingUserViewController.swift */,
-				E20164181D7B5D6100949826 /* ExistingUser.storyboard */,
-				E20164251D7CD98400949826 /* NewUserController.swift */,
-				E20164151D7B5D4900949826 /* NewUser.storyboard */,
+				E24F77EC1D84FBFD00936AAE /* Side-bar */,
+				E24F77E41D84E29800936AAE /* HamburgerButton.swift */,
+				E20164201D7B653A00949826 /* MainMenu.storyboard */,
 			);
-			name = "Login Screens";
+			name = "Main App";
 			sourceTree = "<group>";
 		};
-		E20164231D7B65A600949826 /* Functional Screens */ = {
+		E24F77DB1D7DE41200936AAE /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				E20164201D7B653A00949826 /* Root.storyboard */,
-				E24F77DD1D7DE69600936AAE /* RootViewController.swift */,
+				E2C397EB1D850D8D000D35F4 /* Login.storyboard */,
+				E20163E41D7B2F7100949826 /* LoginController.swift */,
+				E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */,
 			);
-			name = "Functional Screens";
-			sourceTree = "<group>";
-		};
-		E20164241D7CD66700949826 /* Welcome */ = {
-			isa = PBXGroup;
-			children = (
-				E20164291D7CDADA00949826 /* Welcome.storyboard */,
-				E20163E41D7B2F7100949826 /* WelcomeController.swift */,
-				E20163EE1D7B2F7100949826 /* LaunchScreen.storyboard */,
-			);
-			name = Welcome;
-			sourceTree = "<group>";
-		};
-		E24F77DB1D7DE41200936AAE /* Intro Screens */ = {
-			isa = PBXGroup;
-			children = (
-				E20164241D7CD66700949826 /* Welcome */,
-				E201641C1D7B5E2E00949826 /* Login Screens */,
-			);
-			name = "Intro Screens";
+			name = Login;
 			sourceTree = "<group>";
 		};
 		E24F77DC1D7DE4DA00936AAE /* Custom Classes */ = {
@@ -192,6 +169,16 @@
 			children = (
 			);
 			name = "Custom Classes";
+			sourceTree = "<group>";
+		};
+		E24F77EC1D84FBFD00936AAE /* Side-bar */ = {
+			isa = PBXGroup;
+			children = (
+				E24F77E81D84FBB000936AAE /* SWRevealViewController.h */,
+				E24F77E91D84FBB000936AAE /* SWRevealViewController.m */,
+				E24F77EB1D84FBDD00936AAE /* Coign-Bridging-Header.h */,
+			);
+			name = "Side-bar";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,12 +285,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E20164221D7B653A00949826 /* Root.storyboard in Resources */,
-				E20164171D7B5D4900949826 /* NewUser.storyboard in Resources */,
-				E20163F01D7B2F7100949826 /* LaunchScreen.storyboard in Resources */,
+				E20164221D7B653A00949826 /* MainMenu.storyboard in Resources */,
+				E2C397EC1D850D8D000D35F4 /* Login.storyboard in Resources */,
 				E20163ED1D7B2F7100949826 /* Assets.xcassets in Resources */,
-				E201641A1D7B5D6100949826 /* ExistingUser.storyboard in Resources */,
-				E201642A1D7CDADA00949826 /* Welcome.storyboard in Resources */,
+				E2C397EA1D850220000D35F4 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,12 +313,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E24F77E51D84E29800936AAE /* HamburgerButton.swift in Sources */,
 				E20163EB1D7B2F7100949826 /* Coign.xcdatamodeld in Sources */,
-				E20163E51D7B2F7100949826 /* WelcomeController.swift in Sources */,
-				E24F77DE1D7DE69600936AAE /* RootViewController.swift in Sources */,
-				E20164261D7CD98400949826 /* NewUserController.swift in Sources */,
-				E20164281D7CDA0A00949826 /* ExistingUserViewController.swift in Sources */,
+				E20163E51D7B2F7100949826 /* LoginController.swift in Sources */,
 				E20163E31D7B2F7100949826 /* AppDelegate.swift in Sources */,
+				E24F77EA1D84FBB000936AAE /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,36 +353,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E20163EE1D7B2F7100949826 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E20163EF1D7B2F7100949826 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		E20164151D7B5D4900949826 /* NewUser.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E20164161D7B5D4900949826 /* Base */,
-			);
-			name = NewUser.storyboard;
-			sourceTree = "<group>";
-		};
-		E20164181D7B5D6100949826 /* ExistingUser.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E20164191D7B5D6100949826 /* Base */,
-			);
-			name = ExistingUser.storyboard;
-			sourceTree = "<group>";
-		};
-		E20164201D7B653A00949826 /* Root.storyboard */ = {
+		E20164201D7B653A00949826 /* MainMenu.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E20164211D7B653A00949826 /* Base */,
 			);
-			name = Root.storyboard;
+			name = MainMenu.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -493,10 +453,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Coign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coignapp.Coign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Coign/Coign-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -504,10 +467,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Coign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coignapp.Coign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Coign/Coign-Bridging-Header.h";
 			};
 			name = Release;
 		};
