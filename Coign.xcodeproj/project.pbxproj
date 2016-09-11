@@ -19,6 +19,10 @@
 		E2C397EA1D850220000D35F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */; };
 		E2C397EC1D850D8D000D35F4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397EB1D850D8D000D35F4 /* Login.storyboard */; };
 		E2C397EE1D85B07E000D35F4 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C397ED1D85B07E000D35F4 /* MainMenuController.swift */; };
+		E2C397F01D85B9B4000D35F4 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C397EF1D85B9B4000D35F4 /* SettingsController.swift */; };
+		E2C397F21D85BCE1000D35F4 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C397F11D85BCE1000D35F4 /* ProfileController.swift */; };
+		E2C397F41D85BDC3000D35F4 /* DonateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C397F31D85BDC3000D35F4 /* DonateController.swift */; };
+		E2C397F61D85C098000D35F4 /* AboutUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C397F51D85C098000D35F4 /* AboutUsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2C397EB1D850D8D000D35F4 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E2C397ED1D85B07E000D35F4 /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
+		E2C397EF1D85B9B4000D35F4 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		E2C397F11D85BCE1000D35F4 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		E2C397F31D85BDC3000D35F4 /* DonateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonateController.swift; sourceTree = "<group>"; };
+		E2C397F51D85C098000D35F4 /* AboutUsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +160,11 @@
 				E24F77EC1D84FBFD00936AAE /* Side-bar */,
 				E24F77E41D84E29800936AAE /* HamburgerButton.swift */,
 				E20164201D7B653A00949826 /* MainApp.storyboard */,
+				E2C397F51D85C098000D35F4 /* AboutUsController.swift */,
+				E2C397F31D85BDC3000D35F4 /* DonateController.swift */,
 				E2C397ED1D85B07E000D35F4 /* MainMenuController.swift */,
+				E2C397EF1D85B9B4000D35F4 /* SettingsController.swift */,
+				E2C397F11D85BCE1000D35F4 /* ProfileController.swift */,
 			);
 			name = "Main App";
 			sourceTree = "<group>";
@@ -319,9 +331,13 @@
 				E24F77E51D84E29800936AAE /* HamburgerButton.swift in Sources */,
 				E20163EB1D7B2F7100949826 /* Coign.xcdatamodeld in Sources */,
 				E20163E51D7B2F7100949826 /* LoginController.swift in Sources */,
+				E2C397F01D85B9B4000D35F4 /* SettingsController.swift in Sources */,
 				E20163E31D7B2F7100949826 /* AppDelegate.swift in Sources */,
 				E24F77EA1D84FBB000936AAE /* SWRevealViewController.m in Sources */,
 				E2C397EE1D85B07E000D35F4 /* MainMenuController.swift in Sources */,
+				E2C397F61D85C098000D35F4 /* AboutUsController.swift in Sources */,
+				E2C397F41D85BDC3000D35F4 /* DonateController.swift in Sources */,
+				E2C397F21D85BCE1000D35F4 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

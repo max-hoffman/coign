@@ -1,5 +1,5 @@
 //
-//  MainMenuController.swift
+//  SettingsController.swift
 //  Coign
 //
 //  Created by Maximilian Hoffman on 9/11/16.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class MainMenuController: UIViewController {
+class SettingsController: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -28,5 +28,6 @@ class MainMenuController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
 }
