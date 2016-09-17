@@ -1,0 +1,6 @@
+framework module Pods_CoignUITests {
+  umbrella header "Pods-CoignUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

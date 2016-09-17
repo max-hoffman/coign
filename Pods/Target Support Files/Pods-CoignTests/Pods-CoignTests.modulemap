@@ -1,0 +1,6 @@
+framework module Pods_CoignTests {
+  umbrella header "Pods-CoignTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
