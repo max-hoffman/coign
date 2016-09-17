@@ -3,7 +3,7 @@
 //  CoignUITests
 //
 //  Created by Maximilian Hoffman on 9/3/16.
-//  Copyright © 2016 MaxMax. All rights reserved.
+//  Copyright © 2016 The Maxes. All rights reserved.
 //
 
 import XCTest

@@ -312,7 +312,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = MaxMax;
+				ORGANIZATIONNAME = "The Maxes";
 				TargetAttributes = {
 					E20163DE1D7B2F7100949826 = {
 						CreatedOnToolsVersion = 7.3.1;
