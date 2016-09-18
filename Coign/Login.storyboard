@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="mhd-Km-BII">
-                                <frame key="frameInset" minX="189" minY="144" width="222" height="337"/>
+                                <frame key="frameInset" minX="76" minY="165" width="222" height="336"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0R-yz-Lsk">
                                         <fontDescription key="fontDescription" type="system" pointSize="55"/>
@@ -45,13 +45,9 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOF-mT-Znc">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOF-mT-Znc" customClass="FBSDKLoginButton">
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Login"/>
-                                        <connections>
-                                            <action selector="loginButtonPressed:" destination="Waw-fS-3NR" eventType="touchUpInside" id="A8D-I5-Cyx"/>
-                                            <action selector="loginPressed:" destination="Waw-fS-3NR" eventType="touchUpOutside" id="olg-99-Mwq"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -62,6 +58,9 @@
                             <constraint firstItem="mhd-Km-BII" firstAttribute="centerY" secondItem="L9T-EM-hpf" secondAttribute="centerY" id="rUI-As-VvX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="facebookLoginButton" destination="sOF-mT-Znc" id="jfe-eG-2Sq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTm-vs-e3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

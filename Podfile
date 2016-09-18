@@ -8,12 +8,14 @@ target 'Coign' do
   # Pods for Coign
   pod 'Firebase'
   pod 'Firebase/Auth'
-
+  pod 'FBSDKLoginKit'
+  
   target 'CoignTests' do
     inherit! :search_paths
     # Pods for testing
     pod 'Firebase'
     pod 'Firebase/Auth'
+    pod 'FBSDKLoginKit'
   end
 
   target 'CoignUITests' do

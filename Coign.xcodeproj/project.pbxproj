@@ -31,6 +31,9 @@
 		E2C397FE1D85CBE3000D35F4 /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397FC1D85CBE3000D35F4 /* MainMenu.storyboard */; };
 		E2C398011D85CD04000D35F4 /* Donate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397FF1D85CD04000D35F4 /* Donate.storyboard */; };
 		E2C398031D85CD24000D35F4 /* AboutUs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C398021D85CD24000D35F4 /* AboutUs.storyboard */; };
+		E2E94FF81D8E1A8E00DC3ACC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E94FF51D8E1A8E00DC3ACC /* FBSDKCoreKit.framework */; };
+		E2E94FF91D8E1A8E00DC3ACC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E94FF61D8E1A8E00DC3ACC /* FBSDKLoginKit.framework */; };
+		E2E94FFA1D8E1A8E00DC3ACC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E94FF71D8E1A8E00DC3ACC /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,9 @@
 		E2C397FD1D85CBE3000D35F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainMenu.storyboard; sourceTree = "<group>"; };
 		E2C398001D85CD04000D35F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Donate.storyboard; sourceTree = "<group>"; };
 		E2C398021D85CD24000D35F4 /* AboutUs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AboutUs.storyboard; sourceTree = "<group>"; };
+		E2E94FF51D8E1A8E00DC3ACC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		E2E94FF61D8E1A8E00DC3ACC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		E2E94FF71D8E1A8E00DC3ACC /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		F5BCD6129C6B0C08D712E690 /* Pods-Coign.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coign.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coign/Pods-Coign.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,7 +102,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2E94FFA1D8E1A8E00DC3ACC /* FBSDKShareKit.framework in Frameworks */,
 				CB63DADF27B0FCADCE7D3689 /* Pods_Coign.framework in Frameworks */,
+				E2E94FF81D8E1A8E00DC3ACC /* FBSDKCoreKit.framework in Frameworks */,
+				E2E94FF91D8E1A8E00DC3ACC /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +131,7 @@
 		2AA84B60563764A728A4C479 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E2E94FFB1D8E1A9800DC3ACC /* Facebook */,
 				B25C36132C40D08F2AE81A0C /* Pods_Coign.framework */,
 				3DD01F39C39B21A9C07C92CB /* Pods_CoignTests.framework */,
 				631671D89E118B9E050388F5 /* Pods_CoignUITests.framework */,
@@ -174,6 +184,7 @@
 				E20163F11D7B2F7100949826 /* Info.plist */,
 				E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */,
 				E20163E91D7B2F7100949826 /* Coign.xcdatamodeld */,
+				E24F77EB1D84FBDD00936AAE /* Coign-Bridging-Header.h */,
 			);
 			path = Coign;
 			sourceTree = "<group>";
@@ -241,7 +252,6 @@
 			children = (
 				E24F77E81D84FBB000936AAE /* SWRevealViewController.h */,
 				E24F77E91D84FBB000936AAE /* SWRevealViewController.m */,
-				E24F77EB1D84FBDD00936AAE /* Coign-Bridging-Header.h */,
 			);
 			name = "Side-bar";
 			sourceTree = "<group>";
@@ -289,6 +299,16 @@
 				E2C397EF1D85B9B4000D35F4 /* SettingsController.swift */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		E2E94FFB1D8E1A9800DC3ACC /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				E2E94FF51D8E1A8E00DC3ACC /* FBSDKCoreKit.framework */,
+				E2E94FF61D8E1A8E00DC3ACC /* FBSDKLoginKit.framework */,
+				E2E94FF71D8E1A8E00DC3ACC /* FBSDKShareKit.framework */,
+			);
+			name = Facebook;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -742,6 +762,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = EF3N9N24JW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Coign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.exlentstudios.Coign;
@@ -760,6 +784,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = EF3N9N24JW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Coign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.exlentstudios.Coign;
