@@ -22,8 +22,38 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         facebookLoginButton.delegate = self
+        
+        if let token = FBSDKAccessToken.current(){
+          fetchProfile()
+        }
     }
 
+    func fetchProfile() {
+        let parameters = ["fields": "email, name, picture.type(large), id"]
+        
+        let nextrequest: FBSDKGraphRequest = FBSDKGraphRequest(graphPath:"me/friends", parameters: parameters, httpMethod: "GET")
+        nextrequest.start { (connection, result, error) -> Void in
+            guard let result = result as? [String:[AnyObject]], let listOfFriends = result["data"]  else {
+                return
+            }
+        }
+    }
+    
+       // FBSDKGraphRequest(graphPath: "me", parameters: parameters).start//(completionHandler: { (connection, result, error) -> Void in
+            
+           // if error != nil {
+           //     print(error!.localizedDescription)
+           //     return
+           // }
+            
+          //  if let email = result["email"] as? String, let picture = //result["picture"] as? Dictionary {
+         //       print("email")
+         //       let data =
+        //    }
+            
+       // })
+   // }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

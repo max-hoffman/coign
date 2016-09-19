@@ -15,12 +15,24 @@ import FBSDKCoreKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var storyboard: UIStoryboard?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
         //connect to Firebase
         FIRApp.configure()
 
+        //bypass login
+        //if FBSDKAccessToken.current() != nil {
+            self.storyboard =  UIStoryboard(name: "MainApp", bundle: Bundle.main)
+            self.window?.rootViewController = self.storyboard?.instantiateInitialViewController()
+            print("already logged in")
+       // }
+        
+        //let storyboard = UIStoryboard(name: "MainApp", bundle: nil)
+        //let controller  = storyboard.instantiateInitialViewController()!
+        //self.present(controller, animated: true, completion: nil)
+        
         
         // Override point for customization after application launch.
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
