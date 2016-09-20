@@ -15,7 +15,8 @@ import FBSDKCoreKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var storyboard: UIStoryboard?
+    var loginStoryboard: UIStoryboard?
+    var mainAppStoryboard: UIStoryboard?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
@@ -23,10 +24,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
 
         //bypass login
-        //if FBSDKAccessToken.current() != nil {
-            self.storyboard =  UIStoryboard(name: "MainApp", bundle: Bundle.main)
-            self.window?.rootViewController = self.storyboard?.instantiateInitialViewController()
+        self.loginStoryboard = UIStoryboard(name: "Login", bundle: .main)
+        self.mainAppStoryboard = UIStoryboard(name: "MainApp", bundle: .main)
+        let currentUser = FIRAuth.auth()?.currentUser
+        
+        if currentUser != nil {
+            self.window?.rootViewController = self.mainAppStoryboard?.instantiateViewController(withIdentifier: "RevealVC")
             print("already logged in")
+        }else {
+            self.window?.rootViewController = self.loginStoryboard?.instantiateViewController(withIdentifier: "Login VC")
+            print("need to login")
+        }
+        
+        //if FBSDKAccessToken.current() != nil {
+           // self.storyboard =  UIStoryboard(name: "MainApp", bundle: Bundle.main)
+           // self.window?.rootViewController = self.storyboard?.instantiateInitialViewController()
+            //print("already logged in")
        // }
         
         //let storyboard = UIStoryboard(name: "MainApp", bundle: nil)

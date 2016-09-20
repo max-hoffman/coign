@@ -13,8 +13,7 @@ import FBSDKLoginKit
 
 class LoginController: UIViewController, FBSDKLoginButtonDelegate {
 
-    //MARK: - Stand-in for facebook login
-
+    //MARK: - facebook login
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
     override func viewDidLoad() {
@@ -38,22 +37,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
             }
         }
     }
-    
-       // FBSDKGraphRequest(graphPath: "me", parameters: parameters).start//(completionHandler: { (connection, result, error) -> Void in
-            
-           // if error != nil {
-           //     print(error!.localizedDescription)
-           //     return
-           // }
-            
-          //  if let email = result["email"] as? String, let picture = //result["picture"] as? Dictionary {
-         //       print("email")
-         //       let data =
-        //    }
-            
-       // })
-   // }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

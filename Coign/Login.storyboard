@@ -9,7 +9,7 @@
         <!--Login Controller-->
         <scene sceneID="K9S-gK-mri">
             <objects>
-                <viewController storyboardIdentifier="Login" id="Waw-fS-3NR" customClass="LoginController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login VC" id="Waw-fS-3NR" customClass="LoginController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WIe-vN-hpG"/>
                         <viewControllerLayoutGuide type="bottom" id="JZ0-yj-CCS"/>
@@ -18,8 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="mhd-Km-BII">
-                                <frame key="frameInset" minX="76" minY="165" width="222" height="336"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="mhd-Km-BII">
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0R-yz-Lsk">
                                         <fontDescription key="fontDescription" type="system" pointSize="55"/>
