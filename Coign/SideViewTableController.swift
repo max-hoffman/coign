@@ -22,14 +22,13 @@ class SideViewTableController: UITableViewController {
             //give button permission to logout of facebook
             let facebookLogin = FBSDKLoginManager()
             
-            //logout of firebase/facebook
+            //logout of firebase/facebook/userdefualts
             facebookLogin.logOut()
             try! FIRAuth.auth()!.signOut()
-            print("should have logged out")
+            FBSDKAccessToken.setCurrent(nil)
+            FBSDKProfile.setCurrent(nil)
             
-            //MARK: - is this necessary?
-            //FBSDKAccessToken.setCurrent(nil)
-            //FBSDKProfile.setCurrent(nil)
+            //clear user defaults
             
             //segue to login screen
             let storyboard = UIStoryboard(name: "Login", bundle: nil)

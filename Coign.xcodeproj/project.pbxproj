@@ -180,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				E20163E21D7B2F7100949826 /* AppDelegate.swift */,
-				E24F77DC1D7DE4DA00936AAE /* Custom Classes */,
 				E201641B1D7B5DCF00949826 /* Storyboards */,
 				E20163EC1D7B2F7100949826 /* Assets.xcassets */,
 				E20163F11D7B2F7100949826 /* Info.plist */,
@@ -241,13 +240,6 @@
 				E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */,
 			);
 			name = Login;
-			sourceTree = "<group>";
-		};
-		E24F77DC1D7DE4DA00936AAE /* Custom Classes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Custom Classes";
 			sourceTree = "<group>";
 		};
 		E24F77EC1D84FBFD00936AAE /* Side-bar */ = {
