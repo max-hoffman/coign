@@ -10,32 +10,25 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FBSDKLoginKit
+import FBSDKCoreKit
 
 class LoginController: UIViewController, FBSDKLoginButtonDelegate {
 
     //MARK: - facebook login
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
+    var dict : NSDictionary?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         facebookLoginButton.delegate = self
-        
-        if let token = FBSDKAccessToken.current(){
-          fetchProfile()
-        }
-    }
+          }
 
     func fetchProfile() {
-        let parameters = ["fields": "email, name, picture.type(large), id"]
         
-        let nextrequest: FBSDKGraphRequest = FBSDKGraphRequest(graphPath:"me/friends", parameters: parameters, httpMethod: "GET")
-        nextrequest.start { (connection, result, error) -> Void in
-            guard let result = result as? [String:[AnyObject]], let listOfFriends = result["data"]  else {
-                return
-            }
-        }
+        //TODO: make graph request
+        let parameters = ["fields": "email"]
+    
+        //TODO: assign graph vars to 
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,7 +48,10 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
                 print(error!.localizedDescription)
                 return
             }
+            
+            //successful login
             print("User logged in with facebook")
+            self.fetchProfile()
             })
         
         let storyboard = UIStoryboard(name: "MainApp", bundle: nil)

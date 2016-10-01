@@ -13,17 +13,23 @@ import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+    
     var loginStoryboard: UIStoryboard?
     var mainAppStoryboard: UIStoryboard?
+    var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         //connect to Firebase
         FIRApp.configure()
+        
+        self.checkForAutoLogin()
+        
+        // Override point for customization after application launch.
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
 
-        //bypass login
+    func checkForAutoLogin() {
         self.loginStoryboard = UIStoryboard(name: "Login", bundle: .main)
         self.mainAppStoryboard = UIStoryboard(name: "MainApp", bundle: .main)
         let currentUser = FIRAuth.auth()?.currentUser
@@ -35,12 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = self.loginStoryboard?.instantiateViewController(withIdentifier: "Login VC")
             print("need to login")
         }
-        
-        // Override point for customization after application launch.
-        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-    }
 
-    //tells the application what to do after we grant authorizatio nto use it
+    }
+    //tells the application what to do after we grant authorization to use it
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }

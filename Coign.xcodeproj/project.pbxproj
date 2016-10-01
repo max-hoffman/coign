@@ -18,6 +18,7 @@
 		E20164061D7B2F7100949826 /* CoignUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20164051D7B2F7100949826 /* CoignUITests.swift */; };
 		E20164221D7B653A00949826 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20164201D7B653A00949826 /* MainApp.storyboard */; };
 		E24F77EA1D84FBB000936AAE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24F77E91D84FBB000936AAE /* SWRevealViewController.m */; };
+		E259EB5C1D9FF29200EADC4C /* LogoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB5B1D9FF29200EADC4C /* LogoutController.swift */; };
 		E28C6BDB1D8DD7180020EAA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */; };
 		E2C397EA1D850220000D35F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */; };
 		E2C397EC1D850D8D000D35F4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397EB1D850D8D000D35F4 /* Login.storyboard */; };
@@ -79,6 +80,7 @@
 		E24F77E81D84FBB000936AAE /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		E24F77E91D84FBB000936AAE /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		E24F77EB1D84FBDD00936AAE /* Coign-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coign-Bridging-Header.h"; sourceTree = "<group>"; };
+		E259EB5B1D9FF29200EADC4C /* LogoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutController.swift; sourceTree = "<group>"; };
 		E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2C397EB1D850D8D000D35F4 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				E24F77EC1D84FBFD00936AAE /* Side-bar */,
 				E20164201D7B653A00949826 /* MainApp.storyboard */,
 				E2D8771F1D8EFEDC00BAAB46 /* SideViewTableController.swift */,
+				E259EB5B1D9FF29200EADC4C /* LogoutController.swift */,
 			);
 			name = "Main App";
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				E20163E51D7B2F7100949826 /* LoginController.swift in Sources */,
 				E2C397F01D85B9B4000D35F4 /* SettingsController.swift in Sources */,
 				E20163E31D7B2F7100949826 /* AppDelegate.swift in Sources */,
+				E259EB5C1D9FF29200EADC4C /* LogoutController.swift in Sources */,
 				E24F77EA1D84FBB000936AAE /* SWRevealViewController.m in Sources */,
 				E2D877201D8EFEDC00BAAB46 /* SideViewTableController.swift in Sources */,
 				E2C397EE1D85B07E000D35F4 /* MainMenuController.swift in Sources */,

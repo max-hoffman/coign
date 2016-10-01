@@ -19,23 +19,36 @@ class SideViewTableController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.section == 1 && indexPath.row == 1){
             
-            //give button permission to logout of facebook
-            let facebookLogin = FBSDKLoginManager()
+            let logoutAlert = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: UIAlertControllerStyle.alert)
+            logoutAlert.addAction(UIAlertAction(title: "Logout", style: .default, handler: {
+                (action: UIAlertAction) -> Void in
+                    self.logout()
+            }))
+            logoutAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {
+                (action: UIAlertAction) -> Void in
+                self.dismiss(animated: false, completion: nil)
+            }))
             
-            //logout of firebase/facebook/userdefualts
-            facebookLogin.logOut()
-            try! FIRAuth.auth()!.signOut()
-            FBSDKAccessToken.setCurrent(nil)
-            FBSDKProfile.setCurrent(nil)
-            
-            //clear user defaults
-            
-            //segue to login screen
-            let storyboard = UIStoryboard(name: "Login", bundle: nil)
-            let controller  = storyboard.instantiateInitialViewController()!
-            self.present(controller, animated: true, completion: nil)
-        }
+            present(logoutAlert, animated: true, completion: nil)
+               }
     }
+    
+    private func logout() {
+        
+        //logout of firebase/facebook/UserDefualts
+        FBSDKLoginManager().logOut()
+        try! FIRAuth.auth()!.signOut()
+        FBSDKAccessToken.setCurrent(nil)
+        FBSDKProfile.setCurrent(nil)
+        
+        //TODO: clear user defaults
+        
+        //segue to login screen
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let controller  = storyboard.instantiateInitialViewController()!
+        self.present(controller, animated: true, completion: nil)
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
