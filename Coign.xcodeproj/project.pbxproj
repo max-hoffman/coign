@@ -181,13 +181,8 @@
 		E20163E11D7B2F7100949826 /* Coign */ = {
 			isa = PBXGroup;
 			children = (
-				E20163E21D7B2F7100949826 /* AppDelegate.swift */,
+				E259EB601DA1562400EADC4C /* Supporting Files */,
 				E201641B1D7B5DCF00949826 /* Storyboards */,
-				E20163EC1D7B2F7100949826 /* Assets.xcassets */,
-				E20163F11D7B2F7100949826 /* Info.plist */,
-				E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */,
-				E20163E91D7B2F7100949826 /* Coign.xcdatamodeld */,
-				E24F77EB1D84FBDD00936AAE /* Coign-Bridging-Header.h */,
 			);
 			path = Coign;
 			sourceTree = "<group>";
@@ -252,6 +247,19 @@
 				E24F77E91D84FBB000936AAE /* SWRevealViewController.m */,
 			);
 			name = "Side-bar";
+			sourceTree = "<group>";
+		};
+		E259EB601DA1562400EADC4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E20163E21D7B2F7100949826 /* AppDelegate.swift */,
+				E20163EC1D7B2F7100949826 /* Assets.xcassets */,
+				E20163F11D7B2F7100949826 /* Info.plist */,
+				E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */,
+				E20163E91D7B2F7100949826 /* Coign.xcdatamodeld */,
+				E24F77EB1D84FBDD00936AAE /* Coign-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		E2C398041D85CDB3000D35F4 /* Main Menu */ = {

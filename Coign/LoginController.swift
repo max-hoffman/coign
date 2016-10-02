@@ -26,11 +26,21 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     func fetchProfile() {
         
         //TODO: make graph request
-        let parameters = ["fields": "email"]
-    
-        //TODO: assign graph vars to 
+        //let parameters = ["fields": "email"]
+        let connection = FBSDKGraphRequestConnection()
+        let parameters = ["fields":"email, name, id"]
+        let request = FBSDKGraphRequest.init(graphPath: "me", parameters: parameters)
+        connection.add(request, completionHandler: {
+            (connection, result, error) in
+            print("Facebook graph Result:", result)
+            
+            
+        })
+        
+        connection.start()
+        
+        //TODO: assign graph vars to
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
