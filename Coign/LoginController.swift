@@ -16,7 +16,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
 
     //MARK: - facebook login
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
-    var dict : NSDictionary?
+    var databaseManager: UserDataBaseManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,21 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         connection.add(request, completionHandler: {
             (connection, result, error) in
             print("Facebook graph Result:", result)
+            //let dataDict = JSONSerialization.jsonObject(with: result!, options: JSONSerialization.ReadingOptions.mutableContainers)
+            print(JSONSerialization.isValidJSONObject(result!))
             
+            let validJSONObject: Data?
+            
+            do{
+            validJSONObject = try JSONSerialization.data(withJSONObject: result!, options: JSONSerialization.WritingOptions.prettyPrinted)
+            
+                let dataDict = try JSONSerialization.jsonObject(with: validJSONObject!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: AnyObject]
+            
+                print(dataDict["name"])
+            }
+            catch{
+                print("json error")
+            }
             
         })
         
@@ -41,6 +55,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         
         //TODO: assign graph vars to
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -61,7 +76,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
             
             //successful login
             print("User logged in with facebook")
-            self.fetchProfile()
+            self.databaseManager = UserDataBaseManager()
             })
         
         let storyboard = UIStoryboard(name: "MainApp", bundle: nil)

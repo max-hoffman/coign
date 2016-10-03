@@ -43,6 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
     }
+    
+    
     //tells the application what to do after we grant authorization to use it
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
