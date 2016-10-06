@@ -17,16 +17,16 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     //MARK: - facebook login
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     var databaseManager: UserDataBaseManager?
+    var rootRef: FIRDatabaseReference?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         facebookLoginButton.delegate = self
+        rootRef = FIRDatabase.database().reference()
           }
 
     func fetchProfile() {
         
-        //TODO: make graph request
-        //let parameters = ["fields": "email"]
         let connection = FBSDKGraphRequestConnection()
         let parameters = ["fields":"email, name, id"]
         let request = FBSDKGraphRequest.init(graphPath: "me", parameters: parameters)
@@ -75,8 +75,11 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
             }
             
             //successful login
-            print("User logged in with facebook")
-            self.databaseManager = UserDataBaseManager()
+            if self.rootRef != nil {
+                //self.databaseManager = UserDataBaseManager()
+                //UserDataBaseManager.sharedInstance.addUserToFirebase(node: self.rootRef!)
+                print("no error from login controller")
+            }
             })
         
         let storyboard = UIStoryboard(name: "MainApp", bundle: nil)

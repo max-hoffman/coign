@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func checkForAutoLogin() {
+        //TODO: Remove memory cycles - might have already done that by making the storyboard referenecs optional
+        
         self.loginStoryboard = UIStoryboard(name: "Login", bundle: .main)
         self.mainAppStoryboard = UIStoryboard(name: "MainApp", bundle: .main)
         let currentUser = FIRAuth.auth()?.currentUser
@@ -43,7 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
     }
-    
     
     //tells the application what to do after we grant authorization to use it
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
