@@ -9,9 +9,11 @@
 import Foundation
 import Firebase
 
+
 class UserDataBaseManager {
     
-    static let sharedInstance = UserDataBaseManager()
+    //static let sharedInstance = UserDataBaseManager()
+    let rootRef = FIRDatabase.database().reference()
     
     //MARK: - properties
 //    var name: String? = nil
@@ -26,50 +28,104 @@ class UserDataBaseManager {
     //MARK: - class functions
     
     /**
-     Fetch fb data (name / friendlist / picture), update FIR tree
+     Parse JSON data
+        - param validJSONObject: takes the result from FBSDK Graph request
+        - returns: JSON dictionary
     */
-    private func fetchFBSDKInfo(parameters: [String]) -> [String : Any] {
-        var returnDict: [String : Any]
+    private func parseJSON(validJSONObject: Any) -> [String : Any]? {
+        
+        var jsonDict: [String: Any]?
+        
+        if(JSONSerialization.isValidJSONObject(validJSONObject)){
+            do {
+                let JSONData: Data? = try JSONSerialization.data(withJSONObject: validJSONObject, options: JSONSerialization.WritingOptions.prettyPrinted)
+            
+                jsonDict = try JSONSerialization.jsonObject(with: JSONData!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: AnyObject]
+            }
+            catch {
+                print(error.localizedDescription)
+                return jsonDict
+            }
+        }
+        return jsonDict
+    }
+    
+    /**
+     Fetch fb data (name / friendlist / picture), update FIR tree
+        - param parameters: of form ["fields" : "email, name, picture.type(large), friends"]
+     
+        -returns Dictionary: key/value pairs of facebook graph request
+    */
+    private func fetchFBSDKInfo(parameters: [String: Any]) -> [String : Any]? {
+        var returnDict: [String : Any]?
         
         //make graph request, parse JSON data
-        //request parameters
         let connection = FBSDKGraphRequestConnection()
-        let parameters = ["fields":"email, name, id, picture.type(large), friends"]
         let request = FBSDKGraphRequest.init(graphPath: "me", parameters: parameters)
-        self.timeSinceFBSDKUpdate = Date().shortDate
+        //self.timeSinceFBSDKUpdate = Date().shortDate
         
         //formal request
         connection.add(request, completionHandler: {
+            [weak weakSelf = self]
             (connection, result, error) in
+            
+            if error != nil {
+                print(error?.localizedDescription)
+                print("error in fb call")
+                return
+            }
             print("Facebook graph Result:", result)
             
             print(JSONSerialization.isValidJSONObject(result!))
-            
-            do{
-                let validJSONObject: Data? = try JSONSerialization.data(withJSONObject: result!, options: JSONSerialization.WritingOptions.prettyPrinted)
-                
-                let jsonDict = try JSONSerialization.jsonObject(with: validJSONObject!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: AnyObject]
-                
-//                self.name = jsonDict["name"] as! String?
-//                self.email = jsonDict["email"] as! String?
-//                self.facebookID = Int((jsonDict["id"] as! String?)!)
-//                let picture = jsonDict["picture"] as! [String: AnyObject]?
-//                let data = picture?["data"] as! [String: AnyObject]?
-//                self.profilePictureURL = data?["url"] as! String?
+            returnDict = weakSelf?.parseJSON(validJSONObject: result)
+//            do{
+//                let validJSONObject: Data? = try JSONSerialization.data(withJSONObject: result!, options: JSONSerialization.WritingOptions.prettyPrinted)
 //                
-//                print(self.profilePictureURL)
-//                print(self.name)
-//                print(self.email)
-//                print(self.facebookID)
-            }
-            catch{
-                print("json facebook fetch error")
-            }
+//                let jsonDict = try JSONSerialization.jsonObject(with: validJSONObject!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: AnyObject]
+//                
+////                self.name = jsonDict["name"] as! String?
+////                self.email = jsonDict["email"] as! String?
+////                self.facebookID = Int((jsonDict["id"] as! String?)!)
+////                let picture = jsonDict["picture"] as! [String: AnyObject]?
+////                let data = picture?["data"] as! [String: AnyObject]?
+////                self.profilePictureURL = data?["url"] as! String?
+////                
+////                print(self.profilePictureURL)
+////                print(self.name)
+////                print(self.email)
+////                print(self.facebookID)
+//            }
+//            catch{
+//                print("json facebook fetch error")
+//            }
             
         })
         connection.start()
 
         return returnDict
+    }
+    
+    /**
+     Check if the user is new or not
+    */
+    func IsUserNew() {
+        
+        //make graph request
+        let graphParameters = ["fields": "facebookID"]
+        let jsonDict = self.fetchFBSDKInfo(parameters: graphParameters)
+        
+        if let id = jsonDict?["id"] as! String! {
+            self.facebookID = Int(id)
+            print(facebookID)
+        }
+        else {
+            print("facebook fetch or JSON parsing error")
+        }
+        
+        //check with firebase to see if user with the given facebookID exists
+        
+        
+        //return true or false, depending on whether we find user w/ the given ID
     }
     
     /**
