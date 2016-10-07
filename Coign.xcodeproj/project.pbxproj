@@ -22,6 +22,7 @@
 		E259EB631DA19CD700EADC4C /* UserDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB621DA19CD700EADC4C /* UserDatabaseManager.swift */; };
 		E259EB671DA55EDC00EADC4C /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB661DA55EDC00EADC4C /* File.swift */; };
 		E259EB691DA6AC1D00EADC4C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB681DA6AC1D00EADC4C /* DataController.swift */; };
+		E259EB6B1DA6EB5400EADC4C /* LoginExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB6A1DA6EB5400EADC4C /* LoginExtensions.swift */; };
 		E28C6BDB1D8DD7180020EAA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */; };
 		E2C397EA1D850220000D35F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */; };
 		E2C397EC1D850D8D000D35F4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397EB1D850D8D000D35F4 /* Login.storyboard */; };
@@ -87,6 +88,7 @@
 		E259EB621DA19CD700EADC4C /* UserDatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDatabaseManager.swift; sourceTree = "<group>"; };
 		E259EB661DA55EDC00EADC4C /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		E259EB681DA6AC1D00EADC4C /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		E259EB6A1DA6EB5400EADC4C /* LoginExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginExtensions.swift; sourceTree = "<group>"; };
 		E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2C397EB1D850D8D000D35F4 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			children = (
 				E259EB621DA19CD700EADC4C /* UserDatabaseManager.swift */,
 				E259EB681DA6AC1D00EADC4C /* DataController.swift */,
+				E259EB6A1DA6EB5400EADC4C /* LoginExtensions.swift */,
 			);
 			name = "Model Classes";
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				E2C397F41D85BDC3000D35F4 /* DonateController.swift in Sources */,
 				E259EB671DA55EDC00EADC4C /* File.swift in Sources */,
 				E2C397F21D85BCE1000D35F4 /* ProfileController.swift in Sources */,
+				E259EB6B1DA6EB5400EADC4C /* LoginExtensions.swift in Sources */,
 				E259EB631DA19CD700EADC4C /* UserDatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

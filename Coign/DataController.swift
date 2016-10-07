@@ -20,20 +20,22 @@ class DataController: UIViewController {
     /**
      Check if the user is new or not
      */
-    func IsUserNew() {
+    private func IsUserNew(parameters: [String: Any]) {
         
-        //make graph request
-        let graphParameters = ["fields": "facebookID"]
-        let jsonDict = self.fetchFBSDKInfo(parameters: graphParameters)
+        var jsonData: [String: Any]?
         
-        if let id = jsonDict?["id"] as! String! {
-            self.facebookID = Int(id)
-            print(facebookID)
-        }
-        else {
-            print("facebook fetch or JSON parsing error")
-        }
+        let connection = FBSDKGraphRequestConnection()
+        let request = FBSDKGraphRequest.init(graphPath: "me", parameters: parameters)
+        connection.add(request, completionHandler: {
+            [weak weakSelf = self]
+            (connection, result, error) in
+            
+            jsonData = weakSelf?.parseJSON(validJSONObject: result)
+            })
         
+        connection.start()
+        
+        print(jsonData)
         //check with firebase to see if user with the given facebookID exists
         
         
@@ -99,43 +101,13 @@ class DataController: UIViewController {
     }
   
     
-    func fetchProfile() {
-        
-        let connection = FBSDKGraphRequestConnection()
-        let parameters = ["fields":"email, name, id"]
-        let request = FBSDKGraphRequest.init(graphPath: "me", parameters: parameters)
-        connection.add(request, completionHandler: {
-            (connection, result, error) in
-            print("Facebook graph Result:", result)
-            //let dataDict = JSONSerialization.jsonObject(with: result!, options: JSONSerialization.ReadingOptions.mutableContainers)
-            print(JSONSerialization.isValidJSONObject(result!))
-            
-            let validJSONObject: Data?
-            
-            do{
-                validJSONObject = try JSONSerialization.data(withJSONObject: result!, options: JSONSerialization.WritingOptions.prettyPrinted)
-                
-                let dataDict = try JSONSerialization.jsonObject(with: validJSONObject!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: AnyObject]
-                
-                print(dataDict["name"])
-            }
-            catch{
-                print("json error")
-            }
-            
-        })
-        
-        connection.start()
-        
-        //TODO: assign graph vars to
-    }
 
     /**
      Parse JSON data
      - param validJSONObject: takes the result from FBSDK Graph request
      - returns: JSON dictionary
      */
-    private func parseJSON(validJSONObject: Any?) -> [String : Any]? {
+    public func parseJSON(validJSONObject: Any?) -> [String : Any]? {
         
         var jsonDict: [String: Any]?
         
@@ -154,23 +126,20 @@ class DataController: UIViewController {
         return jsonDict
     }
 
-    
+
     func practiceFetchProfile(parameters: [String: Any]) -> [String: Any]? {
         
         var jsonData: [String: Any]?
         
         let connection = FBSDKGraphRequestConnection()
-        
         let request = FBSDKGraphRequest.init(graphPath: "me", parameters: parameters)
         connection.add(request, completionHandler: {
+            [weak weakSelf = self]
             (connection, result, error) in
-            //print("Facebook graph Result:", result)
-            //let dataDict = JSONSerialization.jsonObject(with: result!, options: JSONSerialization.ReadingOptions.mutableContainers)
-            //print(JSONSerialization.isValidJSONObject(result!))
-            
-            jsonData = self.parseJSON(validJSONObject: result)
+
+            jsonData = weakSelf?.parseJSON(validJSONObject: result)
         })
-        
+    
         connection.start()
         
         print(jsonData)

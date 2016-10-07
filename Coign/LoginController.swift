@@ -76,17 +76,12 @@ class LoginController: DataController, FBSDKLoginButtonDelegate {
             
             //successful login
             if self.rootRef != nil {
-                //self.databaseManager = UserDataBaseManager()
-                //check if user is new or not
-                //UserDataBaseManager.sharedInstance.
+                self.IsUserNew()
                 print("no error from login controller")
             }
         })
         
-        //self.IsUserNew()
-        let graphParameters = ["fields": "id, name"]
-        let facebookDict = practiceFetchProfile(parameters: graphParameters)
-        print(facebookDict)
+        
         let storyboard = UIStoryboard(name: "MainApp", bundle: nil)
         let controller  = storyboard.instantiateInitialViewController()!
         self.present(controller, animated: true, completion: nil)
