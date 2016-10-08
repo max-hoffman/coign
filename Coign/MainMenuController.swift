@@ -76,7 +76,7 @@ extension MainMenuController {
         userSetupPopover.alpha = 0
         
         //animate default popover presentation
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.4) {
             
             //apply blur
             self.blurView?.effect = UIBlurEffect(style: .light)
@@ -94,8 +94,15 @@ extension MainMenuController {
      Remove popover view, save the data user has entered.
      */
     public func dismissUserPopover() {
-        userSetupPopover.removeFromSuperview()
-        blurView?.removeFromSuperview()
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        UIView.animate(withDuration: 0.4, animations: {
+            self.userSetupPopover.transform = CGAffineTransform.init(scaleX: 1.5, y: 1.5)
+            self.userSetupPopover.alpha = 0
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+            self.blurView?.effect = nil
+        }) { sucesss in
+            self.userSetupPopover.removeFromSuperview()
+            self.blurView?.removeFromSuperview()
+        }
     }
 }
