@@ -10,6 +10,7 @@ target 'Coign' do
   pod 'Firebase/Auth'
   pod 'FBSDKLoginKit'
   pod 'Firebase/Database'
+  pod 'SkyFloatingLabelTextField', git: "https://github.com/MLSDev/SkyFloatingLabelTextField.git", branch: "swift3"
   
   target 'CoignTests' do
     inherit! :search_paths
