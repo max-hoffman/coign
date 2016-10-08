@@ -14,37 +14,22 @@ import FBSDKCoreKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    //MARK: - PROPERTIES
     var loginStoryboard: UIStoryboard?
     var mainAppStoryboard: UIStoryboard?
     var window: UIWindow?
     
+    //MARK: - HANDLE APP ENTRY
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         //connect to Firebase
         FIRApp.configure()
         
+        //bypass login screen if user credential exists
         self.checkForAutoLogin()
         
         // Override point for customization after application launch.
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-    }
-
-    func checkForAutoLogin() {
-        //TODO: Remove memory cycles - might have already done that by making the storyboard referenecs optional
-        
-        self.loginStoryboard = UIStoryboard(name: "Login", bundle: .main)
-        self.mainAppStoryboard = UIStoryboard(name: "MainApp", bundle: .main)
-        let currentUser = FIRAuth.auth()?.currentUser
-        
-        if currentUser != nil {
-            self.window?.rootViewController = self.mainAppStoryboard?.instantiateViewController(withIdentifier: "RevealVC")
-            print("already logged in")
-            
-        }else {
-            self.window?.rootViewController = self.loginStoryboard?.instantiateViewController(withIdentifier: "Login VC")
-            print("need to login")
-        }
-
     }
     
     //tells the application what to do after we grant authorization to use it
@@ -52,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
     
+    //MARK: - HANDLE APP EXIT
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -141,3 +127,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+//MARK: - AUTO-LOGIN EXTENSION
+private extension AppDelegate{
+    func checkForAutoLogin() {
+        //TODO: Remove memory cycles - might have already done that by making the storyboard referenecs optional
+        
+        self.loginStoryboard = UIStoryboard(name: "Login", bundle: .main)
+        self.mainAppStoryboard = UIStoryboard(name: "MainApp", bundle: .main)
+        let currentUser = FIRAuth.auth()?.currentUser
+        
+        if currentUser != nil {
+            self.window?.rootViewController = self.mainAppStoryboard?.instantiateViewController(withIdentifier: "RevealVC")
+            print("already logged in")
+            
+        }else {
+            self.window?.rootViewController = self.loginStoryboard?.instantiateViewController(withIdentifier: "Login VC")
+            print("need to login")
+        }
+        
+    }
+}

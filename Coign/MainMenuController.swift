@@ -10,8 +10,6 @@ import UIKit
 
 class MainMenuController: UIViewController {
 
-
-
     //properties
     var blurView: UIVisualEffectView?
     var blurEffect: UIVisualEffect?
@@ -25,53 +23,6 @@ class MainMenuController: UIViewController {
     @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var charityPreferencePicker: UIPickerView!
-    
-    /**
-     Shows the user setup popover window. First time users add their phone number and email address to complete user sign-up. 
-     
-     Detailed description: creates a nil blur view, shows a popover window, and then animates the showing of the window and blur view, while hiding the navigation bar.
-    */
-    public func presentUserSetupPopover() {
-        
-        //create blur view with nil effect, add to view
-        blurView = UIVisualEffectView()
-        blurView?.frame = view.frame
-        self.view.addSubview(self.blurView!)
-
-        
-        //show popover
-        self.view.addSubview(userSetupPopover)
-        userSetupPopover.layer.cornerRadius = 10 //rounded corners
-        userSetupPopover.center = self.view.center
-
-        //make popover transparent and expanded (temporarily)
-        userSetupPopover.transform = CGAffineTransform.init(scaleX: 1.5, y: 1.5)
-        userSetupPopover.alpha = 0
-        
-        //animate default popover presentation
-        UIView.animate(withDuration: 0.5) {
-            
-            //apply blur
-            self.blurView?.effect = UIBlurEffect(style: .light)
-            
-            //restore popover defaults
-            self.userSetupPopover.alpha = 1
-            self.userSetupPopover.transform = CGAffineTransform.identity
-            
-            //hide navigation bar
-            self.navigationController?.setNavigationBarHidden(true, animated: true)
-        }
-    }
-    
-    /**
-     Remove popover view, save the data user has entered.
-    */
-     private func dismissUserPopover() {
-        userSetupPopover.removeFromSuperview()
-        blurView?.removeFromSuperview()
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    
     //MARK: - Superview and load functions
     
     //outlets
@@ -97,4 +48,54 @@ class MainMenuController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+}
+
+//MARK: - User setup extensions
+extension MainMenuController {
+    
+    /**
+     Shows the user setup popover window. First time users add their phone number and email address to complete user sign-up.
+     
+     Detailed description: creates a nil blur view, shows a popover window, and then animates the showing of the window and blur view, while hiding the navigation bar.
+     */
+    public func presentUserSetupPopover() {
+        
+        //create blur view with nil effect, add to view
+        blurView = UIVisualEffectView()
+        blurView?.frame = view.frame
+        self.view.addSubview(self.blurView!)
+        
+        
+        //show popover
+        self.view.addSubview(userSetupPopover)
+        userSetupPopover.layer.cornerRadius = 10 //rounded corners
+        userSetupPopover.center = self.view.center
+        
+        //make popover transparent and expanded (temporarily)
+        userSetupPopover.transform = CGAffineTransform.init(scaleX: 1.5, y: 1.5)
+        userSetupPopover.alpha = 0
+        
+        //animate default popover presentation
+        UIView.animate(withDuration: 0.5) {
+            
+            //apply blur
+            self.blurView?.effect = UIBlurEffect(style: .light)
+            
+            //restore popover defaults
+            self.userSetupPopover.alpha = 1
+            self.userSetupPopover.transform = CGAffineTransform.identity
+            
+            //hide navigation bar
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+        }
+    }
+    
+    /**
+     Remove popover view, save the data user has entered.
+     */
+    public func dismissUserPopover() {
+        userSetupPopover.removeFromSuperview()
+        blurView?.removeFromSuperview()
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 }
