@@ -11,8 +11,10 @@ import UIKit
 class MainMenuController: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var userSetupPopover: UIView!
     
     override func viewDidLoad() {
+
         super.viewDidLoad()
         // Do view setup here.
         
@@ -30,4 +32,22 @@ class MainMenuController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    public func presentUserSetupPopover() {
+        print("attempted to present popover")
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        //blur and vibrancy
+        //let blurAndVirbrancyView = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: UIBlurEffect(style: .dark)))
+        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+        blurView.frame = view.frame
+        view.addSubview(blurView)
+        
+        //show popover
+        self.view.addSubview(userSetupPopover)
+        userSetupPopover.layer.cornerRadius = 5
+        userSetupPopover.center = self.view.center
+    }
+    
+    private func dismissUserPopover() {
+        
+    }
 }

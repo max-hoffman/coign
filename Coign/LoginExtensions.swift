@@ -10,53 +10,76 @@ import Foundation
 import Firebase
 
 extension LoginController {
-    
+
     /**
      Check if the user is new or not
      */
-    public func IsUserNew() {
+    public func loginControlFlow() {
         
+        //properties for calling and storing facebook fetch
         var jsonData: [String: Any]?
-        
         let connection = FBSDKGraphRequestConnection()
         let request = FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields": "id, name, picture.type(large)"])
         
+        //initiate facebook fetch
         connection.add(request, completionHandler: {
             [weak weakSelf = self]
             (connection, result, error) in
             
+            //erroneous facebook fetch, close function short
             if error != nil {
                 print(error?.localizedDescription)
                 return
             }
             
+            //parse the json result
             jsonData = weakSelf?.parseJSON(validJSONObject: result)
-            
 
+            //check for expected fetch data before proceeding
             if let facebookID = jsonData?["id"] as! String?,
                 let name = jsonData?["name"] as! String?,
                 let picture = jsonData?["picture"] as! [String: AnyObject]?,
                 let data = picture["data"] as! [String: AnyObject]?,
                 let pictureURL = data["url"] as! String? {
                 
-                //check if the user node exists
-                self.rootRef?.child("name").child(facebookID).observe(FIRDataEventType.value, with: {
-                    [weak weakSelf = self]
+                //check if user is new || cache existing user settings
+                weakSelf?.rootRef?.child("name").child(facebookID).observe(FIRDataEventType.value, with: {
+
                     snapshot in
-                    if snapshot.value == nil { //user is new
-                        print("user is new")
+                    
+                    if snapshot.value == nil { // then the user is new
+                        
+                        //make new user
+                        weakSelf?.createNewUser(facebookID: facebookID, name: name, pictureURL: pictureURL)
+                        
+                        //send user to settings page
+                        let storyboard = UIStoryboard(name: "MainMenu", bundle: nil)
+                        let mainMenuController  = storyboard.instantiateInitialViewController()!
+                        weakSelf?.present(mainMenuController, animated: true, completion: nil)
+                        
+                        let popoverController = storyboard.instantiateViewController(withIdentifier: "User Setup Controller")
+                        mainMenuController.present(popoverController, animated: true, completion: nil)
+                        
                     }
                     else { //user node already exists
                         print("user already exists")
                         
-                        //make new user
-                        weakSelf?.createNewUser(facebookID: facebookID, name: name, pictureURL: pictureURL)
+                        //send user to home page
+                        let storyboard = UIStoryboard(name: "MainMenu", bundle: nil)
+                        let mainMenuNC  = storyboard.instantiateInitialViewController()!
+                        let mainMenuController = mainMenuNC.contentViewController as! MainMenuController
+                        weakSelf?.present(mainMenuNC, animated: true, completion: nil)
+                        
+                        //weakSelf?.newUserLoginDelegate?.presentUserSetupPopover()
+                        mainMenuController.presentUserSetupPopover()
+                        
+                        //let popoverController = storyboard.instantiateViewController(withIdentifier: "UserSetup") as! UIPopoverPresentationController
+                        //mainMenuController.present(popoverController, animated: true, completion: nil)
+                        
                     }
                 })
             }
-            print("IsUserNew completion block ended")
         })
-        
         connection.start()
     }
 

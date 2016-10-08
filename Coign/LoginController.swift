@@ -13,7 +13,7 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 
 class LoginController: DataController, FBSDKLoginButtonDelegate {
-
+    
     //MARK: - facebook login
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     //var databaseManager: UserDataBaseManager?
@@ -62,6 +62,7 @@ class LoginController: DataController, FBSDKLoginButtonDelegate {
     }
 
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        
         if error != nil {
             print(error!.localizedDescription)
             return
@@ -76,15 +77,15 @@ class LoginController: DataController, FBSDKLoginButtonDelegate {
             
             //successful login
             if self.rootRef != nil {
-                self.IsUserNew()
+                self.loginControlFlow()
                 print("no error from login controller")
             }
         })
         
         
-        let storyboard = UIStoryboard(name: "MainApp", bundle: nil)
-        let controller  = storyboard.instantiateInitialViewController()!
-        self.present(controller, animated: true, completion: nil)
+//        let storyboard = UIStoryboard(name: "MainApp", bundle: nil)
+//        let controller  = storyboard.instantiateInitialViewController()!
+//        self.present(controller, animated: true, completion: nil)
     }
     
     func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {

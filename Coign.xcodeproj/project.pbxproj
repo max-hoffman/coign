@@ -17,6 +17,7 @@
 		E20163FB1D7B2F7100949826 /* CoignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20163FA1D7B2F7100949826 /* CoignTests.swift */; };
 		E20164061D7B2F7100949826 /* CoignUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20164051D7B2F7100949826 /* CoignUITests.swift */; };
 		E20164221D7B653A00949826 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20164201D7B653A00949826 /* MainApp.storyboard */; };
+		E24214971DA8966400A5B080 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24214961DA8966400A5B080 /* UIViewControllerExtensions.swift */; };
 		E24F77EA1D84FBB000936AAE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24F77E91D84FBB000936AAE /* SWRevealViewController.m */; };
 		E259EB5C1D9FF29200EADC4C /* LogoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB5B1D9FF29200EADC4C /* LogoutController.swift */; };
 		E259EB631DA19CD700EADC4C /* UserDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB621DA19CD700EADC4C /* UserDatabaseManager.swift */; };
@@ -81,6 +82,7 @@
 		E20164051D7B2F7100949826 /* CoignUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoignUITests.swift; sourceTree = "<group>"; };
 		E20164071D7B2F7100949826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E20164211D7B653A00949826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainApp.storyboard; sourceTree = "<group>"; };
+		E24214961DA8966400A5B080 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		E24F77E81D84FBB000936AAE /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		E24F77E91D84FBB000936AAE /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		E24F77EB1D84FBDD00936AAE /* Coign-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coign-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				E259EB621DA19CD700EADC4C /* UserDatabaseManager.swift */,
 				E259EB681DA6AC1D00EADC4C /* DataController.swift */,
 				E259EB6A1DA6EB5400EADC4C /* LoginExtensions.swift */,
+				E24214961DA8966400A5B080 /* UIViewControllerExtensions.swift */,
 			);
 			name = "Model Classes";
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E20163EB1D7B2F7100949826 /* Coign.xcdatamodeld in Sources */,
+				E24214971DA8966400A5B080 /* UIViewControllerExtensions.swift in Sources */,
 				E20163E51D7B2F7100949826 /* LoginController.swift in Sources */,
 				E2C397F01D85B9B4000D35F4 /* SettingsController.swift in Sources */,
 				E20163E31D7B2F7100949826 /* AppDelegate.swift in Sources */,

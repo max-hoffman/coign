@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if currentUser != nil {
             self.window?.rootViewController = self.mainAppStoryboard?.instantiateViewController(withIdentifier: "RevealVC")
             print("already logged in")
+            
         }else {
             self.window?.rootViewController = self.loginStoryboard?.instantiateViewController(withIdentifier: "Login VC")
             print("need to login")
