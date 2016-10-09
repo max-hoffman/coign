@@ -20,12 +20,41 @@ extension UIViewController {
         }
     }
     
+    func connectRevealVC() {
+        if self.revealViewController() != nil {
+            if let navcon = self.navigationController{
+                let navBar = navcon.navigationBar
+                
+                //add nav bar title
+                if let title = self.title {
+                    self.navigationItem.title = title
+                    let titleAttributes = [
+                        NSForegroundColorAttributeName: UIColor.white,
+                        NSFontAttributeName: UIFont(name: "Georgia-Bold", size: 24)!
+                    ]
+                    UINavigationBar.appearance().titleTextAttributes = titleAttributes
+                }
+                
+                //color nav bar
+                navBar.barTintColor = CustomColor.darkGreen
+                navBar.tintColor = UIColor.white
+                
+                //create menu button in navbar with pan recognizer
+                let menuButton = UIBarButtonItem(title: "Menu", style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
+                navigationItem.leftBarButtonItem = menuButton
+                self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            }
+        }
+
+    
+    }
+    
     /**
      Parse JSON data
      - param validJSONObject: takes the result from FBSDK Graph request
      - returns: JSON dictionary
      */
-    public func parseJSON(validJSONObject: Any?) -> [String : Any]? {
+    func parseJSON(validJSONObject: Any?) -> [String : Any]? {
         
         var jsonDict: [String: Any]?
         

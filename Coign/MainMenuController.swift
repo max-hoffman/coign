@@ -10,7 +10,9 @@ import UIKit
 
 class MainMenuController: UIViewController {
 
-    //properties
+    //TODO: - Should move the popover outlets into a separate view controller, and then change the present popover segue accordingly
+    
+    //MARK: - Properties and outlets
     var blurView: UIVisualEffectView?
     var blurEffect: UIVisualEffect?
     
@@ -33,15 +35,11 @@ class MainMenuController: UIViewController {
         phoneField.delegate = self
         nameField.delegate = self
         charityPreferencePicker.delegate = self
+        charityPreferencePicker.dataSource = self
         
         presentUserSetupPopover()
         
-        //MARK: this should be standardized so we're not duplicating code
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
+        connectRevealVC()
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,7 +57,7 @@ extension MainMenuController {
      
      Detailed description: creates a nil blur view, shows a popover window, and then animates the showing of the window and blur view, while hiding the navigation bar.
      */
-    public func presentUserSetupPopover() {
+    func presentUserSetupPopover() {
         
         //create blur view with nil effect, add to view
         blurView = UIVisualEffectView()
@@ -74,6 +72,9 @@ extension MainMenuController {
         self.view.addSubview(userSetupPopover)
         userSetupPopover.layer.cornerRadius = 10 //rounded corners
         userSetupPopover.center = self.view.center
+        
+        //remove reveal view controller access
+        disablePanGestureRecognizer()
         
         //make popover transparent and expanded (temporarily)
         userSetupPopover.transform = CGAffineTransform.init(scaleX: 1.5, y: 1.5)
@@ -95,9 +96,9 @@ extension MainMenuController {
     }
     
     /**
-     Remove popover view, save the data user has entered.
+     Remove popover view, save the data user has entered, re-enable reveal VC.
      */
-    public func dismissUserPopover() {
+    func dismissUserPopover() {
         
         UIView.animate(withDuration: 0.4, animations: {
             self.userSetupPopover.transform = CGAffineTransform.init(scaleX: 1.5, y: 1.5)
@@ -105,8 +106,10 @@ extension MainMenuController {
             self.navigationController?.setNavigationBarHidden(false, animated: true)
             self.blurView?.effect = nil
         }) { sucesss in
+
             self.userSetupPopover.removeFromSuperview()
             self.blurView?.removeFromSuperview()
+            self.enablePanGestureRecognizer()
         }
     }
 }
@@ -140,14 +143,58 @@ extension MainMenuController: UITextFieldDelegate {
         }
         return true
     }
+    
+ }
+
+//MARK: - manage pan gestures
+private extension MainMenuController {
+    /**
+     Re-enable the pan gesture recognizer when popover dismisses
+     */
+    func enablePanGestureRecognizer() {
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    }
+    
+    /**
+     I can't figure out why, but only disabling the first gesture recognizer does not work for the home page. It works on the other pages, so I'm assuming the recognizer is instantiated twice somewhere for the home page. Until I find it, this works just fine.
+     */
+    func disablePanGestureRecognizer() {
+        if view.gestureRecognizers != nil {
+            for gesture in view.gestureRecognizers! {
+                if let recognizer = gesture as? UIPanGestureRecognizer {
+                    view.removeGestureRecognizer(recognizer)
+                }
+            }
+        }
+    }
 }
 
-
-
-//MARK: - Textfield extensions
-extension MainMenuController: UIPickerViewDelegate {
+//MARK: - Picker view extensions
+extension MainMenuController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func preparePickerView() {
-        
+        charityPreferencePicker.selectRow(1, inComponent: 0, animated: false)
+    }
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Charities.list.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = Charities.list[row]
+        if row == 0 {
+            return NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Helvetica", size: 10.0)!,NSForegroundColorAttributeName: UIColor.lightGray])
+        }
+        return NSAttributedString(string: titleData)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if row == 0 {
+            charityPreferencePicker.selectRow(1, inComponent: 0, animated: true)
+        }
     }
 }

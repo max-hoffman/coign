@@ -81,7 +81,7 @@ extension LoginController {
     /**
      Check if the user is new or not
      */
-    public func loginControlFlow() {
+    func loginControlFlow() {
         
         //properties for calling and storing facebook fetch
         var jsonData: [String: Any]?

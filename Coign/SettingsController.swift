@@ -16,12 +16,7 @@ class SettingsController: UIViewController {
         super.viewDidLoad()
         // Do view setup here.
         
-        //MARK: this should be standardized so we're not duplicating code
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
+        connectRevealVC()
     }
     
     override func didReceiveMemoryWarning() {
