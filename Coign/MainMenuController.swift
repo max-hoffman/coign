@@ -19,18 +19,20 @@ class MainMenuController: UIViewController {
     @IBAction func dismissPopover(_ sender: UIButton) {
         dismissUserPopover()
     }
-    @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var phoneField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var charityPreferencePicker: UIPickerView!
-    //MARK: - Superview and load functions
-    
-    //outlets
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
+    //MARK: - Superview and load functions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        emailField.delegate = self
+        phoneField.delegate = self
+        nameField.delegate = self
+        charityPreferencePicker.delegate = self
         
         presentUserSetupPopover()
         
@@ -40,7 +42,6 @@ class MainMenuController: UIViewController {
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,6 +66,9 @@ extension MainMenuController {
         blurView?.frame = view.frame
         self.view.addSubview(self.blurView!)
         
+        //prepare text fields and picker view
+        prepareTextFields()
+        preparePickerView()
         
         //show popover
         self.view.addSubview(userSetupPopover)
@@ -104,5 +108,46 @@ extension MainMenuController {
             self.userSetupPopover.removeFromSuperview()
             self.blurView?.removeFromSuperview()
         }
+    }
+}
+
+//MARK: - Textfield extensions
+extension MainMenuController: UITextFieldDelegate {
+    
+    func prepareTextFields() {
+        nameField.returnKeyType = .next
+        nameField.enablesReturnKeyAutomatically = true
+        nameField.autocapitalizationType = .words
+        
+        phoneField.keyboardType = .numberPad
+        phoneField.returnKeyType = .next
+        phoneField.enablesReturnKeyAutomatically = true
+        
+        emailField.returnKeyType = .done
+        emailField.enablesReturnKeyAutomatically = true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+        if textField == nameField {
+            nameField.resignFirstResponder()
+            phoneField.becomeFirstResponder()
+        } else if textField == phoneField {
+            nameField.resignFirstResponder()
+            phoneField.becomeFirstResponder()
+        } else if textField == emailField {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+}
+
+
+
+//MARK: - Textfield extensions
+extension MainMenuController: UIPickerViewDelegate {
+    
+    func preparePickerView() {
+        
     }
 }
