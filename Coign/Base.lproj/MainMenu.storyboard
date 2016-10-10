@@ -18,22 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aU-KW-2Dx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aU-KW-2Dx">
+                                <frame key="frameInset" minX="141" minY="323" width="93" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenConcentricCircles" translatesAutoresizingMaskIntoConstraints="NO" id="LsL-6K-ZCW"/>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="LsL-6K-ZCW" firstAttribute="top" secondItem="IsR-Ub-VxL" secondAttribute="top" id="1NP-02-Vwh"/>
-                            <constraint firstItem="LsL-6K-ZCW" firstAttribute="centerX" secondItem="0aU-KW-2Dx" secondAttribute="centerX" id="Fx5-s1-bSf"/>
-                            <constraint firstItem="LsL-6K-ZCW" firstAttribute="centerY" secondItem="0aU-KW-2Dx" secondAttribute="centerY" id="ZuC-No-hjY"/>
-                            <constraint firstAttribute="trailing" secondItem="LsL-6K-ZCW" secondAttribute="trailing" id="czP-Eo-bSi"/>
-                            <constraint firstItem="LsL-6K-ZCW" firstAttribute="bottom" secondItem="8Fz-Tw-zF3" secondAttribute="top" id="fgt-Wl-g1W"/>
-                            <constraint firstItem="LsL-6K-ZCW" firstAttribute="leading" secondItem="IsR-Ub-VxL" secondAttribute="leading" id="rm5-De-pgx"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IMi-KM-cUj">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="OC5-Ph-Uxc">
@@ -187,7 +180,4 @@
             <point key="canvasLocation" x="4518" y="1596"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="GreenConcentricCircles" width="580" height="580"/>
-    </resources>
 </document>

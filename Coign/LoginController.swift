@@ -109,6 +109,11 @@ extension LoginController {
                 let data = picture["data"] as! [String: AnyObject]?,
                 let pictureURL = data["url"] as! String? {
                 
+                //store data in UserDefaults for later use
+                UserDefaults.standard.set(facebookID, forKey: "facebookID")
+                UserDefaults.standard.set(name, forKey: "name")
+                UserDefaults.standard.set(pictureURL, forKey: "pictureURL")
+                
                 //check if user is new || cache existing user settings
                 weakSelf?.rootRef?.child("name").child(facebookID).observe(FIRDataEventType.value, with: {
                     
@@ -151,7 +156,7 @@ extension LoginController {
     }
     
     /**
-     Add a node to the users branch of the FIR tree - marked by the user's facebook ID
+     Add a node to the users branch of the FIR tree - marked by the user's facebook ID. Not used anywhere, could be useful in the future.
      */
     func createNewUser() -> Void {
         

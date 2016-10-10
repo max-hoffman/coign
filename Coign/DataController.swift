@@ -16,25 +16,7 @@ class DataController: UIViewController {
  
     //MARK: - Public functions
 
-    func practiceFetchProfile(parameters: [String: Any]) -> [String: Any]? {
-        
-        var jsonData: [String: Any]?
-        
-        let connection = FBSDKGraphRequestConnection()
-        let request = FBSDKGraphRequest.init(graphPath: "me", parameters: parameters)
-        connection.add(request, completionHandler: {
-            [weak weakSelf = self]
-            (connection, result, error) in
 
-            jsonData = weakSelf?.parseJSON(validJSONObject: result)
-        })
-    
-        connection.start()
-        
-        print(jsonData)
-        return jsonData
-    }
-    
     //TODO: - model functions need to be written
     
     /**
@@ -47,8 +29,11 @@ class DataController: UIViewController {
     /**
      Update multiple user settings
      */
-    func updateUserSettings(node: FIRDatabaseReference, newSettings: [String: Any]) -> Void {
-        //need to get facebookID
+    func updateUserSettings(newSettings: [String: Any]) -> Void {
+        //retrieve facebookID
+        if  let facebookID = UserDefaults.standard.string(forKey: "facebookID") {
+            self.rootRef?.child("users").child(facebookID).setValue(newSettings)
+        }
     }
     
     /**

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainMenuController: UIViewController {
+class MainMenuController: DataController {
 
     //TODO: - Should move the popover outlets into a separate view controller, and then change the present popover segue accordingly
     
@@ -19,6 +19,7 @@ class MainMenuController: UIViewController {
     //UI outlets and actions
     @IBOutlet weak var userSetupPopover: UIView!
     @IBAction func dismissPopover(_ sender: UIButton) {
+        storeUserInfo()
         dismissUserPopover()
     }
     @IBOutlet weak var phoneField: UITextField!
@@ -30,6 +31,7 @@ class MainMenuController: UIViewController {
     //MARK: - Superview and load functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do view setup here.
         emailField.delegate = self
         phoneField.delegate = self
@@ -37,8 +39,11 @@ class MainMenuController: UIViewController {
         charityPreferencePicker.delegate = self
         charityPreferencePicker.dataSource = self
         
+        //temporary
         presentUserSetupPopover()
         
+        print(self.revealViewController())
+        //nav bar for reveal view controller
         connectRevealVC()
     }
     
@@ -46,7 +51,6 @@ class MainMenuController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 }
 
 //MARK: - User setup extensions
@@ -112,6 +116,28 @@ extension MainMenuController {
             self.enablePanGestureRecognizer()
         }
     }
+    
+    /**
+     Save the user setup info from the new user popover.
+    */
+    func storeUserInfo() {
+        
+        if let facebookID = UserDefaults.standard.string(forKey: "facebookID") {
+            let name = nameField.text!
+            let phoneNumber = phoneField.text!
+            let email = emailField.text!
+            let charityPreference = Charities.list[charityPreferencePicker.selectedRow(inComponent: 0)]
+            
+            //load data
+            let settings = ["name": name,
+                        "phone number": phoneNumber,
+                        "email": email,
+                        "charity preference": charityPreference]
+        
+            //save data
+            self.rootRef?.child("users").child(facebookID).updateChildValues(settings)
+        }
+    }
 }
 
 //MARK: - Textfield extensions
@@ -121,7 +147,9 @@ extension MainMenuController: UITextFieldDelegate {
         nameField.returnKeyType = .next
         nameField.enablesReturnKeyAutomatically = true
         nameField.autocapitalizationType = .words
-        
+        nameField.text = UserDefaults.standard.string(forKey: "name")
+
+            
         phoneField.keyboardType = .numberPad
         phoneField.returnKeyType = .next
         phoneField.enablesReturnKeyAutomatically = true
@@ -148,23 +176,22 @@ extension MainMenuController: UITextFieldDelegate {
 
 //MARK: - manage pan gestures
 private extension MainMenuController {
+    
     /**
-     Re-enable the pan gesture recognizer when popover dismisses
+     Re-enable the pan gesture recognizer (when popover dismisses)
      */
     func enablePanGestureRecognizer() {
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        if let pan = self.revealViewController().panGestureRecognizer() {
+            pan.isEnabled = true
+        }
     }
     
     /**
-     I can't figure out why, but only disabling the first gesture recognizer does not work for the home page. It works on the other pages, so I'm assuming the recognizer is instantiated twice somewhere for the home page. Until I find it, this works just fine.
+     Disable the pan gesture recognizer (when popover shows)
      */
     func disablePanGestureRecognizer() {
-        if view.gestureRecognizers != nil {
-            for gesture in view.gestureRecognizers! {
-                if let recognizer = gesture as? UIPanGestureRecognizer {
-                    view.removeGestureRecognizer(recognizer)
-                }
-            }
+        if let pan = self.revealViewController().panGestureRecognizer() {
+            pan.isEnabled = false
         }
     }
 }

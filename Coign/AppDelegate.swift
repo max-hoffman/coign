@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var loginStoryboard: UIStoryboard?
     var mainAppStoryboard: UIStoryboard?
     var window: UIWindow?
+    static let defaults = UserDefaults()
     
     //MARK: - HANDLE APP ENTRY
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
