@@ -136,14 +136,26 @@ extension LoginController {
                     else { //user node already exists
                         print("user already exists")
                         
+                        let mainAppStoryboard = UIStoryboard(name: "MainApp", bundle: nil)
+                        let revealVC = mainAppStoryboard.instantiateInitialViewController()!
+                        let mainMenuController = UIStoryboard(name: "MainMenu", bundle: nil).instantiateInitialViewController()!.contentViewController as! MainMenuController
+                        weakSelf?.present(revealVC, animated: true) {
+                            //mainMenuController.disablePanGestureRecognizer()
+                            mainMenuController.presentUserSetupPopover()
+                            print("called popover to present")
+                        }
                         //send user to home page
-                        let storyboard = UIStoryboard(name: "MainMenu", bundle: nil)
-                        let mainMenuNC  = storyboard.instantiateInitialViewController()!
-                        let mainMenuController = mainMenuNC.contentViewController as! MainMenuController
-                        weakSelf?.present(mainMenuNC, animated: true, completion: nil)
-                        
+//                        let homeMenuStoryboard = UIStoryboard(name: "MainMenu", bundle: nil)
+//                        let homeMenuNC  = homeMenuStoryboard.instantiateInitialViewController()!
+//                        let mainMenuController = homeMenuNC.contentViewController as! MainMenuController
+//                        weakSelf?.present(homeMenuNC, animated: true) {
+//                            //mainMenuController.disablePanGestureRecognizer()
+//                            mainMenuController.presentUserSetupPopover()
+//                            print("called popover to present")
+//                        }
+                    
                         //weakSelf?.newUserLoginDelegate?.presentUserSetupPopover()
-                        mainMenuController.presentUserSetupPopover()
+                        
                         
                         //let popoverController = storyboard.instantiateViewController(withIdentifier: "UserSetup") as! UIPopoverPresentationController
                         //mainMenuController.present(popoverController, animated: true, completion: nil)

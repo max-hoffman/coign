@@ -39,12 +39,11 @@ class MainMenuController: DataController {
         charityPreferencePicker.delegate = self
         charityPreferencePicker.dataSource = self
         
-        //temporary
-        presentUserSetupPopover()
-        
-        print(self.revealViewController())
         //nav bar for reveal view controller
         connectRevealVC()
+        print("main menu controller appeared")
+        //temporary
+        presentUserSetupPopover()
     }
     
     override func didReceiveMemoryWarning() {
@@ -77,7 +76,7 @@ extension MainMenuController {
         userSetupPopover.layer.cornerRadius = 10 //rounded corners
         userSetupPopover.center = self.view.center
         
-        //remove reveal view controller access
+        //disable pan
         disablePanGestureRecognizer()
         
         //make popover transparent and expanded (temporarily)
@@ -175,7 +174,7 @@ extension MainMenuController: UITextFieldDelegate {
  }
 
 //MARK: - manage pan gestures
-private extension MainMenuController {
+extension MainMenuController {
     
     /**
      Re-enable the pan gesture recognizer (when popover dismisses)
@@ -190,7 +189,8 @@ private extension MainMenuController {
      Disable the pan gesture recognizer (when popover shows)
      */
     func disablePanGestureRecognizer() {
-        if let pan = self.revealViewController().panGestureRecognizer() {
+        print("about to disable pan recognizer")
+        if let pan = revealViewController().panGestureRecognizer() {
             pan.isEnabled = false
         }
     }

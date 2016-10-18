@@ -43,9 +43,10 @@ extension UIViewController {
                 let menuButton = UIBarButtonItem(title: "Menu", style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
                 navigationItem.leftBarButtonItem = menuButton
                 self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+                print("created pan gesture")
             }
         }
-
+    print("reveal view controller is connected")
     
     }
     

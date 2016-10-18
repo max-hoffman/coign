@@ -133,6 +133,7 @@ private extension AppDelegate{
     func checkForAutoLogin() {
         //TODO: Remove memory cycles - might have already done that by making the storyboard referenecs optional
         
+        //Bypassed using segues; just used the rootViewController method
         self.loginStoryboard = UIStoryboard(name: "Login", bundle: .main)
         self.mainAppStoryboard = UIStoryboard(name: "MainApp", bundle: .main)
         let currentUser = FIRAuth.auth()?.currentUser
