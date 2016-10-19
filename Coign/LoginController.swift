@@ -119,31 +119,39 @@ extension LoginController {
                     
                     snapshot in
                     
+                    let mainStoryBoard = UIStoryboard(name: "MainApp", bundle: nil)
+                    let revealViewController = mainStoryBoard.instantiateViewController(withIdentifier: "RevealVC")
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = revealViewController
+                    
+                    
                     if snapshot.value == nil { // then the user is new
                         
-                        //make new user
-                        weakSelf?.createNewUser(facebookID: facebookID, name: name, pictureURL: pictureURL)
+                       
                         
-                        //send user to settings page
-                        let storyboard = UIStoryboard(name: "MainMenu", bundle: nil)
-                        let mainMenuController  = storyboard.instantiateInitialViewController()!
-                        weakSelf?.present(mainMenuController, animated: true, completion: nil)
-                        
-                        let popoverController = storyboard.instantiateViewController(withIdentifier: "User Setup Controller")
-                        mainMenuController.present(popoverController, animated: true, completion: nil)
-                        
-                    }
-                    else { //user node already exists
-                        print("user already exists")
-                        
-                        let mainAppStoryboard = UIStoryboard(name: "MainApp", bundle: nil)
-                        let revealVC = mainAppStoryboard.instantiateInitialViewController()!
-                        let mainMenuController = UIStoryboard(name: "MainMenu", bundle: nil).instantiateInitialViewController()!.contentViewController as! MainMenuController
-                        weakSelf?.present(revealVC, animated: true) {
-                            //mainMenuController.disablePanGestureRecognizer()
-                            mainMenuController.presentUserSetupPopover()
-                            print("called popover to present")
-                        }
+//                        //make new user
+//                        weakSelf?.createNewUser(facebookID: facebookID, name: name, pictureURL: pictureURL)
+//                        
+//                        //send user to settings page
+//                        let storyboard = UIStoryboard(name: "MainMenu", bundle: nil)
+//                        let mainMenuController  = storyboard.instantiateInitialViewController()!
+//                        weakSelf?.present(mainMenuController, animated: true, completion: nil)
+//                        
+//                        let popoverController = storyboard.instantiateViewController(withIdentifier: "User Setup Controller")
+//                        mainMenuController.present(popoverController, animated: true, completion: nil)
+//                        
+//                    }
+//                    else { //user node already exists
+//                        print("user already exists")
+//                        
+//                        let mainAppStoryboard = UIStoryboard(name: "MainApp", bundle: nil)
+//                        let revealVC = mainAppStoryboard.instantiateInitialViewController()!
+//                        let mainMenuController = UIStoryboard(name: "MainMenu", bundle: nil).instantiateInitialViewController()!.contentViewController as! MainMenuController
+//                        weakSelf?.present(revealVC, animated: true) {
+//                            //mainMenuController.disablePanGestureRecognizer()
+//                            mainMenuController.presentUserSetupPopover()
+//                            print("called popover to present")
+//                        }
                         //send user to home page
 //                        let homeMenuStoryboard = UIStoryboard(name: "MainMenu", bundle: nil)
 //                        let homeMenuNC  = homeMenuStoryboard.instantiateInitialViewController()!
