@@ -39,11 +39,16 @@ class MainMenuController: DataController {
         charityPreferencePicker.delegate = self
         charityPreferencePicker.dataSource = self
         
+        //MARK: - need to undo in the exit view function
         //nav bar for reveal view controller
         connectRevealVC()
         print("main menu controller appeared")
-        //temporary
-        presentUserSetupPopover()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        //home page loading logic
+        checkLastLoginDate()
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,6 +59,27 @@ class MainMenuController: DataController {
 
 //MARK: - User setup extensions
 extension MainMenuController {
+    
+    /**
+     This function is used to test for new users right now. Could be amended in the future to give users info based on when they last opened the app.
+    */
+    func checkLastLoginDate() {
+        
+        //if user is new, follow through with new user form
+        if (UserDefaults.standard.object(forKey: "most recent login date") as? String == "new user") {
+                
+            //show user info form after a second delay
+            if #available(iOS 10.0, *) {
+                Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (timer) in
+                    self.presentUserSetupPopover()
+                    timer.invalidate()
+                })
+            } else {
+                // Fallback on earlier versions
+                Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(presentUserSetupPopover), userInfo: nil, repeats: false)
+            }
+        }
+    }
     
     /**
      Shows the user setup popover window. First time users add their phone number and email address to complete user sign-up.
@@ -99,10 +125,11 @@ extension MainMenuController {
     }
     
     /**
-     Remove popover view, save the data user has entered, re-enable reveal VC.
+     Remove popover view, save the data user has entered, re-enable reveal VC panning.
      */
     func dismissUserPopover() {
         
+        //animate popover exit
         UIView.animate(withDuration: 0.4, animations: {
             self.userSetupPopover.transform = CGAffineTransform.init(scaleX: 1.5, y: 1.5)
             self.userSetupPopover.alpha = 0
@@ -110,9 +137,20 @@ extension MainMenuController {
             self.blurView?.effect = nil
         }) { sucesss in
 
+            //remove popover views and effects
             self.userSetupPopover.removeFromSuperview()
             self.blurView?.removeFromSuperview()
             self.enablePanGestureRecognizer()
+            
+            //complete new user login by setting most recent login time (trigger for popover showing)
+            if let facebookID = UserDefaults.standard.object(forKey: "facebookID") as? String {
+                let loginTime = Date().shortDate
+                self.rootRef?.child("users").child(facebookID).updateChildValues(["most recent login date": loginTime])
+                UserDefaults.standard.set(loginTime, forKey: "most recent login date")
+            }
+            else{
+                print("New user login error; setup not completed because initial graph request failed")
+            }
         }
     }
     
@@ -170,7 +208,6 @@ extension MainMenuController: UITextFieldDelegate {
         }
         return true
     }
-    
  }
 
 //MARK: - manage pan gestures

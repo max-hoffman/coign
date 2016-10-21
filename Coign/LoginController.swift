@@ -62,6 +62,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     //MARK: - superclass functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         facebookLoginButton.delegate = self
@@ -76,7 +77,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
 
 
 //MARK: - Login flow extensions
-extension LoginController {
+private extension LoginController {
     
     /**
      Check if the user is new or not
@@ -115,59 +116,27 @@ extension LoginController {
                 UserDefaults.standard.set(pictureURL, forKey: "pictureURL")
                 
                 //check if user is new || cache existing user settings
-                weakSelf?.rootRef?.child("name").child(facebookID).observe(FIRDataEventType.value, with: {
+                weakSelf?.rootRef?.child("users").child(facebookID).observe(FIRDataEventType.value, with: {
                     
                     snapshot in
                     
+                    //set home menu as root VC
                     let mainStoryBoard = UIStoryboard(name: "MainApp", bundle: nil)
                     let revealViewController = mainStoryBoard.instantiateViewController(withIdentifier: "RevealVC")
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     appDelegate.window?.rootViewController = revealViewController
                     
-                    
-                    if snapshot.value == nil { // then the user is new
+                    if snapshot.exists()  { //user node exists
                         
-                       
-                        
-//                        //make new user
-//                        weakSelf?.createNewUser(facebookID: facebookID, name: name, pictureURL: pictureURL)
-//                        
-//                        //send user to settings page
-//                        let storyboard = UIStoryboard(name: "MainMenu", bundle: nil)
-//                        let mainMenuController  = storyboard.instantiateInitialViewController()!
-//                        weakSelf?.present(mainMenuController, animated: true, completion: nil)
-//                        
-//                        let popoverController = storyboard.instantiateViewController(withIdentifier: "User Setup Controller")
-//                        mainMenuController.present(popoverController, animated: true, completion: nil)
-//                        
-//                    }
-//                    else { //user node already exists
-//                        print("user already exists")
-//                        
-//                        let mainAppStoryboard = UIStoryboard(name: "MainApp", bundle: nil)
-//                        let revealVC = mainAppStoryboard.instantiateInitialViewController()!
-//                        let mainMenuController = UIStoryboard(name: "MainMenu", bundle: nil).instantiateInitialViewController()!.contentViewController as! MainMenuController
-//                        weakSelf?.present(revealVC, animated: true) {
-//                            //mainMenuController.disablePanGestureRecognizer()
-//                            mainMenuController.presentUserSetupPopover()
-//                            print("called popover to present")
-//                        }
-                        //send user to home page
-//                        let homeMenuStoryboard = UIStoryboard(name: "MainMenu", bundle: nil)
-//                        let homeMenuNC  = homeMenuStoryboard.instantiateInitialViewController()!
-//                        let mainMenuController = homeMenuNC.contentViewController as! MainMenuController
-//                        weakSelf?.present(homeMenuNC, animated: true) {
-//                            //mainMenuController.disablePanGestureRecognizer()
-//                            mainMenuController.presentUserSetupPopover()
-//                            print("called popover to present")
-//                        }
-                    
-                        //weakSelf?.newUserLoginDelegate?.presentUserSetupPopover()
-                        
-                        
-                        //let popoverController = storyboard.instantiateViewController(withIdentifier: "UserSetup") as! UIPopoverPresentationController
-                        //mainMenuController.present(popoverController, animated: true, completion: nil)
-                        
+                        //update last login time
+                        let loginTime = Date().shortDate
+                        self.rootRef?.child("users").child(facebookID).updateChildValues(["most recent login date": loginTime])
+                        UserDefaults.standard.set(loginTime, forKey: "most recent login date")
+                    }
+                    else { //user is new
+                      
+                        //make new user
+                        weakSelf?.createNewUser(facebookID: facebookID, name: name, pictureURL: pictureURL)
                     }
                 })
             }
@@ -196,17 +165,13 @@ extension LoginController {
             
             jsonData = weakSelf?.parseJSON(validJSONObject: result)
             
-            
             if let facebookID = jsonData?["id"] as! String?,
                 let name = jsonData?["name"] as! String?,
                 let picture = jsonData?["picture"] as! [String: AnyObject]?,
                 let data = picture["data"] as! [String: AnyObject]?,
                 let pictureURL = data["url"] as! String? {
                 
-                let post: [String : Any] = ["name" : name,
-                                            "picture" : pictureURL]
-                weakSelf?.rootRef?.child("users").child(facebookID).setValue(post)
-                print("attempted to create new user node")
+            weakSelf?.createNewUser(facebookID: facebookID, name: name, pictureURL: pictureURL)
             }
             })
         
@@ -218,10 +183,10 @@ extension LoginController {
      */
     func createNewUser(facebookID: String, name: String, pictureURL: String) {
         let post: [String : Any] = ["name" : name,
-                                    "picture" : pictureURL]
+                                    "picture" : pictureURL,
+                                    "most recent login date": "new user"]
         self.rootRef?.child("users").child(facebookID).setValue(post)
-        print("attempted to create new user node")
-        
+        UserDefaults.standard.set("new user", forKey: "most recent login date")
     }
 }
 

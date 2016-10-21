@@ -132,7 +132,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 private extension AppDelegate{
     func checkForAutoLogin() {
         //TODO: Remove memory cycles - might have already done that by making the storyboard referenecs optional
-        
+        //MARK: - rootVC is being set twice somehow; viewdidload is being called twice
         //Bypassed using segues; just used the rootViewController method
         self.loginStoryboard = UIStoryboard(name: "Login", bundle: .main)
         self.mainAppStoryboard = UIStoryboard(name: "MainApp", bundle: .main)
@@ -146,6 +146,5 @@ private extension AppDelegate{
             self.window?.rootViewController = self.loginStoryboard?.instantiateViewController(withIdentifier: "Login VC")
             print("need to login")
         }
-        
     }
 }
