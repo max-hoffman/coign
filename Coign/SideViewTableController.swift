@@ -35,20 +35,23 @@ class SideViewTableController: UITableViewController {
     
     private func logout() {
         
-        //logout of firebase/facebook/UserDefualts
+        //logout of firebase/facebook
         FBSDKLoginManager().logOut()
         try! FIRAuth.auth()!.signOut()
         FBSDKAccessToken.setCurrent(nil)
         FBSDKProfile.setCurrent(nil)
         
-        //TODO: clear user defaults
+        //clear defaults
+        UserDefaults.standard.removeObject(forKey: "facebookID")
+        UserDefaults.standard.removeObject(forKey: "name")
+        UserDefaults.standard.removeObject(forKey: "pictureURL")
+        UserDefaults.standard.removeObject(forKey: "most recent login date")
         
-        //segue to login screen
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-        let controller  = storyboard.instantiateInitialViewController()!
-        self.present(controller, animated: true, completion: nil)
+        //set login as the root VC
+        let loginStoryboard = UIStoryboard(name: "Login", bundle: .main)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = loginStoryboard.instantiateInitialViewController()
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

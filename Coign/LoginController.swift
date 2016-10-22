@@ -1,11 +1,11 @@
 //
-//  ViewController.swift
+//  LoginController.swift
 //  Coign
 //
 //  Created by Maximilian Hoffman on 9/3/16.
-//  Copyright © 2016 The Maxes. All rights reserved.
+//  Copyright © 2016 Exlent Studios. All rights reserved.
 //
-
+                                                                                                                                                                              
 import UIKit
 import Firebase
 import FirebaseAuth
@@ -21,7 +21,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     //MARK: - facebook delegate functions
     
     /**
-     Logs user into app. Brings to a web view (looks ugly but I'm not sure if there's a way around it), where user enters FB data and logs in. Initiates the login flow to check if user is new, and proceeds accordingly. The login flow is nested because the servers return requests unpredictably, and it's not possible to serialize this thread. I.e. the fetches are asynchronous on concurrent threads, and the only way to make sure they happen in the correct order is to nest steps inside proceeding request completion blocks.
+     Logs user into app. Brings to a web view (looks ugly but I'm not sure if there's a way around it), where user enters FB data and logs in. Initiates the login flow to check if user is new, and proceeds accordingly.
     */
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         
@@ -34,21 +34,16 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         //issue user a FB credential, auto signs them in the the FIR "user"
         let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+            
+            //quit if FB request error
             if error != nil {
                 print(error!.localizedDescription)
                 return
             }
             
-            //sign in with the
-            if self.rootRef != nil {
-                
-                //nest login lg
-                self.loginControlFlow()
-            }
-            else {
-                print("no database connection; exiting app")
-                return
-            }
+            //MARK: originally guarded for the root ref being connected
+            //log the user in
+            self.loginControlFlow()
         })
     }
     
@@ -80,7 +75,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
 private extension LoginController {
     
     /**
-     Check if the user is new or not
+     Checks if the user is new or not; this is the bulk of the login work. The fetches from BF/FIR are asynchronous so the logic has to be nested. For some reason the FIR observation fires several times, so there's a guard to prevent the entire function from repeatedly being called.
      */
     func loginControlFlow() {
         
@@ -117,43 +112,57 @@ private extension LoginController {
                 
                 //check if user is new || cache existing user settings
                 weakSelf?.rootRef?.child("users").child(facebookID).observe(FIRDataEventType.value, with: {
-                    
+                
                     snapshot in
                     
-                    //set home menu as root VC
-                    let mainStoryBoard = UIStoryboard(name: "MainApp", bundle: nil)
-                    let revealViewController = mainStoryBoard.instantiateViewController(withIdentifier: "RevealVC")
-                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                    appDelegate.window?.rootViewController = revealViewController
+                    //prevent repetitive auto-queries from FIR database
+                    if UserDefaults.standard.object(forKey: "most recent login date") != nil {
+                        print("firebase observation self-activated")
+                        return
+                    }
                     
                     if snapshot.exists()  { //user node exists
                         
                         //update last login time
                         let loginTime = Date().shortDate
-                        self.rootRef?.child("users").child(facebookID).updateChildValues(["most recent login date": loginTime])
-                        UserDefaults.standard.set(loginTime, forKey: "most recent login date")
+                        self.rootRef?
+                            .child("users")
+                            .child(facebookID)
+                            .updateChildValues(["most recent login date": loginTime])
+                        UserDefaults.standard.set(
+                            loginTime,
+                            forKey: "most recent login date")
                     }
                     else { //user is new
                       
                         //make new user
                         weakSelf?.createNewUser(facebookID: facebookID, name: name, pictureURL: pictureURL)
                     }
+                    
+                    //set home menu as root VC
+                    let mainStoryBoard = UIStoryboard(name: "MainApp", bundle: nil)
+                    let revealViewController = mainStoryBoard.instantiateViewController(withIdentifier: "RevealVC")
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = revealViewController
                 })
             }
-            })
+        })
         connection.start()
     }
     
     /**
-     Add a node to the users branch of the FIR tree - marked by the user's facebook ID. Not used anywhere, could be useful in the future.
+     Adds a node to the "users" branch of the FIR tree - indexed by the user's facebook ID. This is an unused overloaded class; feel like it could be useful, because it is all of the logic to make a facebook query and then store that data in the FIR tree.
      */
     func createNewUser() -> Void {
         
+        //return dictionary
         var jsonData: [String: Any]?
         
+        //formal request parameters and callback
+        let request = FBSDKGraphRequest.init(
+            graphPath: "me",
+            parameters: ["fields": "id, name, picture.type(large)"])
         let connection = FBSDKGraphRequestConnection()
-        let request = FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields": "id, name, picture.type(large)"])
-        
         connection.add(request, completionHandler: {
             [weak weakSelf = self]
             (connection, result, error) in
@@ -173,13 +182,12 @@ private extension LoginController {
                 
             weakSelf?.createNewUser(facebookID: facebookID, name: name, pictureURL: pictureURL)
             }
-            })
-        
+        })
         connection.start()
     }
     
     /**
-     Overloaded new user creation: to be called inside of FBSDK completion block where params are already available
+     Overloaded new user creation; used to create new user in "users" branch of FIR tree during loginControlFlow().
      */
     func createNewUser(facebookID: String, name: String, pictureURL: String) {
         let post: [String : Any] = ["name" : name,
@@ -187,6 +195,7 @@ private extension LoginController {
                                     "most recent login date": "new user"]
         self.rootRef?.child("users").child(facebookID).setValue(post)
         UserDefaults.standard.set("new user", forKey: "most recent login date")
+        print(UserDefaults.standard.object(forKey: "most recent login date") as! String)
     }
 }
 

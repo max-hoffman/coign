@@ -3,7 +3,7 @@
 //  Coign
 //
 //  Created by Maximilian Hoffman on 9/3/16.
-//  Copyright © 2016 The Maxes. All rights reserved.
+//  Copyright © 2016 Exlent Studios. All rights reserved.
 //
 
 import UIKit
@@ -14,13 +14,13 @@ import FBSDKCoreKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    //MARK: - PROPERTIES
+    //MARK: - Properties
     var loginStoryboard: UIStoryboard?
     var mainAppStoryboard: UIStoryboard?
     var window: UIWindow?
     static let defaults = UserDefaults()
     
-    //MARK: - HANDLE APP ENTRY
+    //MARK: - Handle App Entry
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         //connect to Firebase
@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
     
-    //MARK: - HANDLE APP EXIT
+    //MARK: - Handle app exit
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -128,7 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-//MARK: - AUTO-LOGIN EXTENSION
+//MARK: - Auto-login extension
 private extension AppDelegate{
     func checkForAutoLogin() {
         //TODO: Remove memory cycles - might have already done that by making the storyboard referenecs optional

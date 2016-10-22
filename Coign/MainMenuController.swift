@@ -3,14 +3,14 @@
 //  Coign
 //
 //  Created by Maximilian Hoffman on 9/11/16.
-//  Copyright © 2016 The Maxes. All rights reserved.
+//  Copyright © 2016 Exlent Studios. All rights reserved.
 //
 
 import UIKit
 
 class MainMenuController: DataController {
 
-    //TODO: - Should move the popover outlets into a separate view controller, and then change the present popover segue accordingly
+    //TODO: - Should move the popover outlets into a separate view controller, and then change the present popover segue accordingly. Make a xib file, then load nib into this controller? Might not be necessary
     
     //MARK: - Properties and outlets
     var blurView: UIVisualEffectView?
@@ -67,7 +67,7 @@ extension MainMenuController {
         
         //if user is new, follow through with new user form
         if (UserDefaults.standard.object(forKey: "most recent login date") as? String == "new user") {
-                
+            //self.presentUserSetupPopover()
             //show user info form after a second delay
             if #available(iOS 10.0, *) {
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (timer) in
