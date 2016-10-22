@@ -17,7 +17,12 @@
 		E20163FB1D7B2F7100949826 /* CoignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20163FA1D7B2F7100949826 /* CoignTests.swift */; };
 		E20164061D7B2F7100949826 /* CoignUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20164051D7B2F7100949826 /* CoignUITests.swift */; };
 		E20164221D7B653A00949826 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20164201D7B653A00949826 /* MainApp.storyboard */; };
+		E24214971DA8966400A5B080 /* VCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24214961DA8966400A5B080 /* VCExtensions.swift */; };
 		E24F77EA1D84FBB000936AAE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24F77E91D84FBB000936AAE /* SWRevealViewController.m */; };
+		E25125A61DA9D92700AA4B09 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25125A51DA9D92700AA4B09 /* Constants.swift */; };
+		E259EB5C1D9FF29200EADC4C /* LogoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB5B1D9FF29200EADC4C /* LogoutController.swift */; };
+		E259EB671DA55EDC00EADC4C /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB661DA55EDC00EADC4C /* DateExtensions.swift */; };
+		E259EB691DA6AC1D00EADC4C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB681DA6AC1D00EADC4C /* DataController.swift */; };
 		E28C6BDB1D8DD7180020EAA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */; };
 		E2C397EA1D850220000D35F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */; };
 		E2C397EC1D850D8D000D35F4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397EB1D850D8D000D35F4 /* Login.storyboard */; };
@@ -76,9 +81,14 @@
 		E20164051D7B2F7100949826 /* CoignUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoignUITests.swift; sourceTree = "<group>"; };
 		E20164071D7B2F7100949826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E20164211D7B653A00949826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainApp.storyboard; sourceTree = "<group>"; };
+		E24214961DA8966400A5B080 /* VCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCExtensions.swift; sourceTree = "<group>"; };
 		E24F77E81D84FBB000936AAE /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		E24F77E91D84FBB000936AAE /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		E24F77EB1D84FBDD00936AAE /* Coign-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coign-Bridging-Header.h"; sourceTree = "<group>"; };
+		E25125A51DA9D92700AA4B09 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E259EB5B1D9FF29200EADC4C /* LogoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutController.swift; sourceTree = "<group>"; };
+		E259EB661DA55EDC00EADC4C /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		E259EB681DA6AC1D00EADC4C /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2C397EB1D850D8D000D35F4 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -179,13 +189,9 @@
 		E20163E11D7B2F7100949826 /* Coign */ = {
 			isa = PBXGroup;
 			children = (
-				E20163E21D7B2F7100949826 /* AppDelegate.swift */,
+				E259EB601DA1562400EADC4C /* Supporting Files */,
+				E259EB611DA19C3C00EADC4C /* Models */,
 				E201641B1D7B5DCF00949826 /* Storyboards */,
-				E20163EC1D7B2F7100949826 /* Assets.xcassets */,
-				E20163F11D7B2F7100949826 /* Info.plist */,
-				E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */,
-				E20163E91D7B2F7100949826 /* Coign.xcdatamodeld */,
-				E24F77EB1D84FBDD00936AAE /* Coign-Bridging-Header.h */,
 			);
 			path = Coign;
 			sourceTree = "<group>";
@@ -228,6 +234,7 @@
 				E24F77EC1D84FBFD00936AAE /* Side-bar */,
 				E20164201D7B653A00949826 /* MainApp.storyboard */,
 				E2D8771F1D8EFEDC00BAAB46 /* SideViewTableController.swift */,
+				E259EB5B1D9FF29200EADC4C /* LogoutController.swift */,
 			);
 			name = "Main App";
 			sourceTree = "<group>";
@@ -237,7 +244,6 @@
 			children = (
 				E2C397EB1D850D8D000D35F4 /* Login.storyboard */,
 				E20163E41D7B2F7100949826 /* LoginController.swift */,
-				E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -249,6 +255,31 @@
 				E24F77E91D84FBB000936AAE /* SWRevealViewController.m */,
 			);
 			name = "Side-bar";
+			sourceTree = "<group>";
+		};
+		E259EB601DA1562400EADC4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E20163E21D7B2F7100949826 /* AppDelegate.swift */,
+				E20163EC1D7B2F7100949826 /* Assets.xcassets */,
+				E20163F11D7B2F7100949826 /* Info.plist */,
+				E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */,
+				E20163E91D7B2F7100949826 /* Coign.xcdatamodeld */,
+				E24F77EB1D84FBDD00936AAE /* Coign-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E259EB611DA19C3C00EADC4C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E259EB661DA55EDC00EADC4C /* DateExtensions.swift */,
+				E25125A51DA9D92700AA4B09 /* Constants.swift */,
+				E259EB681DA6AC1D00EADC4C /* DataController.swift */,
+				E24214961DA8966400A5B080 /* VCExtensions.swift */,
+				E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		E2C398041D85CDB3000D35F4 /* Main Menu */ = {
@@ -359,6 +390,7 @@
 				E20163FE1D7B2F7100949826 /* Frameworks */,
 				E20163FF1D7B2F7100949826 /* Resources */,
 				E97569E9DC56486754A300E4 /* [CP] Copy Pods Resources */,
+				1BA882610E94E19610E086AB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -453,6 +485,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1BA882610E94E19610E086AB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoignUITests/Pods-CoignUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		366783CBF423C37013479A49 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -465,7 +512,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		4C2413B6FDCFC90FE5C533D5 /* [CP] Check Pods Manifest.lock */ = {
@@ -480,7 +527,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		63E4EB7654738F7189524B99 /* [CP] Embed Pods Frameworks */ = {
@@ -510,7 +557,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C74C7BE98EF96BF5D353F061 /* [CP] Copy Pods Resources */ = {
@@ -581,14 +628,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				E20163EB1D7B2F7100949826 /* Coign.xcdatamodeld in Sources */,
+				E24214971DA8966400A5B080 /* VCExtensions.swift in Sources */,
 				E20163E51D7B2F7100949826 /* LoginController.swift in Sources */,
 				E2C397F01D85B9B4000D35F4 /* SettingsController.swift in Sources */,
 				E20163E31D7B2F7100949826 /* AppDelegate.swift in Sources */,
+				E25125A61DA9D92700AA4B09 /* Constants.swift in Sources */,
+				E259EB5C1D9FF29200EADC4C /* LogoutController.swift in Sources */,
 				E24F77EA1D84FBB000936AAE /* SWRevealViewController.m in Sources */,
 				E2D877201D8EFEDC00BAAB46 /* SideViewTableController.swift in Sources */,
+				E259EB691DA6AC1D00EADC4C /* DataController.swift in Sources */,
 				E2C397EE1D85B07E000D35F4 /* MainMenuController.swift in Sources */,
 				E2C397F61D85C098000D35F4 /* AboutUsController.swift in Sources */,
 				E2C397F41D85BDC3000D35F4 /* DonateController.swift in Sources */,
+				E259EB671DA55EDC00EADC4C /* DateExtensions.swift in Sources */,
 				E2C397F21D85BCE1000D35F4 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
