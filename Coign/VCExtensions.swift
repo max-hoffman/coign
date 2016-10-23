@@ -65,8 +65,6 @@ extension UIViewController {
             validJSONData = try JSONSerialization.data(withJSONObject: validJSONObject!, options: JSONSerialization.WritingOptions.prettyPrinted)
             
             jsonDict = try JSONSerialization.jsonObject(with: validJSONData!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: AnyObject]
-            
-            print(jsonDict?["name"])
         }
         catch{
             print("json error, invalid object passed: \(error.localizedDescription)")
