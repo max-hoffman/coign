@@ -14,9 +14,9 @@
 		E20163E51D7B2F7100949826 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20163E41D7B2F7100949826 /* LoginController.swift */; };
 		E20163EB1D7B2F7100949826 /* Coign.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E20163E91D7B2F7100949826 /* Coign.xcdatamodeld */; };
 		E20163ED1D7B2F7100949826 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E20163EC1D7B2F7100949826 /* Assets.xcassets */; };
-		E20163FB1D7B2F7100949826 /* CoignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20163FA1D7B2F7100949826 /* CoignTests.swift */; };
 		E20164061D7B2F7100949826 /* CoignUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20164051D7B2F7100949826 /* CoignUITests.swift */; };
 		E20164221D7B653A00949826 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20164201D7B653A00949826 /* MainApp.storyboard */; };
+		E222B4CD1DBC4E43004FC2C2 /* DateExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222B4CC1DBC4E43004FC2C2 /* DateExtensionsTests.swift */; };
 		E24214971DA8966400A5B080 /* VCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24214961DA8966400A5B080 /* VCExtensions.swift */; };
 		E24F77EA1D84FBB000936AAE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24F77E91D84FBB000936AAE /* SWRevealViewController.m */; };
 		E25125A61DA9D92700AA4B09 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25125A51DA9D92700AA4B09 /* Constants.swift */; };
@@ -75,12 +75,12 @@
 		E20163EC1D7B2F7100949826 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E20163F11D7B2F7100949826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E20163F61D7B2F7100949826 /* CoignTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoignTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E20163FA1D7B2F7100949826 /* CoignTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoignTests.swift; sourceTree = "<group>"; };
 		E20163FC1D7B2F7100949826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E20164011D7B2F7100949826 /* CoignUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoignUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E20164051D7B2F7100949826 /* CoignUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoignUITests.swift; sourceTree = "<group>"; };
 		E20164071D7B2F7100949826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E20164211D7B653A00949826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainApp.storyboard; sourceTree = "<group>"; };
+		E222B4CC1DBC4E43004FC2C2 /* DateExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensionsTests.swift; sourceTree = "<group>"; };
 		E24214961DA8966400A5B080 /* VCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCExtensions.swift; sourceTree = "<group>"; };
 		E24F77E81D84FBB000936AAE /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		E24F77E91D84FBB000936AAE /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 		E20163F91D7B2F7100949826 /* CoignTests */ = {
 			isa = PBXGroup;
 			children = (
-				E20163FA1D7B2F7100949826 /* CoignTests.swift */,
+				E222B4CC1DBC4E43004FC2C2 /* DateExtensionsTests.swift */,
 				E20163FC1D7B2F7100949826 /* Info.plist */,
 			);
 			path = CoignTests;
@@ -649,7 +649,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E20163FB1D7B2F7100949826 /* CoignTests.swift in Sources */,
+				E222B4CD1DBC4E43004FC2C2 /* DateExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
