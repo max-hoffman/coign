@@ -125,7 +125,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 }
 
 //MARK: - Auto-login extension
