@@ -14,6 +14,7 @@ class SettingDetailController: UITableViewController {
     var propertyName: String? = nil
     var propertyValue: String? = nil
     
+    //table view methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -28,9 +29,6 @@ class SettingDetailController: UITableViewController {
     //superclass methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         return
     }
 }

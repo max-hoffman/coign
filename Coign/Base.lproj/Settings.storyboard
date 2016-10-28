@@ -57,7 +57,7 @@
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="left" translatesAutoresizingMaskIntoConstraints="NO" id="8hp-BP-lGH">
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uN-Nc-Dv3">
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" verticalHuggingPriority="251" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uN-Nc-Dv3">
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -87,7 +87,7 @@
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="left" translatesAutoresizingMaskIntoConstraints="NO" id="DcU-P1-a1T">
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBj-fH-Ib4">
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBj-fH-Ib4">
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -117,7 +117,7 @@
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="left" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="f1z-u1-qjE">
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtI-gm-U6o">
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtI-gm-U6o">
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -138,14 +138,47 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="donations cell" id="DOa-fG-5K4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="charity preference cell" id="8F3-WH-njb">
                                         <rect key="frame" x="0.0" y="295.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8F3-WH-njb" id="4Gg-PY-hZI">
+                                            <frame key="frameInset" width="342" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="left" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DH5-eq-7ar">
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Default charity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpY-Ma-D81">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="American Red Cross" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vs4-RT-JC4">
+                                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="DH5-eq-7ar" secondAttribute="trailing" id="HIW-a4-UVB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="DH5-eq-7ar" secondAttribute="bottom" id="Qsu-Qb-EjA"/>
+                                                <constraint firstItem="DH5-eq-7ar" firstAttribute="leading" secondItem="4Gg-PY-hZI" secondAttribute="leadingMargin" id="jie-Qs-Flp"/>
+                                                <constraint firstAttribute="topMargin" secondItem="DH5-eq-7ar" secondAttribute="top" id="nQk-Ze-ngd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="RlM-CK-3yt" kind="show" identifier="show charity picker" id="5BW-Rq-VSB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="donations cell" id="DOa-fG-5K4">
+                                        <rect key="frame" x="0.0" y="339.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DOa-fG-5K4" id="gnc-0A-C12">
                                             <frame key="frameInset" width="308" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="left" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GuR-aO-rZ5">
+                                                <stackView opaque="NO" contentMode="left" translatesAutoresizingMaskIntoConstraints="NO" id="GuR-aO-rZ5">
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donation history" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnb-md-K8y">
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -168,7 +201,7 @@
                             <tableViewSection headerTitle="Preferences" id="rRg-kw-Ro8">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="permissions cell" id="fe0-YK-lYa">
-                                        <rect key="frame" x="0.0" y="395.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="439.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fe0-YK-lYa" id="oTQ-Bb-Rny">
                                             <frame key="frameInset" width="342" height="43"/>
@@ -197,7 +230,7 @@
                             <tableViewSection headerTitle="General" id="qJR-dn-obf">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="faq cell" id="RoM-WI-MRD">
-                                        <rect key="frame" x="0.0" y="495.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="539.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RoM-WI-MRD" id="nmx-zG-LOR">
                                             <frame key="frameInset" width="342" height="43"/>
@@ -222,7 +255,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="feedback cell" id="oaI-sA-ePE">
-                                        <rect key="frame" x="0.0" y="539.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="583.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oaI-sA-ePE" id="DqN-Lp-9Uu">
                                             <frame key="frameInset" width="342" height="43"/>
@@ -247,7 +280,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="policy cell" id="bzb-40-ikV">
-                                        <rect key="frame" x="0.0" y="583.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="627.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bzb-40-ikV" id="64t-Wf-qUP">
                                             <frame key="frameInset" width="342" height="43"/>
@@ -272,7 +305,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="terms cell" id="RDs-4Y-98e">
-                                        <rect key="frame" x="0.0" y="627.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="671.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RDs-4Y-98e" id="sjq-9s-gdg">
                                             <frame key="frameInset" width="342" height="43"/>
@@ -297,7 +330,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="attributions cell" id="mUv-iv-uMX">
-                                        <rect key="frame" x="0.0" y="671.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="715.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mUv-iv-uMX" id="ThU-3h-oa2">
                                             <frame key="frameInset" width="342" height="43"/>
@@ -322,7 +355,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="log out cell" id="5Ph-cV-7fH">
-                                        <rect key="frame" x="0.0" y="715.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="759.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Ph-cV-7fH" id="TMg-dJ-KnW">
                                             <frame key="frameInset" width="375" height="43"/>
@@ -418,7 +451,87 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wd4-2U-K1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6285.6000000000004" y="1580.9595202398802"/>
+            <point key="canvasLocation" x="6665" y="1343"/>
+        </scene>
+        <!--Edit default charity-->
+        <scene sceneID="jDG-fs-P1u">
+            <objects>
+                <viewController title="Edit default charity" id="RlM-CK-3yt" customClass="CharityPickerController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ruV-Pz-yIm"/>
+                        <viewControllerLayoutGuide type="bottom" id="QlP-JT-50q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="heT-6Q-LaU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FTm-dX-VUR">
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6VT-dV-pHU">
+                                        <frame key="frameInset" height="216"/>
+                                    </pickerView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Sik-Up-gpw">
+                                        <frame key="frameInset" minY="226" width="343" height="377"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="top" ambiguous="YES" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sSS-4c-jGU">
+                                                <frame key="frameInset" width="343" height="327"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Charity Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGY-gJ-Yjh">
+                                                        <frame key="frameInset" width="170" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="10D-GX-BBS">
+                                                        <frame key="frameInset" minX="180" width="163" height="43"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="4/5 stars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAW-Gm-Obf">
+                                                                <frame key="frameInset" width="69" height="21"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Relief Fund" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvm-Kh-1is">
+                                                                <frame key="frameInset" minY="23" width="86" height="21"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZE-AL-vI3">
+                                                <frame key="frameInset" minY="327" width="343" height="21"/>
+                                                <mutableString key="text">Since its founding in 1881 by visionary leader Clara Barton, the American Red Cross has been the nation's premier emergency response organization. We bring shelter, food and comfort to those affected by disasters, large and small. We collect lifesaving donated blood and supply it to patients in need. We provide support to our men and women in military bases around the world, and to the families they leave behind. We train communities in CPR, first aid and other skills that save lives. And we assist our neighbors abroad with critical disaster response, preparedness and disease prevention efforts. We are able to do all this by mobilizing the power of volunteers and the generosity of donors.</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJ3-7N-p5l">
+                                                <frame key="frameInset" minY="347" width="343" height="30"/>
+                                                <state key="normal" title="hyperlink to charity navigator site "/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FTm-dX-VUR" firstAttribute="top" secondItem="ruV-Pz-yIm" secondAttribute="bottom" id="DDi-9e-IZW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FTm-dX-VUR" secondAttribute="trailing" id="W3R-b2-ucf"/>
+                            <constraint firstItem="QlP-JT-50q" firstAttribute="top" secondItem="FTm-dX-VUR" secondAttribute="bottom" id="o0n-Kd-8vs"/>
+                            <constraint firstItem="FTm-dX-VUR" firstAttribute="leading" secondItem="heT-6Q-LaU" secondAttribute="leadingMargin" id="zsY-qS-uAc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="charityPreferencePicker" destination="6VT-dV-pHU" id="yjf-Nu-LBi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kab-Tv-96B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6665" y="2051"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="A1I-i4-hqL">

@@ -42,6 +42,7 @@
 		E2E94FFA1D8E1A8E00DC3ACC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E94FF71D8E1A8E00DC3ACC /* FBSDKShareKit.framework */; };
 		E2F0A8D71DC27E4A00ABDC4F /* SettingDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0A8D61DC27E4A00ABDC4F /* SettingDetailController.swift */; };
 		E2F0A8D91DC2AF9F00ABDC4F /* SettingDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0A8D81DC2AF9F00ABDC4F /* SettingDetailCell.swift */; };
+		E2F0A8DB1DC3AA7800ABDC4F /* CharityPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0A8DA1DC3AA7800ABDC4F /* CharityPickerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		E2E94FF71D8E1A8E00DC3ACC /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		E2F0A8D61DC27E4A00ABDC4F /* SettingDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingDetailController.swift; sourceTree = "<group>"; };
 		E2F0A8D81DC2AF9F00ABDC4F /* SettingDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingDetailCell.swift; sourceTree = "<group>"; };
+		E2F0A8DA1DC3AA7800ABDC4F /* CharityPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharityPickerController.swift; sourceTree = "<group>"; };
 		F5BCD6129C6B0C08D712E690 /* Pods-Coign.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coign.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coign/Pods-Coign.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -327,6 +329,7 @@
 			children = (
 				E2C397F71D85CB69000D35F4 /* Settings.storyboard */,
 				E2C397EF1D85B9B4000D35F4 /* SettingsController.swift */,
+				E2F0A8DA1DC3AA7800ABDC4F /* CharityPickerController.swift */,
 				E2F0A8D61DC27E4A00ABDC4F /* SettingDetailController.swift */,
 				E2F0A8D81DC2AF9F00ABDC4F /* SettingDetailCell.swift */,
 			);
@@ -641,6 +644,7 @@
 				E25125A61DA9D92700AA4B09 /* Constants.swift in Sources */,
 				E259EB5C1D9FF29200EADC4C /* LogoutController.swift in Sources */,
 				E24F77EA1D84FBB000936AAE /* SWRevealViewController.m in Sources */,
+				E2F0A8DB1DC3AA7800ABDC4F /* CharityPickerController.swift in Sources */,
 				E2D877201D8EFEDC00BAAB46 /* SideViewTableController.swift in Sources */,
 				E259EB691DA6AC1D00EADC4C /* DataController.swift in Sources */,
 				E2C397EE1D85B07E000D35F4 /* MainMenuController.swift in Sources */,

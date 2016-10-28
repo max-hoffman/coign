@@ -13,8 +13,7 @@ class SettingsController: UITableViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     struct Settings {
-
-    enum Changeable: String {
+        enum Changeable: String {
             case name = "name cell"
             case birthday = "birthday cell"
             case email = "email cell"
@@ -30,10 +29,9 @@ class SettingsController: UITableViewController {
         enum Actionable: String {
             case permissions = "permission cell"
             case logout = "log out cell"
+            case charityDefault = "charity default cell"
         }
-        
     }
-
     
     private func changeableSetting(setting: String) -> Bool {
         return Settings.Changeable.init(rawValue: setting) != nil
@@ -45,15 +43,25 @@ class SettingsController: UITableViewController {
                 print("cell identifier does not exist")
                 return
         }
-
+        
+        //deep link to phone settings
         if cellIdentifier == Settings.Actionable.permissions.rawValue {
             if let appSettings = URL(string: UIApplicationOpenSettingsURLString) {
                 UIApplication.shared.openURL(appSettings as URL)
             }
         }
+            
+        //log out of current user
         else if cellIdentifier == Settings.Actionable.logout.rawValue {
             //logout of application
         }
+        
+        //show picker view; default charity selection
+        else if cellIdentifier == Settings.Actionable.charityDefault.rawValue {
+            performSegue(withIdentifier: "show charirty picker view", sender: self)
+        }
+            
+        //show setting detail page, can update account info
         else if changeableSetting(setting: cellIdentifier) {
             performSegue(withIdentifier: "show setting detail", sender: indexPath)
         }
@@ -64,8 +72,10 @@ class SettingsController: UITableViewController {
         if let detailVC = segue.destination as? SettingDetailController {
             if let index = sender as? IndexPath {
                 let label = self.tableView.cellForRow(at: index)?.contentView.viewWithTag(1) as? UILabel
-                let name = label?.text
-                detailVC.propertyName = name
+                if let name = label?.text {
+                    detailVC.propertyName = name
+                    detailVC.title = "Update \(name)"
+                }
             }
         }
     }
@@ -76,6 +86,11 @@ class SettingsController: UITableViewController {
         
         connectRevealVC()
     }
+    
+    //TODO: - connect to FIR tree
+//    override func viewDidAppear(_ animated: Bool) {
+//        <#code#>
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

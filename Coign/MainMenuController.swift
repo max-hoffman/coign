@@ -38,14 +38,13 @@ class MainMenuController: DataController {
         nameField.delegate = self
         charityPreferencePicker.delegate = self
         charityPreferencePicker.dataSource = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         
         //MARK: - need to undo in the exit view function
         //nav bar for reveal view controller
         connectRevealVC()
-        print("main menu controller appeared")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         
         //home page loading logic
         checkLastLoginDate()
