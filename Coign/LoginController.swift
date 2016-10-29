@@ -16,7 +16,6 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     
     //MARK: - properties
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
-    var rootRef: FIRDatabaseReference?
     
     //MARK: - facebook delegate functions
     
@@ -41,7 +40,6 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
                 return
             }
             
-            //MARK: originally guarded for the root ref being connected
             //log the user in
             self.loginControlFlow()
         })
@@ -61,7 +59,6 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         facebookLoginButton.delegate = self
-        rootRef = FIRDatabase.database().reference()
     }
     
     override func didReceiveMemoryWarning() {
@@ -111,7 +108,7 @@ private extension LoginController {
                 UserDefaults.standard.set(pictureURL, forKey: "pictureURL")
                 
                 //check if user is new || cache existing user settings
-                weakSelf?.rootRef?.child("users").child(facebookID).observe(FIRDataEventType.value, with: {
+                FirTree.rootRef.child("users").child(facebookID).observe(FIRDataEventType.value, with: {
                 
                     snapshot in
                     
@@ -125,7 +122,7 @@ private extension LoginController {
                         
                         //update last login time
                         let loginTime = Date().shortDate
-                        self.rootRef?
+                        FirTree.rootRef
                             .child("users")
                             .child(facebookID)
                             .updateChildValues(["most recent login date": loginTime])
@@ -153,49 +150,49 @@ private extension LoginController {
     /**
      Adds a node to the "users" branch of the FIR tree - indexed by the user's facebook ID. This is an unused overloaded class; feel like it could be useful, because it is all of the logic to make a facebook query and then store that data in the FIR tree.
      */
-    func createNewUser() -> Void {
-        
-        //return dictionary
-        var jsonData: [String: Any]?
-        
-        //formal request parameters and callback
-        let request = FBSDKGraphRequest.init(
-            graphPath: "me",
-            parameters: ["fields": "id, name, picture.type(large)"])
-        let connection = FBSDKGraphRequestConnection()
-        connection.add(request, completionHandler: {
-            [weak weakSelf = self]
-            (connection, result, error) in
-            
-            if error != nil {
-                print(error?.localizedDescription ?? error!)
-                return
-            }
-            
-            jsonData = weakSelf?.parseJSON(validJSONObject: result)
-            
-            if let facebookID = jsonData?["id"] as! String?,
-                let name = jsonData?["name"] as! String?,
-                let picture = jsonData?["picture"] as! [String: AnyObject]?,
-                let data = picture["data"] as! [String: AnyObject]?,
-                let pictureURL = data["url"] as! String? {
-                
-            weakSelf?.createNewUser(facebookID: facebookID, name: name, pictureURL: pictureURL)
-            }
-        })
-        connection.start()
-    }
+//    func createNewUser() -> Void {
+//        
+//        //return dictionary
+//        var jsonData: [String: Any]?
+//        
+//        //formal request parameters and callback
+//        let request = FBSDKGraphRequest.init(
+//            graphPath: "me",
+//            parameters: ["fields": "id, name, picture.type(large)"])
+//        let connection = FBSDKGraphRequestConnection()
+//        connection.add(request, completionHandler: {
+//            [weak weakSelf = self]
+//            (connection, result, error) in
+//            
+//            if error != nil {
+//                print(error?.localizedDescription ?? error!)
+//                return
+//            }
+//            
+//            jsonData = weakSelf?.parseJSON(validJSONObject: result)
+//            
+//            if let facebookID = jsonData?["id"] as! String?,
+//                let name = jsonData?["name"] as! String?,
+//                let picture = jsonData?["picture"] as! [String: AnyObject]?,
+//                let data = picture["data"] as! [String: AnyObject]?,
+//                let pictureURL = data["url"] as! String? {
+//                
+//            weakSelf?.createNewUser(facebookID: facebookID, name: name, pictureURL: pictureURL)
+//            }
+//        })
+//        connection.start()
+//    }
     
+    //MARK: - updated, haven't verified
     /**
      Overloaded new user creation; used to create new user in "users" branch of FIR tree during loginControlFlow().
      */
     func createNewUser(facebookID: String, name: String, pictureURL: String) {
-        let post: [String : Any] = ["name" : name,
-                                    "picture" : pictureURL,
-                                    "most recent login date": "new user"]
-        self.rootRef?.child("users").child(facebookID).setValue(post)
-        UserDefaults.standard.set("new user", forKey: "most recent login date")
-        print(UserDefaults.standard.object(forKey: "most recent login date") as! String)
+        let post: [String : Any] = [FirTree.UserParameter.Name.rawValue : name,
+                                    FirTree.UserParameter.Picture.rawValue : pictureURL,
+                                    FirTree.UserParameter.MostRecentLoginDate.rawValue: FirTree.UserParameter.NewUser.rawValue]
+        FirTree.rootRef.child(FirTree.Node.Users.rawValue).child(facebookID).setValue(post)
+        UserDefaults.standard.set(FirTree.UserParameter.NewUser.rawValue, forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
     }
 }
 

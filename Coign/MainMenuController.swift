@@ -15,7 +15,6 @@ class MainMenuController: UIViewController {
     //MARK: - Properties and outlets
     var blurView: UIVisualEffectView?
     var blurEffect: UIVisualEffect?
-    let rootRef = FIRDatabase.database().reference()
     
     //UI outlets and actions
     @IBOutlet weak var userSetupPopover: UIView!
@@ -142,39 +141,52 @@ extension MainMenuController {
             self.blurView?.removeFromSuperview()
             self.enablePanGestureRecognizer()
             
+            //TODO: - update firebase functions (make this a login function)
+            
+            //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
             //complete new user login by setting most recent login time (trigger for popover showing)
-            if let facebookID = UserDefaults.standard.object(forKey: "facebookID") as? String {
-                let loginTime = Date().shortDate
-                self.rootRef?.child("users").child(facebookID).updateChildValues(["most recent login date": loginTime])
-                UserDefaults.standard.set(loginTime, forKey: "most recent login date")
-            }
-            else{
-                print("New user login error; setup not completed because initial graph request failed")
-            }
+            //<<<<<<<<<<<<<<<<<<<<<<<
+//            if let facebookID = UserDefaults.standard.object(forKey: "facebookID") as? String {
+//                let loginTime = Date().shortDate
+//                rootRef.child("users").child(facebookID).updateChildValues(["most recent login date": loginTime])
+//                UserDefaults.standard.set(loginTime, forKey: "most recent login date")
+//            }
+//            else{
+//                print("New user login error; setup not completed because initial graph request failed")
+//            }
+            let loginTime = Date().shortDate
+            FirTree.updateUser(withNewSettings:
+                [FirTree.UserParameter.MostRecentLoginDate.rawValue: loginTime])
+            UserDefaults.standard.set(loginTime, forKey: "most recent login date")
+            //<<<<<<<<<<<<<<<<<<<<<<<<
         }
     }
     
+    //TODO: - Replace this function, move into fir tree
+    
+        //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     /**
      Save the user setup info from the new user popover.
     */
     func storeUserInfo() {
         
-        if let facebookID = UserDefaults.standard.string(forKey: "facebookID") {
+        if UserDefaults.standard.string(forKey: "facebookID") != nil {
             let name = nameField.text!
             let phoneNumber = phoneField.text!
             let email = emailField.text!
             let charityPreference = Charities.list[charityPreferencePicker.selectedRow(inComponent: 0)]
             
             //load data
-            let settings = ["name": name,
-                        "phone number": phoneNumber,
-                        "email": email,
-                        "charity preference": charityPreference]
+            let settings = [FirTree.UserParameter.Name.rawValue: name,
+                        FirTree.UserParameter.Phone.rawValue: phoneNumber,
+                        FirTree.UserParameter.Email.rawValue: email,
+                        FirTree.UserParameter.Charity.rawValue: charityPreference]
         
             //save data
-            self.rootRef?.child("users").child(facebookID).updateChildValues(settings)
+            FirTree.updateUser(withNewSettings: settings)
         }
     }
+    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }
 
 //MARK: - Textfield extensions

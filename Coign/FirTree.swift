@@ -9,11 +9,11 @@
 import UIKit
 import Firebase
 
-struct FirTree {
+class FirTree {
     
     //MARK: - Properties
     //var rootRef: FIRDatabaseReference?
-    let rootRef = FIRDatabase.database().reference()
+    static let rootRef = FIRDatabase.database().reference()
  
     //MARK: - Internal data structure
     enum Node: String {
@@ -33,6 +33,7 @@ struct FirTree {
         case NewUser = "new user"
         case Id = "facebookID"
         case Donations = "donations"
+        case Charity = "charity preference"
     }
     
     enum DonationParameter: String {
@@ -49,10 +50,11 @@ struct FirTree {
     /**
      Update user setting(s). Access valid parameter in FirTree enum.
      */
-    func updateUser(withNewSettings: [UserParameter: Any]) -> Void {
+    class func updateUser(withNewSettings: [String: Any]) -> Void {
         //retrieve facebookID
         if  let facebookID = UserDefaults.standard.string(forKey: UserParameter.Id.rawValue) {
-            self.rootRef.child(Node.Users.rawValue).child(facebookID).setValue(withNewSettings)
+            //rootRef.child(Node.Users.rawValue).child(facebookID).setValue(withNewSettings)
+            rootRef.child(Node.Users.rawValue).child(facebookID).updateChildValues(withNewSettings)
         }
     }
     
@@ -81,13 +83,13 @@ struct FirTree {
                             DonationParameter.Message.rawValue: message]
             
             //create donation node with a unique ID
-            let donationRef = self.rootRef.child(Node.Donations.rawValue).childByAutoId()
+            let donationRef = FirTree.rootRef.child(Node.Donations.rawValue).childByAutoId()
             
             //add the donation info to that node
-            donationRef.setValue(donation)
+            donationRef.updateChildValues(donation)
             
             //record that donation event in the user's donation node (array of ID's)
-            self.rootRef.child(Node.Users.rawValue).child(UserParameter.Donations.rawValue).setValue(donationRef)
+            FirTree.rootRef.child(Node.Users.rawValue).child(UserParameter.Donations.rawValue).setValue(donationRef)
         }
     }
     
