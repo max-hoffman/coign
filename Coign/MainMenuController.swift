@@ -8,13 +8,14 @@
 
 import UIKit
 
-class MainMenuController: DataController {
+class MainMenuController: UIViewController {
 
     //TODO: - Should move the popover outlets into a separate view controller, and then change the present popover segue accordingly. Make a xib file, then load nib into this controller? Might not be necessary
     
     //MARK: - Properties and outlets
     var blurView: UIVisualEffectView?
     var blurEffect: UIVisualEffect?
+    let rootRef = FIRDatabase.database().reference()
     
     //UI outlets and actions
     @IBOutlet weak var userSetupPopover: UIView!

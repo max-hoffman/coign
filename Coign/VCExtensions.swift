@@ -30,7 +30,7 @@ extension UIViewController {
                     self.navigationItem.title = title
                     let titleAttributes = [
                         NSForegroundColorAttributeName: UIColor.white,
-                        NSFontAttributeName: UIFont(name: "Georgia-Bold", size: 24)!
+                        NSFontAttributeName: UIFont(name: "Helvetica", size: 18)!
                     ]
                     UINavigationBar.appearance().titleTextAttributes = titleAttributes
                 }
@@ -43,11 +43,8 @@ extension UIViewController {
                 let menuButton = UIBarButtonItem(title: "Menu", style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
                 navigationItem.leftBarButtonItem = menuButton
                 self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-                print("created pan gesture")
             }
         }
-    print("reveal view controller is connected")
-    
     }
     
     /**
