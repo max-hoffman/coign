@@ -418,7 +418,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Exlent Studios";
 				TargetAttributes = {
 					E20163DE1D7B2F7100949826 = {

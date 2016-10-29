@@ -91,7 +91,7 @@ private extension LoginController {
             
             //erroneous facebook fetch, close function short
             if error != nil {
-                print(error?.localizedDescription)
+                print(error!.localizedDescription)
                 return
             }
             
@@ -168,7 +168,7 @@ private extension LoginController {
             (connection, result, error) in
             
             if error != nil {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? error!)
                 return
             }
             
