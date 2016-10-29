@@ -107,6 +107,7 @@ private extension LoginController {
                 UserDefaults.standard.set(name, forKey: FirTree.UserParameter.Name.rawValue)
                 UserDefaults.standard.set(pictureURL, forKey: FirTree.UserParameter.Picture.rawValue)
                 
+                //check if user is new || cache existing user settings
                 FirTree.rootRef.child(FirTree.Node.Users.rawValue).child(facebookID).observeSingleEvent(of: .value, with: {
                     snapshot in
                     
@@ -129,60 +130,33 @@ private extension LoginController {
                             forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
                     }
                     else { //user is new
-                        
-                        //make new user
                         weakSelf?.createNewUser(facebookID: facebookID, name: name, pictureURL: pictureURL)
                     }
                     
                     //set home menu as root VC
-                    let mainStoryBoard = UIStoryboard(name: "MainApp", bundle: nil)
+                    let mainStoryBoard = UIStoryboard(name: Storyboard.MainApp.rawValue, bundle: .main)
                     let revealViewController = mainStoryBoard.instantiateViewController(withIdentifier: "RevealVC")
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     appDelegate.window?.rootViewController = revealViewController
-                    
                 })
-                //check if user is new || cache existing user settings
-//                FirTree.rootRef.child(FirTree.Node.Users.rawValue).child(facebookID).observe(FIRDataEventType.value, with: {
-//                
-//                    snapshot in
-//                    
-//                    //prevent repetitive auto-queries from FIR database
-//                    if UserDefaults.standard.object(forKey: "most recent login date") != nil {
-//                        print("firebase observation self-activated")
-//                        return
-//                    }
-//                    
-//                    if snapshot.exists()  { //user node exists
-//                        
-//                        //update last login time
-//                        let loginTime = Date().shortDate
-//                        FirTree.rootRef
-//                            .child(FirTree.Node.Users.rawValue)
-//                            .child(facebookID)
-//                            .updateChildValues([FirTree.UserParameter.MostRecentLoginDate.rawValue: loginTime])
-//                        UserDefaults.standard.set(
-//                            loginTime,
-//                            forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
-//                    }
-//                    else { //user is new
-//                      
-//                        //make new user
-//                        weakSelf?.createNewUser(facebookID: facebookID, name: name, pictureURL: pictureURL)
-//                    }
-//                    
-//                    //set home menu as root VC
-//                    let mainStoryBoard = UIStoryboard(name: "MainApp", bundle: nil)
-//                    let revealViewController = mainStoryBoard.instantiateViewController(withIdentifier: "RevealVC")
-//                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//                    appDelegate.window?.rootViewController = revealViewController
-//                })
             }
         })
         connection.start()
     }
     
     /**
-     Adds a node to the "users" branch of the FIR tree - indexed by the user's facebook ID. This is an unused overloaded class; feel like it could be useful, because it is all of the logic to make a facebook query and then store that data in the FIR tree.
+     Adds a node to the "users" branch of the FIR tree - indexed by the user's facebook ID; used to create new user in "users" branch of FIR tree during loginControlFlow().
+     */
+    func createNewUser(facebookID: String, name: String, pictureURL: String) {
+        let post: [String : Any] = [FirTree.UserParameter.Name.rawValue : name,
+                                    FirTree.UserParameter.Picture.rawValue : pictureURL,
+                                    FirTree.UserParameter.MostRecentLoginDate.rawValue: FirTree.UserParameter.NewUser.rawValue]
+        FirTree.rootRef.child(FirTree.Node.Users.rawValue).child(facebookID).setValue(post)
+        UserDefaults.standard.set(FirTree.UserParameter.NewUser.rawValue, forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
+    }
+    
+    /**
+     Overloaded new user creation - indexed by the user's facebook ID. This is an unused overloaded class; feel like it could be useful, because it is all of the logic to make a facebook query and then store that data in the FIR tree.
      */
 //    func createNewUser() -> Void {
 //        
@@ -216,17 +190,5 @@ private extension LoginController {
 //        })
 //        connection.start()
 //    }
-    
-    //MARK: - updated, haven't verified
-    /**
-     Overloaded new user creation; used to create new user in "users" branch of FIR tree during loginControlFlow().
-     */
-    func createNewUser(facebookID: String, name: String, pictureURL: String) {
-        let post: [String : Any] = [FirTree.UserParameter.Name.rawValue : name,
-                                    FirTree.UserParameter.Picture.rawValue : pictureURL,
-                                    FirTree.UserParameter.MostRecentLoginDate.rawValue: FirTree.UserParameter.NewUser.rawValue]
-        FirTree.rootRef.child(FirTree.Node.Users.rawValue).child(facebookID).setValue(post)
-        UserDefaults.standard.set(FirTree.UserParameter.NewUser.rawValue, forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
-    }
 }
 
