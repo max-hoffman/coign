@@ -23,6 +23,8 @@
 		E259EB671DA55EDC00EADC4C /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB661DA55EDC00EADC4C /* DateExtensions.swift */; };
 		E259EB691DA6AC1D00EADC4C /* FirTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB681DA6AC1D00EADC4C /* FirTree.swift */; };
 		E28C6BDB1D8DD7180020EAA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */; };
+		E2A8C9441DC52B0200C0DDDB /* UserSetupExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */; };
+		E2A8C9461DC52BCA00C0DDDB /* LoginExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8C9451DC52BCA00C0DDDB /* LoginExtensions.swift */; };
 		E2C397EA1D850220000D35F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */; };
 		E2C397EC1D850D8D000D35F4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397EB1D850D8D000D35F4 /* Login.storyboard */; };
 		E2C397EE1D85B07E000D35F4 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C397ED1D85B07E000D35F4 /* MainMenuController.swift */; };
@@ -91,6 +93,8 @@
 		E259EB661DA55EDC00EADC4C /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		E259EB681DA6AC1D00EADC4C /* FirTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirTree.swift; sourceTree = "<group>"; };
 		E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetupExtensions.swift; sourceTree = "<group>"; };
+		E2A8C9451DC52BCA00C0DDDB /* LoginExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginExtensions.swift; sourceTree = "<group>"; };
 		E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2C397EB1D850D8D000D35F4 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E2C397ED1D85B07E000D35F4 /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 			children = (
 				E2C397EB1D850D8D000D35F4 /* Login.storyboard */,
 				E20163E41D7B2F7100949826 /* LoginController.swift */,
+				E2A8C9451DC52BCA00C0DDDB /* LoginExtensions.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 			children = (
 				E2C397FC1D85CBE3000D35F4 /* MainMenu.storyboard */,
 				E2C397ED1D85B07E000D35F4 /* MainMenuController.swift */,
+				E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */,
 			);
 			name = "Main Menu";
 			sourceTree = "<group>";
@@ -633,6 +639,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A8C9461DC52BCA00C0DDDB /* LoginExtensions.swift in Sources */,
 				E24214971DA8966400A5B080 /* VCExtensions.swift in Sources */,
 				E20163E51D7B2F7100949826 /* LoginController.swift in Sources */,
 				E2C397F01D85B9B4000D35F4 /* SettingsController.swift in Sources */,
@@ -649,6 +656,7 @@
 				E2F0A8D71DC27E4A00ABDC4F /* SettingDetailController.swift in Sources */,
 				E2F0A8D91DC2AF9F00ABDC4F /* SettingDetailCell.swift in Sources */,
 				E259EB671DA55EDC00EADC4C /* DateExtensions.swift in Sources */,
+				E2A8C9441DC52B0200C0DDDB /* UserSetupExtensions.swift in Sources */,
 				E2C397F21D85BCE1000D35F4 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
