@@ -12,7 +12,6 @@
 		D191AF78124CFACC5205FCD6 /* Pods_CoignUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631671D89E118B9E050388F5 /* Pods_CoignUITests.framework */; };
 		E20163E31D7B2F7100949826 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20163E21D7B2F7100949826 /* AppDelegate.swift */; };
 		E20163E51D7B2F7100949826 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20163E41D7B2F7100949826 /* LoginController.swift */; };
-		E20163EB1D7B2F7100949826 /* Coign.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E20163E91D7B2F7100949826 /* Coign.xcdatamodeld */; };
 		E20163ED1D7B2F7100949826 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E20163EC1D7B2F7100949826 /* Assets.xcassets */; };
 		E20163FB1D7B2F7100949826 /* CoignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20163FA1D7B2F7100949826 /* CoignTests.swift */; };
 		E20164061D7B2F7100949826 /* CoignUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20164051D7B2F7100949826 /* CoignUITests.swift */; };
@@ -74,7 +73,6 @@
 		E20163DF1D7B2F7100949826 /* Coign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E20163E21D7B2F7100949826 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E20163E41D7B2F7100949826 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		E20163EA1D7B2F7100949826 /* Coign.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Coign.xcdatamodel; sourceTree = "<group>"; };
 		E20163EC1D7B2F7100949826 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E20163F11D7B2F7100949826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E20163F61D7B2F7100949826 /* CoignTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoignTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,7 +268,6 @@
 				E20163EC1D7B2F7100949826 /* Assets.xcassets */,
 				E20163F11D7B2F7100949826 /* Info.plist */,
 				E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */,
-				E20163E91D7B2F7100949826 /* Coign.xcdatamodeld */,
 				E24F77EB1D84FBDD00936AAE /* Coign-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
@@ -636,7 +633,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E20163EB1D7B2F7100949826 /* Coign.xcdatamodeld in Sources */,
 				E24214971DA8966400A5B080 /* VCExtensions.swift in Sources */,
 				E20163E51D7B2F7100949826 /* LoginController.swift in Sources */,
 				E2C397F01D85B9B4000D35F4 /* SettingsController.swift in Sources */,
@@ -953,19 +949,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		E20163E91D7B2F7100949826 /* Coign.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E20163EA1D7B2F7100949826 /* Coign.xcdatamodel */,
-			);
-			currentVersion = E20163EA1D7B2F7100949826 /* Coign.xcdatamodel */;
-			path = Coign.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = E20163D71D7B2F7100949826 /* Project object */;
 }
