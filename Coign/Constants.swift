@@ -16,3 +16,9 @@ struct Charities {
     static let list = ["dafault charity:", "American Red Cross", "Feeding America", "Smithsonian Institution", "City of Hope", "Dana-Farber Cancer Institute", "World Vision", "St. Jude Children's Research Hospital", "Food For The Poor", "American Cancer Society", "The Nature Conservancy"]
 }
 
+enum Storyboard: String {
+    case Login = "Login"
+    case MainMenu = "MainMenu"
+    case MainApp = "MainApp"
+}
+

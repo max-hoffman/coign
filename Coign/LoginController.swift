@@ -103,13 +103,11 @@ private extension LoginController {
                 let pictureURL = data["url"] as! String? {
                 
                 //store data in UserDefaults for later use
-                UserDefaults.standard.set(facebookID, forKey: "facebookID")
-                UserDefaults.standard.set(name, forKey: "name")
-                UserDefaults.standard.set(pictureURL, forKey: "pictureURL")
+                UserDefaults.standard.set(facebookID, forKey: FirTree.UserParameter.Id.rawValue)
+                UserDefaults.standard.set(name, forKey: FirTree.UserParameter.Name.rawValue)
+                UserDefaults.standard.set(pictureURL, forKey: FirTree.UserParameter.Picture.rawValue)
                 
-                //check if user is new || cache existing user settings
-                FirTree.rootRef.child("users").child(facebookID).observe(FIRDataEventType.value, with: {
-                
+                FirTree.rootRef.child(FirTree.Node.Users.rawValue).child(facebookID).observeSingleEvent(of: .value, with: {
                     snapshot in
                     
                     //prevent repetitive auto-queries from FIR database
@@ -123,15 +121,15 @@ private extension LoginController {
                         //update last login time
                         let loginTime = Date().shortDate
                         FirTree.rootRef
-                            .child("users")
+                            .child(FirTree.Node.Users.rawValue)
                             .child(facebookID)
-                            .updateChildValues(["most recent login date": loginTime])
+                            .updateChildValues([FirTree.UserParameter.MostRecentLoginDate.rawValue: loginTime])
                         UserDefaults.standard.set(
                             loginTime,
-                            forKey: "most recent login date")
+                            forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
                     }
                     else { //user is new
-                      
+                        
                         //make new user
                         weakSelf?.createNewUser(facebookID: facebookID, name: name, pictureURL: pictureURL)
                     }
@@ -141,7 +139,43 @@ private extension LoginController {
                     let revealViewController = mainStoryBoard.instantiateViewController(withIdentifier: "RevealVC")
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     appDelegate.window?.rootViewController = revealViewController
+                    
                 })
+                //check if user is new || cache existing user settings
+//                FirTree.rootRef.child(FirTree.Node.Users.rawValue).child(facebookID).observe(FIRDataEventType.value, with: {
+//                
+//                    snapshot in
+//                    
+//                    //prevent repetitive auto-queries from FIR database
+//                    if UserDefaults.standard.object(forKey: "most recent login date") != nil {
+//                        print("firebase observation self-activated")
+//                        return
+//                    }
+//                    
+//                    if snapshot.exists()  { //user node exists
+//                        
+//                        //update last login time
+//                        let loginTime = Date().shortDate
+//                        FirTree.rootRef
+//                            .child(FirTree.Node.Users.rawValue)
+//                            .child(facebookID)
+//                            .updateChildValues([FirTree.UserParameter.MostRecentLoginDate.rawValue: loginTime])
+//                        UserDefaults.standard.set(
+//                            loginTime,
+//                            forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
+//                    }
+//                    else { //user is new
+//                      
+//                        //make new user
+//                        weakSelf?.createNewUser(facebookID: facebookID, name: name, pictureURL: pictureURL)
+//                    }
+//                    
+//                    //set home menu as root VC
+//                    let mainStoryBoard = UIStoryboard(name: "MainApp", bundle: nil)
+//                    let revealViewController = mainStoryBoard.instantiateViewController(withIdentifier: "RevealVC")
+//                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//                    appDelegate.window?.rootViewController = revealViewController
+//                })
             }
         })
         connection.start()

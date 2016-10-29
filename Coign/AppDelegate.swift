@@ -70,8 +70,8 @@ private extension AppDelegate{
         //TODO: Remove memory cycles - might have already done that by making the storyboard referenecs optional
         //MARK: - rootVC is being set twice somehow; viewdidload is being called twice
         //Bypassed using segues; just used the rootViewController method
-        self.loginStoryboard = UIStoryboard(name: "Login", bundle: .main)
-        self.mainAppStoryboard = UIStoryboard(name: "MainApp", bundle: .main)
+        self.loginStoryboard = UIStoryboard(name: Storyboard.Login.rawValue, bundle: .main)
+        self.mainAppStoryboard = UIStoryboard(name: Storyboard.MainApp.rawValue, bundle: .main)
         let currentUser = FIRAuth.auth()?.currentUser
         
         if currentUser != nil {
