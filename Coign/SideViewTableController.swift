@@ -46,6 +46,7 @@ class SideViewTableController: UITableViewController {
         UserDefaults.standard.removeObject(forKey: "name")
         UserDefaults.standard.removeObject(forKey: "pictureURL")
         UserDefaults.standard.removeObject(forKey: "most recent login date")
+        UserDefaults.standard.removeObject(forKey: "birthday")
         
         //set login as the root VC
         let loginStoryboard = UIStoryboard(name: "Login", bundle: .main)

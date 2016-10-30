@@ -39,7 +39,7 @@ class FirTree {
         case Donations = "donations"
         case Charity = "charity preference"
     }
-    
+
     enum DonationParameter: String {
         case Charity = "charity"
         case Donor = "donor"
@@ -47,7 +47,7 @@ class FirTree {
         case Date = "date"
         case Message = "message"
     }
-
+    
     //MARK: - Public functions
     //TODO: - model functions need to be written
     

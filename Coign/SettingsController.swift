@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FBSDKLoginKit
 
 class SettingsController: UITableViewController {
 
@@ -17,7 +19,6 @@ class SettingsController: UITableViewController {
     @IBOutlet weak var phoneValue: UILabel!
     @IBOutlet weak var emailValue: UILabel!
     @IBOutlet weak var charityValue: UILabel!
-    
     
     struct Settings {
         enum Changeable: String {
@@ -60,20 +61,21 @@ class SettingsController: UITableViewController {
             
         //log out of current user
         else if cellIdentifier == Settings.Actionable.Logout.rawValue {
-            //logout of application
+            logoutOfUser()
         }
         
         //show picker view; default charity selection
         else if cellIdentifier == Settings.Actionable.CharityDefault.rawValue {
             performSegue(withIdentifier: "show charity picker", sender: nil)
         }
-        
+    
         //MARK: - Need to be able to verify phone number
         //show setting detail page, can update account info
         else if changeableSetting(setting: cellIdentifier) {
             performSegue(withIdentifier: "show setting detail", sender: indexPath)
         }
         tableView.deselectRow(at: indexPath, animated: true)
+        
     }
     
     
@@ -99,6 +101,33 @@ class SettingsController: UITableViewController {
         emailValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Email.rawValue)
         phoneValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Phone.rawValue)
         charityValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Charity.rawValue)
+    }
+    
+    private func logoutOfUser() {
+        
+        //logout of firebase/facebook
+        FBSDKLoginManager().logOut()
+        try! FIRAuth.auth()!.signOut()
+        FBSDKAccessToken.setCurrent(nil)
+        FBSDKProfile.setCurrent(nil)
+        
+        /* TODO: figure out how to have this loop through the user parameters. Maybe need to change my enums in FirData, which would require changing every reference to that parameter in the entire project */
+        //clear user defaults
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Id.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Name.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Email.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Birthday.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Phone.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Picture.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Friends.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Donations.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Charity.rawValue)
+        
+        //set login as the root VC
+        let loginStoryboard = UIStoryboard(name: "Login", bundle: .main)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = loginStoryboard.instantiateInitialViewController()
     }
     
     override func viewDidLoad() {
