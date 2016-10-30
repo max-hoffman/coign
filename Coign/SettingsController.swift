@@ -75,7 +75,9 @@ class SettingsController: UITableViewController {
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
-     
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detailVC = segue.destination as? SettingDetailController {
             if let index = sender as? IndexPath {
@@ -84,6 +86,7 @@ class SettingsController: UITableViewController {
                     detailVC.propertyName = name
                     detailVC.title = "Update \(name)"
                     let key = tableView.cellForRow(at: index)?.reuseIdentifier
+                    detailVC.defaultsKey = key
                     detailVC.propertyValue = UserDefaults.standard.string(forKey: key!)
                 }
             }
@@ -96,7 +99,6 @@ class SettingsController: UITableViewController {
         emailValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Email.rawValue)
         phoneValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Phone.rawValue)
         charityValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Charity.rawValue)
-        print(charityValue.text ?? nil)
     }
     
     override func viewDidLoad() {

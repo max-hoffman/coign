@@ -60,6 +60,9 @@ class FirTree {
             
             rootRef.child(Node.Users.rawValue).child(facebookID).updateChildValues(withNewSettings)
         }
+        else {
+            print("did not find facebook ID value in user defaults")
+        }
     }
     
 //    func fetchUser(settings: [UserParameter], completion: @escaping ([UserParameter: Any]?) -> ()) {

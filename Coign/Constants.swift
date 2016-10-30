@@ -36,5 +36,10 @@ enum Storyboard: String {
     case Login = "Login"
     case MainMenu = "MainMenu"
     case MainApp = "MainApp"
+    case Settings = "Settings"
+}
+
+enum ViewController: String {
+    case Settings = "Settings"
 }
 
