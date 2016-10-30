@@ -61,7 +61,7 @@ class SettingsController: UITableViewController {
             
         //log out of current user
         else if cellIdentifier == Settings.Actionable.Logout.rawValue {
-            logoutOfUser()
+            tryLogout()
         }
         
         //show picker view; default charity selection
@@ -75,11 +75,9 @@ class SettingsController: UITableViewController {
             performSegue(withIdentifier: "show setting detail", sender: indexPath)
         }
         tableView.deselectRow(at: indexPath, animated: true)
-        
     }
     
-    
-    
+    //pre-load the detail controller if that's the next destination
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detailVC = segue.destination as? SettingDetailController {
             if let index = sender as? IndexPath {
@@ -101,6 +99,22 @@ class SettingsController: UITableViewController {
         emailValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Email.rawValue)
         phoneValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Phone.rawValue)
         charityValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Charity.rawValue)
+    }
+    
+    private func tryLogout() {
+        let logoutAlert = UIAlertController(title: "Logout", message: "Are you sure you want to log out?", preferredStyle: UIAlertControllerStyle.alert)
+        logoutAlert.addAction(UIAlertAction(title: "Logout", style: .default, handler: {
+            [weak weakSelf = self]
+            (action: UIAlertAction) -> Void in
+            
+            weakSelf?.logoutOfUser()
+        }))
+        logoutAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {
+            (action: UIAlertAction) -> Void in
+            self.dismiss(animated: false, completion: nil)
+        }))
+        
+        present(logoutAlert, animated: true, completion: nil)
     }
     
     private func logoutOfUser() {

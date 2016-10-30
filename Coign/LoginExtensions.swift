@@ -52,13 +52,21 @@ extension LoginController {
                 FirTree.rootRef.child(FirTree.Node.Users.rawValue).child(facebookID).observeSingleEvent(of: .value, with: {
                     snapshot in
                     
-                    //prevent repetitive auto-queries from FIR database
+                    //this should be deprecated
                     if UserDefaults.standard.object(forKey: "most recent login date") != nil {
                         print("firebase observation self-activated")
                         return
                     }
                     
                     if snapshot.exists()  { //user node exists
+                        
+                        //extract FirTree data to update user defaults
+                        /*fixes bug: user data does not load into settings after logout */
+                        let value: Dictionary<String,String> = snapshot.value as! Dictionary
+                        UserDefaults.standard.set(value[FirTree.UserParameter.Birthday.rawValue], forKey: FirTree.UserParameter.Birthday.rawValue)
+                        UserDefaults.standard.set(value[FirTree.UserParameter.Email.rawValue], forKey: FirTree.UserParameter.Email .rawValue)
+                        UserDefaults.standard.set(value[FirTree.UserParameter.Phone.rawValue], forKey: FirTree.UserParameter.Phone .rawValue)
+                        UserDefaults.standard.set(value[FirTree.UserParameter.Charity.rawValue], forKey: FirTree.UserParameter.Charity.rawValue)
                         
                         //update last login time
                         let loginTime = Date().shortDate
@@ -69,6 +77,7 @@ extension LoginController {
                         UserDefaults.standard.set(
                             loginTime,
                             forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
+                        
                     }
                     else { //user is new
                         weakSelf?.createNewUser(facebookID: facebookID, name: name, pictureURL: pictureURL)
