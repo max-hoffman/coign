@@ -12,7 +12,7 @@ class CharityPickerController: UIViewController {
 
     //outlets
     @IBOutlet weak var charityPreferencePicker: UIPickerView!
-
+    
     //properties
     let charities = Charities.list
 
@@ -21,6 +21,9 @@ class CharityPickerController: UIViewController {
         super.viewDidLoad()
         charityPreferencePicker.delegate = self
         // Do any additional setup after loading the view.
+        if let defaultCharity = UserDefaults.standard.string(forKey: FirTree.UserParameter.Charity.rawValue) {
+            charityPreferencePicker.selectRow(Charities.list.index(of: defaultCharity)!, inComponent: 0, animated: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +31,11 @@ class CharityPickerController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        let row = charityPreferencePicker.selectedRow(inComponent: 0)
+        let charityValue = Charities.list[row]
+        UserDefaults.standard.set(charityValue, forKey: FirTree.UserParameter.Charity.rawValue)
+    }
 }
 
 //MARK: - Picker view extensions

@@ -62,10 +62,23 @@ class FirTree {
         }
     }
     
-//    func fetchUser(settings: [UserParameter: Any]) -> [UserParameter: Any] {
+//    func fetchUser(settings: [UserParameter], completion: @escaping ([UserParameter: Any]?) -> ()) {
+//        var data = [UserParameter: Any]()
+//        if  let facebookID = UserDefaults.standard.string(forKey: UserParameter.Id.rawValue) {
+//
+//            FirTree.rootRef.child(Node.Users.rawValue).child(facebookID).observeSingleEvent(of: .value, with: { (snapshot) in
+//                
+//                let value = snapshot.value as? NSDictionary
+//                
+//                for setting in settings {
+//                    data[setting] = value?[setting]
+//                }
+//                completion(data)
+//            })
+//        }else {
+//            completion(nil)
+//        }
 //        
-//        
-//        return data
 //    }
     
     /**

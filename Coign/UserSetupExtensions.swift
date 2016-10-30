@@ -123,6 +123,7 @@ extension MainMenuController: UITextFieldDelegate, UIPickerViewDelegate, UIPicke
             
             //save data
             FirTree.updateUser(withNewSettings: settings)
+            UserDefaults.standard.set(charityPreference, forKey: FirTree.UserParameter.Donations.rawValue)
         }
     }
     

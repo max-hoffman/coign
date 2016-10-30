@@ -12,24 +12,31 @@ class SettingsController: UITableViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
+    @IBOutlet weak var nameValue: UILabel!
+    @IBOutlet weak var birthdayValue: UILabel!
+    @IBOutlet weak var phoneValue: UILabel!
+    @IBOutlet weak var emailValue: UILabel!
+    @IBOutlet weak var charityValue: UILabel!
+    
+    
     struct Settings {
         enum Changeable: String {
-            case name = "name cell"
-            case birthday = "birthday cell"
-            case email = "email cell"
-            case phone = "phone cell"
+            case Name = "name"
+            case Birthday = "birthday"
+            case Email = "email"
+            case Phone = "phone number"
         }
         enum Static: String {
-            case faq = "faq cell"
-            case feedback = "feedback cell"
-            case policy = "policy cell"
-            case terms = "terms cell"
-            case attributions = "attributions cell"
+            case Faq = "faq cell"
+            case Feedback = "feedback cell"
+            case Policy = "policy cell"
+            case Terms = "terms cell"
+            case Attributions = "attributions cell"
         }
         enum Actionable: String {
-            case permissions = "permission cell"
-            case logout = "log out cell"
-            case charityDefault = "charity default cell"
+            case Permissions = "permissions cell"
+            case Logout = "log out cell"
+            case CharityDefault = "charity preference"
         }
     }
     
@@ -45,22 +52,23 @@ class SettingsController: UITableViewController {
         }
         
         //deep link to phone settings
-        if cellIdentifier == Settings.Actionable.permissions.rawValue {
+        if cellIdentifier == Settings.Actionable.Permissions.rawValue {
             if let appSettings = URL(string: UIApplicationOpenSettingsURLString) {
                 UIApplication.shared.openURL(appSettings as URL)
             }
         }
             
         //log out of current user
-        else if cellIdentifier == Settings.Actionable.logout.rawValue {
+        else if cellIdentifier == Settings.Actionable.Logout.rawValue {
             //logout of application
         }
         
         //show picker view; default charity selection
-        else if cellIdentifier == Settings.Actionable.charityDefault.rawValue {
-            performSegue(withIdentifier: "show charirty picker view", sender: self)
+        else if cellIdentifier == Settings.Actionable.CharityDefault.rawValue {
+            performSegue(withIdentifier: "show charity picker", sender: nil)
         }
-            
+        
+        //MARK: - Need to be able to verify phone number
         //show setting detail page, can update account info
         else if changeableSetting(setting: cellIdentifier) {
             performSegue(withIdentifier: "show setting detail", sender: indexPath)
@@ -75,18 +83,30 @@ class SettingsController: UITableViewController {
                 if let name = label?.text {
                     detailVC.propertyName = name
                     detailVC.title = "Update \(name)"
+                    let key = tableView.cellForRow(at: index)?.reuseIdentifier
+                    detailVC.propertyValue = UserDefaults.standard.string(forKey: key!)
                 }
             }
         }
     }
     
+    private func updateUserSettingsValues() {
+        nameValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Name.rawValue)
+        birthdayValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Birthday.rawValue)
+        emailValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Email.rawValue)
+        phoneValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Phone.rawValue)
+        charityValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Charity.rawValue)
+        print(charityValue.text ?? nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
-        
         connectRevealVC()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        updateUserSettingsValues()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
