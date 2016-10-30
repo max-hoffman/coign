@@ -12,15 +12,11 @@ class CharityPickerController: UIViewController {
 
     //outlets
     @IBOutlet weak var charityPreferencePicker: UIPickerView!
-    
-    //properties
-    let charities = Charities.list
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         charityPreferencePicker.delegate = self
-        // Do any additional setup after loading the view.
         if let defaultCharity = UserDefaults.standard.string(forKey: FirTree.UserParameter.Charity.rawValue) {
             charityPreferencePicker.selectRow(Charities.list.index(of: defaultCharity)!, inComponent: 0, animated: false)
         }
