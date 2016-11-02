@@ -21,6 +21,8 @@ class SettingDetailController: UITableViewController, UITextFieldDelegate {
         return 1
     }
     
+    /* Set the label and textfield data. The reason userdefaults is not called explicity is because this is a general setting page, usable by every single editable setting. The data is still being drawn from user defaults, however. */
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SettingDetailCell?
         cell?.property.text = propertyName
@@ -39,9 +41,9 @@ class SettingDetailController: UITableViewController, UITextFieldDelegate {
     //superclass methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         return
     }
+    
     /* Update the user settings in FirTree and Defaults when we leave the page, regardless of exit method. */
     override func viewWillDisappear(_ animated: Bool) {
         if let newValue = cell?.propertyTextField.text, defaultsKey != nil {
