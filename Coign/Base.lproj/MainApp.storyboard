@@ -24,8 +24,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <segue destination="boD-bs-ywk" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="uCs-Xa-NdE"/>
                         <segue destination="D8i-Uu-Gs4" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="BwS-EM-jAB"/>
+                        <segue destination="IYO-sQ-fTn" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="feR-oi-vQO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iuw-gs-1gx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -77,7 +77,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="boD-bs-ywk" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="LLz-Bx-UWP"/>
+                                            <segue destination="IYO-sQ-fTn" kind="custom" identifier="home segue" customClass="SWRevealViewControllerSeguePushController" id="9ts-A5-S6i"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RsG-fj-7Wl">
@@ -114,7 +114,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="c5p-Fd-Owu" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="s05-fJ-cDL"/>
+                                            <segue destination="IYO-sQ-fTn" kind="custom" identifier="donate segue" customClass="SWRevealViewControllerSeguePushController" id="Pz7-dP-DMU"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wSj-sB-qLr">
@@ -151,11 +151,15 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="I6v-PD-H4a" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="KDa-Za-O43"/>
+                                            <segue destination="IYO-sQ-fTn" kind="custom" identifier="profile segue" customClass="SWRevealViewControllerSeguePushController" id="6Vf-8p-xyt"/>
                                         </connections>
                                     </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle=" " id="Gvj-M0-LTI">
+                                <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="0NG-hd-VX2">
-                                        <rect key="frame" x="0.0" y="160" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="188" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0NG-hd-VX2" id="MLg-Tk-Lv5">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -188,13 +192,9 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="XEG-e6-KVu" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Jce-51-ZQ5"/>
+                                            <segue destination="XEG-e6-KVu" kind="custom" identifier="settings segue" customClass="SWRevealViewControllerSeguePushController" id="Jce-51-ZQ5"/>
                                         </connections>
                                     </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle=" " id="Gvj-M0-LTI">
-                                <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NlN-q1-hlt">
                                         <rect key="frame" x="0.0" y="232" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -229,7 +229,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="NV6-ts-rXV" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Jea-5c-1fp"/>
+                                            <segue destination="NV6-ts-rXV" kind="custom" identifier="about segue" customClass="SWRevealViewControllerSeguePushController" id="Jea-5c-1fp"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -251,31 +251,56 @@
                 <viewControllerPlaceholder storyboardName="Settings" id="XEG-e6-KVu" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SV5-4T-gUM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5609.5" y="151"/>
+            <point key="canvasLocation" x="5721" y="-211"/>
         </scene>
         <!--Profile-->
         <scene sceneID="DAG-YT-6Rs">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="I6v-PD-H4a" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Profile" id="I6v-PD-H4a" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="2" title="Profile" id="NfK-Z3-izv"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k4S-PE-HW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5432" y="151"/>
+            <point key="canvasLocation" x="5829" y="232"/>
         </scene>
         <!--MainMenu-->
         <scene sceneID="eos-Jy-EOe">
             <objects>
-                <viewControllerPlaceholder storyboardName="MainMenu" id="boD-bs-ywk" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MainMenu" id="boD-bs-ywk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="bxB-by-544"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FzI-sH-vPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5063.5" y="151"/>
+            <point key="canvasLocation" x="5810" y="4"/>
+        </scene>
+        <!--Tab Bar VC-->
+        <scene sceneID="xDz-vQ-snZ">
+            <objects>
+                <tabBarController title="Tab Bar VC" id="IYO-sQ-fTn" customClass="TabController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Ooe-4E-3PC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="boD-bs-ywk" kind="relationship" relationship="viewControllers" id="yHh-tD-Ccl"/>
+                        <segue destination="c5p-Fd-Owu" kind="relationship" relationship="viewControllers" id="yHJ-8F-pNl"/>
+                        <segue destination="I6v-PD-H4a" kind="relationship" relationship="viewControllers" id="6GY-6e-xAS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MJ8-du-R5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5249" y="100"/>
         </scene>
         <!--Donate-->
         <scene sceneID="fyP-8I-lnj">
             <objects>
-                <viewControllerPlaceholder storyboardName="Donate" id="c5p-Fd-Owu" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Donate" id="c5p-Fd-Owu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="1" title="Donate" id="ld6-8c-vgG"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biJ-Nk-g33" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5262" y="151"/>
+            <point key="canvasLocation" x="5826" y="113"/>
         </scene>
         <!--AboutUs-->
         <scene sceneID="ay2-sF-8ec">
@@ -283,10 +308,10 @@
                 <viewControllerPlaceholder storyboardName="AboutUs" id="NV6-ts-rXV" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7uV-2k-HHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5781.5" y="151"/>
+            <point key="canvasLocation" x="5953" y="-211"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LLz-Bx-UWP"/>
+        <segue reference="9ts-A5-S6i"/>
     </inferredMetricsTieBreakers>
 </document>

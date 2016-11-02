@@ -24,4 +24,19 @@ class SideViewTableController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(segue.destination)
+        print(segue.identifier)
+        if let tabVC = segue.destination as? TabController, let  identifier = segue.identifier {
+            print(identifier)
+            switch identifier {
+                case "home segue": tabVC.segueDestinationIndex = 0
+                case "donate segue": tabVC.segueDestinationIndex = 1
+                case "profile segue": tabVC.segueDestinationIndex = 2
+                default: print("unidentifiable segue name")
+            }
+            
+        }
+    }
 }

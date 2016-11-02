@@ -22,6 +22,7 @@
 		E259EB671DA55EDC00EADC4C /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB661DA55EDC00EADC4C /* DateExtensions.swift */; };
 		E259EB691DA6AC1D00EADC4C /* FirTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB681DA6AC1D00EADC4C /* FirTree.swift */; };
 		E28C6BDB1D8DD7180020EAA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */; };
+		E2A04A8B1DCA63110082EF1E /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A04A8A1DCA63110082EF1E /* TabController.swift */; };
 		E2A8C9441DC52B0200C0DDDB /* UserSetupExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */; };
 		E2A8C9461DC52BCA00C0DDDB /* LoginExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8C9451DC52BCA00C0DDDB /* LoginExtensions.swift */; };
 		E2C397EA1D850220000D35F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */; };
@@ -91,6 +92,7 @@
 		E259EB661DA55EDC00EADC4C /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		E259EB681DA6AC1D00EADC4C /* FirTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirTree.swift; sourceTree = "<group>"; };
 		E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E2A04A8A1DCA63110082EF1E /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetupExtensions.swift; sourceTree = "<group>"; };
 		E2A8C9451DC52BCA00C0DDDB /* LoginExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginExtensions.swift; sourceTree = "<group>"; };
 		E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				E24F77EC1D84FBFD00936AAE /* Side-bar */,
 				E20164201D7B653A00949826 /* MainApp.storyboard */,
 				E2D8771F1D8EFEDC00BAAB46 /* SideViewTableController.swift */,
+				E2A04A8A1DCA63110082EF1E /* TabController.swift */,
 			);
 			name = "Main App";
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				E2F0A8D91DC2AF9F00ABDC4F /* SettingDetailCell.swift in Sources */,
 				E259EB671DA55EDC00EADC4C /* DateExtensions.swift in Sources */,
 				E2A8C9441DC52B0200C0DDDB /* UserSetupExtensions.swift in Sources */,
+				E2A04A8B1DCA63110082EF1E /* TabController.swift in Sources */,
 				E2C397F21D85BCE1000D35F4 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
