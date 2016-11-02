@@ -15,12 +15,8 @@ class DonateController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //MARK: this should be standardized so we're not duplicating code
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
+        //nav bar for reveal view controller
+        connectRevealVC()
     }
 
     override func didReceiveMemoryWarning() {

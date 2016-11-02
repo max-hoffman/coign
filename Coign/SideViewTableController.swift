@@ -14,6 +14,16 @@ import FBSDKLoginKit
 
 class SideViewTableController: UITableViewController {
  
+    enum Segue: String {
+        case Home = "home segue"
+        case Donate = "donate segue"
+        case Profile = "profile segue"
+    }
+    
+    enum DestinationIndex: Int {
+        case Home = 0, Donation, Profile
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,17 +36,14 @@ class SideViewTableController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(segue.destination)
-        print(segue.identifier)
         if let tabVC = segue.destination as? TabController, let  identifier = segue.identifier {
-            print(identifier)
+
             switch identifier {
-                case "home segue": tabVC.segueDestinationIndex = 0
-                case "donate segue": tabVC.segueDestinationIndex = 1
-                case "profile segue": tabVC.segueDestinationIndex = 2
+                case Segue.Home.rawValue: tabVC.segueDestinationIndex = DestinationIndex.Home.rawValue
+                case Segue.Donate.rawValue: tabVC.segueDestinationIndex = DestinationIndex.Donation.rawValue
+                case Segue.Profile.rawValue: tabVC.segueDestinationIndex = DestinationIndex.Profile.rawValue
                 default: print("unidentifiable segue name")
             }
-            
         }
     }
 }

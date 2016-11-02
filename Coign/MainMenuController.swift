@@ -45,7 +45,7 @@ class MainMenuController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+
         //home page loading logic, automatically calls user setup popover if the last date was set to "new user"
         checkLastLoginDate()
     }

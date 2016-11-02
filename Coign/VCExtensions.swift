@@ -26,14 +26,13 @@ extension UIViewController {
                 let navBar = navcon.navigationBar
                 
                 //add nav bar title
-                if let title = self.title {
-                    self.navigationItem.title = title
-                    let titleAttributes = [
-                        NSForegroundColorAttributeName: UIColor.white,
-                        NSFontAttributeName: UIFont(name: "Helvetica", size: 18)!
-                    ]
-                    UINavigationBar.appearance().titleTextAttributes = titleAttributes
-                }
+                self.navigationItem.title = self.title
+                let titleAttributes = [
+                    NSForegroundColorAttributeName: UIColor.white,
+                    NSFontAttributeName: UIFont(name: "Helvetica", size: 20)!
+                ]
+                UINavigationBar.appearance().titleTextAttributes = titleAttributes
+                
                 
                 //color nav bar
                 navBar.barTintColor = CustomColor.darkGreen
