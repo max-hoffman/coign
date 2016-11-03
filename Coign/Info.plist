@@ -9,6 +9,11 @@
 		<string>Lato-Medium.ttf</string>
 		<string>Amiri-Regular.ttf</string>
 		<string>Amiri-Bold.ttf</string>
+		<string>CrimsonText-Roman.ttf</string>
+		<string>CrimsonText-Semibold.ttf</string>
+		<string>Khula-Bold.ttf</string>
+		<string>Khula-Regular.ttf</string>
+		<string>Khula-SemiBold.ttf</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>View and contribute to local activity.</string>

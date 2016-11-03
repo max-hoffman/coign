@@ -10,20 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Amiri-Bold.ttf">
-            <string>Amiri-Bold</string>
+        <array key="CrimsonText-Roman.ttf">
+            <string>CrimsonText-Roman</string>
         </array>
-        <array key="Amiri-Regular.ttf">
-            <string>Amiri-Regular</string>
-        </array>
-        <array key="Lato-Bold.ttf">
-            <string>Lato-Bold</string>
-        </array>
-        <array key="Lato-Light.ttf">
-            <string>Lato-Light</string>
-        </array>
-        <array key="Lato-Regular.ttf">
-            <string>Lato-Regular</string>
+        <array key="Khula-Bold.ttf">
+            <string>Khula-Bold</string>
         </array>
     </customFonts>
     <scenes>
@@ -42,21 +33,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="fve-pl-POW">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MX7-Qu-6aD">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MX7-Qu-6aD">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nL-F2-4fV">
                                                 <rect key="frame" x="20" y="20" width="335" height="44"/>
-                                                <fontDescription key="fontDescription" name="Amiri-Bold" family="Amiri" pointSize="40"/>
+                                                <fontDescription key="fontDescription" name="Khula-Bold" family="Khula" pointSize="47"/>
                                                 <state key="normal" title="Mission">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="viewSelectedWithSender:" destination="43W-33-Gzp" eventType="touchUpInside" id="qmn-hP-u4I"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.017969632950000002" green="0.35247328369999997" blue="0.0043098790859999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="0nL-F2-4fV" secondAttribute="trailing" constant="20" symbolic="YES" id="8BN-MQ-S1D"/>
                                             <constraint firstItem="0nL-F2-4fV" firstAttribute="top" secondItem="MX7-Qu-6aD" secondAttribute="top" constant="20" symbolic="YES" id="Nv9-Dq-n1c"/>
@@ -64,17 +55,17 @@
                                             <constraint firstAttribute="bottom" secondItem="0nL-F2-4fV" secondAttribute="bottom" constant="20" symbolic="YES" id="wev-Y3-SU2"/>
                                         </constraints>
                                     </view>
-                                    <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDQ-uC-Xhq">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDQ-uC-Xhq">
                                         <rect key="frame" x="0.0" y="84" width="375" height="64"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mission text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHF-cM-0i8">
                                                 <rect key="frame" x="20" y="0.0" width="335" height="44"/>
-                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="CrimsonText-Roman" family="Crimson Text" pointSize="22"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.017969632950000002" green="0.35247328369999997" blue="0.0043098790859999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="WHF-cM-0i8" secondAttribute="bottom" constant="20" symbolic="YES" id="1QK-Q3-8eM"/>
                                             <constraint firstAttribute="trailing" secondItem="WHF-cM-0i8" secondAttribute="trailing" constant="20" symbolic="YES" id="ML8-vC-b9P"/>
@@ -82,21 +73,21 @@
                                             <constraint firstItem="WHF-cM-0i8" firstAttribute="leading" secondItem="CDQ-uC-Xhq" secondAttribute="leading" constant="20" symbolic="YES" id="gji-L9-Q57"/>
                                         </constraints>
                                     </view>
-                                    <view alpha="0.5" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bl0-O1-faH">
+                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bl0-O1-faH">
                                         <rect key="frame" x="0.0" y="148" width="375" height="84"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSi-Un-9oj">
                                                 <rect key="frame" x="20" y="20" width="335" height="44"/>
-                                                <fontDescription key="fontDescription" name="Amiri-Bold" family="Amiri" pointSize="40"/>
+                                                <fontDescription key="fontDescription" name="Khula-Bold" family="Khula" pointSize="47"/>
                                                 <state key="normal" title="Features">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.017969632950000002" green="0.35247328369999997" blue="0.0043098790859999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="viewSelectedWithSender:" destination="43W-33-Gzp" eventType="touchUpInside" id="Ewv-nA-1Pc"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="DSi-Un-9oj" firstAttribute="top" secondItem="Bl0-O1-faH" secondAttribute="top" constant="20" symbolic="YES" id="Czx-7E-8pz"/>
                                             <constraint firstItem="DSi-Un-9oj" firstAttribute="leading" secondItem="Bl0-O1-faH" secondAttribute="leading" constant="20" symbolic="YES" id="H2p-ih-RpB"/>
@@ -104,17 +95,17 @@
                                             <constraint firstAttribute="bottom" secondItem="DSi-Un-9oj" secondAttribute="bottom" constant="20" symbolic="YES" id="rFZ-0S-Db5"/>
                                         </constraints>
                                     </view>
-                                    <view alpha="0.5" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGr-7c-RPa">
+                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGr-7c-RPa">
                                         <rect key="frame" x="0.0" y="232" width="375" height="75.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="features text" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5i-e5-Adu">
                                                 <rect key="frame" x="20" y="0.0" width="335" height="55.5"/>
-                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="20"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="CrimsonText-Roman" family="Crimson Text" pointSize="22"/>
+                                                <color key="textColor" red="0.017969632950000002" green="0.35247328369999997" blue="0.0043098790859999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="U5i-e5-Adu" secondAttribute="trailing" constant="20" symbolic="YES" id="7JW-qt-f54"/>
                                             <constraint firstAttribute="bottom" secondItem="U5i-e5-Adu" secondAttribute="bottom" constant="20" symbolic="YES" id="Ksy-fd-DnW"/>
@@ -127,7 +118,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfQ-2h-XSa">
                                                 <rect key="frame" x="20" y="20" width="335" height="38"/>
-                                                <fontDescription key="fontDescription" name="Amiri-Regular" family="Amiri" pointSize="40"/>
+                                                <fontDescription key="fontDescription" name="Khula-Bold" family="Khula" pointSize="47"/>
                                                 <state key="normal" title="Team">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -149,7 +140,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="team text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bP7-mV-6iF">
                                                 <rect key="frame" x="20" y="0.0" width="335" height="55.5"/>
-                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="CrimsonText-Roman" family="Crimson Text" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -167,7 +158,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNo-zd-dkz">
                                                 <rect key="frame" x="20" y="20" width="335" height="38"/>
-                                                <fontDescription key="fontDescription" name="Amiri-Regular" family="Amiri" pointSize="40"/>
+                                                <fontDescription key="fontDescription" name="Khula-Bold" family="Khula" pointSize="47"/>
                                                 <state key="normal" title="Opportunities">
                                                     <color key="titleColor" red="0.017969632950000002" green="0.35247328369999997" blue="0.0043098790859999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -189,7 +180,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="opportunities text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msx-7p-ucp">
                                                 <rect key="frame" x="20" y="0.0" width="335" height="44"/>
-                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="CrimsonText-Roman" family="Crimson Text" pointSize="22"/>
                                                 <color key="textColor" red="0.017969632950000002" green="0.35247328369999997" blue="0.0043098790859999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -246,7 +237,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Je-fX-Cha" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O50-r4-NG4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="O50-r4-NG4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
