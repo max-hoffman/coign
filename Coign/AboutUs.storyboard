@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,17 +22,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wh-qU-QyT">
-                                <rect key="frame" x="257" y="289" width="87" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fve-pl-POW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MX7-Qu-6aD">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nL-F2-4fV">
+                                                <rect key="frame" x="0.0" y="15" width="375" height="120.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <state key="normal" title="Mission">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="viewSelectedWithSender:" destination="43W-33-Gzp" eventType="touchUpInside" id="qmn-hP-u4I"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view alpha="0.45000000000000001" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bl0-O1-faH">
+                                        <rect key="frame" x="0.0" y="151" width="375" height="150.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSi-Un-9oj">
+                                                <rect key="frame" x="0.0" y="15" width="375" height="120.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <state key="normal" title="Features">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="viewSelectedWithSender:" destination="43W-33-Gzp" eventType="touchUpInside" id="Ewv-nA-1Pc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.017969632948973295" green="0.35247328365647668" blue="0.0043098790855641313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efD-IK-QQQ">
+                                        <rect key="frame" x="0.0" y="301.5" width="375" height="151"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfQ-2h-XSa">
+                                                <rect key="frame" x="0.0" y="14.5" width="375" height="120.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <state key="normal" title="Team">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="viewSelectedWithSender:" destination="43W-33-Gzp" eventType="touchUpInside" id="Mdi-pS-zTz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view alpha="0.45000000000000001" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHP-fJ-wRs">
+                                        <rect key="frame" x="0.0" y="452.5" width="375" height="150.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNo-zd-dkz">
+                                                <rect key="frame" x="0.0" y="14.5" width="375" height="120.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <state key="normal" title="Opportunities">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="viewSelectedWithSender:" destination="43W-33-Gzp" eventType="touchUpInside" id="xgT-A3-enQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.017969632948973295" green="0.35247328365647668" blue="0.0043098790855641313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7Wh-qU-QyT" firstAttribute="centerX" secondItem="eIm-gA-ojs" secondAttribute="centerX" id="K3I-Ja-dDA"/>
-                            <constraint firstItem="7Wh-qU-QyT" firstAttribute="centerY" secondItem="eIm-gA-ojs" secondAttribute="centerY" id="qYa-PF-PYm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fve-pl-POW" secondAttribute="trailing" constant="-16" id="X2G-sy-Mfd"/>
+                            <constraint firstItem="MkF-qo-vpR" firstAttribute="top" secondItem="fve-pl-POW" secondAttribute="bottom" id="m2C-7E-9wx"/>
+                            <constraint firstItem="fve-pl-POW" firstAttribute="leading" secondItem="eIm-gA-ojs" secondAttribute="leadingMargin" constant="-16" id="opV-IL-1Gl"/>
+                            <constraint firstItem="fve-pl-POW" firstAttribute="top" secondItem="vys-Gr-89W" secondAttribute="bottom" id="png-xX-O2l"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="inI-Sy-afz">
@@ -39,11 +109,20 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="Ode-Mz-ys0" id="DXU-Fs-G5U"/>
+                        <outletCollection property="aboutViews" destination="MX7-Qu-6aD" collectionClass="NSMutableArray" id="9r2-Dd-Ken"/>
+                        <outletCollection property="aboutViews" destination="Bl0-O1-faH" collectionClass="NSMutableArray" id="oAD-wV-9vF"/>
+                        <outletCollection property="aboutViews" destination="efD-IK-QQQ" collectionClass="NSMutableArray" id="jdT-ov-YFB"/>
+                        <outletCollection property="aboutViews" destination="BHP-fJ-wRs" collectionClass="NSMutableArray" id="IoP-UT-BdY"/>
+                        <outletCollection property="aboutButtons" destination="0nL-F2-4fV" collectionClass="NSMutableArray" id="uNw-A9-2am"/>
+                        <outletCollection property="aboutButtons" destination="DSi-Un-9oj" collectionClass="NSMutableArray" id="66Y-RZ-ook"/>
+                        <outletCollection property="aboutButtons" destination="EfQ-2h-XSa" collectionClass="NSMutableArray" id="4rI-Gg-PrP"/>
+                        <outletCollection property="aboutButtons" destination="BNo-zd-dkz" collectionClass="NSMutableArray" id="EJi-DC-qw5"/>
+                        <outletCollection property="aboutButtons" destination="0nL-F2-4fV" collectionClass="NSMutableArray" id="dqo-6a-nd9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59P-EO-5TR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6984" y="1613"/>
+            <point key="canvasLocation" x="6983.1999999999998" y="1611.5442278860571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eK7-72-2VO">

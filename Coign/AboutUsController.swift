@@ -12,9 +12,43 @@ class AboutUsController: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
+    @IBOutlet var aboutViews: [UIView]!
+    
+    @IBOutlet var aboutButtons: [UIButton]!
+
+    @IBAction func viewSelected(sender: UIButton) {
+        if let index = aboutButtons.index(of: sender) {
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                
+                if self.aboutViews[0].isHidden || self.aboutViews[1].isHidden {
+                    self.aboutViews.forEach {
+                        $0.isHidden = false
+//                        ($0.viewWithTag(1) as! UILabel).text = ""
+                    }
+                    self.aboutButtons.forEach {
+                        $0.isHidden = false
+                    }
+                }
+                else {
+                    self.aboutViews.forEach {
+                        $0.isHidden = true
+                    }
+                    self.aboutButtons.forEach {
+                        $0.isHidden = true
+                    }
+                    self.aboutViews[index].isHidden = false
+                    self.aboutButtons[index].isHidden = false
+//                    (self.aboutViews[index].viewWithTag(1) as! UILabel).text = "practice"
+                }
+
+            })
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //nav bar for reveal view controller
         connectRevealVC()
     }
@@ -23,16 +57,6 @@ class AboutUsController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
