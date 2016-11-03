@@ -23,6 +23,8 @@
 		E259EB691DA6AC1D00EADC4C /* FirTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB681DA6AC1D00EADC4C /* FirTree.swift */; };
 		E28C6BDB1D8DD7180020EAA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */; };
 		E2A04A8B1DCA63110082EF1E /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A04A8A1DCA63110082EF1E /* TabController.swift */; };
+		E2A04AAA1DCBC4780082EF1E /* Amiri-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A04AA81DCBC4780082EF1E /* Amiri-Bold.ttf */; };
+		E2A04AAB1DCBC4780082EF1E /* Amiri-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A04AA91DCBC4780082EF1E /* Amiri-Regular.ttf */; };
 		E2A8C9441DC52B0200C0DDDB /* UserSetupExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */; };
 		E2A8C9461DC52BCA00C0DDDB /* LoginExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8C9451DC52BCA00C0DDDB /* LoginExtensions.swift */; };
 		E2C397EA1D850220000D35F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */; };
@@ -93,6 +95,11 @@
 		E259EB681DA6AC1D00EADC4C /* FirTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirTree.swift; sourceTree = "<group>"; };
 		E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2A04A8A1DCA63110082EF1E /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		E2A04AA51DCBC2AC0082EF1E /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		E2A04AA61DCBC2AC0082EF1E /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		E2A04AA71DCBC2AC0082EF1E /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		E2A04AA81DCBC4780082EF1E /* Amiri-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amiri-Bold.ttf"; sourceTree = "<group>"; };
+		E2A04AA91DCBC4780082EF1E /* Amiri-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amiri-Regular.ttf"; sourceTree = "<group>"; };
 		E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetupExtensions.swift; sourceTree = "<group>"; };
 		E2A8C9451DC52BCA00C0DDDB /* LoginExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginExtensions.swift; sourceTree = "<group>"; };
 		E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -269,6 +276,7 @@
 		E259EB601DA1562400EADC4C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E2A04A8C1DCBBE260082EF1E /* Fonts */,
 				E20163E21D7B2F7100949826 /* AppDelegate.swift */,
 				E20163EC1D7B2F7100949826 /* Assets.xcassets */,
 				E20163F11D7B2F7100949826 /* Info.plist */,
@@ -288,6 +296,19 @@
 				E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		E2A04A8C1DCBBE260082EF1E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E2A04AA51DCBC2AC0082EF1E /* Lato-Bold.ttf */,
+				E2A04AA61DCBC2AC0082EF1E /* Lato-Light.ttf */,
+				E2A04AA71DCBC2AC0082EF1E /* Lato-Regular.ttf */,
+				E2A04AA81DCBC4780082EF1E /* Amiri-Bold.ttf */,
+				E2A04AA91DCBC4780082EF1E /* Amiri-Regular.ttf */,
+			);
+			name = Fonts;
+			path = Cormorant_Garamond;
 			sourceTree = "<group>";
 		};
 		E2C398041D85CDB3000D35F4 /* Main Menu */ = {
@@ -476,6 +497,8 @@
 				E2C397EC1D850D8D000D35F4 /* Login.storyboard in Resources */,
 				E20163ED1D7B2F7100949826 /* Assets.xcassets in Resources */,
 				E2C397EA1D850220000D35F4 /* LaunchScreen.storyboard in Resources */,
+				E2A04AAA1DCBC4780082EF1E /* Amiri-Bold.ttf in Resources */,
+				E2A04AAB1DCBC4780082EF1E /* Amiri-Regular.ttf in Resources */,
 				E2C397F91D85CB69000D35F4 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

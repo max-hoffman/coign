@@ -12,7 +12,7 @@
         <!--Home-->
         <scene sceneID="XsZ-Hq-3Iy">
             <objects>
-                <viewController storyboardIdentifier="MainMenu" title="Home" hidesBottomBarWhenPushed="YES" id="VyG-g7-eoE" customClass="MainMenuController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenu" title="Home" id="VyG-g7-eoE" customClass="MainMenuController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hxc-g8-HSu"/>
                         <viewControllerLayoutGuide type="bottom" id="8Fz-Tw-zF3"/>

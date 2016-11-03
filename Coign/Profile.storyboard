@@ -12,7 +12,7 @@
         <!--Profile-->
         <scene sceneID="oiY-6i-rlv">
             <objects>
-                <viewController storyboardIdentifier="User Profile" title="Profile" hidesBottomBarWhenPushed="YES" id="pQ7-qK-PG4" customClass="ProfileController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="User Profile" title="Profile" id="pQ7-qK-PG4" customClass="ProfileController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a8Y-em-CPf"/>
                         <viewControllerLayoutGuide type="bottom" id="bGg-Kd-eaR"/>
@@ -50,7 +50,7 @@
             <objects>
                 <navigationController storyboardIdentifier="UINavigationController-8I6-m6-oCQ" title="Profile NC" automaticallyAdjustsScrollViewInsets="NO" id="8I6-m6-oCQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cNg-Sd-e1N">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cNg-Sd-e1N">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
