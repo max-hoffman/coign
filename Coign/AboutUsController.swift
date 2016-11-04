@@ -41,32 +41,46 @@ class AboutUsController: UIViewController {
     
     @IBAction func viewSelected(sender: UIButton) {
         if let index = aboutButtons.index(of: sender) {
+            if index == 4 {
+                let faqStoryboard = UIStoryboard.init(name: Storyboard.Settings.rawValue, bundle: nil)
+                let faqVC = faqStoryboard.instantiateViewController(withIdentifier: ViewController.FAQ.rawValue) as! FAQController
+                self.navigationController?.pushViewController(faqVC, animated: true)
+            }
+                
             
             //if the button's text is currently showing
-            if !self.textViews[index].isHidden {
-                
-                //hide text, show buttons
-                self.textViews[index].isHidden = true
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.aboutViews.forEach {
-                        $0.isHidden = false
-                    }
-                })
+            else if !self.textViews[index].isHidden {
+                expandViewToHideDetail(index: index)
             }
-            else { //button was selected for text showing
-                UIView.animate(withDuration: 0.3, animations: {
-                    
-                    //hide buttons
-                    self.aboutViews.forEach {
-                        $0.isHidden = true
-                    }
-                    
-                    //show only the selected button and text
-                    self.textViews[index].isHidden = false
-                    self.aboutViews[index].isHidden = false
-                })
+            else {
+                collapseViewToShowDetail(index: index)
             }
         }
+    }
+    
+    private func collapseViewToShowDetail(index: Array<UIButton>.Index) {
+        UIView.animate(withDuration: 0.3, animations: {
+            
+            //hide buttons
+            self.aboutViews.forEach {
+                $0.isHidden = true
+            }
+            
+            //show only the selected button and text
+            self.textViews[index].isHidden = false
+            self.aboutViews[index].isHidden = false
+        })
+
+    }
+    
+    private func expandViewToHideDetail(index: Array<UIButton>.Index) {
+        //hide text, show buttons
+        self.textViews[index].isHidden = true
+        UIView.animate(withDuration: 0.3, animations: {
+            self.aboutViews.forEach {
+                $0.isHidden = false
+            }
+        })
     }
     
     override func viewDidLoad() {

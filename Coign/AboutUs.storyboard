@@ -13,15 +13,15 @@
         <array key="CrimsonText-Roman.ttf">
             <string>CrimsonText-Roman</string>
         </array>
-        <array key="Khula-Bold.ttf">
-            <string>Khula-Bold</string>
+        <array key="Khula-SemiBold.ttf">
+            <string>Khula-Semibold</string>
         </array>
     </customFonts>
     <scenes>
-        <!--About Us-->
+        <!--About-->
         <scene sceneID="I6f-w2-sCg">
             <objects>
-                <viewController title="About Us" id="43W-33-Gzp" customClass="AboutUsController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="About" id="43W-33-Gzp" customClass="AboutUsController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vys-Gr-89W"/>
                         <viewControllerLayoutGuide type="bottom" id="MkF-qo-vpR"/>
@@ -34,11 +34,11 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MX7-Qu-6aD">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nL-F2-4fV">
-                                                <rect key="frame" x="20" y="20" width="335" height="44"/>
-                                                <fontDescription key="fontDescription" name="Khula-Bold" family="Khula" pointSize="47"/>
+                                                <rect key="frame" x="20" y="20" width="335" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Khula-Semibold" family="Khula" pointSize="35"/>
                                                 <state key="normal" title="Mission">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -56,10 +56,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDQ-uC-Xhq">
-                                        <rect key="frame" x="0.0" y="84" width="375" height="64"/>
+                                        <rect key="frame" x="0.0" y="74.5" width="375" height="56.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mission text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHF-cM-0i8">
-                                                <rect key="frame" x="20" y="0.0" width="335" height="44"/>
+                                                <rect key="frame" x="20" y="0.0" width="335" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="CrimsonText-Roman" family="Crimson Text" pointSize="22"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -74,11 +74,11 @@
                                         </constraints>
                                     </view>
                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bl0-O1-faH">
-                                        <rect key="frame" x="0.0" y="148" width="375" height="84"/>
+                                        <rect key="frame" x="0.0" y="131" width="375" height="74.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSi-Un-9oj">
-                                                <rect key="frame" x="20" y="20" width="335" height="44"/>
-                                                <fontDescription key="fontDescription" name="Khula-Bold" family="Khula" pointSize="47"/>
+                                                <rect key="frame" x="20" y="20" width="335" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Khula-Semibold" family="Khula" pointSize="35"/>
                                                 <state key="normal" title="Features">
                                                     <color key="titleColor" red="0.017969632950000002" green="0.35247328369999997" blue="0.0043098790859999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -96,10 +96,10 @@
                                         </constraints>
                                     </view>
                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGr-7c-RPa">
-                                        <rect key="frame" x="0.0" y="232" width="375" height="75.5"/>
+                                        <rect key="frame" x="0.0" y="205.5" width="375" height="67"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="features text" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5i-e5-Adu">
-                                                <rect key="frame" x="20" y="0.0" width="335" height="55.5"/>
+                                                <rect key="frame" x="20" y="0.0" width="335" height="47"/>
                                                 <fontDescription key="fontDescription" name="CrimsonText-Roman" family="Crimson Text" pointSize="22"/>
                                                 <color key="textColor" red="0.017969632950000002" green="0.35247328369999997" blue="0.0043098790859999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -114,11 +114,11 @@
                                         </constraints>
                                     </view>
                                     <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efD-IK-QQQ">
-                                        <rect key="frame" x="0.0" y="307.5" width="375" height="78"/>
+                                        <rect key="frame" x="0.0" y="272.5" width="375" height="69"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfQ-2h-XSa">
-                                                <rect key="frame" x="20" y="20" width="335" height="38"/>
-                                                <fontDescription key="fontDescription" name="Khula-Bold" family="Khula" pointSize="47"/>
+                                                <rect key="frame" x="20" y="20" width="335" height="29"/>
+                                                <fontDescription key="fontDescription" name="Khula-Semibold" family="Khula" pointSize="35"/>
                                                 <state key="normal" title="Team">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -136,10 +136,10 @@
                                         </constraints>
                                     </view>
                                     <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Slj-c2-AJu">
-                                        <rect key="frame" x="0.0" y="385.5" width="375" height="75.5"/>
+                                        <rect key="frame" x="0.0" y="341.5" width="375" height="66.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="team text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bP7-mV-6iF">
-                                                <rect key="frame" x="20" y="0.0" width="335" height="55.5"/>
+                                                <rect key="frame" x="20" y="0.0" width="335" height="46.5"/>
                                                 <fontDescription key="fontDescription" name="CrimsonText-Roman" family="Crimson Text" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -154,11 +154,11 @@
                                         </constraints>
                                     </view>
                                     <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHP-fJ-wRs">
-                                        <rect key="frame" x="0.0" y="461" width="375" height="78"/>
+                                        <rect key="frame" x="0.0" y="408" width="375" height="69.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNo-zd-dkz">
-                                                <rect key="frame" x="20" y="20" width="335" height="38"/>
-                                                <fontDescription key="fontDescription" name="Khula-Bold" family="Khula" pointSize="47"/>
+                                                <rect key="frame" x="20" y="20" width="335" height="29.5"/>
+                                                <fontDescription key="fontDescription" name="Khula-Semibold" family="Khula" pointSize="35"/>
                                                 <state key="normal" title="Opportunities">
                                                     <color key="titleColor" red="0.017969632950000002" green="0.35247328369999997" blue="0.0043098790859999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -176,10 +176,10 @@
                                         </constraints>
                                     </view>
                                     <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kBQ-QU-fkG">
-                                        <rect key="frame" x="0.0" y="539" width="375" height="64"/>
+                                        <rect key="frame" x="0.0" y="477.5" width="375" height="56.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="opportunities text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msx-7p-ucp">
-                                                <rect key="frame" x="20" y="0.0" width="335" height="44"/>
+                                                <rect key="frame" x="20" y="0.0" width="335" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="CrimsonText-Roman" family="Crimson Text" pointSize="22"/>
                                                 <color key="textColor" red="0.017969632950000002" green="0.35247328369999997" blue="0.0043098790859999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -191,6 +191,28 @@
                                             <constraint firstAttribute="trailing" secondItem="msx-7p-ucp" secondAttribute="trailing" constant="20" symbolic="YES" id="6tE-iF-udn"/>
                                             <constraint firstItem="msx-7p-ucp" firstAttribute="leading" secondItem="kBQ-QU-fkG" secondAttribute="leading" constant="20" symbolic="YES" id="SXv-bP-jJG"/>
                                             <constraint firstItem="msx-7p-ucp" firstAttribute="top" secondItem="kBQ-QU-fkG" secondAttribute="top" id="Yhj-X9-QMb"/>
+                                        </constraints>
+                                    </view>
+                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zey-gc-gvP">
+                                        <rect key="frame" x="0.0" y="534" width="375" height="69"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NkR-zF-WnJ">
+                                                <rect key="frame" x="20" y="20" width="335" height="29"/>
+                                                <fontDescription key="fontDescription" name="Khula-Semibold" family="Khula" pointSize="35"/>
+                                                <state key="normal" title="FAQs">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="viewSelectedWithSender:" destination="43W-33-Gzp" eventType="touchUpInside" id="u8e-Aa-tyN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="NkR-zF-WnJ" secondAttribute="bottom" constant="20" symbolic="YES" id="GWs-8S-CnP"/>
+                                            <constraint firstAttribute="trailing" secondItem="NkR-zF-WnJ" secondAttribute="trailing" constant="20" symbolic="YES" id="UtB-HT-4kc"/>
+                                            <constraint firstItem="NkR-zF-WnJ" firstAttribute="leading" secondItem="Zey-gc-gvP" secondAttribute="leading" constant="20" symbolic="YES" id="pG9-tU-hIs"/>
+                                            <constraint firstItem="NkR-zF-WnJ" firstAttribute="top" secondItem="Zey-gc-gvP" secondAttribute="top" constant="20" symbolic="YES" id="uEl-ur-eDb"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -217,7 +239,6 @@
                         <outletCollection property="aboutButtons" destination="DSi-Un-9oj" collectionClass="NSMutableArray" id="66Y-RZ-ook"/>
                         <outletCollection property="aboutButtons" destination="EfQ-2h-XSa" collectionClass="NSMutableArray" id="4rI-Gg-PrP"/>
                         <outletCollection property="aboutButtons" destination="BNo-zd-dkz" collectionClass="NSMutableArray" id="EJi-DC-qw5"/>
-                        <outletCollection property="aboutButtons" destination="0nL-F2-4fV" collectionClass="NSMutableArray" id="dqo-6a-nd9"/>
                         <outletCollection property="textLabels" destination="WHF-cM-0i8" collectionClass="NSMutableArray" id="qMg-N2-nAa"/>
                         <outletCollection property="textLabels" destination="U5i-e5-Adu" collectionClass="NSMutableArray" id="uTU-ne-V2M"/>
                         <outletCollection property="textLabels" destination="bP7-mV-6iF" collectionClass="NSMutableArray" id="yuL-1F-dJG"/>
@@ -226,6 +247,8 @@
                         <outletCollection property="textViews" destination="VGr-7c-RPa" collectionClass="NSMutableArray" id="0f6-R0-IRa"/>
                         <outletCollection property="textViews" destination="Slj-c2-AJu" collectionClass="NSMutableArray" id="Hea-ka-1Pi"/>
                         <outletCollection property="textViews" destination="kBQ-QU-fkG" collectionClass="NSMutableArray" id="XRl-H8-1UQ"/>
+                        <outletCollection property="aboutViews" destination="Zey-gc-gvP" collectionClass="NSMutableArray" id="Ia8-8Y-6kA"/>
+                        <outletCollection property="aboutButtons" destination="NkR-zF-WnJ" collectionClass="NSMutableArray" id="4Uy-wa-BgM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59P-EO-5TR" userLabel="First Responder" sceneMemberID="firstResponder"/>
