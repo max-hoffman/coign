@@ -9,7 +9,9 @@
 import UIKit
 
 class CharityPickerController: UIViewController {
+    
 
+    
     //outlets
     @IBOutlet weak var charityPreferencePicker: UIPickerView!
 
@@ -37,6 +39,16 @@ class CharityPickerController: UIViewController {
 
 //MARK: - Picker view extensions
 extension CharityPickerController: UIPickerViewDelegate, UIPickerViewDataSource {
+
+    var charityData: Dictionary<String, Any>? {
+        if let path = Bundle.main.path(forResource: "CharityInfo", ofType: "plist") {
+            return NSDictionary(contentsOfFile: path) as? Dictionary<String, Any>
+        }
+        else{
+            print("error finding CharityInfo.plist")
+            return nil
+        }
+    }
     
     //initialize picker view at the first real entry
     func preparePickerView() {

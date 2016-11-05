@@ -75,11 +75,20 @@
 			<string>Step Up For Students</string>
 		</array>
 		<key>Rating</key>
-		<array/>
+		<array>
+			<integer>4</integer>
+			<integer>4</integer>
+		</array>
 		<key>Mission</key>
-		<array/>
+		<array>
+			<string>Our Mission is the increase and diffusion of knowledge. Our Vision is to shape the future by preserving our heritage, discovering new knowledge, and sharing our resources with the world.</string>
+			<string>Since 2000, Step Up For Students (formerly The Florida School Choice Fund) has been working to empower low-income parents with educational options for their children. The mission of Step Up For Students is to provide legislatively authorized K-12 scholarships and related support to give disadvantaged families the freedom to choose the best learning options for their children. Step Up For Students seeks to spur improvements in the K-12 education system by equipping all of Florida&apos;s parents with the tools to seek the best education for their children through educational option programs - such as the Step Up For Students Corporate Tax Credit Scholarship Program and the Personal Learning Scholarship Account for students with special needs.</string>
+		</array>
 		<key>URL</key>
-		<array/>
+		<array>
+			<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=4474</string>
+			<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=11436</string>
+		</array>
 	</dict>
 	<key>Environment</key>
 	<dict>
@@ -90,11 +99,23 @@
 			<string>Fauna &amp; Flora International, Inc.</string>
 		</array>
 		<key>Rating</key>
-		<array/>
+		<array>
+			<integer>4</integer>
+			<integer>4</integer>
+			<integer>4</integer>
+		</array>
 		<key>Mission</key>
-		<array/>
+		<array>
+			<string>Founded in 1999, the Amazon Conservation Association (ACA) works to conserve the biological diversity of the Amazon. We work to protect biodiversity by studying ecosystems and developing innovative conservation tools to protect land in the region while supporting the livelihoods of local communities. We work by forging ties with governments, nonprofits and people who depend on the rainforests for their livelihood, with the goal of saving rare species and habitats and learning from the land. Scientific research guides our approach, which strives for concrete, measurable achievements.</string>
+			<string>Carbonfund.org is leading the fight against global warming, making it easy and affordable for any individual, business or organization to reduce &amp; offset their climate impact and hasten the transition to a clean energy future. Carbonfund.org achieves its goals through: Climate change education Carbon offsets and reductions Public outreach We encourage everyone to continually strive to reduce their carbon footprint through sensible energy reductions combined with cost-effective carbon offsets to eliminate their overall carbon footprint. Carbonfund.org supports third-party validated renewable energy, energy efficiency and reforestation projects globally that reduce carbon dioxide emissions and the threat of climate change.</string>
+			<string>Fauna &amp; Flora International, Inc. is a nonprofit organization organized and operated exclusively for charitable, scientific and educational purposes, including the conservation and sustainable management of biodiversity throughout the world. Our guiding principle is to maximize our conservation impact by working directly with local conservation leaders to protect threatened species and habitats that require urgent action to ensure their survival. </string>
+		</array>
 		<key>URL</key>
-		<array/>
+		<array>
+			<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=7141</string>
+			<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=12315</string>
+			<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=10635</string>
+		</array>
 	</dict>
 	<key>Health</key>
 	<dict>
@@ -104,11 +125,20 @@
 			<string>Dana-Farber Cancer Institute</string>
 		</array>
 		<key>Rating</key>
-		<array/>
+		<array>
+			<integer>4</integer>
+			<integer>4</integer>
+		</array>
 		<key>Mission</key>
-		<array/>
+		<array>
+			<string>Founded in 1996, the Foundation for the National Institutes of Health (NIH) fosters public health through scientific discovery, translational research, and the dissemination of research results through specially-configured, high-impact public-private partnerships consistent with the priorities of the NIH. The foundation is not only involved in large, ambitious initiatives with potentially high impact on the lives of millions of the world&apos;s citizens, but it also supports smaller focused programs in clinical training and ancillary support programs. With the goals of NIH as its guide, the foundation serves both the public and private sectors, helping them achieve significant breakthroughs in human health in areas of interest that overlap with those of NIH.</string>
+			<string>Founded in 1947, Dana-Farber Cancer Institute provides expert, compassionate care to children and adults with cancer while advancing the understanding, diagnosis, treatment, cure, and prevention of cancer and related diseases. Since 1948, the Jimmy Fund has supported the fight against cancer in children and adults at the Dana-Farber Cancer Institute, helping to raise the chances of survival for cancer patients around the world. The Institute employs about 4,000 people supporting more than 250,000 patient visits a year, is involved in some 700 clinical trials, and is internationally renowned for its blending of research and clinical excellence.</string>
+		</array>
 		<key>URL</key>
-		<array/>
+		<array>
+			<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=6244</string>
+			<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=3597</string>
+		</array>
 	</dict>
 	<key>Human Services</key>
 	<dict>
@@ -137,11 +167,20 @@
 			<string>The Carter Center</string>
 		</array>
 		<key>Rating</key>
-		<array/>
+		<array>
+			<integer>4</integer>
+			<integer>4</integer>
+		</array>
 		<key>Mission</key>
-		<array/>
+		<array>
+			<string>Founded in 1948, Direct Relief is California&apos;s largest international humanitarian nonprofit organization. Direct Relief provides medical assistance to improve the health and lives of people affected by poverty and disaster - at home and throughout the world. Since 2000, Direct Relief has responded to a wide range of urgent and ongoing health emergencies, by providing more than $3.4 billion in essential material resources - medicines, supplies and equipment, including more than $500 million in assistance in the United States.</string>
+			<string>Founded in 1982, the Carter Center, in partnership with Emory University, is guided by a fundamental commitment to human rights and the alleviation of human suffering; it seeks to prevent and resolve conflicts, enhance freedom and democracy, and improve health. While the program agenda may change, The Carter Center is guided by five principles: it emphasizes action and results based on careful research and analysis; it does not duplicate the effective efforts of others; it addresses difficult problems and recognizes the possibility of failure as an acceptable risk; it acts as a neutral in dispute resolution activities; and it believes that people can improve their lives when provided with the necessary skills, knowledge, and access to resources.</string>
+		</array>
 		<key>URL</key>
-		<array/>
+		<array>
+			<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=3626</string>
+			<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=4530</string>
+		</array>
 	</dict>
 	<key>Religion</key>
 	<dict>
@@ -150,86 +189,17 @@
 			<string>The Outreach Foundation</string>
 		</array>
 		<key>Rating</key>
-		<array/>
+		<array>
+			<integer>4</integer>
+		</array>
 		<key>Mission</key>
-		<array/>
+		<array>
+			<string></string>
+		</array>
 		<key>URL</key>
-		<array/>
+		<array>
+			<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=4287</string>
+		</array>
 	</dict>
-	<key>Name</key>
-	<array>
-		<string>default charity:</string>
-		<string>American Red Cross</string>
-		<string>Feeding America</string>
-		<string>Smithsonian Institute</string>
-		<string>City of Hope</string>
-		<string>Dana-Farber Cancer Institute</string>
-		<string>Direct Relief</string>
-		<string>World Vision</string>
-		<string>St. Jude&apos;s Childrens Research Hospital</string>
-		<string>Food For The Poor</string>
-		<string>American Cancer Society</string>
-		<string>The Nature Conservancy</string>
-		<string></string>
-		<string>Step Up For Students</string>
-	</array>
-	<key>Mission</key>
-	<array>
-		<string></string>
-		<string>Since its founding in 1881 by visionary leader Clara Barton, the American Red Cross has been the nation&apos;s premier emergency response organization. We bring shelter, food and comfort to those affected by disasters, large and small. We collect lifesaving donated blood and supply it to patients in need. We provide support to our men and women in military bases around the world, and to the families they leave behind. We train communities in CPR, first aid and other skills that save lives. And we assist our neighbors abroad with critical disaster response, preparedness and disease prevention efforts. We are able to do all this by mobilizing the power of volunteers and the generosity of donors.</string>
-		<string>Feeding America is the nationwide network of 200 food banks that leads the fight against hunger in the United States. Together, we provide food to more than 46 million people through 60,000 food pantries and meal programs in communities across America. Feeding America also supports programs that improve food security among the people we serve; educates the public about the problem of hunger; and advocates for legislation that protects people from going hungry. Individuals, charities, businesses and government all have a role in ending hunger. Donate. Volunteer. Advocate. Educate. Together we can solve hunger.</string>
-		<string>Our Mission is the increase and diffusion of knowledge. Our Vision is to shape the future by preserving our heritage, discovering new knowledge, and sharing our resources with the world.</string>
-		<string>City of Hope is a leading research and treatment center for cancer, diabetes and other life-threatening diseases. Designated as a comprehensive cancer center, the highest recognition bestowed by the National Cancer Institute, City of Hope is also a founding member of the National Comprehensive Cancer Network, with research and treatment protocols that advance care throughout the nation. City of Hope&apos;s main hospital is located in Duarte, Calif., just northeast of Los Angeles, with clinics in Antelope Valley and South Pasadena. It is ranked as one of &quot;America&apos;s Best Hospitals&quot; in cancer by U.S. News &amp; World Report. Founded in 1913, City of Hope is a pioneer in the fields of bone marrow transplantation and genetics.</string>
-		<string>Founded in 1947, Dana-Farber Cancer Institute provides expert, compassionate care to children and adults with cancer while advancing the understanding, diagnosis, treatment, cure, and prevention of cancer and related diseases. Since 1948, the Jimmy Fund has supported the fight against cancer in children and adults at the Dana-Farber Cancer Institute, helping to raise the chances of survival for cancer patients around the world. The Institute employs about 4,000 people supporting more than 250,000 patient visits a year, is involved in some 700 clinical trials, and is internationally renowned for its blending of research and clinical excellence.</string>
-		<string>Founded in 1948, Direct Relief is California&apos;s largest international humanitarian nonprofit organization. Direct Relief provides medical assistance to improve the health and lives of people affected by poverty and disaster - at home and throughout the world. Since 2000, Direct Relief has responded to a wide range of urgent and ongoing health emergencies, by providing more than $3.4 billion in essential material resources - medicines, supplies and equipment, including more than $500 million in assistance in the United States</string>
-		<string></string>
-		<string></string>
-		<string></string>
-	</array>
-	<key>Category</key>
-	<array>
-		<string></string>
-		<string>Human Services</string>
-		<string>Community Development</string>
-		<string>Education</string>
-		<string>Health</string>
-		<string>Health</string>
-		<string>International</string>
-		<string>Human Rights</string>
-		<string>Community Development</string>
-		<string>Animals</string>
-		<string>Environment</string>
-		<string>Religion</string>
-		<string></string>
-		<string>Education</string>
-	</array>
-	<key>Rating</key>
-	<array>
-		<string></string>
-		<string>3</string>
-		<string>4</string>
-		<string>4</string>
-		<string>4</string>
-		<string>4</string>
-		<string>4</string>
-		<string></string>
-		<string></string>
-		<string></string>
-		<string></string>
-	</array>
-	<key>URL</key>
-	<array>
-		<string></string>
-		<string>https://www.charitynavigator.org/index.cfm/index.cfm/bay/index.cfm?bay=search.summary&amp;orgid=3277</string>
-		<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=5271</string>
-		<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=4474</string>
-		<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=7645</string>
-		<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=3597</string>
-		<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=3626</string>
-		<string></string>
-		<string></string>
-		<string></string>
-		<string></string>
-	</array>
 </dict>
 </plist>
