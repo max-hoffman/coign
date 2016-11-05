@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Animals</key>
+	<dict>
+		<key>Name</key>
+		<array>
+			<string>Wildlife Conservation Network</string>
+			<string>Puppies Behind Bars</string>
+		</array>
+		<key>Rating</key>
+		<array>
+			<integer>4</integer>
+			<integer>4</integer>
+		</array>
+		<key>Mission</key>
+		<array>
+			<string>Founded in 2002, Wildlife Conservation Network (WCN) is dedicated to protecting endangered species and preserving their natural habitats. We support innovative strategies for people and wildlife to co-exist and thrive. We partner with independent, community-based conservationists around the world and provide them with the capital and tools they need to develop solutions for human-wildlife coexistence. WCN&apos;s conservationists actively engage local people as effective stewards of their environment and work in a culturally-respectful manner to ensure that conservation skills and values will be passed on to future generations.</string>
+			<string>Puppies Behind Bars (PBB) trains prison inmates to raise service dogs for wounded war veterans and explosive-detection canines for law enforcement. The puppies live in prison with their inmate raisers from the age of 8 weeks to 24 months. Since 1997, PBB has raised more than 900 puppies. Through our Dog Tags program we place service dogs, free of charge, with wounded veterans returning from Iraq and Afghanistan. The dogs learn special commands to help mitigate the effects of post-traumatic stress disorder (PTSD) and TBI (traumatic brain injury). Since our first Dog Tags placement in 2008, we have paired 87 service dogs with wounded veterans in 27 states (as of May &apos;16). We pair approximately 15 more exceptional service dogs with veterans each year. Additionally, more than 400 PBB-trained explosive-detection canines work with law enforcement agencies around the country. The dogs we raise transform the lives of the inmates who train them, and the lives of those they go on to serve.</string>
+		</array>
+		<key>URL</key>
+		<array>
+			<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=11563</string>
+			<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=8403</string>
+		</array>
+	</dict>
+	<key>Civil Rights</key>
+	<dict>
+		<key>Name</key>
+		<array>
+			<string>Equal Justice Institute</string>
+		</array>
+		<key>Rating</key>
+		<array>
+			<integer>4</integer>
+		</array>
+		<key>Mission</key>
+		<array>
+			<string>The Equal Justice Initiative is a private, nonprofit organization that provides legal representation to indigent defendants and prisoners who have been denied fair and just treatment in the legal system. We litigate on behalf of condemned prisoners, juvenile offenders, people wrongly convicted or charged with violent crimes, poor people denied effective representation, and others whose trials are marked by racial bias or prosecutorial misconduct. EJI works with communities that have been marginalized by poverty and discouraged by unequal treatment.</string>
+		</array>
+		<key>URL</key>
+		<array>
+			<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=12756</string>
+		</array>
+	</dict>
+	<key>Community Development</key>
+	<dict>
+		<key>Name</key>
+		<array>
+			<string>Feeding America</string>
+			<string>Hour Women</string>
+		</array>
+		<key>Rating</key>
+		<array>
+			<integer>4</integer>
+			<integer>4</integer>
+		</array>
+		<key>Mission</key>
+		<array>
+			<string>Feeding America is the nationwide network of 200 food banks that leads the fight against hunger in the United States. Together, we provide food to more than 46 million people through 60,000 food pantries and meal programs in communities across America. Feeding America also supports programs that improve food security among the people we serve; educates the public about the problem of hunger; and advocates for legislation that protects people from going hungry. Individuals, charities, businesses and government all have a role in ending hunger. Donate. Volunteer. Advocate. Educate. Together we can solve hunger.</string>
+			<string>Established in 1995, Hour Children is a non-sectarian organization that assists incarcerated women and continues to provide the crucial post-release services that prevent recidivism after their release. Hour Children begins working with women while they are still in prison, bringing their children to visit and offering the mothers advocacy, parenting and domestic violence, support groups and counseling to ease their transition to reunification with their children. Today, Hour Children is a community of five residences, housing 45 families, with children from infancy to 21 years. More than 700 housing alumnae who have successfully transitioned to independent living return for special events and attend monthly support groups. Through our work both in the prison and in the community, Hour Children has assisted over 7,000 families with reunification and re-entry services.</string>
+		</array>
+		<key>URL</key>
+		<array>
+			<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=5271</string>
+			<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=6750</string>
+		</array>
+	</dict>
+	<key>Education</key>
+	<dict>
+		<key>Name</key>
+		<array>
+			<string>Smithsonian Institute</string>
+			<string>Step Up For Students</string>
+		</array>
+		<key>Rating</key>
+		<array/>
+		<key>Mission</key>
+		<array/>
+		<key>URL</key>
+		<array/>
+	</dict>
+	<key>Environment</key>
+	<dict>
+		<key>Name</key>
+		<array>
+			<string>Amazon Conservation Association</string>
+			<string>Carbonfund.org</string>
+			<string>Fauna &amp; Flora International, Inc.</string>
+		</array>
+		<key>Rating</key>
+		<array/>
+		<key>Mission</key>
+		<array/>
+		<key>URL</key>
+		<array/>
+	</dict>
+	<key>Health</key>
+	<dict>
+		<key>Name</key>
+		<array>
+			<string>Foundation of the NIH</string>
+			<string>Dana-Farber Cancer Institute</string>
+		</array>
+		<key>Rating</key>
+		<array/>
+		<key>Mission</key>
+		<array/>
+		<key>URL</key>
+		<array/>
+	</dict>
+	<key>Human Services</key>
+	<dict>
+		<key>Name</key>
+		<array>
+			<string>Red Cross</string>
+		</array>
+		<key>Rating</key>
+		<array>
+			<integer>3</integer>
+		</array>
+		<key>Mission</key>
+		<array>
+			<string>Since its founding in 1881 by visionary leader Clara Barton, the American Red Cross has been the nation&apos;s premier emergency response organization. We bring shelter, food and comfort to those affected by disasters, large and small. We collect lifesaving donated blood and supply it to patients in need. We provide support to our men and women in military bases around the world, and to the families they leave behind. We train communities in CPR, first aid and other skills that save lives. And we assist our neighbors abroad with critical disaster response, preparedness and disease prevention efforts. We are able to do all this by mobilizing the power of volunteers and the generosity of donors.</string>
+		</array>
+		<key>URL</key>
+		<array>
+			<string>https://www.charitynavigator.org/index.cfm/index.cfm/bay/index.cfm?bay=search.summary&amp;orgid=3277</string>
+		</array>
+	</dict>
+	<key>International</key>
+	<dict>
+		<key>Name</key>
+		<array>
+			<string>Direct Relief</string>
+			<string>The Carter Center</string>
+		</array>
+		<key>Rating</key>
+		<array/>
+		<key>Mission</key>
+		<array/>
+		<key>URL</key>
+		<array/>
+	</dict>
+	<key>Religion</key>
+	<dict>
+		<key>Name</key>
+		<array>
+			<string>The Outreach Foundation</string>
+		</array>
+		<key>Rating</key>
+		<array/>
+		<key>Mission</key>
+		<array/>
+		<key>URL</key>
+		<array/>
+	</dict>
+	<key>Name</key>
+	<array>
+		<string>default charity:</string>
+		<string>American Red Cross</string>
+		<string>Feeding America</string>
+		<string>Smithsonian Institute</string>
+		<string>City of Hope</string>
+		<string>Dana-Farber Cancer Institute</string>
+		<string>Direct Relief</string>
+		<string>World Vision</string>
+		<string>St. Jude&apos;s Childrens Research Hospital</string>
+		<string>Food For The Poor</string>
+		<string>American Cancer Society</string>
+		<string>The Nature Conservancy</string>
+		<string></string>
+		<string>Step Up For Students</string>
+	</array>
+	<key>Mission</key>
+	<array>
+		<string></string>
+		<string>Since its founding in 1881 by visionary leader Clara Barton, the American Red Cross has been the nation&apos;s premier emergency response organization. We bring shelter, food and comfort to those affected by disasters, large and small. We collect lifesaving donated blood and supply it to patients in need. We provide support to our men and women in military bases around the world, and to the families they leave behind. We train communities in CPR, first aid and other skills that save lives. And we assist our neighbors abroad with critical disaster response, preparedness and disease prevention efforts. We are able to do all this by mobilizing the power of volunteers and the generosity of donors.</string>
+		<string>Feeding America is the nationwide network of 200 food banks that leads the fight against hunger in the United States. Together, we provide food to more than 46 million people through 60,000 food pantries and meal programs in communities across America. Feeding America also supports programs that improve food security among the people we serve; educates the public about the problem of hunger; and advocates for legislation that protects people from going hungry. Individuals, charities, businesses and government all have a role in ending hunger. Donate. Volunteer. Advocate. Educate. Together we can solve hunger.</string>
+		<string>Our Mission is the increase and diffusion of knowledge. Our Vision is to shape the future by preserving our heritage, discovering new knowledge, and sharing our resources with the world.</string>
+		<string>City of Hope is a leading research and treatment center for cancer, diabetes and other life-threatening diseases. Designated as a comprehensive cancer center, the highest recognition bestowed by the National Cancer Institute, City of Hope is also a founding member of the National Comprehensive Cancer Network, with research and treatment protocols that advance care throughout the nation. City of Hope&apos;s main hospital is located in Duarte, Calif., just northeast of Los Angeles, with clinics in Antelope Valley and South Pasadena. It is ranked as one of &quot;America&apos;s Best Hospitals&quot; in cancer by U.S. News &amp; World Report. Founded in 1913, City of Hope is a pioneer in the fields of bone marrow transplantation and genetics.</string>
+		<string>Founded in 1947, Dana-Farber Cancer Institute provides expert, compassionate care to children and adults with cancer while advancing the understanding, diagnosis, treatment, cure, and prevention of cancer and related diseases. Since 1948, the Jimmy Fund has supported the fight against cancer in children and adults at the Dana-Farber Cancer Institute, helping to raise the chances of survival for cancer patients around the world. The Institute employs about 4,000 people supporting more than 250,000 patient visits a year, is involved in some 700 clinical trials, and is internationally renowned for its blending of research and clinical excellence.</string>
+		<string>Founded in 1948, Direct Relief is California&apos;s largest international humanitarian nonprofit organization. Direct Relief provides medical assistance to improve the health and lives of people affected by poverty and disaster - at home and throughout the world. Since 2000, Direct Relief has responded to a wide range of urgent and ongoing health emergencies, by providing more than $3.4 billion in essential material resources - medicines, supplies and equipment, including more than $500 million in assistance in the United States</string>
+		<string></string>
+		<string></string>
+		<string></string>
+	</array>
+	<key>Category</key>
+	<array>
+		<string></string>
+		<string>Human Services</string>
+		<string>Community Development</string>
+		<string>Education</string>
+		<string>Health</string>
+		<string>Health</string>
+		<string>International</string>
+		<string>Human Rights</string>
+		<string>Community Development</string>
+		<string>Animals</string>
+		<string>Environment</string>
+		<string>Religion</string>
+		<string></string>
+		<string>Education</string>
+	</array>
+	<key>Rating</key>
+	<array>
+		<string></string>
+		<string>3</string>
+		<string>4</string>
+		<string>4</string>
+		<string>4</string>
+		<string>4</string>
+		<string>4</string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+	</array>
+	<key>URL</key>
+	<array>
+		<string></string>
+		<string>https://www.charitynavigator.org/index.cfm/index.cfm/bay/index.cfm?bay=search.summary&amp;orgid=3277</string>
+		<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=5271</string>
+		<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=4474</string>
+		<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=7645</string>
+		<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=3597</string>
+		<string>https://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=3626</string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+	</array>
+</dict>
+</plist>

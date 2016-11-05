@@ -9,6 +9,14 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="CrimsonText-Roman.ttf">
+            <string>CrimsonText-Roman</string>
+        </array>
+        <array key="Khula-Bold.ttf">
+            <string>Khula-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Settings-->
         <scene sceneID="AiF-bg-AUD">
@@ -443,34 +451,48 @@
         <scene sceneID="rim-yk-CrF">
             <objects>
                 <tableViewController storyboardIdentifier="FAQ" title="FAQ" id="1Mg-zr-T2h" customClass="FAQController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="UAk-iG-ZCx">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="293" sectionHeaderHeight="28" sectionFooterHeight="28" id="UAk-iG-ZCx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.017969632950000002" green="0.35247328369999997" blue="0.0043098790859999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ZDx-6o-bEj" detailTextLabel="U8c-K5-fuT" style="IBUITableViewCellStyleValue1" id="fEd-vE-LdS">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="faq cell" rowHeight="293" id="fEd-vE-LdS" customClass="FAQCell" customModule="Coign" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="293"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fEd-vE-LdS" id="BHt-7e-UOD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="292"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZDx-6o-bEj">
-                                            <rect key="frame" x="15" y="11" width="34" height="21"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U8c-K5-fuT">
-                                            <rect key="frame" x="301" y="11" width="59" height="21"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="250" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YIP-7z-evz">
+                                            <rect key="frame" x="23" y="23" width="329" height="246.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Question" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9T-c1-XdQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="329" height="221.5"/>
+                                                    <fontDescription key="fontDescription" name="Khula-Bold" family="Khula" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDM-mG-s9Y">
+                                                    <rect key="frame" x="0.0" y="221.5" width="329" height="25"/>
+                                                    <fontDescription key="fontDescription" name="CrimsonText-Roman" family="Crimson Text" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="YIP-7z-evz" firstAttribute="top" secondItem="BHt-7e-UOD" secondAttribute="topMargin" constant="15" id="CmQ-ms-Yhp"/>
+                                        <constraint firstItem="YIP-7z-evz" firstAttribute="leading" secondItem="BHt-7e-UOD" secondAttribute="leadingMargin" constant="15" id="cbg-7d-Y3i"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="YIP-7z-evz" secondAttribute="trailing" constant="15" id="i0c-I0-5SR"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="YIP-7z-evz" secondAttribute="bottom" constant="15" id="l8F-3e-d1R"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="answer" destination="kDM-mG-s9Y" id="YP0-aE-dA8"/>
+                                    <outlet property="question" destination="F9T-c1-XdQ" id="uyu-lO-u4o"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -481,7 +503,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ttz-vm-iu0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5018" y="2306"/>
+            <point key="canvasLocation" x="5016.8000000000002" y="2305.9970014992505"/>
         </scene>
         <!--Setting Detail Controller-->
         <scene sceneID="aU0-ha-I3z">

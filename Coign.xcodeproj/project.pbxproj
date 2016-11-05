@@ -16,6 +16,7 @@
 		E20163FB1D7B2F7100949826 /* CoignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20163FA1D7B2F7100949826 /* CoignTests.swift */; };
 		E20164061D7B2F7100949826 /* CoignUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20164051D7B2F7100949826 /* CoignUITests.swift */; };
 		E20164221D7B653A00949826 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20164201D7B653A00949826 /* MainApp.storyboard */; };
+		E20AF7661DCD117A00E6CB09 /* FAQCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20AF7651DCD117A00E6CB09 /* FAQCell.swift */; };
 		E24214971DA8966400A5B080 /* VCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24214961DA8966400A5B080 /* VCExtensions.swift */; };
 		E24F77EA1D84FBB000936AAE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24F77E91D84FBB000936AAE /* SWRevealViewController.m */; };
 		E25125A61DA9D92700AA4B09 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25125A51DA9D92700AA4B09 /* Constants.swift */; };
@@ -23,8 +24,6 @@
 		E259EB691DA6AC1D00EADC4C /* FirTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB681DA6AC1D00EADC4C /* FirTree.swift */; };
 		E28C6BDB1D8DD7180020EAA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */; };
 		E2A04A8B1DCA63110082EF1E /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A04A8A1DCA63110082EF1E /* TabController.swift */; };
-		E2A04AAA1DCBC4780082EF1E /* Amiri-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A04AA81DCBC4780082EF1E /* Amiri-Bold.ttf */; };
-		E2A04AAB1DCBC4780082EF1E /* Amiri-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A04AA91DCBC4780082EF1E /* Amiri-Regular.ttf */; };
 		E2A04AAE1DCBE47E0082EF1E /* CrimsonText-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A04AAC1DCBE47E0082EF1E /* CrimsonText-Roman.ttf */; };
 		E2A04AAF1DCBE47E0082EF1E /* CrimsonText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A04AAD1DCBE47E0082EF1E /* CrimsonText-Semibold.ttf */; };
 		E2A04AB31DCBE4920082EF1E /* Khula-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A04AB01DCBE4920082EF1E /* Khula-Bold.ttf */; };
@@ -32,6 +31,8 @@
 		E2A04AB51DCBE4920082EF1E /* Khula-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A04AB21DCBE4920082EF1E /* Khula-SemiBold.ttf */; };
 		E2A04AB71DCC23250082EF1E /* FAQController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A04AB61DCC23250082EF1E /* FAQController.swift */; };
 		E2A04AB91DCC2FB90082EF1E /* FAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A04AB81DCC2FB90082EF1E /* FAQ.swift */; };
+		E2A04ABB1DCCE7990082EF1E /* CharityInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2A04ABA1DCCE7990082EF1E /* CharityInfo.plist */; };
+		E2A04AC11DCD06180082EF1E /* FAQ.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2A04AC01DCD06180082EF1E /* FAQ.plist */; };
 		E2A8C9441DC52B0200C0DDDB /* UserSetupExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */; };
 		E2A8C9461DC52BCA00C0DDDB /* LoginExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8C9451DC52BCA00C0DDDB /* LoginExtensions.swift */; };
 		E2C397EA1D850220000D35F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */; };
@@ -93,6 +94,7 @@
 		E20164051D7B2F7100949826 /* CoignUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoignUITests.swift; sourceTree = "<group>"; };
 		E20164071D7B2F7100949826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E20164211D7B653A00949826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainApp.storyboard; sourceTree = "<group>"; };
+		E20AF7651DCD117A00E6CB09 /* FAQCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQCell.swift; sourceTree = "<group>"; };
 		E24214961DA8966400A5B080 /* VCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCExtensions.swift; sourceTree = "<group>"; };
 		E24F77E81D84FBB000936AAE /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		E24F77E91D84FBB000936AAE /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -114,6 +116,8 @@
 		E2A04AB21DCBE4920082EF1E /* Khula-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Khula-SemiBold.ttf"; sourceTree = "<group>"; };
 		E2A04AB61DCC23250082EF1E /* FAQController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQController.swift; sourceTree = "<group>"; };
 		E2A04AB81DCC2FB90082EF1E /* FAQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
+		E2A04ABA1DCCE7990082EF1E /* CharityInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CharityInfo.plist; sourceTree = "<group>"; };
+		E2A04AC01DCD06180082EF1E /* FAQ.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FAQ.plist; sourceTree = "<group>"; };
 		E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetupExtensions.swift; sourceTree = "<group>"; };
 		E2A8C9451DC52BCA00C0DDDB /* LoginExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginExtensions.swift; sourceTree = "<group>"; };
 		E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -303,6 +307,8 @@
 		E259EB611DA19C3C00EADC4C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E2A04ABA1DCCE7990082EF1E /* CharityInfo.plist */,
+				E2A04AC01DCD06180082EF1E /* FAQ.plist */,
 				E259EB661DA55EDC00EADC4C /* DateExtensions.swift */,
 				E2A04AB81DCC2FB90082EF1E /* FAQ.swift */,
 				E25125A51DA9D92700AA4B09 /* Constants.swift */,
@@ -373,6 +379,7 @@
 			children = (
 				E2C397F71D85CB69000D35F4 /* Settings.storyboard */,
 				E2A04AB61DCC23250082EF1E /* FAQController.swift */,
+				E20AF7651DCD117A00E6CB09 /* FAQCell.swift */,
 				E2C397EF1D85B9B4000D35F4 /* SettingsController.swift */,
 				E2F0A8DA1DC3AA7800ABDC4F /* CharityPickerController.swift */,
 				E2F0A8D61DC27E4A00ABDC4F /* SettingDetailController.swift */,
@@ -514,6 +521,8 @@
 				E2A04AB41DCBE4920082EF1E /* Khula-Regular.ttf in Resources */,
 				E2C397FB1D85CBB0000D35F4 /* Profile.storyboard in Resources */,
 				E2C397FE1D85CBE3000D35F4 /* MainMenu.storyboard in Resources */,
+				E2A04ABB1DCCE7990082EF1E /* CharityInfo.plist in Resources */,
+				E2A04AC11DCD06180082EF1E /* FAQ.plist in Resources */,
 				E20164221D7B653A00949826 /* MainApp.storyboard in Resources */,
 				E2A04AAF1DCBE47E0082EF1E /* CrimsonText-Semibold.ttf in Resources */,
 				E2C398031D85CD24000D35F4 /* AboutUs.storyboard in Resources */,
@@ -523,8 +532,6 @@
 				E2A04AB31DCBE4920082EF1E /* Khula-Bold.ttf in Resources */,
 				E20163ED1D7B2F7100949826 /* Assets.xcassets in Resources */,
 				E2C397EA1D850220000D35F4 /* LaunchScreen.storyboard in Resources */,
-				E2A04AAA1DCBC4780082EF1E /* Amiri-Bold.ttf in Resources */,
-				E2A04AAB1DCBC4780082EF1E /* Amiri-Regular.ttf in Resources */,
 				E2C397F91D85CB69000D35F4 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -696,6 +703,7 @@
 				E25125A61DA9D92700AA4B09 /* Constants.swift in Sources */,
 				E2A04AB71DCC23250082EF1E /* FAQController.swift in Sources */,
 				E24F77EA1D84FBB000936AAE /* SWRevealViewController.m in Sources */,
+				E20AF7661DCD117A00E6CB09 /* FAQCell.swift in Sources */,
 				E2F0A8DB1DC3AA7800ABDC4F /* CharityPickerController.swift in Sources */,
 				E2D877201D8EFEDC00BAAB46 /* SideViewTableController.swift in Sources */,
 				E259EB691DA6AC1D00EADC4C /* FirTree.swift in Sources */,
