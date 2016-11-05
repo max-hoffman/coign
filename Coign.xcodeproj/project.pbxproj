@@ -30,7 +30,6 @@
 		E2A04AB41DCBE4920082EF1E /* Khula-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A04AB11DCBE4920082EF1E /* Khula-Regular.ttf */; };
 		E2A04AB51DCBE4920082EF1E /* Khula-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A04AB21DCBE4920082EF1E /* Khula-SemiBold.ttf */; };
 		E2A04AB71DCC23250082EF1E /* FAQController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A04AB61DCC23250082EF1E /* FAQController.swift */; };
-		E2A04AB91DCC2FB90082EF1E /* FAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A04AB81DCC2FB90082EF1E /* FAQ.swift */; };
 		E2A04ABB1DCCE7990082EF1E /* CharityInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2A04ABA1DCCE7990082EF1E /* CharityInfo.plist */; };
 		E2A04AC11DCD06180082EF1E /* FAQ.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2A04AC01DCD06180082EF1E /* FAQ.plist */; };
 		E2A8C9441DC52B0200C0DDDB /* UserSetupExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */; };
@@ -115,7 +114,6 @@
 		E2A04AB11DCBE4920082EF1E /* Khula-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Khula-Regular.ttf"; sourceTree = "<group>"; };
 		E2A04AB21DCBE4920082EF1E /* Khula-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Khula-SemiBold.ttf"; sourceTree = "<group>"; };
 		E2A04AB61DCC23250082EF1E /* FAQController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQController.swift; sourceTree = "<group>"; };
-		E2A04AB81DCC2FB90082EF1E /* FAQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
 		E2A04ABA1DCCE7990082EF1E /* CharityInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CharityInfo.plist; sourceTree = "<group>"; };
 		E2A04AC01DCD06180082EF1E /* FAQ.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FAQ.plist; sourceTree = "<group>"; };
 		E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetupExtensions.swift; sourceTree = "<group>"; };
@@ -259,17 +257,74 @@
 		E20164231D7B65A600949826 /* Main App */ = {
 			isa = PBXGroup;
 			children = (
-				E2C398081D85CDE4000D35F4 /* Settings */,
-				E2C398071D85CDD8000D35F4 /* About Us */,
-				E2C398061D85CDD0000D35F4 /* Profile */,
-				E2C398051D85CDBE000D35F4 /* Donate  */,
-				E2C398041D85CDB3000D35F4 /* Main Menu */,
-				E24F77EC1D84FBFD00936AAE /* Side-bar */,
-				E20164201D7B653A00949826 /* MainApp.storyboard */,
-				E2D8771F1D8EFEDC00BAAB46 /* SideViewTableController.swift */,
-				E2A04A8A1DCA63110082EF1E /* TabController.swift */,
+				E24F77EC1D84FBFD00936AAE /* Overall Organization */,
+				E20AF7681DCE8DA400E6CB09 /* Tab-Bar */,
+				E20AF7691DCE8DD200E6CB09 /* Extras */,
 			);
 			name = "Main App";
+			sourceTree = "<group>";
+		};
+		E20AF7671DCE8D8900E6CB09 /* Charity Info */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Charity Info";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		E20AF7681DCE8DA400E6CB09 /* Tab-Bar */ = {
+			isa = PBXGroup;
+			children = (
+				E2C398061D85CDD0000D35F4 /* Profile */,
+				E2C398051D85CDBE000D35F4 /* Donate  */,
+				E2C398041D85CDB3000D35F4 /* Home Menu */,
+			);
+			name = "Tab-Bar";
+			sourceTree = "<group>";
+		};
+		E20AF7691DCE8DD200E6CB09 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				E2C398071D85CDD8000D35F4 /* About Us */,
+				E2C398081D85CDE4000D35F4 /* Settings */,
+				E20AF7671DCE8D8900E6CB09 /* Charity Info */,
+			);
+			name = Extras;
+			sourceTree = "<group>";
+		};
+		E20AF76A1DCE8E2B00E6CB09 /* Side-view Bridging */ = {
+			isa = PBXGroup;
+			children = (
+				E24F77E81D84FBB000936AAE /* SWRevealViewController.h */,
+				E24F77E91D84FBB000936AAE /* SWRevealViewController.m */,
+			);
+			name = "Side-view Bridging";
+			sourceTree = "<group>";
+		};
+		E20AF76B1DCE8E9700E6CB09 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E259EB681DA6AC1D00EADC4C /* FirTree.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		E20AF76C1DCE8EB000E6CB09 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E259EB661DA55EDC00EADC4C /* DateExtensions.swift */,
+				E24214961DA8966400A5B080 /* VCExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E20AF76D1DCE8ECB00E6CB09 /* Static Data */ = {
+			isa = PBXGroup;
+			children = (
+				E2A04ABA1DCCE7990082EF1E /* CharityInfo.plist */,
+				E2A04AC01DCD06180082EF1E /* FAQ.plist */,
+			);
+			name = "Static Data";
 			sourceTree = "<group>";
 		};
 		E24F77DB1D7DE41200936AAE /* Login */ = {
@@ -282,13 +337,15 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
-		E24F77EC1D84FBFD00936AAE /* Side-bar */ = {
+		E24F77EC1D84FBFD00936AAE /* Overall Organization */ = {
 			isa = PBXGroup;
 			children = (
-				E24F77E81D84FBB000936AAE /* SWRevealViewController.h */,
-				E24F77E91D84FBB000936AAE /* SWRevealViewController.m */,
+				E20164201D7B653A00949826 /* MainApp.storyboard */,
+				E2D8771F1D8EFEDC00BAAB46 /* SideViewTableController.swift */,
+				E2A04A8A1DCA63110082EF1E /* TabController.swift */,
+				E20AF76A1DCE8E2B00E6CB09 /* Side-view Bridging */,
 			);
-			name = "Side-bar";
+			name = "Overall Organization";
 			sourceTree = "<group>";
 		};
 		E259EB601DA1562400EADC4C /* Supporting Files */ = {
@@ -300,6 +357,7 @@
 				E20163F11D7B2F7100949826 /* Info.plist */,
 				E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */,
 				E24F77EB1D84FBDD00936AAE /* Coign-Bridging-Header.h */,
+				E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -307,14 +365,10 @@
 		E259EB611DA19C3C00EADC4C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E2A04ABA1DCCE7990082EF1E /* CharityInfo.plist */,
-				E2A04AC01DCD06180082EF1E /* FAQ.plist */,
-				E259EB661DA55EDC00EADC4C /* DateExtensions.swift */,
-				E2A04AB81DCC2FB90082EF1E /* FAQ.swift */,
+				E20AF76D1DCE8ECB00E6CB09 /* Static Data */,
 				E25125A51DA9D92700AA4B09 /* Constants.swift */,
-				E259EB681DA6AC1D00EADC4C /* FirTree.swift */,
-				E24214961DA8966400A5B080 /* VCExtensions.swift */,
-				E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */,
+				E20AF76B1DCE8E9700E6CB09 /* Networking */,
+				E20AF76C1DCE8EB000E6CB09 /* Extensions */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -337,14 +391,14 @@
 			path = Cormorant_Garamond;
 			sourceTree = "<group>";
 		};
-		E2C398041D85CDB3000D35F4 /* Main Menu */ = {
+		E2C398041D85CDB3000D35F4 /* Home Menu */ = {
 			isa = PBXGroup;
 			children = (
 				E2C397FC1D85CBE3000D35F4 /* MainMenu.storyboard */,
 				E2C397ED1D85B07E000D35F4 /* MainMenuController.swift */,
 				E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */,
 			);
-			name = "Main Menu";
+			name = "Home Menu";
 			sourceTree = "<group>";
 		};
 		E2C398051D85CDBE000D35F4 /* Donate  */ = {
@@ -707,7 +761,6 @@
 				E2F0A8DB1DC3AA7800ABDC4F /* CharityPickerController.swift in Sources */,
 				E2D877201D8EFEDC00BAAB46 /* SideViewTableController.swift in Sources */,
 				E259EB691DA6AC1D00EADC4C /* FirTree.swift in Sources */,
-				E2A04AB91DCC2FB90082EF1E /* FAQ.swift in Sources */,
 				E2C397EE1D85B07E000D35F4 /* MainMenuController.swift in Sources */,
 				E2C397F61D85C098000D35F4 /* AboutUsController.swift in Sources */,
 				E2C397F41D85BDC3000D35F4 /* DonateController.swift in Sources */,
