@@ -10,26 +10,27 @@ import UIKit
 
 class FAQController: UITableViewController {
     
-    var questions: [String]? = nil
-    var answers: [String]? = nil
+    //MARK: - Properties
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        readPropertyList()
+    var faqData: Dictionary<String, Any>? {
+        if let path = Bundle.main.path(forResource: "FAQ", ofType: "plist") {
+            return NSDictionary(contentsOfFile: path) as? Dictionary<String, Any>
+        } else {
+            return nil
+        }
+    }
     
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    var questions: [String]? {
+        return faqData?["Questions"] as? [String]
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    var answers: [String]? {
+        return faqData?["Answers"] as? [String]
     }
+    
+     // MARK: - Table view methods
 
+    /* Make the cell height dynamic based on the amount of "answer" text. It was also necessary to relax the vertical compression of the dynamic cell in the storyboard. */
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
@@ -38,42 +39,34 @@ class FAQController: UITableViewController {
         return UITableViewAutomaticDimension
     }
     
-    // MARK: - Table view data source
-
+    /* Only one section in FAQs */
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
+    /* Req tableview function; counts number of cells, which will always be the size of our plist array */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return questions?.count ?? 0
     }
 
-    
+    /* Add questions and answers to the cells. The height is automatically dynamic already. */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "faq cell", for: indexPath) as! FAQCell
         
+        //dequeue and format each cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "faq cell", for: indexPath) as! FAQCell
         cell.question.text = questions?[indexPath.row]
         cell.answer.text = answers?[indexPath.row]
-
         return cell
     }
     
-    private func readPropertyList(){
-        
-        guard let path = Bundle.main.path(forResource: "FAQ", ofType: "plist"),
-            let faqData = NSDictionary(contentsOfFile: path) as?
-                Dictionary<String, Any>
-        else {
-            print("error parsing FAQ plist data")
-            return
-        }
-        
-        self.questions = faqData["Questions"] as? [String]
-        self.answers = faqData["Answers"] as? [String]
+    //MARK: - Superclass methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
-
-
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 }

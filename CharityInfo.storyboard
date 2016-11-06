@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KeN-8y-Ppi">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="CrimsonText-Roman.ttf">
+            <string>CrimsonText-Roman</string>
+        </array>
+        <array key="Khula-Bold.ttf">
+            <string>Khula-Bold</string>
+        </array>
+        <array key="Khula-Regular.ttf">
+            <string>Khula-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Categories-->
+        <scene sceneID="bAZ-f1-GNz">
+            <objects>
+                <tableViewController title="Categories" id="wA1-dE-lKC" customClass="CharityInfoController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="xfl-ZA-L8e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="hbp-n3-bsJ">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="LK0-X4-aXK" rowHeight="65" style="IBUITableViewCellStyleDefault" id="bsI-qW-p30">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bsI-qW-p30" id="oWx-ig-GFo">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Animals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LK0-X4-aXK">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="32M-kV-3hv" rowHeight="65" style="IBUITableViewCellStyleDefault" id="L02-D2-R4t" customClass="CharityCategoryCell" customModule="Coign" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="65" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L02-D2-R4t" id="Lk3-Oo-v5H">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Civil Rights" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="32M-kV-3hv">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="Kp7-lT-8Fx" rowHeight="65" style="IBUITableViewCellStyleDefault" id="176-ob-NhI" customClass="CharityCategoryCell" customModule="Coign" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="130" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="176-ob-NhI" id="VHy-hQ-9Qu">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Community Development" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kp7-lT-8Fx">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="ds9-rP-vUU" rowHeight="65" style="IBUITableViewCellStyleDefault" id="740-wX-rjw" customClass="CharityCategoryCell" customModule="Coign" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="195" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="740-wX-rjw" id="gFk-NW-rlQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Education" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ds9-rP-vUU">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="AeY-4W-R0k" rowHeight="65" style="IBUITableViewCellStyleDefault" id="Hnd-YJ-BF1" customClass="CharityCategoryCell" customModule="Coign" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="260" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hnd-YJ-BF1" id="Yqa-Rg-ayD">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Environment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AeY-4W-R0k">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="6pF-jl-bCe" rowHeight="65" style="IBUITableViewCellStyleDefault" id="8JI-QW-Cy5" customClass="CharityCategoryCell" customModule="Coign" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="325" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8JI-QW-Cy5" id="dPh-RJ-Fqb">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Health" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6pF-jl-bCe">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="mCI-EH-yK1" rowHeight="65" style="IBUITableViewCellStyleDefault" id="1Sb-k8-6Y2" customClass="CharityCategoryCell" customModule="Coign" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="390" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Sb-k8-6Y2" id="uQm-To-wO1">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Human Services" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mCI-EH-yK1">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="OMT-Ek-ry1" rowHeight="65" style="IBUITableViewCellStyleDefault" id="AjX-j5-vb7" customClass="CharityCategoryCell" customModule="Coign" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="455" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AjX-j5-vb7" id="aZi-w1-0l5">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="International" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OMT-Ek-ry1">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="Kcf-jn-ZrB" rowHeight="65" style="IBUITableViewCellStyleDefault" id="mIH-jf-p1N" customClass="CharityCategoryCell" customModule="Coign" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="520" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mIH-jf-p1N" id="WWw-Pa-Mcq">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Religion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kcf-jn-ZrB">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="delegate" destination="wA1-dE-lKC" id="fM6-Zt-FaL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="W1N-5u-JUl"/>
+                    <connections>
+                        <segue destination="TMj-ow-T4h" kind="show" identifier="show charity category segue" id="yEO-PT-tHX"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W0K-yZ-gTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922.39999999999998" y="-133.5832083958021"/>
+        </scene>
+        <!--Charity Category Controller-->
+        <scene sceneID="E8w-jQ-5Ry">
+            <objects>
+                <tableViewController id="TMj-ow-T4h" customClass="CharityCategoryController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="28" sectionFooterHeight="28" id="dD7-2C-Cmu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="charity cell" textLabel="nXq-sN-obE" rowHeight="76" style="IBUITableViewCellStyleDefault" id="r2E-XN-IBg">
+                                <rect key="frame" x="0.0" y="28" width="375" height="76"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r2E-XN-IBg" id="gFA-QT-Kd7">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Individual Charity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nXq-sN-obE">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TMj-ow-T4h" id="o2L-mK-3Eo"/>
+                            <outlet property="delegate" destination="TMj-ow-T4h" id="Noa-CO-wSs"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="1oz-gp-gYj" kind="show" identifier="show charity detail segue" id="3jh-uc-KIc"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vtB-N4-PG9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1704.8" y="-134.48275862068968"/>
+        </scene>
+        <!--Charity Detail Controller-->
+        <scene sceneID="IXc-Uk-spQ">
+            <objects>
+                <viewController id="1oz-gp-gYj" customClass="CharityDetailController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4R0-fn-dYx"/>
+                        <viewControllerLayoutGuide type="bottom" id="kbH-gl-b3O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jtv-Vy-NDQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="QUB-RS-O4e">
+                                <rect key="frame" x="0.0" y="64" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="nwj-ma-Ke0" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6H8-ly-ZBd">
+                                                <rect key="frame" x="20" y="20" width="335" height="627"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akN-1N-5AG">
+                                                        <rect key="frame" x="125.5" y="0.0" width="84" height="48.5"/>
+                                                        <fontDescription key="fontDescription" name="Khula-Bold" family="Khula" pointSize="30"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="center" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1Ry-XK-j05">
+                                                        <rect key="frame" x="0.0" y="58.5" width="335" height="84"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" image="blue-stars-four" translatesAutoresizingMaskIntoConstraints="NO" id="PWc-sl-zUk">
+                                                                <rect key="frame" x="0.0" y="0.0" width="223" height="84"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsc-HV-FGi">
+                                                                <rect key="frame" x="233" y="0.0" width="102" height="84"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJx-ud-2yj">
+                                                        <rect key="frame" x="136" y="152.5" width="63" height="26"/>
+                                                        <fontDescription key="fontDescription" name="CrimsonText-Roman" family="Crimson Text" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FSL-AY-ash">
+                                                        <rect key="frame" x="66.5" y="188.5" width="202" height="438.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WxM-Th-ilV">
+                                                                <rect key="frame" x="0.0" y="0.0" width="127" height="438.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                                <state key="normal" title="Make default"/>
+                                                                <connections>
+                                                                    <action selector="setDefaultButton:" destination="1oz-gp-gYj" eventType="touchUpInside" id="5xL-Qp-1s4"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVb-So-HBJ">
+                                                                <rect key="frame" x="137" y="0.0" width="65" height="438.5"/>
+                                                                <state key="normal" title="More info"/>
+                                                                <connections>
+                                                                    <action selector="showMoreInfoButton:" destination="1oz-gp-gYj" eventType="touchUpInside" id="qDb-8r-Oh1"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="667" id="1Dc-50-v17"/>
+                                            <constraint firstAttribute="trailing" secondItem="6H8-ly-ZBd" secondAttribute="trailing" constant="20" symbolic="YES" id="2QW-uJ-Bkf"/>
+                                            <constraint firstItem="6H8-ly-ZBd" firstAttribute="top" secondItem="nwj-ma-Ke0" secondAttribute="top" constant="20" symbolic="YES" id="TVX-ge-Kr4"/>
+                                            <constraint firstItem="6H8-ly-ZBd" firstAttribute="leading" secondItem="nwj-ma-Ke0" secondAttribute="leading" constant="20" symbolic="YES" id="Xcv-Oz-s6o"/>
+                                            <constraint firstAttribute="bottom" secondItem="6H8-ly-ZBd" secondAttribute="bottom" constant="20" symbolic="YES" id="iZs-LK-ksy"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="nwj-ma-Ke0" firstAttribute="height" secondItem="QUB-RS-O4e" secondAttribute="height" id="H55-qf-Qia"/>
+                                    <constraint firstAttribute="bottom" secondItem="nwj-ma-Ke0" secondAttribute="bottom" id="KRB-uI-vot"/>
+                                    <constraint firstAttribute="trailing" secondItem="nwj-ma-Ke0" secondAttribute="trailing" id="NBm-yK-olA"/>
+                                    <constraint firstItem="nwj-ma-Ke0" firstAttribute="leading" secondItem="QUB-RS-O4e" secondAttribute="leading" id="qif-6D-t4A"/>
+                                    <constraint firstItem="nwj-ma-Ke0" firstAttribute="top" secondItem="QUB-RS-O4e" secondAttribute="top" id="uZb-uu-vHy"/>
+                                    <constraint firstItem="nwj-ma-Ke0" firstAttribute="width" secondItem="QUB-RS-O4e" secondAttribute="width" id="zTr-tv-5D6"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QUB-RS-O4e" firstAttribute="top" secondItem="4R0-fn-dYx" secondAttribute="bottom" id="9kP-yb-OCb"/>
+                            <constraint firstItem="QUB-RS-O4e" firstAttribute="width" secondItem="Jtv-Vy-NDQ" secondAttribute="width" id="Obe-uU-k7g"/>
+                            <constraint firstItem="QUB-RS-O4e" firstAttribute="height" secondItem="Jtv-Vy-NDQ" secondAttribute="height" id="WzS-WO-P15"/>
+                            <constraint firstItem="QUB-RS-O4e" firstAttribute="leading" secondItem="Jtv-Vy-NDQ" secondAttribute="leading" id="zyT-sL-Xxw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="categoryLabel" destination="vsc-HV-FGi" id="IZk-HW-Lys"/>
+                        <outlet property="missionLabel" destination="DJx-ud-2yj" id="lTj-By-qby"/>
+                        <outlet property="nameLabel" destination="akN-1N-5AG" id="UNq-GS-BYf"/>
+                        <outlet property="ratingImage" destination="PWc-sl-zUk" id="81K-bV-T5y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V4h-QR-T9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2420" y="-134.48275862068968"/>
+        </scene>
+        <!--Charity NC-->
+        <scene sceneID="CfJ-9h-Kat">
+            <objects>
+                <navigationController title="Charity NC" automaticallyAdjustsScrollViewInsets="NO" id="KeN-8y-Ppi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Ma4-B6-Co8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wA1-dE-lKC" kind="relationship" relationship="rootViewController" id="uJ0-mX-P5p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E7e-5P-0jj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-550" y="-188"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="blue-stars-four" width="336" height="84"/>
+    </resources>
+</document>

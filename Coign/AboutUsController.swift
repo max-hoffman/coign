@@ -10,20 +10,15 @@ import UIKit
 
 class AboutUsController: UIViewController {
 
+    //MARK: - Properties
+    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     @IBOutlet var aboutViews: [UIView]!
+    
     @IBOutlet var aboutButtons: [UIButton]!
 
-    //need body views and texts
-    @IBOutlet var textViews: [UIView]! {
-        didSet {
-            textViews.forEach {
-                $0.isHidden = true
-            }
-        }
-    }
-    
+    //set the text for each detail label
     @IBOutlet var textLabels: [UILabel]! {
         didSet {
             textLabels.forEach {
@@ -32,6 +27,16 @@ class AboutUsController: UIViewController {
         }
     }
     
+    //hide the detail views on page load
+    @IBOutlet var textViews: [UIView]! {
+        didSet {
+            textViews.forEach {
+                $0.isHidden = true
+            }
+        }
+    }
+    
+    //TODO: refactor to Strings plist
     let labelDictionary = [
         "mission text" : "At Coign, we strive to make donation and personal finance simple, social and substantial. If you would like to incorporate microdonation in your life by helping communities, thanking friends or claiming coupons, then Coign puts you in a position to take action by helping others.",
         "features text" : "We are currently testing the Beta version of Coign, which allows users to donate individual dollars to a handful of prominent charities. We do encourage users to share their donation messages on social media as a way to encourage others to take action in their own ways. We do not support donations larger than $1.50.",
@@ -39,8 +44,13 @@ class AboutUsController: UIViewController {
         "opportunities text": "Ambitious and talented students with heavy technical backgrounds, who lack risk-aversion, and who are interested in cofounding a startup are welcome to contact our team for more information.",
         ]
     
+    //MARK: - Handle a button press
+    
+    /* One of the buttons was pressed; either show the detail or segue to FAQs */
     @IBAction func viewSelected(sender: UIButton) {
         if let index = aboutButtons.index(of: sender) {
+            
+            //reroute to FAQ section, stay in this navigation controller
             if index == 4 {
                 let faqStoryboard = UIStoryboard.init(name: Storyboard.Settings.rawValue, bundle: nil)
                 let faqVC = faqStoryboard.instantiateViewController(withIdentifier: ViewController.FAQ.rawValue) as! FAQController
@@ -48,16 +58,21 @@ class AboutUsController: UIViewController {
             }
                 
             
-            //if the button's text is currently showing
+            //button was pressed and it's detail is not already showing -> show that detail
             else if !self.textViews[index].isHidden {
                 expandViewToHideDetail(index: index)
             }
-            else {
+            else { //detail was showing -> show all buttons and hide detail
                 collapseViewToShowDetail(index: index)
             }
         }
     }
     
+    //MARK: - Helper methods for this class
+    
+    /*
+     A button was selected, and we want to show only that title and its detail. This hides all of the other views in the stackview, which includes a nice animation.
+     */
     private func collapseViewToShowDetail(index: Array<UIButton>.Index) {
         UIView.animate(withDuration: 0.3, animations: {
             
@@ -73,6 +88,9 @@ class AboutUsController: UIViewController {
 
     }
     
+    /*
+     We want to hide a detail and show the rest of the stack view buttons in the about us section.
+     */
     private func expandViewToHideDetail(index: Array<UIButton>.Index) {
         //hide text, show buttons
         self.textViews[index].isHidden = true
@@ -83,10 +101,9 @@ class AboutUsController: UIViewController {
         })
     }
     
+    //MARK: - Superview methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //nav bar for reveal view controller
         connectRevealVC()
     }
 
@@ -94,6 +111,4 @@ class AboutUsController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    
 }

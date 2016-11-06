@@ -47,7 +47,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zYP-Cg-V32" id="KtV-W8-VM6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2R1-dB-l5u">
@@ -84,7 +84,7 @@
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RsG-fj-7Wl" id="4sx-8y-NZw">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Sy-VU-BSu">
@@ -121,7 +121,7 @@
                                         <rect key="frame" x="0.0" y="116" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wSj-sB-qLr" id="Ccj-Ff-FUL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18q-3q-nqT">
@@ -162,7 +162,7 @@
                                         <rect key="frame" x="0.0" y="188" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0NG-hd-VX2" id="MLg-Tk-Lv5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2k5-nQ-f4f">
@@ -199,7 +199,7 @@
                                         <rect key="frame" x="0.0" y="232" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NlN-q1-hlt" id="xaT-k1-d2m">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y34-0e-wEC">
@@ -230,6 +230,43 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="NV6-ts-rXV" kind="custom" identifier="about segue" customClass="SWRevealViewControllerSeguePushController" id="Jea-5c-1fp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Etp-UK-B8n">
+                                        <rect key="frame" x="0.0" y="276" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Etp-UK-B8n" id="vlD-3J-aGZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charity Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbD-DV-9bS">
+                                                    <rect key="frame" x="8" y="8" width="359" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rbD-DV-9bS" firstAttribute="centerX" secondItem="vlD-3J-aGZ" secondAttribute="centerX" id="6ez-dc-uwL"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="rbD-DV-9bS" secondAttribute="leading" id="By3-U0-JOr"/>
+                                                <constraint firstItem="rbD-DV-9bS" firstAttribute="centerY" secondItem="vlD-3J-aGZ" secondAttribute="centerY" id="HGf-bH-5En"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="rbD-DV-9bS" secondAttribute="bottom" id="RMU-FF-hBi"/>
+                                                <constraint firstItem="rbD-DV-9bS" firstAttribute="centerY" secondItem="vlD-3J-aGZ" secondAttribute="centerY" id="VF4-1g-i4E"/>
+                                                <constraint firstItem="rbD-DV-9bS" firstAttribute="top" secondItem="vlD-3J-aGZ" secondAttribute="topMargin" id="sJo-Ig-j8t"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="rbD-DV-9bS" secondAttribute="trailing" constant="499" id="slO-iB-t1Q"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="rbD-DV-9bS" secondAttribute="trailing" id="w9f-xG-nnv"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="slO-iB-t1Q"/>
+                                                    <exclude reference="VF4-1g-i4E"/>
+                                                    <exclude reference="6ez-dc-uwL"/>
+                                                    <exclude reference="HGf-bH-5En"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Jzg-Bg-ORQ" kind="show" identifier="charity segue" customClass="SWRevealViewControllerSeguePushController" id="gLB-9z-J6M"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -310,8 +347,16 @@
             </objects>
             <point key="canvasLocation" x="5953" y="-211"/>
         </scene>
+        <!--CharityInfo-->
+        <scene sceneID="Xoj-9n-1Rl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CharityInfo" id="Jzg-Bg-ORQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SNA-e7-911" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6204" y="-212"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9ts-A5-S6i"/>
+        <segue reference="6Vf-8p-xyt"/>
     </inferredMetricsTieBreakers>
 </document>
