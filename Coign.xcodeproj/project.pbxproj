@@ -21,6 +21,8 @@
 		E20AF7711DCEA28000E6CB09 /* CharityInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20AF7701DCEA28000E6CB09 /* CharityInfoController.swift */; };
 		E20AF7771DCEB1C000E6CB09 /* CharityCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20AF7761DCEB1C000E6CB09 /* CharityCategoryController.swift */; };
 		E20AF7791DCEB1D900E6CB09 /* CharityDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20AF7781DCEB1D900E6CB09 /* CharityDetailController.swift */; };
+		E20AF77C1DCF9BF700E6CB09 /* CrimsonText-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E20AF77B1DCF9AB300E6CB09 /* CrimsonText-Italic.ttf */; };
+		E20AF77D1DCF9BF700E6CB09 /* Khula-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E20AF77A1DCF9A4000E6CB09 /* Khula-ExtraBold.ttf */; };
 		E24214971DA8966400A5B080 /* VCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24214961DA8966400A5B080 /* VCExtensions.swift */; };
 		E24F77EA1D84FBB000936AAE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24F77E91D84FBB000936AAE /* SWRevealViewController.m */; };
 		E25125A61DA9D92700AA4B09 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25125A51DA9D92700AA4B09 /* Constants.swift */; };
@@ -102,6 +104,8 @@
 		E20AF7701DCEA28000E6CB09 /* CharityInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharityInfoController.swift; sourceTree = "<group>"; };
 		E20AF7761DCEB1C000E6CB09 /* CharityCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharityCategoryController.swift; sourceTree = "<group>"; };
 		E20AF7781DCEB1D900E6CB09 /* CharityDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharityDetailController.swift; sourceTree = "<group>"; };
+		E20AF77A1DCF9A4000E6CB09 /* Khula-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Khula-ExtraBold.ttf"; sourceTree = "<group>"; };
+		E20AF77B1DCF9AB300E6CB09 /* CrimsonText-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CrimsonText-Italic.ttf"; sourceTree = "<group>"; };
 		E24214961DA8966400A5B080 /* VCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCExtensions.swift; sourceTree = "<group>"; };
 		E24F77E81D84FBB000936AAE /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		E24F77E91D84FBB000936AAE /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -395,9 +399,11 @@
 				E2A04AA91DCBC4780082EF1E /* Amiri-Regular.ttf */,
 				E2A04AAC1DCBE47E0082EF1E /* CrimsonText-Roman.ttf */,
 				E2A04AAD1DCBE47E0082EF1E /* CrimsonText-Semibold.ttf */,
+				E20AF77B1DCF9AB300E6CB09 /* CrimsonText-Italic.ttf */,
 				E2A04AB01DCBE4920082EF1E /* Khula-Bold.ttf */,
 				E2A04AB11DCBE4920082EF1E /* Khula-Regular.ttf */,
 				E2A04AB21DCBE4920082EF1E /* Khula-SemiBold.ttf */,
+				E20AF77A1DCF9A4000E6CB09 /* Khula-ExtraBold.ttf */,
 			);
 			name = Fonts;
 			path = Cormorant_Garamond;
@@ -582,6 +588,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E20AF77C1DCF9BF700E6CB09 /* CrimsonText-Italic.ttf in Resources */,
+				E20AF77D1DCF9BF700E6CB09 /* Khula-ExtraBold.ttf in Resources */,
 				E28C6BDB1D8DD7180020EAA3 /* GoogleService-Info.plist in Resources */,
 				E2A04AB51DCBE4920082EF1E /* Khula-SemiBold.ttf in Resources */,
 				E2A04AB41DCBE4920082EF1E /* Khula-Regular.ttf in Resources */,

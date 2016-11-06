@@ -14,6 +14,8 @@
 		<string>Khula-Bold.ttf</string>
 		<string>Khula-Regular.ttf</string>
 		<string>Khula-SemiBold.ttf</string>
+		<string>Khula-ExtraBold.ttf</string>
+		<string>CrimsonText-Italic.ttf</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>View and contribute to local activity.</string>
