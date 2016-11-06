@@ -273,18 +273,18 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="G52-Ws-sPO">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="G52-Ws-sPO">
                                                         <rect key="frame" x="0.0" y="63" width="335" height="24"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vON-4P-Lzs">
-                                                                <rect key="frame" x="0.0" y="0.0" width="194.5" height="24"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Category:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vON-4P-Lzs">
+                                                                <rect key="frame" x="0.0" y="0.0" width="86.5" height="24"/>
                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
                                                                 <color key="textColor" red="0.017969632950000002" green="0.35247328369999997" blue="0.0043098790859999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsc-HV-FGi">
-                                                                <rect key="frame" x="194.5" y="0.0" width="140.5" height="24"/>
-                                                                <fontDescription key="fontDescription" name="CrimsonText-Italic" family="Crimson Text" pointSize="19"/>
+                                                                <rect key="frame" x="96.5" y="0.0" width="238.5" height="24"/>
+                                                                <fontDescription key="fontDescription" name="CrimsonText-Italic" family="Crimson Text" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -333,15 +333,15 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vn6-aK-s0W">
                                                                 <rect key="frame" x="0.0" y="49" width="335" height="39"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WxM-Th-ilV">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WxM-Th-ilV">
                                                                         <rect key="frame" x="0.0" y="0.0" width="223" height="39"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                         <state key="normal" title="Make default"/>
                                                                         <connections>
-                                                                            <action selector="setDefaultButton:" destination="1oz-gp-gYj" eventType="touchUpInside" id="5xL-Qp-1s4"/>
+                                                                            <action selector="updateDefault:" destination="1oz-gp-gYj" eventType="touchUpInside" id="ksK-vX-2KR"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVb-So-HBJ">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVb-So-HBJ">
                                                                         <rect key="frame" x="222" y="4.5" width="113" height="30"/>
                                                                         <state key="normal" title="More info"/>
                                                                         <connections>
@@ -384,6 +384,7 @@
                     </view>
                     <connections>
                         <outlet property="categoryLabel" destination="vsc-HV-FGi" id="IZk-HW-Lys"/>
+                        <outlet property="makeDefaultButton" destination="WxM-Th-ilV" id="v3k-oo-Qmp"/>
                         <outlet property="missionLabel" destination="DJx-ud-2yj" id="lTj-By-qby"/>
                         <outlet property="nameLabel" destination="akN-1N-5AG" id="UNq-GS-BYf"/>
                         <outlet property="ratingImage" destination="PWc-sl-zUk" id="81K-bV-T5y"/>

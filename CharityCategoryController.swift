@@ -71,7 +71,7 @@ class CharityCategoryController: UITableViewController {
                 detailVC.name = self.name?[index]
                 detailVC.category = self.title
                 detailVC.mission = self.mission?[index]
-                detailVC.url = URL(fileURLWithPath: (self.url?[index])!)
+                detailVC.url = self.url?[index]
             }
         }
     }
