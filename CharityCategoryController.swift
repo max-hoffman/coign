@@ -10,35 +10,23 @@ import UIKit
 
 class CharityCategoryController: UITableViewController {
 
+    //MARK: - Properties
+    
     var category: String? = nil
-    
     var charityCategoryData: Dictionary<String, Any>? = nil
-    
     var name: [String]? {
         return charityCategoryData?["Name"] as! [String]?
     }
-    
     var rating: [String]? {
         return charityCategoryData?["Rating"] as! [String]?
     }
-    
     var mission: [String]? {
         return charityCategoryData?["Mission"] as! [String]?
     }
-    
     var url: [String]? {
         return charityCategoryData?["URL"] as! [String]?
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,20 +39,23 @@ class CharityCategoryController: UITableViewController {
         return name?.count ?? 0
     }
 
-
+    /* Each row is a title of the charity in the selected categroy. */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "charity cell", for: indexPath)
         cell.textLabel?.text = name?[indexPath.row]
         return cell
     }
     
+    /* Segue to the selected charity detail page if the proper cell is selected */
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "show charity detail segue", sender: indexPath.row)
     }
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /*
+     Pass the necessary information into the next viewcontroller before the page loads.
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detailVC = segue.destination as? CharityDetailController {
             if let index = sender as? Int {
@@ -74,5 +65,16 @@ class CharityCategoryController: UITableViewController {
                 detailVC.url = self.url?[index]
             }
         }
+    }
+    
+    //MARK: - Superclass methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 }

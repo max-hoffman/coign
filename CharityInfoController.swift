@@ -11,7 +11,6 @@ import UIKit
 class CharityInfoController: UITableViewController {
 
     //MARK: - Properties
-    
     var charityData: Dictionary<String, Any>? {
         if let path = Bundle.main.path(forResource: "CharityInfo", ofType: "plist") {
             return NSDictionary(contentsOfFile: path) as? Dictionary<String, Any>
@@ -19,9 +18,25 @@ class CharityInfoController: UITableViewController {
             return nil
         }
     }
-
+    
+    //MARK: - Tableview methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "show charity category segue", sender: tableView.cellForRow(at: indexPath))
+    }
+    
+    // MARK: - Navigation
+    
+    /* 
+     Open the selected charity category, and pass that information into the next viewcontroller.
+     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let categoryVC = segue.destination as? CharityCategoryController {
+            if let category = (sender as? UITableViewCell)?.textLabel?.text {
+                categoryVC.category = category
+                categoryVC.title = category
+                categoryVC.charityCategoryData = charityData?[category] as! Dictionary<String, Any>?
+            }
+        }
     }
     
     //MARK: - Superclass methods
@@ -35,22 +50,4 @@ class CharityInfoController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
- 
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let categoryVC = segue.destination as? CharityCategoryController {
-            if let category = (sender as? UITableViewCell)?.textLabel?.text {
-                categoryVC.category = category
-                categoryVC.title = category
-                categoryVC.charityCategoryData = charityData?[category] as! Dictionary<String, Any>?
-            }
-        }
-    }
- 
-
 }

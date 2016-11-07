@@ -14,6 +14,7 @@
 		<string>Coign&apos;s intentions seem noble, but I am skeptical of how this would practically fit into my life.</string>
 		<string>I can think of a dozen applications of your platform better than donating mobile dollars. Why the myopic approach?</string>
 		<string>What are the Charity Navigator ratings used in the app?</string>
+		<string>What if I want to donate to one of the many charities not listed on your app?</string>
 	</array>
 	<key>Answers</key>
 	<array>
@@ -24,9 +25,10 @@
 		<string>The short answer is no. The only way your account could be accessed by someone other than you is if someone stole your phone, hacked your facebook, and then somehow discovered your private PIN. All of that effort would leave a hacker without any of your financial information, and able only to make single dollar donations in your name. In that highly unlikely event, simply contacting the Coign team within a week of losing your phone would allow us to prevent any charge transfers.</string>
 		<string>There are two ways, and first is easy: participate at opportune moments moments in your life, and choose to share your message on Facebook. Donating doesn&apos;t have to be a difficult and impersonal process, but our platform depends on the social nature of altruism. The more people involved, the larger impact the Coign community has, and the more our team can progress our larger mission. The second is be vocal about any criticisms you have. We want to get better, and our community as a whole will always be better at problem solving that us alone. The more feedback we get, the more we can build a product that people love.</string>
 		<string>If you have the technical skills to dramatically improve our team, the vision to help grow our team, and the ability to tolerate working with our team, feel free to get in contact. And coding skills or not, refering the previous question is always a good way to help.</string>
-		<string>Part of a startup&apos;s growing pains is finding how to adjust the product so that it fits perfectly into its users lives. So while we intend this app to be used in conjunction with Facebook posts relevant to some area of donation (disaster relief, healthcare, animal rights, environmental protection), to really drive home the point of putting action behind your words, the only people that can tell us the use cases or our failure to acccomodate them is you. So please leave us any feedback at all, because we would love to hear about ways to improve your experience.</string>
-		<string>We agree, and have plans to improve as our user base grows. If you have any ideas in particular, we&apos;d love to hear the feedback.</string>
+		<string>Part of a startup&apos;s growing pains is finding how to adjust the product so that it fits perfectly into its users lives. So while we intend this app to be used in conjunction with Facebook posts relevant to some area of donation (disaster relief, healthcare, animal rights, environmental protection) to really drive home the point of putting action behind your words, the only people that can determine the successes or shortcomings of Coign are you. So please leave us feedback, because we would love to hear about ways to improve your experience.</string>
+		<string>We agree, and have plans to improve as our user base grows. If you have any ideas in particular, we&apos;d love to hear feedback.</string>
 		<string>The ratings we use to qualify charities are produced by analysts at charitynavigator.org, and are intended to give an objective measure of a non-profit&apos;s transparancy and financial efficiency. Organization titles are linked to webpages with more information about how those ratings are produced for each individual charity.</string>
+		<string>As long as we are a small team with limited resources, we can only afford to keep track of a handful of charities. So while we attempted to to construct a list with a wide breadth of high quality charities, inevitably, we will have missed some. If you feel that passionate and think our list could use some improvement, we encourage you to contact us.</string>
 	</array>
 </dict>
 </plist>
