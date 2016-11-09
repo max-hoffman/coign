@@ -269,7 +269,7 @@
 		E20164231D7B65A600949826 /* Main App */ = {
 			isa = PBXGroup;
 			children = (
-				E24F77EC1D84FBFD00936AAE /* Overall Organization */,
+				E24F77EC1D84FBFD00936AAE /* Heirarchy */,
 				E20AF7681DCE8DA400E6CB09 /* Tab-Bar */,
 				E20AF7691DCE8DD200E6CB09 /* Extras */,
 			);
@@ -353,7 +353,7 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
-		E24F77EC1D84FBFD00936AAE /* Overall Organization */ = {
+		E24F77EC1D84FBFD00936AAE /* Heirarchy */ = {
 			isa = PBXGroup;
 			children = (
 				E20164201D7B653A00949826 /* MainApp.storyboard */,
@@ -361,7 +361,7 @@
 				E2A04A8A1DCA63110082EF1E /* TabController.swift */,
 				E20AF76A1DCE8E2B00E6CB09 /* Side-view Bridging */,
 			);
-			name = "Overall Organization";
+			name = Heirarchy;
 			sourceTree = "<group>";
 		};
 		E259EB601DA1562400EADC4C /* Supporting Files */ = {

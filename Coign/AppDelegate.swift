@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Firebase
 import FBSDKCoreKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //connect to Firebase
         FIRApp.configure()
+        
+        //connect keyboard manager
+        IQKeyboardManager.sharedManager().enable = true
         
         //bypass login screen if user credential exists
         self.checkForAutoLogin()

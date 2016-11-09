@@ -11,6 +11,7 @@ target 'Coign' do
   pod 'FBSDKLoginKit'
   pod 'Firebase/Database'
   pod 'SkyFloatingLabelTextField', git: "https://github.com/MLSDev/SkyFloatingLabelTextField.git", branch: "swift3"
+  pod 'IQKeyboardManagerSwift'
   
   target 'CoignTests' do
     inherit! :search_paths

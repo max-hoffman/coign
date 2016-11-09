@@ -183,7 +183,7 @@
             <objects>
                 <navigationController storyboardIdentifier="UINavigationController-FaJ-OH-j7q" title="Main Menu NC" automaticallyAdjustsScrollViewInsets="NO" id="FaJ-OH-j7q" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FFw-cS-oLs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FFw-cS-oLs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
