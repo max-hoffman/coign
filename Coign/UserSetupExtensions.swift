@@ -11,6 +11,7 @@ import Foundation
 //MARK: - User setup extensions
 extension MainMenuController: UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    //TODO: make this a class function so that it can be called from the login page, remove the role of "new user" node
     /**
      This function is used to test for new users right now. Could be amended in the future to give users info based on when they last opened the app.
      */

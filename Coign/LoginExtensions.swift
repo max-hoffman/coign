@@ -101,6 +101,7 @@ extension LoginController {
     func createNewUser(facebookID: String, name: String, pictureURL: String) {
         
         //prep data
+        //TODO: make the "new user" node unnecessary by calling the 
         let post: [String : Any] = [FirTree.UserParameter.Name.rawValue : name,
                                     FirTree.UserParameter.Picture.rawValue : pictureURL,
                                     FirTree.UserParameter.MostRecentLoginDate.rawValue: FirTree.UserParameter.NewUser.rawValue]

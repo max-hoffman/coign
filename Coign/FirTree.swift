@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import GeoFire
 
 /**
  Contains all of the calls to and from the firebase database, including constants enums that replicates the firebase database structure.
@@ -119,4 +120,19 @@ class FirTree {
     func updateDonationMessage(messageID: String, newMessage newValue: String) {
         
     }
+    
+    
+    //set reference
+//    let geofireRef = FIRDatabase.database().reference()
+//    let geoFire = GeoFire(firebaseRef: geofireRef)
+    
+    //Geofire query example
+//    let center = CLLocation(latitude: 37.7832889, longitude: -122.4056973)
+//    // Query locations at [37.7832889, -122.4056973] with a radius of 600 meters
+//    var circleQuery = geoFire.queryAtLocation(center, withRadius: 0.6)
+//    
+//    // Query location by region
+//    let span = MKCoordinateSpanMake(0.001, 0.001)
+//    let region = MKCoordinateRegionMake(center.coordinate, span)
+//    var regionQuery = geoFire.queryWithRegion(region)
 }
