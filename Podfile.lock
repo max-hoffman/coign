@@ -44,6 +44,7 @@ PODS:
     - GoogleSymbolUtilities (~> 1.0)
   - IQKeyboardManagerSwift (4.0.6)
   - SkyFloatingLabelTextField (1.2.1)
+  - Spring (1.0.3)
 
 DEPENDENCIES:
   - FBSDKLoginKit
@@ -53,6 +54,7 @@ DEPENDENCIES:
   - GeoFire (from `https://github.com/firebase/geofire-objc.git`)
   - IQKeyboardManagerSwift
   - SkyFloatingLabelTextField (from `https://github.com/MLSDev/SkyFloatingLabelTextField.git`, branch `swift3`)
+  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
 
 EXTERNAL SOURCES:
   GeoFire:
@@ -60,6 +62,9 @@ EXTERNAL SOURCES:
   SkyFloatingLabelTextField:
     :branch: swift3
     :git: https://github.com/MLSDev/SkyFloatingLabelTextField.git
+  Spring:
+    :branch: swift3
+    :git: https://github.com/MengTo/Spring.git
 
 CHECKOUT OPTIONS:
   GeoFire:
@@ -68,6 +73,9 @@ CHECKOUT OPTIONS:
   SkyFloatingLabelTextField:
     :commit: 03177934f990c794060765f33c408268ce8afee0
     :git: https://github.com/MLSDev/SkyFloatingLabelTextField.git
+  Spring:
+    :commit: 3a9227c6e9157e7b47f5ac1ee5abab2a56b50002
+    :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -85,7 +93,8 @@ SPEC CHECKSUMS:
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   IQKeyboardManagerSwift: b3015e819559ca76381f87a0833f44d178564603
   SkyFloatingLabelTextField: 3f6610aded18e778df5cfab3b9e12a11b3e014e9
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
 
-PODFILE CHECKSUM: 2b1ab57b88691453b93246395e014efc41a455f5
+PODFILE CHECKSUM: 1f4fb3637bb150e9b61c691b6c7fb6d4aac62203
 
 COCOAPODS: 1.1.0.rc.2
