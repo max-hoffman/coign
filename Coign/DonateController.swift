@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelegate {
+class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelegate, CLLocationManagerDelegate {
 
     //MARK: - Constants 
     var charities: [String]? {
@@ -18,6 +19,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
             return nil
         }
     }
+    var currentUserLocation:CLLocationCoordinate2D? = nil
     
     //MARK: - Outlets
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -25,10 +27,50 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     @IBOutlet weak var shareToFacebookSwitch: UISwitch!
     @IBOutlet weak var anonymousSwitch: UISwitch!
     @IBOutlet weak var donateMessage: UITextView!
+    @IBOutlet weak var donateFor: UITextView!
     @IBOutlet weak var charityPicker: UIPickerView!
     @IBOutlet weak var charityPickerView: UIView!
     @IBOutlet weak var verifyView: UIView!
     @IBOutlet weak var verifyButton: UIButton!
+    
+    //MARK: - Post methods
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        currentUserLocation = manager.location?.coordinate
+        print("locations = \(currentUserLocation?.latitude) \(currentUserLocation?.longitude)")
+    }
+    
+    //TODO: This needs to go inside the plaid completion block
+    private func createPost() {
+        
+        if let user = UserDefaults.standard.object(forKey: FirTree.UserParameter.Id.rawValue) as? String, let recipient = donateFor.text {
+
+        var charity: String? = nil
+        if defaultCharitySwitch.isOn {
+            charity = UserDefaults.standard.object(forKey: FirTree.UserParameter.Charity.rawValue) as! String?
+        }
+        else {
+            charity = charities?[charityPicker.selectedRow(inComponent: 0)]
+        }
+            
+        //TODO: need a function to find if we can update the specified user, for now it's left to be nil
+            
+        let post : [String: Any] = [
+            FirTree.UserParameter.Id.rawValue : user ,
+            FirTree.PostParameter.Charity.rawValue : charity!,
+            FirTree.PostParameter.Recipient.rawValue : recipient,
+            FirTree.PostParameter.DonationAmount.rawValue : 1,
+            FirTree.PostParameter.TimeStamp.rawValue : Date.timeIntervalSinceReferenceDate,
+            FirTree.PostParameter.SharedToFacebook.rawValue : shareToFacebookSwitch.isOn,
+            FirTree.PostParameter.Anonymous.rawValue : anonymousSwitch.isOn,
+            FirTree.PostParameter.Location.rawValue : currentUserLocation ?? "no provided location"
+        ]
+        
+        print(post)
+        
+        //complete the post by updating the FirTree
+        FirTree.newPost(post: post, userID: user, recipientID: nil)
+        }
+    }
     
     //MARK: - Verfiy methods
     @IBAction func verifyButtonPressed(_ sender: UIButton) {
@@ -44,7 +86,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
             [weak weakSelf = self]
             (action: UIAlertAction) -> Void in
             
-            weakSelf?.postDonation()
+            weakSelf?.createPost()
         }))
         donationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {
             (action: UIAlertAction) -> Void in
@@ -52,12 +94,6 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         }))
         
         present(donationAlert, animated: true, completion: nil)
-    }
-    
-    private func postDonation() {
-        //TODO: This will go in the plaid completion block
-        
-        
     }
     
     //MARK:- Switch methods
@@ -153,6 +189,16 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         donateMessage.layer.cornerRadius = 8
         verifyButton.layer.cornerRadius = 15
         verifyView.isHidden = true
+        
+        //location manager
+        let locationManager = CLLocationManager()
+        // Ask for Authorisation from the User.
+        locationManager.requestAlwaysAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+            locationManager.startUpdatingLocation()
+        }
         
         //nav bar for reveal view controller
         connectRevealVC()

@@ -18,7 +18,7 @@
 		<string>CrimsonText-Italic.ttf</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>View and contribute to local activity.</string>
+	<string>Can Coign access your location?</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

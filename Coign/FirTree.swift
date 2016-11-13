@@ -44,7 +44,7 @@ class FirTree {
         case MostRecentLoginDate = "most recent login date"
         case NewUser = "new user"
         case Id = "facebookID"
-        case Donations = "donations"
+        case Posts = "posts"
         case Charity = "charity preference"
         case IncomingCoigns = "incoming"
         case OutgoingCoigns = "outgoing"
@@ -58,17 +58,14 @@ class FirTree {
         case DonationAmount = "donation amount"
         case Message = "message"
         case TimeStamp = "time stamp"
-        case Geohash = "geohash"
+        case Location = "location"
         case SharedToFacebook = "shared to facebook"
+        case Anonymous = "anonymous"
         case LikeCount = "like count"
         case CommentCount = "comment count"
         case ReCoignCount = "recoign count"
         case RootPostId = "root post"
     }
-    
-    //likes -- just an array of user id's
-    //comments -- just a dict of user id : comment string
-    //reposts -- just an array of user id's
     
     enum NotificationParameter: String {
         case NotiicationUID = "notification uid"
@@ -83,6 +80,11 @@ class FirTree {
         case Comment = "comment"
         case ReCoign = "recoign"
     }
+    
+    //likes -- just an array of user id's
+    //comments -- just a dict of user id : comment string
+    //reposts -- just an array of user id's
+    
     //MARK: - Public functions
     //TODO - model functions need to be written
     
@@ -122,29 +124,66 @@ class FirTree {
     /**
      Post donation to FIR tree; update "users" nodes and "donations" nodes
      */
-    class func newDonation(donor: String, charity: String, recipient: String?, message: String) {
+    class func newPost(post: [String: Any], userID: String, recipientID: String?) {
         
-        //make sure the user's logged in
-        if  let _ = UserDefaults.standard.string(forKey: UserParameter.Id.rawValue) {
+        //POST DATA
+        //create donation node with a unique ID
+        let postRef = FirTree.rootRef.child(Node.Posts.rawValue).childByAutoId()
+        
+        //add the donation info to that node
+        postRef.updateChildValues(post)
+        
+        //USER DATA
+        //record that donation event in the user's donation node (array of ID's)
+        FirTree.rootRef.child(Node.Users.rawValue).child(userID).child(UserParameter.Posts.rawValue).setValue(postRef)
+        
+        //increment user outgoing post counter
+        FirTree.rootRef.child(Node.Users.rawValue).child(userID).child(FirTree.UserParameter.OutgoingCoigns.rawValue).runTransactionBlock({ (currentData: FIRMutableData) -> FIRTransactionResult in
+            if var outgoingCount = currentData.value as? Int {
+                
+                //update the count
+                outgoingCount += 1
+                
+                //reset the userData == our updated value
+                
+                // Set value and report transaction success
+                currentData.value = outgoingCount
+                
+                return FIRTransactionResult.success(withValue: currentData)
+            }
+            return FIRTransactionResult.success(withValue: currentData)
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        
+        //RECIPIENT DATA
+        //update the recipient node if necessary
+        if recipientID != nil {
+            //record that donation event in the recipient's donation node
+            FirTree.rootRef.child(Node.Users.rawValue).child(recipientID!).child(UserParameter.Posts.rawValue).setValue(postRef)
             
-            //TODO: access the date somehow, maybe just do milliseconds since 1970
-            let date = "date"
-            
-            //organize donation info
-            let donation = [PostParameter.Charity.rawValue: charity,
-                            PostParameter.Donor.rawValue: donor,
-                            PostParameter.Recipient.rawValue: recipient,
-                            PostParameter.TimeStamp.rawValue: date,
-                            PostParameter.Message.rawValue: message]
-            
-            //create donation node with a unique ID
-            let donationRef = FirTree.rootRef.child(Node.Posts.rawValue).childByAutoId()
-            
-            //add the donation info to that node
-            donationRef.updateChildValues(donation)
-            
-            //record that donation event in the user's donation node (array of ID's)
-            FirTree.rootRef.child(Node.Users.rawValue).child(UserParameter.Donations.rawValue).setValue(donationRef)
+            //increment user outgoing post counter
+            FirTree.rootRef.child(Node.Users.rawValue).child(userID).child(FirTree.UserParameter.IncomingCoigns.rawValue).runTransactionBlock({ (currentData: FIRMutableData) -> FIRTransactionResult in
+                if var incomingCount = currentData.value as? Int {
+                    
+                    //update the count
+                    incomingCount += 1
+                    
+                    //reset the userData == our updated value
+                    
+                    // Set value and report transaction success
+                    currentData.value = incomingCount
+                    
+                    return FIRTransactionResult.success(withValue: currentData)
+                }
+                return FIRTransactionResult.success(withValue: currentData)
+            }) { (error, committed, snapshot) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+            }
         }
     }
     
@@ -154,101 +193,4 @@ class FirTree {
     func updateDonationMessage(messageID: String, newMessage newValue: String) {
         
     }
-    
-    //MARK: - Image functions
-    
-    /**
-     Pull user image from their image url, store in the Firebase storage database
-     */
-    class func getUserImage(completionHandler: @escaping (_ image: UIImage?) -> Void) {
-        
-        //vars needed
-        let facebookID = UserDefaults.standard.object(forKey: FirTree.UserParameter.Id.rawValue) as! String
-        
-        //establish reference point for image
-        let userImageRef = FirTree.database.child("user profile images/\(facebookID)")
-        
-        //check to see if we've already saved their picture
-        userImageRef.data(withMaxSize: 1*1000*1000) {
-            (data, error) in
-            
-            //if the reference has no data, then we need to fill it
-            if error != nil {
-                print(error?.localizedDescription ?? "no image was found at the given url")
-                
-                FirTree.updateUserDatabaseImage(facebookID: facebookID, completionHandler: { (image) in
-                    completionHandler(image)
-                })
-            }
-            
-            //if the reference does have data, we can just return that as an image
-            else if data != nil {
-                let image = UIImage(data: data!)
-                
-                print("image already exists")
-                completionHandler(image)
-            }
-        }
-    }
-    
-    /**
-     Updates the firebase storage image given the current url in defaults.
-    */
-    //TODO: This should probably be changed so that we make a facebook query to update the defaults and FirTree before updating FIR storage.
-    class func updateUserDatabaseImage(facebookID: String, completionHandler: @escaping (_ image: UIImage?) -> Void) {
-        
-        //vars needed
-        var image:UIImage? = nil
-        let facebookID = UserDefaults.standard.object(forKey: FirTree.UserParameter.Id.rawValue)
-        
-        //establish reference point for image
-        let userImageRef = FirTree.database.child("user profile images/\(facebookID!)")
-        let metadata = FIRStorageMetadata()
-        metadata.contentType = "image/jpeg"
-        
-        //pull data from the user's picture url
-        if let profileImageURL = UserDefaults.standard.object(forKey: FirTree.UserParameter.Picture.rawValue) as? String {
-            
-            URLSession.shared.dataTask(
-                with: URL(string: profileImageURL)!)
-            { (data, response, error) in
-                
-                //catch errors
-                if error != nil {
-                    print(error?.localizedDescription ?? "no image was found at the given url")
-                }
-                    
-                else if data != nil {
-                    
-                    //save the data to return in completion handler
-                    image = UIImage(data: data!)
-                    
-                    //put data in google cloud bucket
-                    userImageRef.put(data!, metadata: metadata, completion: { (metadata, error) in
-                        if error != nil {
-                            print(error?.localizedDescription ?? "error uploading user image")
-                        }
-                    })
-                }
-                
-                //finish the completion block by returning the user image
-                completionHandler(image)
-                
-            }.resume()
-        }
-    }
-    
-    //set reference
-//    let geofireRef = FIRDatabase.database().reference()
-//    let geoFire = GeoFire(firebaseRef: geofireRef)
-    
-    //Geofire query example
-//    let center = CLLocation(latitude: 37.7832889, longitude: -122.4056973)
-//    // Query locations at [37.7832889, -122.4056973] with a radius of 600 meters
-//    var circleQuery = geoFire.queryAtLocation(center, withRadius: 0.6)
-//    
-//    // Query location by region
-//    let span = MKCoordinateSpanMake(0.001, 0.001)
-//    let region = MKCoordinateRegionMake(center.coordinate, span)
-//    var regionQuery = geoFire.queryWithRegion(region)
 }
