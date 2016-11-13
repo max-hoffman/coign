@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
 
 class ProfileController: UIViewController {
 
@@ -17,6 +19,7 @@ class ProfileController: UIViewController {
             picture.layer.cornerRadius = picture.frame.width/4.0
         }
     }
+    @IBOutlet weak var name: UILabel!
     
     @IBOutlet var networkGraphs: [NetworkGraph]!
     
@@ -49,7 +52,11 @@ class ProfileController: UIViewController {
         super.viewDidLoad()
         prepareProfileNativation()
         
-        loadUserImage()
+        print("outer handler starting")
+        FirTree.getUserImage { (image) in
+            self.picture.image = image
+            print("outer handler complete")
+        }
         //nav bar for reveal view controller
         connectRevealVC()
     }
@@ -59,33 +66,11 @@ class ProfileController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
-    private func loadUserImage() {
-        if let profileImageURL = UserDefaults.standard.object(forKey: FirTree.UserParameter.Picture.rawValue) as? String {
-            print(profileImageURL)
-            URLSession.shared.dataTask(
-                with: URL(string: profileImageURL)!)
-            { (data, response, error) in
-
-                if error != nil {
-                    print(error?.localizedDescription)
-                    return
-                }
-                if data != nil {
-                    self.picture.image = UIImage(data: data!)
-                }
-                
-            }.resume()
-        }
-    }
-    
     // MARK: - Navigation
     
     @IBOutlet var profileNavigation: [UIView]!
     
     func prepareProfileNativation() {
-
-
         profileNavigation.forEach {
             let gesture = UITapGestureRecognizer(target: self, action: #selector(triggerSegue(_:)))
             $0.addGestureRecognizer(gesture)
