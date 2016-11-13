@@ -132,7 +132,7 @@ class FirTree {
     class func getUserImage(completionHandler: @escaping (_ image: UIImage?) -> Void) {
         
         //vars needed
-        let facebookID = UserDefaults.standard.object(forKey: FirTree.UserParameter.Id.rawValue) as! Int
+        let facebookID = UserDefaults.standard.object(forKey: FirTree.UserParameter.Id.rawValue) as! String
         
         //establish reference point for image
         let userImageRef = FirTree.database.child("user profile images/\(facebookID)")
@@ -164,7 +164,7 @@ class FirTree {
      Updates the firebase storage image given the current url in defaults.
     */
     //TODO: This should probably be changed so that we make a facebook query to update the defaults and FirTree before updating FIR storage.
-    class func updateUserDatabaseImage(facebookID: Int, completionHandler: @escaping (_ image: UIImage?) -> Void) {
+    class func updateUserDatabaseImage(facebookID: String, completionHandler: @escaping (_ image: UIImage?) -> Void) {
         
         //vars needed
         var image:UIImage? = nil

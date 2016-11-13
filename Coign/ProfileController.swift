@@ -35,42 +35,29 @@ class ProfileController: UIViewController {
         }
     }
     
-    private func didSetDonationLabel() {
-        if let incomingText = incomingDonationsLabel.text,
-            let outgoingText = outgoigDonationsLabel.text {
-            if let incomingValue = Int(incomingText),
-                let outgoingValue = Int(outgoingText) {
-                networkGraphs[0].scale = CGFloat(incomingValue/(incomingValue + outgoingValue))
-                networkGraphs[1].scale = CGFloat(outgoingValue/(incomingValue + outgoingValue))
-                totalDonationsLabel.text = String(incomingValue + outgoingValue)
-            }
-        }
+//    private func didSetDonationLabel() {
+//        if let incomingText = incomingDonationsLabel.text,
+//            let outgoingText = outgoigDonationsLabel.text {
+//            if let incomingValue = Int(incomingText),
+//                let outgoingValue = Int(outgoingText) {
+//                networkGraphs[0].scale = CGFloat(incomingValue/(incomingValue + outgoingValue))
+//                networkGraphs[1].scale = CGFloat(outgoingValue/(incomingValue + outgoingValue))
+//                totalDonationsLabel.text = String(incomingValue + outgoingValue)
+//            }
+//        }
+//    }
+    
+    private func prepareUserLabels() {
+        self.name.text = UserDefaults.standard.object(forKey: FirTree.UserParameter.Name.rawValue) as? String ?? "name error"
     }
+    
     @IBOutlet weak var totalDonationsLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        prepareProfileNativation()
-        
-        print("outer handler starting")
-        FirTree.getUserImage { (image) in
-            self.picture.image = image
-            print("outer handler complete")
-        }
-        //nav bar for reveal view controller
-        connectRevealVC()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Navigation
     
     @IBOutlet var profileNavigation: [UIView]!
     
-    func prepareProfileNativation() {
+    func prepareProfileNavigation() {
         profileNavigation.forEach {
             let gesture = UITapGestureRecognizer(target: self, action: #selector(triggerSegue(_:)))
             $0.addGestureRecognizer(gesture)
@@ -99,5 +86,30 @@ class ProfileController: UIViewController {
         }
     }
 
-
+    //MARK: - Superclass methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //update the labels with user data
+        prepareUserLabels()
+        
+        //add tap gesture recognizers to the navigation views
+        prepareProfileNavigation()
+        
+        
+        //load user image
+        FirTree.getUserImage { (image) in
+            self.picture.image = image
+            
+        }
+        //nav bar for reveal view controller
+        connectRevealVC()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
 }
