@@ -21,6 +21,9 @@ PODS:
   - Firebase/Database (3.6.0):
     - Firebase/Analytics
     - FirebaseDatabase (= 3.0.3)
+  - Firebase/Storage (3.6.0):
+    - Firebase/Analytics
+    - FirebaseStorage (= 1.0.3)
   - FirebaseAnalytics (3.4.2):
     - FirebaseInstanceID (~> 1.0)
     - GoogleInterchangeUtilities (~> 1.2)
@@ -33,6 +36,9 @@ PODS:
   - FirebaseDatabase (3.0.3):
     - FirebaseAnalytics (~> 3.3)
   - FirebaseInstanceID (1.0.8)
+  - FirebaseStorage (1.0.3):
+    - FirebaseAnalytics (~> 3.3)
+    - GoogleNetworkingUtilities (~> 1.2)
   - GeoFire (2.0.0):
     - Firebase/Database (~> 3.2)
   - GoogleInterchangeUtilities (1.2.1):
@@ -44,17 +50,16 @@ PODS:
     - GoogleSymbolUtilities (~> 1.0)
   - IQKeyboardManagerSwift (4.0.6)
   - SkyFloatingLabelTextField (1.2.1)
-  - Spring (1.0.3)
 
 DEPENDENCIES:
   - FBSDKLoginKit
   - Firebase
   - Firebase/Auth
   - Firebase/Database
+  - Firebase/Storage
   - GeoFire (from `https://github.com/firebase/geofire-objc.git`)
   - IQKeyboardManagerSwift
   - SkyFloatingLabelTextField (from `https://github.com/MLSDev/SkyFloatingLabelTextField.git`, branch `swift3`)
-  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
 
 EXTERNAL SOURCES:
   GeoFire:
@@ -62,9 +67,6 @@ EXTERNAL SOURCES:
   SkyFloatingLabelTextField:
     :branch: swift3
     :git: https://github.com/MLSDev/SkyFloatingLabelTextField.git
-  Spring:
-    :branch: swift3
-    :git: https://github.com/MengTo/Spring.git
 
 CHECKOUT OPTIONS:
   GeoFire:
@@ -73,9 +75,6 @@ CHECKOUT OPTIONS:
   SkyFloatingLabelTextField:
     :commit: 03177934f990c794060765f33c408268ce8afee0
     :git: https://github.com/MLSDev/SkyFloatingLabelTextField.git
-  Spring:
-    :commit: 3a9227c6e9157e7b47f5ac1ee5abab2a56b50002
-    :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -86,6 +85,7 @@ SPEC CHECKSUMS:
   FirebaseAuth: 75a062bbf2d3c97d1e6e55bbc110e13a6853e25d
   FirebaseDatabase: 750a4a0fe18ef114318876fd654b2d9c671e0992
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
+  FirebaseStorage: 3992817bf405f5c1a4f8349678d22724cd0ef509
   GeoFire: ef73103b88eb026c27212c40ea16757d6ad362ea
   GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
   GoogleNetworkingUtilities: 3e83269048cfb498dc7ec83ab36813360965c74f
@@ -93,8 +93,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   IQKeyboardManagerSwift: b3015e819559ca76381f87a0833f44d178564603
   SkyFloatingLabelTextField: 3f6610aded18e778df5cfab3b9e12a11b3e014e9
-  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
 
-PODFILE CHECKSUM: 1f4fb3637bb150e9b61c691b6c7fb6d4aac62203
+PODFILE CHECKSUM: 510354015ef7e767e52027d55030bb886c6f82c3
 
 COCOAPODS: 1.1.0.rc.2

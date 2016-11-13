@@ -12,6 +12,11 @@ class ProfileController: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
+    @IBOutlet weak var picture: UIImageView! {
+        didSet {
+            picture.layer.cornerRadius = picture.frame.width/4.0
+        }
+    }
     
     @IBOutlet var networkGraphs: [NetworkGraph]!
     
@@ -44,6 +49,7 @@ class ProfileController: UIViewController {
         super.viewDidLoad()
         prepareProfileNativation()
         
+        loadUserImage()
         //nav bar for reveal view controller
         connectRevealVC()
     }
@@ -54,7 +60,25 @@ class ProfileController: UIViewController {
     }
 
     
-   
+    private func loadUserImage() {
+        if let profileImageURL = UserDefaults.standard.object(forKey: FirTree.UserParameter.Picture.rawValue) as? String {
+            print(profileImageURL)
+            URLSession.shared.dataTask(
+                with: URL(string: profileImageURL)!)
+            { (data, response, error) in
+
+                if error != nil {
+                    print(error?.localizedDescription)
+                    return
+                }
+                if data != nil {
+                    self.picture.image = UIImage(data: data!)
+                }
+                
+            }.resume()
+        }
+    }
+    
     // MARK: - Navigation
     
     @IBOutlet var profileNavigation: [UIView]!
@@ -69,6 +93,9 @@ class ProfileController: UIViewController {
     }
     
     func triggerSegue(_ sender: UITapGestureRecognizer) {
+        if sender.view?.tag == 2 {
+            //TODO: pop support MVC
+        }
         self.performSegue(withIdentifier: "profile detail segue", sender: sender.view)
     }
     
@@ -77,8 +104,13 @@ class ProfileController: UIViewController {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let view = sender as? UIView {
-            print(view.tag)
+        if let detailVC = segue.destination as? ProfileDetailController,
+        let view = sender as? UIView  {
+            switch view.tag {
+                case 0:  detailVC.viewType = "notifications"
+                case 1: detailVC.viewType = "coigns"
+                default: print("unidentified segue")
+            }
         }
     }
 

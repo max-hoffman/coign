@@ -10,10 +10,11 @@ target 'Coign' do
   pod 'Firebase/Auth'
   pod 'FBSDKLoginKit'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
   pod 'SkyFloatingLabelTextField', git: "https://github.com/MLSDev/SkyFloatingLabelTextField.git", branch: "swift3"
   pod 'IQKeyboardManagerSwift'
   pod 'GeoFire', :git => 'https://github.com/firebase/geofire-objc.git'
-  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
+  # pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
   
   # this was necessary to link the firebase database to geofire, copy pasted from the geofire github
   post_install do |installer|

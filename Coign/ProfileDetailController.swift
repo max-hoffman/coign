@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileDetailController: UITableViewController {
 
+    var viewType: String? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
