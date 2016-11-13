@@ -27,7 +27,11 @@ class FirTree {
     //MARK: - Internal data structure
     enum Node: String {
         case Users = "users"
-        case Donations = "donations"
+        case Posts = "posts"
+        case Likes = "likes"
+        case Comments = "comments"
+        case ReCoigns = "recoigns"
+        case Notifications = "notifications"
     }
 
     enum UserParameter: String {
@@ -42,16 +46,43 @@ class FirTree {
         case Id = "facebookID"
         case Donations = "donations"
         case Charity = "charity preference"
+        case IncomingCoigns = "incoming"
+        case OutgoingCoigns = "outgoing"
     }
 
-    enum DonationParameter: String {
-        case Charity = "charity"
+    enum PostParameter: String {
+        case PostUID = "post uid"
         case Donor = "donor"
         case Recipient = "recipient"
-        case Date = "date"
+        case Charity = "charity"
+        case DonationAmount = "donation amount"
         case Message = "message"
+        case TimeStamp = "time stamp"
+        case Geohash = "geohash"
+        case SharedToFacebook = "shared to facebook"
+        case LikeCount = "like count"
+        case CommentCount = "comment count"
+        case ReCoignCount = "recoign count"
+        case RootPostId = "root post"
     }
     
+    //likes -- just an array of user id's
+    //comments -- just a dict of user id : comment string
+    //reposts -- just an array of user id's
+    
+    enum NotificationParameter: String {
+        case NotiicationUID = "notification uid"
+        case From = "from"
+        case Category = "Category" //
+        case ForPost = "for post" //postUID
+        case TimeStamp = "time stamp"
+    }
+    
+    enum NotificationCategory: String {
+        case Like = "like"
+        case Comment = "comment"
+        case ReCoign = "recoign"
+    }
     //MARK: - Public functions
     //TODO - model functions need to be written
     
@@ -100,14 +131,14 @@ class FirTree {
             let date = "date"
             
             //organize donation info
-            let donation = [DonationParameter.Charity.rawValue: charity,
-                            DonationParameter.Donor.rawValue: donor,
-                            DonationParameter.Recipient.rawValue: recipient,
-                            DonationParameter.Date.rawValue: date,
-                            DonationParameter.Message.rawValue: message]
+            let donation = [PostParameter.Charity.rawValue: charity,
+                            PostParameter.Donor.rawValue: donor,
+                            PostParameter.Recipient.rawValue: recipient,
+                            PostParameter.TimeStamp.rawValue: date,
+                            PostParameter.Message.rawValue: message]
             
             //create donation node with a unique ID
-            let donationRef = FirTree.rootRef.child(Node.Donations.rawValue).childByAutoId()
+            let donationRef = FirTree.rootRef.child(Node.Posts.rawValue).childByAutoId()
             
             //add the donation info to that node
             donationRef.updateChildValues(donation)
