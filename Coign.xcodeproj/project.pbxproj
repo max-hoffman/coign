@@ -59,6 +59,7 @@
 		E2E8FE141DD8F451003AB2D2 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E8FE131DD8F451003AB2D2 /* ImageExtensions.swift */; };
 		E2E8FE181DD90314003AB2D2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E8FE171DD90314003AB2D2 /* CoreLocation.framework */; };
 		E2E8FE1A1DD904E7003AB2D2 /* Geohash.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E8FE191DD904E7003AB2D2 /* Geohash.swift */; };
+		E2E8FE1C1DD90F35003AB2D2 /* PostingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E8FE1B1DD90F35003AB2D2 /* PostingExtensions.swift */; };
 		E2E94FF81D8E1A8E00DC3ACC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E94FF51D8E1A8E00DC3ACC /* FBSDKCoreKit.framework */; };
 		E2E94FF91D8E1A8E00DC3ACC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E94FF61D8E1A8E00DC3ACC /* FBSDKLoginKit.framework */; };
 		E2E94FFA1D8E1A8E00DC3ACC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E94FF71D8E1A8E00DC3ACC /* FBSDKShareKit.framework */; };
@@ -156,6 +157,7 @@
 		E2E8FE151DD90205003AB2D2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E2E8FE171DD90314003AB2D2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E2E8FE191DD904E7003AB2D2 /* Geohash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geohash.swift; sourceTree = "<group>"; };
+		E2E8FE1B1DD90F35003AB2D2 /* PostingExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostingExtensions.swift; sourceTree = "<group>"; };
 		E2E94FF51D8E1A8E00DC3ACC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		E2E94FF61D8E1A8E00DC3ACC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		E2E94FF71D8E1A8E00DC3ACC /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				E259EB681DA6AC1D00EADC4C /* FirTree.swift */,
+				E2E8FE1B1DD90F35003AB2D2 /* PostingExtensions.swift */,
 				E2E8FE191DD904E7003AB2D2 /* Geohash.swift */,
 				E2E8FE131DD8F451003AB2D2 /* ImageExtensions.swift */,
 			);
@@ -806,6 +809,7 @@
 				E20AF7661DCD117A00E6CB09 /* FAQCell.swift in Sources */,
 				E2F0A8DB1DC3AA7800ABDC4F /* CharityPickerController.swift in Sources */,
 				E2D877201D8EFEDC00BAAB46 /* SideViewTableController.swift in Sources */,
+				E2E8FE1C1DD90F35003AB2D2 /* PostingExtensions.swift in Sources */,
 				E2E4E37C1DD56C86004522C9 /* NetworkGraph.swift in Sources */,
 				E259EB691DA6AC1D00EADC4C /* FirTree.swift in Sources */,
 				E2C397EE1D85B07E000D35F4 /* MainMenuController.swift in Sources */,

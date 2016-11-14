@@ -104,6 +104,8 @@ extension LoginController {
         //TODO: make the "new user" node unnecessary by calling the 
         let post: [String : Any] = [FirTree.UserParameter.Name.rawValue : name,
                                     FirTree.UserParameter.Picture.rawValue : pictureURL,
+                                    FirTree.UserParameter.OutgoingCoigns.rawValue: 0,
+                                    FirTree.UserParameter.IncomingCoigns.rawValue: 0,
                                     FirTree.UserParameter.MostRecentLoginDate.rawValue: FirTree.UserParameter.NewUser.rawValue]
         
         //add date to new node

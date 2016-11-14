@@ -275,7 +275,7 @@
                         <outlet property="charityPicker" destination="lge-U7-dtA" id="WmC-qn-B8L"/>
                         <outlet property="charityPickerView" destination="CIm-SW-PXx" id="tMJ-Vs-rAm"/>
                         <outlet property="defaultCharitySwitch" destination="iBS-GP-0g8" id="saR-DJ-Pgm"/>
-                        <outlet property="donateFor" destination="VNv-CP-ove" id="nH9-2s-Hdg"/>
+                        <outlet property="donateFor" destination="3Zv-So-gki" id="bqE-b8-N8i"/>
                         <outlet property="donateMessage" destination="VNv-CP-ove" id="9Ip-nL-bxm"/>
                         <outlet property="shareToFacebookSwitch" destination="Tqa-Tb-hPF" id="SH3-oF-5Jl"/>
                         <outlet property="verifyButton" destination="7gu-Fl-ovk" id="agm-fP-SD3"/>

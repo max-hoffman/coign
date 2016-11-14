@@ -27,7 +27,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     @IBOutlet weak var shareToFacebookSwitch: UISwitch!
     @IBOutlet weak var anonymousSwitch: UISwitch!
     @IBOutlet weak var donateMessage: UITextView!
-    @IBOutlet weak var donateFor: UITextView!
+    @IBOutlet weak var donateFor: UITextField!
     @IBOutlet weak var charityPicker: UIPickerView!
     @IBOutlet weak var charityPickerView: UIView!
     @IBOutlet weak var verifyView: UIView!
@@ -58,6 +58,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
             FirTree.UserParameter.Id.rawValue : user ,
             FirTree.PostParameter.Charity.rawValue : charity!,
             FirTree.PostParameter.Recipient.rawValue : recipient,
+            FirTree.PostParameter.Message.rawValue : donateMessage.text,
             FirTree.PostParameter.DonationAmount.rawValue : 1,
             FirTree.PostParameter.TimeStamp.rawValue : Date.timeIntervalSinceReferenceDate,
             FirTree.PostParameter.SharedToFacebook.rawValue : shareToFacebookSwitch.isOn,

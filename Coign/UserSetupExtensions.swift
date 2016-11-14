@@ -114,7 +114,7 @@ extension MainMenuController: UITextFieldDelegate, UIPickerViewDelegate, UIPicke
             let name = nameField.text!
             let phoneNumber = phoneField.text!
             let email = emailField.text!
-            let charityPreference = Charities.list[charityPreferencePicker.selectedRow(inComponent: 0)]
+            let charityPreference = Charities.list[charityPreferencePicker.selectedRow(inComponent: 0)-1] //displace default by 1 to get correct charity
             
             //prep data
             let settings = [FirTree.UserParameter.Name.rawValue: name,
@@ -124,7 +124,7 @@ extension MainMenuController: UITextFieldDelegate, UIPickerViewDelegate, UIPicke
             
             //save data
             FirTree.updateUser(withNewSettings: settings)
-            UserDefaults.standard.set(charityPreference, forKey: FirTree.UserParameter.Donations.rawValue)
+            UserDefaults.standard.set(charityPreference, forKey: FirTree.UserParameter.Charity.rawValue)
         }
     }
     
@@ -180,6 +180,15 @@ extension MainMenuController: UITextFieldDelegate, UIPickerViewDelegate, UIPicke
     
     //MARK: - Picker view extensions
     
+    var charities: [String]? {
+        if let path = Bundle.main.path(forResource: "CharityList", ofType: "plist") {
+            return NSArray(contentsOfFile: path) as? [String]
+        } else {
+            return nil
+        }
+    }
+
+    
     //initialize picker view at the first real entry
     func preparePickerView() {
         charityPreferencePicker.selectRow(1, inComponent: 0, animated: false)
@@ -192,16 +201,28 @@ extension MainMenuController: UITextFieldDelegate, UIPickerViewDelegate, UIPicke
     
     //data is in the Constants file
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Charities.list.count
+        if charities?.count != nil {
+            return charities!.count + 1
+        }
+        else {
+            return 0
+        }
+        
     }
     
     //fill the rows with charity data
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let titleData = Charities.list[row]
-        if row == 0 { //grey out the label
-            return NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Helvetica", size: 10.0)!,NSForegroundColorAttributeName: UIColor.lightGray])
+        if charities != nil {
+            if row == 0 { //grey out the label
+                return NSAttributedString(string: "default charity:", attributes: [NSFontAttributeName:UIFont(name: "Helvetica", size: 10.0)!,NSForegroundColorAttributeName: UIColor.lightGray])
+            }
+            else {
+                return NSAttributedString(string: charities![row-1])
+            }
         }
-        return NSAttributedString(string: titleData)
+        else {
+            return nil
+        }
     }
     
     //prevent user from selecting the grey label

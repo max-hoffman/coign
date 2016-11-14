@@ -135,7 +135,7 @@ class SettingsController: UITableViewController {
         UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Picture.rawValue)
         UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Friends.rawValue)
         UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
-        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Donations.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Posts.rawValue)
         UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Charity.rawValue)
         
         //set login as the root VC
