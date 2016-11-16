@@ -13,14 +13,19 @@ import GeoFire
 
 class Geohash {
     
-    class func setGeohash(location: CLLocation, postUID: String) {
+    class func setGeohash(location: CLLocationCoordinate2D?, postUID: String) {
         
-        //set reference
-        let geofireRef = FIRDatabase.database().reference().child("post locations")
-        let geoFire = GeoFire(firebaseRef: geofireRef)
+        if  location != nil {
+            let postLocation = CLLocation(latitude: location!.latitude, longitude: location!.longitude)
+            
+            //set reference
+            let geofireRef = FIRDatabase.database().reference().child("post locations")
+            let geoFire = GeoFire(firebaseRef: geofireRef)
+
+            //store location for the given post ID
+            geoFire?.setLocation(postLocation, forKey: postUID)
+        }
         
-        //store location for the given post ID
-        geoFire?.setLocation(location, forKey: postUID)
         
     }
     

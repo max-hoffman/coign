@@ -8,22 +8,30 @@
 
 import Foundation
 import Firebase
+import CoreLocation
 
 extension FirTree {
     
     /**
      Post donation to FIR tree; update "users" nodes and "donations" nodes
      */
-    class func newPost(post: [String: Any], userID: String, recipientID: String?) {
+    class func newPost(post: [String: Any], location: CLLocationCoordinate2D?, userID: String, recipientID: String?) {
         
-        //POST DATA
+        //MARK: Post data
+        
         //create donation node with a unique ID
         let postRef = FirTree.rootRef.child(Node.Posts.rawValue).childByAutoId()
+
         
         //add the donation info to that node
         postRef.updateChildValues(post)
         
-        //USER DATA
+        //MARK: Geohash data
+        
+        //set geohash with that ID reference
+        Geohash.setGeohash(location: location, postUID: postRef.key)
+        
+        //MARK: User data
         //record that donation event in the user's donation node (array of ID's)
         FirTree.rootRef.child(Node.Users.rawValue).child(userID).child(UserParameter.Posts.rawValue).updateChildValues([postRef.key: true])
         
@@ -46,7 +54,8 @@ extension FirTree {
             }
         }
         
-        //RECIPIENT DATA
+        //MARK: Recipient data
+
         //update the recipient node if necessary
         if recipientID != nil {
             //record that donation event in the recipient's donation node

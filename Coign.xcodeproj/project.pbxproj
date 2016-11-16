@@ -135,6 +135,7 @@
 		E2A04AB61DCC23250082EF1E /* FAQController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQController.swift; sourceTree = "<group>"; };
 		E2A04ABA1DCCE7990082EF1E /* CharityInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CharityInfo.plist; sourceTree = "<group>"; };
 		E2A04AC01DCD06180082EF1E /* FAQ.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FAQ.plist; sourceTree = "<group>"; };
+		E2A7D5DF1DDCB92E00D6D92A /* Coign.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Coign.entitlements; sourceTree = "<group>"; };
 		E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetupExtensions.swift; sourceTree = "<group>"; };
 		E2A8C9451DC52BCA00C0DDDB /* LoginExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginExtensions.swift; sourceTree = "<group>"; };
 		E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -250,6 +251,7 @@
 		E20163E11D7B2F7100949826 /* Coign */ = {
 			isa = PBXGroup;
 			children = (
+				E2A7D5DF1DDCB92E00D6D92A /* Coign.entitlements */,
 				E259EB601DA1562400EADC4C /* Supporting Files */,
 				E259EB611DA19C3C00EADC4C /* Models */,
 				E201641B1D7B5DCF00949826 /* Storyboards */,
@@ -574,6 +576,14 @@
 						DevelopmentTeam = U93CAA7FV6;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.WAC = {
+								enabled = 0;
+							};
+						};
 					};
 					E20163F51D7B2F7100949826 = {
 						CreatedOnToolsVersion = 7.3.1;

@@ -20,6 +20,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         }
     }
     var currentUserLocation:CLLocationCoordinate2D? = nil
+    var locationManager: CLLocationManager? = nil
     
     //MARK: - Outlets
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -34,42 +35,37 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     @IBOutlet weak var verifyButton: UIButton!
     
     //MARK: - Post methods
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        currentUserLocation = manager.location?.coordinate
-        print("locations = \(currentUserLocation?.latitude) \(currentUserLocation?.longitude)")
-    }
     
     //TODO: This needs to go inside the plaid completion block
     private func createPost() {
         
         if let user = UserDefaults.standard.object(forKey: FirTree.UserParameter.Id.rawValue) as? String, let recipient = donateFor.text {
 
-        var charity: String? = nil
-        if defaultCharitySwitch.isOn {
-            charity = UserDefaults.standard.object(forKey: FirTree.UserParameter.Charity.rawValue) as! String?
-        }
-        else {
-            charity = charities?[charityPicker.selectedRow(inComponent: 0)]
-        }
+            var charity: String? = nil
+            if defaultCharitySwitch.isOn {
+                charity = UserDefaults.standard.object(forKey: FirTree.UserParameter.Charity.rawValue) as! String?
+            }
+            else {
+                charity = charities?[charityPicker.selectedRow(inComponent: 0)]
+            }
             
-        //TODO: need a function to find if we can update the specified user, for now it's left to be nil
+            //TODO: need a function to find if we can update the specified user, for now it's left to be nil
+                
+            let post : [String: Any] = [
+                FirTree.UserParameter.Id.rawValue : user ,
+                FirTree.PostParameter.Charity.rawValue : charity!,
+                FirTree.PostParameter.Recipient.rawValue : recipient,
+                FirTree.PostParameter.Message.rawValue : donateMessage.text,
+                FirTree.PostParameter.DonationAmount.rawValue : 1,
+                FirTree.PostParameter.TimeStamp.rawValue : Date.timeIntervalSinceReferenceDate,
+                FirTree.PostParameter.SharedToFacebook.rawValue : shareToFacebookSwitch.isOn,
+                FirTree.PostParameter.Anonymous.rawValue : anonymousSwitch.isOn,
+                FirTree.PostParameter.Location.rawValue : String(describing: currentUserLocation)
+            ]
             
-        let post : [String: Any] = [
-            FirTree.UserParameter.Id.rawValue : user ,
-            FirTree.PostParameter.Charity.rawValue : charity!,
-            FirTree.PostParameter.Recipient.rawValue : recipient,
-            FirTree.PostParameter.Message.rawValue : donateMessage.text,
-            FirTree.PostParameter.DonationAmount.rawValue : 1,
-            FirTree.PostParameter.TimeStamp.rawValue : Date.timeIntervalSinceReferenceDate,
-            FirTree.PostParameter.SharedToFacebook.rawValue : shareToFacebookSwitch.isOn,
-            FirTree.PostParameter.Anonymous.rawValue : anonymousSwitch.isOn,
-            FirTree.PostParameter.Location.rawValue : currentUserLocation ?? "no provided location"
-        ]
-        
-        print(post)
-        
-        //complete the post by updating the FirTree
-        FirTree.newPost(post: post, userID: user, recipientID: nil)
+            //complete the post by updating the FirTree
+            FirTree.newPost(post: post, location: currentUserLocation, userID: user, recipientID: nil)
+            
         }
     }
     
@@ -178,6 +174,22 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         return charities?.count ?? 0
     }
 
+    //MARK: - Location methods
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        currentUserLocation = manager.location?.coordinate
+        print("locations = \(currentUserLocation?.latitude) \(currentUserLocation?.longitude)")
+        locationManager?.stopUpdatingLocation()
+    }
+    
+    private func requestLocationUpdate() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager?.delegate = self
+            locationManager?.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+            locationManager?.startUpdatingLocation()
+        }
+    }
+    
     //MARK: - Superclass methods
     
     override func viewDidLoad() {
@@ -185,26 +197,32 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         donateMessage.delegate = self
         charityPicker.delegate = self
 
+        // Create a location manager object
+        locationManager = CLLocationManager()
+        
+        // Set the delegate
+        locationManager?.delegate = self
+        
+        //get quick location update
+        requestLocationUpdate()
+        
+        //nav bar for reveal view controller
+        connectRevealVC()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         //hide the picker view
         charityPickerView.isHidden = true
         donateMessage.layer.cornerRadius = 8
         verifyButton.layer.cornerRadius = 15
         verifyView.isHidden = true
         
-        //location manager
-        let locationManager = CLLocationManager()
-        // Ask for Authorisation from the User.
-        locationManager.requestAlwaysAuthorization()
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-            locationManager.startUpdatingLocation()
-        }
         
-        //nav bar for reveal view controller
-        connectRevealVC()
-    }
 
+        // Ask for Authorisation from the User.
+        locationManager?.requestAlwaysAuthorization()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
