@@ -308,7 +308,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uEW-az-brl" id="Ea6-On-xYF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -328,7 +328,7 @@
             <objects>
                 <navigationController storyboardIdentifier="UINavigationController-8I6-m6-oCQ" title="Profile NC" automaticallyAdjustsScrollViewInsets="NO" id="8I6-m6-oCQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cNg-Sd-e1N">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cNg-Sd-e1N">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -21,10 +21,12 @@ extension FirTree {
         
         //create donation node with a unique ID
         let postRef = FirTree.rootRef.child(Node.Posts.rawValue).childByAutoId()
-
         
         //add the donation info to that node
         postRef.updateChildValues(post)
+        
+        //TODO: this is lazy af, need to make this nicer. the fix is to probably pass in a bunch of parameters to this funciton and assemble the post inside
+        postRef.updateChildValues([FirTree.PostParameter.PostUID.rawValue: postRef.key])
         
         //MARK: Geohash data
         

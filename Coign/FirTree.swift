@@ -22,7 +22,6 @@ class FirTree {
     //MARK: - Properties
     static let rootRef = FIRDatabase.database().reference()
     static let database = FIRStorage.storage().reference()
-
  
     //MARK: - Internal data structure
     enum Node: String {

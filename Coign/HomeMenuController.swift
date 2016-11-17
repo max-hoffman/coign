@@ -15,6 +15,11 @@ class HomeMenuController: UITableViewController {
     //MARK: - User setup properties and outlets
     var blurView: UIVisualEffectView?
     var blurEffect: UIVisualEffect?
+    var recentPosts: [[String: Any]]? {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     
     //UI outlets and actions
     @IBOutlet weak var userSetupPopover: UIView!
@@ -32,7 +37,13 @@ class HomeMenuController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //MARK: need to undo in the exit view function? or does it automatically disconnect?
+        //TODO: pull in an array of posts to load into the post cells
+        FirTree.queryRecentPosts() { postData in
+            self.recentPosts = postData
+        }
+//        let postArray = jsonPostArray.map {parseJSON(validJSONObject: $0)}
+//        print(postArray)
+        
         //nav bar for reveal view controller
         connectRevealVC()
         
@@ -54,23 +65,31 @@ class HomeMenuController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return recentPosts?.count ?? 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "post cell", for: indexPath) as? PostCell, let post = recentPosts?[indexPath.row] {
+            cell.header.text = post[FirTree.PostParameter.TimeStamp.rawValue] as? String
+            cell.timeStamp.text = String (describing: post[FirTree.PostParameter.TimeStamp.rawValue] as? Int)
+            cell.postBody.text = post[FirTree.PostParameter.Message.rawValue] as? String
+            print("should fill cell")
+            return cell
+        }
+        else {
+            return UITableViewCell()
+        }
+        
 
-        // Configure the cell...
-
-        return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
