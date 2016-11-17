@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FaJ-OH-j7q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yJb-Vt-nnF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,45 +9,42 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
-        <scene sceneID="XsZ-Hq-3Iy">
+        <!--Home Menu Controller-->
+        <scene sceneID="oHM-20-n4T">
             <objects>
-                <viewController storyboardIdentifier="MainMenu" title="Home" id="VyG-g7-eoE" customClass="MainMenuController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Hxc-g8-HSu"/>
-                        <viewControllerLayoutGuide type="bottom" id="8Fz-Tw-zF3"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IsR-Ub-VxL">
+                <tableViewController id="8Rj-ln-A4g" customClass="HomeMenuController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ylc-gc-16r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aU-KW-2Dx">
-                                <rect key="frame" x="141" y="323" width="93" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="IMi-KM-cUj">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="OC5-Ph-Uxc">
-                            <connections>
-                                <action selector="menuButtonPressed:" destination="VyG-g7-eoE" id="egq-i5-GGL"/>
-                            </connections>
-                        </barButtonItem>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LMF-sl-QZ0">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LMF-sl-QZ0" id="pUu-jh-vtr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8Rj-ln-A4g" id="2Bl-A9-m5L"/>
+                            <outlet property="delegate" destination="8Rj-ln-A4g" id="8RY-cR-URw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="48k-Dn-Lgj">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="OC5-Ph-Uxc"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="charityPreferencePicker" destination="iDa-4c-Lu6" id="ZdP-BW-yfd"/>
-                        <outlet property="emailField" destination="Xii-7X-h4f" id="ovd-x0-5O7"/>
-                        <outlet property="menuButton" destination="OC5-Ph-Uxc" id="7Vw-ZW-GXM"/>
-                        <outlet property="nameField" destination="wqo-ti-oZO" id="Fk2-29-5c8"/>
-                        <outlet property="phoneField" destination="dS3-NS-9Mo" id="7rg-Nf-udc"/>
-                        <outlet property="userSetupPopover" destination="YDw-if-TRb" id="5JF-jh-hVO"/>
+                        <outlet property="charityPreferencePicker" destination="iDa-4c-Lu6" id="ffR-ho-DWQ"/>
+                        <outlet property="emailField" destination="Xii-7X-h4f" id="ddy-Va-OVs"/>
+                        <outlet property="menuButton" destination="OC5-Ph-Uxc" id="7Ur-eG-o3g"/>
+                        <outlet property="nameField" destination="wqo-ti-oZO" id="HTb-vA-ulr"/>
+                        <outlet property="phoneField" destination="dS3-NS-9Mo" id="jz4-oo-RLL"/>
+                        <outlet property="userSetupPopover" destination="YDw-if-TRb" id="jGk-m5-YIj"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2YA-fJ-NgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Zz-zC-cwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="YDw-if-TRb">
                     <rect key="frame" x="0.0" y="0.0" width="290" height="417"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -159,7 +156,7 @@
                                                 <color key="titleColor" red="0.034081597376073906" green="0.60575210492227982" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <connections>
-                                                <action selector="dismissPopover:" destination="VyG-g7-eoE" eventType="touchUpInside" id="DQi-Ez-54f"/>
+                                                <action selector="dismissPopover:" destination="8Rj-ln-A4g" eventType="touchUpInside" id="j3A-u0-jpe"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -176,25 +173,25 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="5432.8000000000002" y="1596.2518740629687"/>
+            <point key="canvasLocation" x="7196" y="1614"/>
         </scene>
-        <!--Main Menu NC-->
-        <scene sceneID="SfC-Ae-SNL">
+        <!--Home-->
+        <scene sceneID="Qea-VH-xt8">
             <objects>
-                <navigationController storyboardIdentifier="UINavigationController-FaJ-OH-j7q" title="Main Menu NC" automaticallyAdjustsScrollViewInsets="NO" id="FaJ-OH-j7q" sceneMemberID="viewController">
+                <navigationController title="Home" automaticallyAdjustsScrollViewInsets="NO" id="yJb-Vt-nnF" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FFw-cS-oLs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="k0F-wE-N7F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="VyG-g7-eoE" kind="relationship" relationship="rootViewController" id="Npl-Af-VSd"/>
+                        <segue destination="8Rj-ln-A4g" kind="relationship" relationship="rootViewController" id="Qre-2a-Blo"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DQ3-lg-Iiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Adx-Tt-Ifh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4518" y="1596"/>
+            <point key="canvasLocation" x="6325.6000000000004" y="1594.4527736131936"/>
         </scene>
     </scenes>
 </document>

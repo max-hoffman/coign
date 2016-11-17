@@ -9,7 +9,7 @@
 import Foundation
 
 //MARK: - User setup extensions
-extension MainMenuController: UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+extension HomeMenuController: UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     //TODO: make this a class function so that it can be called from the login page, remove the role of "new user" node
     /**

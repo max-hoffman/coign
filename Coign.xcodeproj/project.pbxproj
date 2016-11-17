@@ -38,6 +38,7 @@
 		E2A04AB71DCC23250082EF1E /* FAQController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A04AB61DCC23250082EF1E /* FAQController.swift */; };
 		E2A04ABB1DCCE7990082EF1E /* CharityInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2A04ABA1DCCE7990082EF1E /* CharityInfo.plist */; };
 		E2A04AC11DCD06180082EF1E /* FAQ.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2A04AC01DCD06180082EF1E /* FAQ.plist */; };
+		E2A7D5E11DDD427700D6D92A /* HomeMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7D5E01DDD427700D6D92A /* HomeMenuController.swift */; };
 		E2A8C9441DC52B0200C0DDDB /* UserSetupExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */; };
 		E2A8C9461DC52BCA00C0DDDB /* LoginExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8C9451DC52BCA00C0DDDB /* LoginExtensions.swift */; };
 		E2C397EA1D850220000D35F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */; };
@@ -136,6 +137,7 @@
 		E2A04ABA1DCCE7990082EF1E /* CharityInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CharityInfo.plist; sourceTree = "<group>"; };
 		E2A04AC01DCD06180082EF1E /* FAQ.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FAQ.plist; sourceTree = "<group>"; };
 		E2A7D5DF1DDCB92E00D6D92A /* Coign.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Coign.entitlements; sourceTree = "<group>"; };
+		E2A7D5E01DDD427700D6D92A /* HomeMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuController.swift; sourceTree = "<group>"; };
 		E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetupExtensions.swift; sourceTree = "<group>"; };
 		E2A8C9451DC52BCA00C0DDDB /* LoginExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginExtensions.swift; sourceTree = "<group>"; };
 		E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 			children = (
 				E2C397FC1D85CBE3000D35F4 /* MainMenu.storyboard */,
 				E2C397ED1D85B07E000D35F4 /* MainMenuController.swift */,
+				E2A7D5E01DDD427700D6D92A /* HomeMenuController.swift */,
 				E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */,
 			);
 			name = "Home Menu";
@@ -819,6 +822,7 @@
 				E20AF7661DCD117A00E6CB09 /* FAQCell.swift in Sources */,
 				E2F0A8DB1DC3AA7800ABDC4F /* CharityPickerController.swift in Sources */,
 				E2D877201D8EFEDC00BAAB46 /* SideViewTableController.swift in Sources */,
+				E2A7D5E11DDD427700D6D92A /* HomeMenuController.swift in Sources */,
 				E2E8FE1C1DD90F35003AB2D2 /* PostingExtensions.swift in Sources */,
 				E2E4E37C1DD56C86004522C9 /* NetworkGraph.swift in Sources */,
 				E259EB691DA6AC1D00EADC4C /* FirTree.swift in Sources */,
