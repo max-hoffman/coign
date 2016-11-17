@@ -21,6 +21,8 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     }
     var currentUserLocation:CLLocationCoordinate2D? = nil
     var locationManager: CLLocationManager? = nil
+    let MAX_POST_CHARACTERS: Int = 200
+    let ANIMATION_DURATION = 0.3
     
     //MARK: - Outlets
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -33,6 +35,8 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     @IBOutlet weak var charityPickerView: UIView!
     @IBOutlet weak var verifyView: UIView!
     @IBOutlet weak var verifyButton: UIButton!
+    @IBOutlet weak var dollarLabel: UILabel!
+    @IBOutlet weak var dollarSlider: UISlider!
     
     //MARK: - Post methods
     
@@ -49,27 +53,24 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
                 charity = charities?[charityPicker.selectedRow(inComponent: 0)]
             }
             
-            //TODO: need a function to find if we can update the specified user, for now it's left to be nil
+            //TODO: need a function to find if we can update the specified user, for now it's just whatever name is passed in
                 
             let post : [String: Any] = [
-                FirTree.UserParameter.Id.rawValue : user ,
+                FirTree.PostParameter.Donor.rawValue : user ,
                 FirTree.PostParameter.Charity.rawValue : charity!,
                 FirTree.PostParameter.Recipient.rawValue : recipient,
                 FirTree.PostParameter.Message.rawValue : donateMessage.text,
-                FirTree.PostParameter.DonationAmount.rawValue : 1,
+                FirTree.PostParameter.DonationAmount.rawValue : dollarSlider.value,
                 FirTree.PostParameter.TimeStamp.rawValue : Date.timeIntervalSinceReferenceDate,
                 FirTree.PostParameter.SharedToFacebook.rawValue : shareToFacebookSwitch.isOn,
                 FirTree.PostParameter.Anonymous.rawValue : anonymousSwitch.isOn,
-                FirTree.PostParameter.Location.rawValue : String(describing: currentUserLocation)
             ]
             
             //complete the post by updating the FirTree
             FirTree.newPost(post: post, location: currentUserLocation, userID: user, recipientID: nil)
-            
         }
     }
-    
-    //MARK: - Verfiy methods
+
     @IBAction func verifyButtonPressed(_ sender: UIButton) {
         presentVerifyPopover()
     }
@@ -136,7 +137,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == "Insert message here. " {
             donateMessage.text = ""
-            UIView.animate(withDuration: 0.3, animations: {self.verifyView.isHidden = false})
+            UIView.animate(withDuration: ANIMATION_DURATION, animations: {self.verifyView.isHidden = false})
         }
     }
     
@@ -150,11 +151,11 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         textView.frame = newFrame;
     }
 
-    
+    /* Limits the number of characters in a post */
     private func textView(textView: UITextView, shouldChangeTextInRange range: Range<String.Index>, replacementText text: String) -> Bool {
         let newText = textView.text.replacingCharacters(in: range as Range<String.Index>, with: text)
         let numberOfChars = newText.characters.count
-        return numberOfChars < 200;
+        return numberOfChars < MAX_POST_CHARACTERS;
     }
     
     //MARK: - Pickerview methods
@@ -174,6 +175,30 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         return charities?.count ?? 0
     }
 
+    
+    //MARK: - Slider methods
+    
+    /* Handle slider event / limit to discrete values */
+    @IBAction private func sliderValueChanged(_ sender: Any) {
+        if let slider = sender as? UISlider {
+            
+            //discrete slider values
+            switch slider.value {
+                case 0..<0.13 : slider.value = 0.10
+                case 0.13..<0.38 : slider.value = 0.25
+                case 0.38..<0.63 : slider.value = 0.50
+                case 0.63..<0.88 : slider.value = 0.75
+                case 0.88..<1.13 : slider.value = 1.00
+                case 1.13..<1.38 : slider.value = 1.25
+                case 1.38...1.50 : slider.value = 1.50
+                default: break
+            }
+            
+            //update label to reflect the change
+            dollarLabel.text = "$ \(slider.value)"
+        }
+    }
+    
     //MARK: - Location methods
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -190,18 +215,36 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         }
     }
     
+    //MARK: - View did load preperation methods
+    
+    private func prepDonationSubviews() {
+        //hide the picker view
+        donateMessage.delegate = self
+        charityPicker.delegate = self
+        
+        charityPickerView.isHidden = true
+        donateMessage.layer.cornerRadius = 8
+        verifyButton.layer.cornerRadius = 15
+        verifyView.isHidden = true
+    }
+    
     //MARK: - Superclass methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        donateMessage.delegate = self
-        charityPicker.delegate = self
+        
+        //hide pickerview/verify subview/set delegates
+        prepDonationSubviews()
 
         // Create a location manager object
         locationManager = CLLocationManager()
         
+        // ask for location authorization
+        locationManager?.requestAlwaysAuthorization()
+        
         // Set the delegate
         locationManager?.delegate = self
+        
         
         //get quick location update
         requestLocationUpdate()
@@ -210,33 +253,8 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         connectRevealVC()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        //hide the picker view
-        charityPickerView.isHidden = true
-        donateMessage.layer.cornerRadius = 8
-        verifyButton.layer.cornerRadius = 15
-        verifyView.isHidden = true
-        
-        
-
-        // Ask for Authorisation from the User.
-        locationManager?.requestAlwaysAuthorization()
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

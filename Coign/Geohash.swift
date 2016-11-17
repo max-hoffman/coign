@@ -25,8 +25,6 @@ class Geohash {
             //store location for the given post ID
             geoFire?.setLocation(postLocation, forKey: postUID)
         }
-        
-        
     }
     
     
