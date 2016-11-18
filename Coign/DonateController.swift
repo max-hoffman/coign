@@ -31,6 +31,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     @IBOutlet weak var anonymousSwitch: UISwitch!
     @IBOutlet weak var donateMessage: UITextView!
     @IBOutlet weak var donateFor: UITextField!
+    @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var charityPicker: UIPickerView!
     @IBOutlet weak var charityPickerView: UIView!
     @IBOutlet weak var verifyView: UIView!
@@ -149,7 +150,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
         var newFrame = textView.frame
         newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
-        textView.frame = newFrame;
+        textView.frame = newFrame
     }
 
     /* Limits the number of characters in a post */

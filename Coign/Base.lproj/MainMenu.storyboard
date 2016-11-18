@@ -34,16 +34,16 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="uVM-W7-Jhs">
-                                            <rect key="frame" x="66" y="8" width="301" height="36.5"/>
+                                            <rect key="frame" x="66" y="8" width="301" height="37"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name → Charity" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJm-TG-MoF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="21"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time stamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZb-54-Kwq">
-                                                    <rect key="frame" x="0.0" y="20.5" width="71" height="16"/>
+                                                    <rect key="frame" x="0.0" y="21" width="71" height="16"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -230,7 +230,7 @@
             <objects>
                 <navigationController title="Home" automaticallyAdjustsScrollViewInsets="NO" id="yJb-Vt-nnF" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="k0F-wE-N7F">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k0F-wE-N7F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
