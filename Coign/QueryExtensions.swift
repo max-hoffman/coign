@@ -12,9 +12,9 @@ import Firebase
 extension FirTree {
     
     //pull the 50 most recent posts from firebase
-    class func queryRecentPosts(completionHandler: @escaping (_ postData: [[String:Any]]?) -> Void) {
+    class func queryRecentPosts(completionHandler: @escaping (_ postData: [Post]?) -> Void) {
         
-        var postArray: [[String:Any]] = []
+        var postArray: [Post] = []
         
         rootRef.child("posts").queryLimited(toFirst: 50).observe(
             .value, with: { snapshot in
@@ -22,7 +22,16 @@ extension FirTree {
             for item in snapshot.children {
                 if let child = item as? FIRDataSnapshot, let post = child.value,
                 let postDict = JSONParser.parseJSON(validJSONObject: post) {
-                    postArray.append(postDict)
+                    let newPost = Post(
+                        donor: postDict[FirTree.PostParameter.DonorName.rawValue] as? String,
+                        donorUID: postDict[FirTree.PostParameter.DonorUID.rawValue] as? String,
+                               recipient: postDict[FirTree.PostParameter.RecipientName.rawValue] as? String,
+                        message: postDict[FirTree.PostParameter.Message.rawValue] as? String,
+                        timeStamp: postDict[FirTree.PostParameter.TimeStamp.rawValue] as? Int,
+                        charity: postDict[FirTree.PostParameter.Charity.rawValue] as? String,
+                        postUID: postDict[FirTree.PostParameter.PostUID.rawValue] as? String,
+                        anonymous: postDict[FirTree.PostParameter.Anonymous.rawValue] as? Bool)
+                    postArray.insert(newPost, at: 0)
                 }
             }
             completionHandler(postArray)

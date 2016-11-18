@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 extension LoginController {
     
@@ -14,6 +15,7 @@ extension LoginController {
     
     /**
      Checks if the user is new or not; this is the bulk of the login work. The fetches from BF/FIR are asynchronous so the logic has to be nested. For some reason the FIR observation fires several times, so there's a guard to prevent the entire function from repeatedly being called.
+     //TODO: - make a loginFBSDKGraphRequest() func with completion handler that returns dictionary
      */
     func loginControlFlow() {
         
@@ -27,7 +29,7 @@ extension LoginController {
             [weak weakSelf = self]
             (connection, result, error) in
             
-            //erroneous facebook fetch, close function short
+            //facebook fetch failed, exit flow
             if error != nil {
                 print(error!.localizedDescription)
                 return
@@ -41,18 +43,14 @@ extension LoginController {
                 let name = jsonData?["name"] as! String?,
                 let picture = jsonData?["picture"] as! [String: AnyObject]?,
                 let data = picture["data"] as! [String: AnyObject]?,
-                let pictureURL = data["url"] as! String? {
+                let pictureURL = data["url"] as! String?,
+                let userID = FIRAuth.auth()?.currentUser?.uid {
                 
-                //store data in UserDefaults for later use
-                UserDefaults.standard.set(facebookID, forKey: FirTree.UserParameter.Id.rawValue)
-                UserDefaults.standard.set(name, forKey: FirTree.UserParameter.Name.rawValue)
-                UserDefaults.standard.set(pictureURL, forKey: FirTree.UserParameter.Picture.rawValue)
-                
-                //check if user is new || cache existing user settings
-                FirTree.rootRef.child(FirTree.Node.Users.rawValue).child(facebookID).observeSingleEvent(of: .value, with: {
+                //start firbase fetch, see if the logged in user has signed up
+                FirTree.rootRef.child(FirTree.Node.Users.rawValue).child(userID).observeSingleEvent(of: .value, with: {
                     snapshot in
                     
-                    //this should be deprecated
+                    //TODO: this should be deprecated
                     if UserDefaults.standard.object(forKey: "most recent login date") != nil {
                         print("firebase observation self-activated")
                         return
@@ -62,58 +60,103 @@ extension LoginController {
                         
                         //extract FirTree data to update user defaults
                         /*fixes bug: user data does not load into settings after logout */
-                        let value: Dictionary<String,String> = snapshot.value as! Dictionary
-                        UserDefaults.standard.set(value[FirTree.UserParameter.Birthday.rawValue], forKey: FirTree.UserParameter.Birthday.rawValue)
-                        UserDefaults.standard.set(value[FirTree.UserParameter.Email.rawValue], forKey: FirTree.UserParameter.Email .rawValue)
-                        UserDefaults.standard.set(value[FirTree.UserParameter.Phone.rawValue], forKey: FirTree.UserParameter.Phone .rawValue)
-                        UserDefaults.standard.set(value[FirTree.UserParameter.Charity.rawValue], forKey: FirTree.UserParameter.Charity.rawValue)
+                        weakSelf?.existingUserLoggedIn(userID: userID,
+                                                       firTreeDictionary: snapshot.value as! Dictionary<String, Any>)
                         
-                        //update last login time
-                        let loginTime = Date().shortDate
-                        FirTree.rootRef
-                            .child(FirTree.Node.Users.rawValue)
-                            .child(facebookID)
-                            .updateChildValues([FirTree.UserParameter.MostRecentLoginDate.rawValue: loginTime])
-                        UserDefaults.standard.set(
-                            loginTime,
-                            forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
+//                        let value: Dictionary<String,String> = snapshot.value as! Dictionary
+//                        UserDefaults.standard.set(value[FirTree.UserParameter.Birthday.rawValue], forKey: FirTree.UserParameter.Birthday.rawValue)
+//                        UserDefaults.standard.set(value[FirTree.UserParameter.Email.rawValue], forKey: FirTree.UserParameter.Email .rawValue)
+//                        UserDefaults.standard.set(value[FirTree.UserParameter.Phone.rawValue], forKey: FirTree.UserParameter.Phone .rawValue)
+//                        UserDefaults.standard.set(value[FirTree.UserParameter.Charity.rawValue], forKey: FirTree.UserParameter.Charity.rawValue)
+//                        UserDefaults.standard.set(userID, forKey: FirTree.UserParameter.UserUID.rawValue)
+//                        UserDefaults.standard.set(facebookID, forKey: FirTree.UserParameter.FacebookUID.rawValue)
+//                        UserDefaults.standard.set(name, forKey: FirTree.UserParameter.Name.rawValue)
+//                        UserDefaults.standard.set(pictureURL, forKey: FirTree.UserParameter.Picture.rawValue)
+//                        
+//                        //update last login time
+//                        let loginTime = Date().shortDate
+//                        FirTree.rootRef
+//                            .child(FirTree.Node.Users.rawValue)
+//                            .child(facebookID)
+//                            .updateChildValues([FirTree.UserParameter.MostRecentLoginDate.rawValue: loginTime])
+//                        UserDefaults.standard.set(
+//                            loginTime,
+//                            forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
                         
                     }
                     else { //user is new
-                        weakSelf?.createNewUser(facebookID: facebookID, name: name, pictureURL: pictureURL)
+                        FirTree.createNewUserInFirebase(userID: userID, facebookID: facebookID, name: name, pictureURL: pictureURL)
                     }
                     
-                    //set home menu as root VC
-                    let mainStoryBoard = UIStoryboard(name: Storyboard.MainApp.rawValue, bundle: .main)
-                    let revealViewController = mainStoryBoard.instantiateViewController(withIdentifier: "RevealVC")
-                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                    appDelegate.window?.rootViewController = revealViewController
+                    weakSelf?.setHomeMenuAsRootViewController()
+                   
                 })
             }
         })
         connection.start()
     }
     
+    
+    private func setHomeMenuAsRootViewController() {
+        //set home menu as root VC
+        let mainStoryBoard = UIStoryboard(name: Storyboard.MainApp.rawValue, bundle: .main)
+        let revealViewController = mainStoryBoard.instantiateViewController(withIdentifier: "RevealVC")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = revealViewController
+    }
+    
+    
+    private func existingUserLoggedIn(userID: String, firTreeDictionary value: Dictionary<String, Any>) {
+        //extract FirTree data to update user defaults
+        /*fixes bug: user data does not load into settings after logout */
+        
+        UserDefaults.standard.set(value[FirTree.UserParameter.Birthday.rawValue], forKey: FirTree.UserParameter.Birthday.rawValue)
+        UserDefaults.standard.set(value[FirTree.UserParameter.Email.rawValue], forKey: FirTree.UserParameter.Email .rawValue)
+        UserDefaults.standard.set(value[FirTree.UserParameter.Phone.rawValue], forKey: FirTree.UserParameter.Phone .rawValue)
+        UserDefaults.standard.set(value[FirTree.UserParameter.Charity.rawValue], forKey: FirTree.UserParameter.Charity.rawValue)
+        UserDefaults.standard.set(userID, forKey: FirTree.UserParameter.UserUID.rawValue)
+        UserDefaults.standard.set(value[FirTree.UserParameter.FacebookUID.rawValue], forKey: FirTree.UserParameter.FacebookUID.rawValue)
+        UserDefaults.standard.set(value[FirTree.UserParameter.Name.rawValue], forKey: FirTree.UserParameter.Name.rawValue)
+        UserDefaults.standard.set(value[FirTree.UserParameter.Picture.rawValue], forKey: FirTree.UserParameter.Picture.rawValue)
+        
+        //update last login time
+        let loginTime = Date().shortDate
+        FirTree.rootRef
+            .child(FirTree.Node.Users.rawValue)
+            .child(userID)
+            .updateChildValues([FirTree.UserParameter.MostRecentLoginDate.rawValue: loginTime])
+        UserDefaults.standard.set(
+            loginTime,
+            forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
+    }
+    
     //MARK: - New user function
     /**
      Adds a node to the "users" branch of the FIR tree - indexed by the user's facebook ID; used to create new user in "users" branch of FIR tree during loginControlFlow().
      */
-    func createNewUser(facebookID: String, name: String, pictureURL: String) {
-        
-        //prep data
-        //TODO: make the "new user" node unnecessary by calling the 
-        let post: [String : Any] = [FirTree.UserParameter.Name.rawValue : name,
-                                    FirTree.UserParameter.Picture.rawValue : pictureURL,
-                                    FirTree.UserParameter.OutgoingCoigns.rawValue: 0,
-                                    FirTree.UserParameter.IncomingCoigns.rawValue: 0,
-                                    FirTree.UserParameter.MostRecentLoginDate.rawValue: FirTree.UserParameter.NewUser.rawValue]
-        
-        //add date to new node
-        FirTree.updateUser(withNewSettings: post)
-        
-        //update user defaults
-        UserDefaults.standard.set(FirTree.UserParameter.NewUser.rawValue, forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
-    }
+//    func createNewUser(userID: String, facebookID: String, name: String, pictureURL: String) {
+//        
+//        //prep data
+//        //TODO: make the "new user" node unnecessary by calling the 
+//        let post: [String : Any] = [FirTree.UserParameter.Name.rawValue : name,
+//                                    FirTree.UserParameter.Picture.rawValue : pictureURL,
+//                                    FirTree.UserParameter.OutgoingCoigns.rawValue: 0,
+//                                    FirTree.UserParameter.IncomingCoigns.rawValue: 0,
+//                                    FirTree.UserParameter.FacebookUID.rawValue: facebookID,
+//                                    FirTree.UserParameter.MostRecentLoginDate.rawValue: FirTree.UserParameter.NewUser.rawValue]
+//        
+//        //add date to new node
+//        FirTree.updateUser(withNewSettings: post)
+//        
+//        //update user defaults
+//        //TODO: change this so that we don't need the "new user" intermediary
+//        UserDefaults.standard.set(FirTree.UserParameter.NewUser.rawValue, forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
+//        //store data in UserDefaults for later use
+//        UserDefaults.standard.set(facebookID, forKey: FirTree.UserParameter.FacebookUID.rawValue)
+//        UserDefaults.standard.set(name, forKey: FirTree.UserParameter.Name.rawValue)
+//        UserDefaults.standard.set(pictureURL, forKey: FirTree.UserParameter.Picture.rawValue)
+//        UserDefaults.standard.set(userID, forKey: FirTree.UserParameter.UserUID.rawValue)
+//    }
     
     /**
      Overloaded new user creation - indexed by the user's facebook ID. This is an unused overloaded class; feel like it could be useful, because it is all of the logic to make a facebook query and then store that data in the FIR tree.

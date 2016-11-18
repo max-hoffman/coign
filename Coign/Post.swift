@@ -10,6 +10,7 @@ import Foundation
 
 struct Post {
     let donor: String?
+    let donorUID:String?
     let recipient: String?
     let message: String?
     let timeStamp: Int?

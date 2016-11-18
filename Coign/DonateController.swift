@@ -43,7 +43,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     //TODO: This needs to go inside the plaid completion block
     private func createPost() {
         
-        if let user = UserDefaults.standard.object(forKey: FirTree.UserParameter.Id.rawValue) as? String, let recipient = donateFor.text {
+        if let userUID = UserDefaults.standard.object(forKey: FirTree.UserParameter.UserUID.rawValue) as? String, let recipient = donateFor.text, let name = UserDefaults.standard.object(forKey: FirTree.UserParameter.Name.rawValue) {
 
             var charity: String? = nil
             if defaultCharitySwitch.isOn {
@@ -56,18 +56,19 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
             //TODO: need a function to find if we can update the specified user, for now it's just whatever name is passed in
                 
             let post : [String: Any] = [
-                FirTree.PostParameter.Donor.rawValue : user ,
+                FirTree.PostParameter.DonorName.rawValue: name,
+                FirTree.PostParameter.DonorUID.rawValue : userUID,
                 FirTree.PostParameter.Charity.rawValue : charity!,
-                FirTree.PostParameter.Recipient.rawValue : recipient,
+                FirTree.PostParameter.RecipientName.rawValue : recipient,
                 FirTree.PostParameter.Message.rawValue : donateMessage.text,
                 FirTree.PostParameter.DonationAmount.rawValue : dollarSlider.value,
                 FirTree.PostParameter.TimeStamp.rawValue : Date.timeIntervalSinceReferenceDate,
                 FirTree.PostParameter.SharedToFacebook.rawValue : shareToFacebookSwitch.isOn,
-                FirTree.PostParameter.Anonymous.rawValue : anonymousSwitch.isOn,
+                FirTree.PostParameter.Anonymous.rawValue : anonymousSwitch.isOn
             ]
             
             //complete the post by updating the FirTree
-            FirTree.newPost(post: post, location: currentUserLocation, userID: user, recipientID: nil)
+            FirTree.newPost(post: post, location: currentUserLocation, userID: userUID, recipientID: nil)
         }
     }
 

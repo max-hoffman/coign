@@ -55,7 +55,7 @@ class SettingsController: UITableViewController {
         //deep link to phone settings
         if cellIdentifier == Settings.Actionable.Permissions.rawValue {
             if let appSettings = URL(string: UIApplicationOpenSettingsURLString) {
-                UIApplication.shared.openURL(appSettings as URL)
+                UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
             }
         }
             
@@ -125,18 +125,8 @@ class SettingsController: UITableViewController {
         FBSDKAccessToken.setCurrent(nil)
         FBSDKProfile.setCurrent(nil)
         
-        /* TODO: figure out how to have this loop through the user parameters. Maybe need to change my enums in FirData, which would require changing every reference to that parameter in the entire project */
-        //clear user defaults
-        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Id.rawValue)
-        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Name.rawValue)
-        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Email.rawValue)
-        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Birthday.rawValue)
-        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Phone.rawValue)
-        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Picture.rawValue)
-        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Friends.rawValue)
-        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
-        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Posts.rawValue)
-        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Charity.rawValue)
+        //erase user defaults
+        clearDefaults()
         
         //set login as the root VC
         let loginStoryboard = UIStoryboard(name: "Login", bundle: .main)
@@ -157,5 +147,20 @@ class SettingsController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    private func clearDefaults() {
+        /* TODO: figure out how to have this loop through the user parameters. Maybe need to change my enums in FirData, which would require changing every reference to that parameter in the entire project */
+        //clear user defaults
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.UserUID.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.FacebookUID.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Name.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Email.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Birthday.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Phone.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Picture.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Friends.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Posts.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Charity.rawValue)
+    }
     
 }

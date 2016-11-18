@@ -14,15 +14,15 @@ extension FirTree {
     //MARK: - Image functions
     
     /**
-     Pull user image from their image url, store in the Firebase storage database
+     Pull user image from their image url, store in the Firebase storage database.
      */
-    class func getUserImage(completionHandler: @escaping (_ image: UIImage?) -> Void) {
+    class func returnCurrentUserImage(completionHandler: @escaping (_ image: UIImage?) -> Void) {
         
         //vars needed
-        let facebookID = UserDefaults.standard.object(forKey: FirTree.UserParameter.Id.rawValue) as! String
+        let userID = UserDefaults.standard.object(forKey: FirTree.UserParameter.UserUID.rawValue) as! String
         
         //establish reference point for image
-        let userImageRef = FirTree.database.child("user profile images/\(facebookID)")
+        let userImageRef = FirTree.database.child("user profile images/\(userID)")
         
         //check to see if we've already saved their picture
         userImageRef.data(withMaxSize: 1*1000*1000) {
@@ -32,17 +32,16 @@ extension FirTree {
             if error != nil {
                 print(error?.localizedDescription ?? "no image was found at the given url")
                 
-                FirTree.updateUserDatabaseImage(facebookID: facebookID, completionHandler: { (image) in
+                FirTree.updateUserDatabaseImage(userID: userID, completionHandler: { (image) in
                     completionHandler(image)
                 })
             }
                 
                 //if the reference does have data, we can just return that as an image
             else if data != nil {
-                let image = UIImage(data: data!)
-                
-                print("image already exists")
-                completionHandler(image)
+                if let image = UIImage(data: data!) {
+                    completionHandler(image)
+                }
             }
         }
     }
@@ -51,14 +50,13 @@ extension FirTree {
      Updates the firebase storage image given the current url in defaults.
      */
     //TODO: This should probably be changed so that we make a facebook query to update the defaults and FirTree before updating FIR storage.
-    class func updateUserDatabaseImage(facebookID: String, completionHandler: @escaping (_ image: UIImage?) -> Void) {
+    class func updateUserDatabaseImage(userID: String, completionHandler: @escaping (_ image: UIImage?) -> Void) {
         
         //vars needed
         var image:UIImage? = nil
-        let facebookID = UserDefaults.standard.object(forKey: FirTree.UserParameter.Id.rawValue)
         
         //establish reference point for image
-        let userImageRef = FirTree.database.child("user profile images/\(facebookID!)")
+        let userImageRef = FirTree.database.child("user profile images/\(userID)")
         let metadata = FIRStorageMetadata()
         metadata.contentType = "image/jpeg"
         
@@ -94,5 +92,31 @@ extension FirTree {
         }
     }
 
-    
+    /**
+     Gets an image given the user UID. 
+     
+     //TODO: - Overloaded method that takes URL might be a good idea in the future.
+    */
+    class func returnImage(userID: String, completionHandler: @escaping (_ image: UIImage) -> Void) {
+        
+        //establish reference point for image
+        let userImageRef = FirTree.database.child("user profile images/\(userID)")
+        
+        //check to see if we've already saved their picture
+        userImageRef.data(withMaxSize: 1*1000*1000) {
+            (data, error) in
+            
+            //if the reference has no data, then we need to fill it
+            if error != nil {
+                print(error?.localizedDescription ?? "no image was found at the given url")
+            }
+                
+                //if the reference does have data, we can just return that as an image
+            else if data != nil {
+                if let image = UIImage(data: data!) {
+                    completionHandler(image)
+                }
+            }
+        }
+    }
 }

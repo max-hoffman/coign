@@ -42,7 +42,8 @@ class FirTree {
         case Friends = "friends"
         case MostRecentLoginDate = "most recent login date"
         case NewUser = "new user"
-        case Id = "facebookID"
+        case FacebookUID = "facebook uid"
+        case UserUID = "user uid"
         case Posts = "posts"
         case Charity = "charity preference"
         case IncomingCoigns = "incoming"
@@ -51,8 +52,10 @@ class FirTree {
 
     enum PostParameter: String {
         case PostUID = "post uid"
-        case Donor = "donor"
-        case Recipient = "recipient"
+        case DonorUID = "donor uid"
+        case DonorName = "donor name"
+        case RecipientUID = "recipient uid"
+        case RecipientName = "recipient name"
         case Charity = "charity"
         case DonationAmount = "donation amount"
         case Message = "message"
@@ -92,15 +95,44 @@ class FirTree {
      */
     class func updateUser(withNewSettings: [String: Any]) -> Void {
         //retrieve facebookID
-        if  let facebookID = UserDefaults.standard.string(forKey: UserParameter.Id.rawValue) {
+        if  let userID = UserDefaults.standard.string(forKey: UserParameter.UserUID.rawValue) {
             
-            rootRef.child(Node.Users.rawValue).child(facebookID).updateChildValues(withNewSettings)
+            rootRef.child(Node.Users.rawValue).child(userID).updateChildValues(withNewSettings)
         }
         else {
             print("did not find facebook ID value in user defaults")
         }
     }
     
+    //MARK: - New user function
+    /**
+     Adds a node to the "users" branch of the FIR tree - indexed by the user's facebook ID; used to create new user in "users" branch of FIR tree during loginControlFlow().
+     */
+    class func createNewUserInFirebase(userID: String, facebookID: String, name: String, pictureURL: String) {
+        
+        //prep data
+        //TODO: make the "new user" node unnecessary by calling the
+        let post: [String : Any] = [FirTree.UserParameter.Name.rawValue : name,
+                                    FirTree.UserParameter.Picture.rawValue : pictureURL,
+                                    FirTree.UserParameter.OutgoingCoigns.rawValue: 0,
+                                    FirTree.UserParameter.IncomingCoigns.rawValue: 0,
+                                    FirTree.UserParameter.FacebookUID.rawValue: facebookID,
+                                    FirTree.UserParameter.MostRecentLoginDate.rawValue: FirTree.UserParameter.NewUser.rawValue]
+        
+        //add date to new node
+        
+        rootRef.child(Node.Users.rawValue).child(userID).updateChildValues(post)
+        
+        //update user defaults
+        //TODO: change this so that we don't need the "new user" intermediary
+        UserDefaults.standard.set(FirTree.UserParameter.NewUser.rawValue, forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
+        //store data in UserDefaults for later use
+        UserDefaults.standard.set(facebookID, forKey: FirTree.UserParameter.FacebookUID.rawValue)
+        UserDefaults.standard.set(name, forKey: FirTree.UserParameter.Name.rawValue)
+        UserDefaults.standard.set(pictureURL, forKey: FirTree.UserParameter.Picture.rawValue)
+        UserDefaults.standard.set(userID, forKey: FirTree.UserParameter.UserUID.rawValue)
+    }
+
 //    func fetchUser(settings: [UserParameter], completion: @escaping ([UserParameter: Any]?) -> ()) {
 //        var data = [UserParameter: Any]()
 //        if  let facebookID = UserDefaults.standard.string(forKey: UserParameter.Id.rawValue) {

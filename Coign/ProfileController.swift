@@ -99,9 +99,8 @@ class ProfileController: UIViewController {
         
         
         //load user image
-        FirTree.getUserImage { (image) in
+        FirTree.returnCurrentUserImage { (image) in
             self.picture.image = image
-            
         }
         //nav bar for reveal view controller
         connectRevealVC()

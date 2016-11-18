@@ -93,12 +93,6 @@ extension HomeMenuController: UITextFieldDelegate, UIPickerViewDelegate, UIPicke
             self.userSetupPopover.removeFromSuperview()
             self.blurView?.removeFromSuperview()
             self.enablePanGestureRecognizer()
-            
-            //complete new user login by setting most recent login time (trigger for popover showing)
-            let loginTime = Date().shortDate
-            FirTree.updateUser(withNewSettings:
-                [FirTree.UserParameter.MostRecentLoginDate.rawValue: loginTime])
-            UserDefaults.standard.set(loginTime, forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
         }
     }
     
@@ -106,26 +100,34 @@ extension HomeMenuController: UITextFieldDelegate, UIPickerViewDelegate, UIPicke
      Helper function for saving the user setup info from the new user popover; FirTree.updateuser() does the main work.
      */
     func storeUserInfo() {
+
+        //grab values from text fields
+        let name = nameField.text!
+        let phoneNumber = phoneField.text!
+        let email = emailField.text!
+        let charityPreference = Charities.list[charityPreferencePicker.selectedRow(inComponent: 0)-1] //displace default by 1 to get correct charity
         
-        //this is probably an unnecessary check
-        if UserDefaults.standard.string(forKey: FirTree.UserParameter.Id.rawValue) != nil {
-            
-            //grab values from text fields
-            let name = nameField.text!
-            let phoneNumber = phoneField.text!
-            let email = emailField.text!
-            let charityPreference = Charities.list[charityPreferencePicker.selectedRow(inComponent: 0)-1] //displace default by 1 to get correct charity
-            
-            //prep data
-            let settings = [FirTree.UserParameter.Name.rawValue: name,
-                            FirTree.UserParameter.Phone.rawValue: phoneNumber,
-                            FirTree.UserParameter.Email.rawValue: email,
-                            FirTree.UserParameter.Charity.rawValue: charityPreference]
-            
-            //save data
-            FirTree.updateUser(withNewSettings: settings)
-            UserDefaults.standard.set(charityPreference, forKey: FirTree.UserParameter.Charity.rawValue)
-        }
+        //prep data
+        let settings = [FirTree.UserParameter.Name.rawValue: name,
+                        FirTree.UserParameter.Phone.rawValue: phoneNumber,
+                        FirTree.UserParameter.Email.rawValue: email,
+                        FirTree.UserParameter.Charity.rawValue: charityPreference]
+        
+        //save data to firebase
+        FirTree.updateUser(withNewSettings: settings)
+        
+        //save data to defaults
+        UserDefaults.standard.set(charityPreference, forKey: FirTree.UserParameter.Charity.rawValue)
+        UserDefaults.standard.set(name, forKey: FirTree.UserParameter.Name.rawValue)
+        UserDefaults.standard.set(phoneNumber, forKey: FirTree.UserParameter.Phone.rawValue)
+        UserDefaults.standard.set(email, forKey: FirTree.UserParameter.Email.rawValue)
+        
+        //complete new user login by setting most recent login time (trigger for popover showing)
+        let loginTime = Date().shortDate
+        FirTree.updateUser(withNewSettings:
+            [FirTree.UserParameter.MostRecentLoginDate.rawValue: loginTime])
+        UserDefaults.standard.set(loginTime, forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
+
     }
     
     
@@ -187,7 +189,6 @@ extension HomeMenuController: UITextFieldDelegate, UIPickerViewDelegate, UIPicke
             return nil
         }
     }
-
     
     //initialize picker view at the first real entry
     func preparePickerView() {
