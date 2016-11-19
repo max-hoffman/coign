@@ -92,21 +92,26 @@ class HomeMenuController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: POST_CELL_IDENTIFIER, for: indexPath) as? PostCell,
-            let post = recentPosts?[indexPath.row],
-            let time = post.timeStamp {
+            let post = recentPosts?[indexPath.row] {
             
             if let donor = post.donor, let charity = post.charity {
                 cell.header.text = "\(donor) → \(charity)"
             }
             
-            cell.timeStamp.text = String(describing: time)
+            if let time = post.timeStamp {
+            cell.timeStamp.text = Double(time).formatMillisecondsToCoherentTime
+            }
             
-            if let message = post.message {
-                if let recipient = post.recipient{
-                    cell.postBody.text = "@\(recipient): \(message)"
+            //if let message = post.message {
+                cell.postBody.text = post.message
+            //}
+            
+            if let recipient = post.recipient?.lowercased().removeWhitespace() {
+                if recipient != "" {
+                    cell.recipientLabel.text = "@ \(recipient):"
                 }
                 else {
-                     cell.postBody.text = post.message
+                    cell.recipientLabel.isHidden = true
                 }
             }
             

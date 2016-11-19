@@ -12,6 +12,7 @@ class PostCell: UITableViewCell {
     
     //MARK: - Outlets
     
+    @IBOutlet weak var recipientLabel: UILabel!
     @IBOutlet weak var header: UILabel!
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var timeStamp: UILabel!
@@ -23,6 +24,8 @@ class PostCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        recipientLabel.textColor = UIColor.blue
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

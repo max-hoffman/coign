@@ -14,16 +14,16 @@
         <scene sceneID="oHM-20-n4T">
             <objects>
                 <tableViewController id="8Rj-ln-A4g" customClass="HomeMenuController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="102" sectionHeaderHeight="28" sectionFooterHeight="28" id="ylc-gc-16r">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="156" sectionHeaderHeight="28" sectionFooterHeight="28" id="ylc-gc-16r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="post cell" rowHeight="102" id="LMF-sl-QZ0" customClass="PostCell" customModule="Coign" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="102"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="post cell" rowHeight="156" id="LMF-sl-QZ0" customClass="PostCell" customModule="Coign" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="156"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LMF-sl-QZ0" id="pUu-jh-vtr">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jjb-81-WEY">
@@ -34,38 +34,47 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="uVM-W7-Jhs">
-                                            <rect key="frame" x="66" y="8" width="301" height="37"/>
+                                            <rect key="frame" x="66" y="8" width="301" height="36.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name → Charity" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJm-TG-MoF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="20.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time stamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZb-54-Kwq">
-                                                    <rect key="frame" x="0.0" y="21" width="71" height="16"/>
+                                                    <rect key="frame" x="0.0" y="20.5" width="71" height="16"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="Donate message" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBo-zw-7i0">
-                                            <rect key="frame" x="8" y="66" width="359" height="27"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="@person:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uok-Jg-i5Q">
+                                            <rect key="frame" x="8" y="66" width="359" height="42"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="250" text="Donate message" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBo-zw-7i0">
+                                            <rect key="frame" x="8" y="86.5" width="359" height="61"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="dBo-zw-7i0" firstAttribute="top" secondItem="Uok-Jg-i5Q" secondAttribute="bottom" id="2jz-1O-PvT"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="Uok-Jg-i5Q" secondAttribute="leading" id="9Q7-Mr-qgr"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="dBo-zw-7i0" secondAttribute="trailing" id="HPc-0X-KGZ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Uok-Jg-i5Q" secondAttribute="trailing" id="Naz-5u-b3m"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="dBo-zw-7i0" secondAttribute="bottom" id="Q60-cH-XyW"/>
                                         <constraint firstAttribute="topMargin" secondItem="uVM-W7-Jhs" secondAttribute="top" id="RtX-J1-GJE"/>
                                         <constraint firstItem="uVM-W7-Jhs" firstAttribute="leading" secondItem="jjb-81-WEY" secondAttribute="trailing" constant="8" symbolic="YES" id="exr-ry-Hz3"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="dBo-zw-7i0" secondAttribute="leading" id="j0U-B9-0Hu"/>
                                         <constraint firstAttribute="topMargin" secondItem="jjb-81-WEY" secondAttribute="top" id="jxH-NT-Eyg"/>
+                                        <constraint firstItem="Uok-Jg-i5Q" firstAttribute="top" secondItem="jjb-81-WEY" secondAttribute="bottom" constant="8" symbolic="YES" id="kM0-xz-UYe"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="uVM-W7-Jhs" secondAttribute="trailing" id="ovK-y4-gty"/>
-                                        <constraint firstItem="dBo-zw-7i0" firstAttribute="top" secondItem="jjb-81-WEY" secondAttribute="bottom" constant="8" symbolic="YES" id="wdR-PN-8Lr"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="dBo-zw-7i0" secondAttribute="bottom" id="yyi-hW-OdY"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="jjb-81-WEY" secondAttribute="leading" id="zSD-2l-4UV"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -73,6 +82,7 @@
                                     <outlet property="header" destination="vJm-TG-MoF" id="lNP-x6-HaZ"/>
                                     <outlet property="picture" destination="jjb-81-WEY" id="bdk-7A-iCJ"/>
                                     <outlet property="postBody" destination="dBo-zw-7i0" id="Z5J-tM-Hg1"/>
+                                    <outlet property="recipientLabel" destination="Uok-Jg-i5Q" id="n6o-rp-iTP"/>
                                     <outlet property="timeStamp" destination="sZb-54-Kwq" id="EPf-Kk-IFC"/>
                                 </connections>
                             </tableViewCell>
@@ -230,7 +240,7 @@
             <objects>
                 <navigationController title="Home" automaticallyAdjustsScrollViewInsets="NO" id="yJb-Vt-nnF" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k0F-wE-N7F">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="k0F-wE-N7F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

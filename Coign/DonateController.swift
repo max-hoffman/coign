@@ -23,6 +23,9 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     var locationManager: CLLocationManager? = nil
     let MAX_POST_CHARACTERS: Int = 200
     let ANIMATION_DURATION = 0.3
+    let MESSAGE_PLACEHOLDER_TEXT = "Insert message here: "
+    let DONATE_PLACEHOLDER_TEXT = "ex: Jane Doe"
+    let VERIFY_BUTTON_DELAY = 0.4
     
     //MARK: - Outlets
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -73,9 +76,20 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         }
     }
 
+    //button color returned to normal after the popover appears
     @IBAction func verifyButtonPressed(_ sender: UIButton) {
+        verifyButton.backgroundColor = CustomColor.darkGreen.withAlphaComponent(0.5)
         presentVerifyPopover()
+        let _ = Timer.scheduledTimer(withTimeInterval: VERIFY_BUTTON_DELAY, repeats: false) {timer in
+            self.verifyButton.backgroundColor = CustomColor.darkGreen.withAlphaComponent(1.0)
+            timer.invalidate()
+        }
     }
+    
+    @IBAction func verifyButtonReleased(_ sender: UIButton) {
+        verifyButton.backgroundColor = CustomColor.darkGreen.withAlphaComponent(1.0)
+    }
+    
     
     private func presentVerifyPopover() {
         //TODO: This is where the stripe/plaid verification needs to go
@@ -87,6 +101,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
             (action: UIAlertAction) -> Void in
             
             weakSelf?.createPost()
+            weakSelf?.resetPage()
         }))
         donationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {
             (action: UIAlertAction) -> Void in
@@ -137,7 +152,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     //MARK:- Textview methods
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == "Insert message here. " {
+        if textView.text == MESSAGE_PLACEHOLDER_TEXT {
             donateMessage.text = ""
             UIView.animate(withDuration: ANIMATION_DURATION, animations: {self.verifyView.isHidden = false})
         }
@@ -228,6 +243,20 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         donateMessage.layer.cornerRadius = 8
         verifyButton.layer.cornerRadius = 15
         verifyView.isHidden = true
+        donateMessage.placeholderText = MESSAGE_PLACEHOLDER_TEXT
+    }
+    
+    private func resetPage() {
+        charityPickerView.isHidden = true
+        verifyView.isHidden = true
+        defaultCharitySwitch.isOn = true
+        donateFor.text = nil
+        donateMessage.text = MESSAGE_PLACEHOLDER_TEXT
+        anonymousSwitch.isOn = false
+        shareToFacebookSwitch.isOn = true
+        shareToFacebookSwitch.isEnabled = true
+        dollarSlider.value = 1.00
+        dollarLabel.text = "$ 1.00"
     }
     
     //MARK: - Superclass methods

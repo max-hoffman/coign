@@ -32,10 +32,10 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bnz-RK-opw">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yeu-JT-KAn" userLabel="Content View">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yeu-JT-KAn" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="814"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="occ-vf-44b">
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" misplaced="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="occ-vf-44b">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="814"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5rb-GF-0ZV" userLabel="Charity/Donatee View">
@@ -77,7 +77,7 @@
                                                         <rect key="frame" x="0.0" y="71" width="375" height="266"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mI2-fm-jSa">
-                                                                <rect key="frame" x="161.5" y="20" width="52.5" height="22"/>
+                                                                <rect key="frame" x="161" y="20" width="53" height="22"/>
                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -98,14 +98,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTP-J1-9IJ" userLabel="For View">
                                                         <rect key="frame" x="0.0" y="337" width="375" height="50"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEf-wr-W2Z" userLabel="For">
-                                                                <rect key="frame" x="20" y="0.0" width="33.5" height="50"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="For:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEf-wr-W2Z" userLabel="For">
+                                                                <rect key="frame" x="20" y="0.0" width="34" height="50"/>
                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex: Jane Doe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Zv-So-gki">
-                                                                <rect key="frame" x="61" y="0.0" width="294" height="50"/>
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex: Jane Doe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Zv-So-gki">
+                                                                <rect key="frame" x="62" y="0.0" width="293" height="50"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -126,7 +126,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Xk-M4-Pog" userLabel="Comments View">
                                                         <rect key="frame" x="0.0" y="387" width="375" height="50"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nF-5C-ZrK">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Comments:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nF-5C-ZrK">
                                                                 <rect key="frame" x="20" y="20" width="335" height="30"/>
                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                                                 <nil key="textColor"/>
@@ -144,10 +144,10 @@
                                                     <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="MTk-t6-EVH" userLabel="TextView">
                                                         <rect key="frame" x="0.0" y="437" width="375" height="78"/>
                                                         <subviews>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" scrollEnabled="NO" text="Insert message here. " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VNv-CP-ove">
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" scrollEnabled="NO" text="Insert message here: " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VNv-CP-ove">
                                                                 <rect key="frame" x="20" y="20" width="335" height="38"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="continue"/>
                                                                 <connections>
@@ -215,13 +215,13 @@
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="1QM-D9-F0f" userLabel="Slider View">
                                                         <rect key="frame" x="0.0" y="632" width="375" height="94"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfV-4O-AkB">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 1.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfV-4O-AkB">
                                                                 <rect key="frame" x="20" y="20" width="335" height="24"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.10000000000000001" maxValue="1.5" translatesAutoresizingMaskIntoConstraints="NO" id="df6-h0-54B">
+                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.25" maxValue="1.5" translatesAutoresizingMaskIntoConstraints="NO" id="df6-h0-54B">
                                                                 <rect key="frame" x="18" y="44" width="339" height="31"/>
                                                                 <connections>
                                                                     <action selector="sliderValueChanged:" destination="Rlo-Te-RmQ" eventType="valueChanged" id="qRc-w9-h5S"/>
@@ -252,6 +252,7 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="verifyButtonPressed:" destination="Rlo-Te-RmQ" eventType="touchUpInside" id="Mk3-W4-0ed"/>
+                                                                    <action selector="verifyButtonReleased:" destination="Rlo-Te-RmQ" eventType="touchDown" id="iWE-Q1-oZb"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -266,12 +267,11 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="JdA-bF-1Oe" firstAttribute="top" secondItem="1QM-D9-F0f" secondAttribute="bottom" id="6f0-bQ-804"/>
-                                                    <constraint firstItem="5rb-GF-0ZV" firstAttribute="top" secondItem="occ-vf-44b" secondAttribute="top" id="82O-6Y-qhi"/>
-                                                    <constraint firstItem="DTP-J1-9IJ" firstAttribute="top" secondItem="CIm-SW-PXx" secondAttribute="bottom" id="9OH-FR-LSy"/>
                                                     <constraint firstItem="MTk-t6-EVH" firstAttribute="top" secondItem="3Xk-M4-Pog" secondAttribute="bottom" id="9o7-WU-iCJ"/>
                                                     <constraint firstItem="4Tj-8W-T4d" firstAttribute="top" secondItem="MTk-t6-EVH" secondAttribute="bottom" id="BTs-i5-y6Q"/>
+                                                    <constraint firstItem="DTP-J1-9IJ" firstAttribute="top" secondItem="CIm-SW-PXx" secondAttribute="bottom" id="ORv-q4-OeZ"/>
                                                     <constraint firstItem="1QM-D9-F0f" firstAttribute="top" secondItem="4Tj-8W-T4d" secondAttribute="bottom" id="Owl-KT-umD"/>
-                                                    <constraint firstItem="CIm-SW-PXx" firstAttribute="top" secondItem="5rb-GF-0ZV" secondAttribute="bottom" id="ZOm-wo-nLR"/>
+                                                    <constraint firstItem="CIm-SW-PXx" firstAttribute="top" secondItem="5rb-GF-0ZV" secondAttribute="bottom" id="cLP-dH-Zoa"/>
                                                     <constraint firstAttribute="bottom" secondItem="JdA-bF-1Oe" secondAttribute="bottom" id="rRe-Kk-8sa"/>
                                                     <constraint firstItem="3Xk-M4-Pog" firstAttribute="top" secondItem="DTP-J1-9IJ" secondAttribute="bottom" id="uil-qQ-UNk"/>
                                                 </constraints>
@@ -287,7 +287,6 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Yeu-JT-KAn" firstAttribute="height" secondItem="Bnz-RK-opw" secondAttribute="height" priority="250" id="3h8-9d-cuP"/>
                                     <constraint firstAttribute="trailing" secondItem="Yeu-JT-KAn" secondAttribute="trailing" id="CHI-aX-j5c"/>
                                     <constraint firstAttribute="bottom" secondItem="Yeu-JT-KAn" secondAttribute="bottom" id="E5m-wc-bqm"/>
                                     <constraint firstItem="Yeu-JT-KAn" firstAttribute="top" secondItem="Bnz-RK-opw" secondAttribute="top" id="kEy-i1-exA"/>
@@ -331,7 +330,7 @@
             <objects>
                 <navigationController storyboardIdentifier="Donate NC" title="Donation NC" automaticallyAdjustsScrollViewInsets="NO" id="6hD-sd-YP4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EHl-6R-c6q">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EHl-6R-c6q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
