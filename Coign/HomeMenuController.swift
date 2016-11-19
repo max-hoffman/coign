@@ -60,6 +60,7 @@ class HomeMenuController: UITableViewController {
         nameField.delegate = self
         charityPreferencePicker.delegate = self
         charityPreferencePicker.dataSource = self
+        tableView.backgroundView = UIImageView(image: UIImage(named: "coign_background_02"))
     }
     
     
