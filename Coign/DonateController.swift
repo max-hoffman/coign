@@ -286,10 +286,6 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         
         //nav bar for reveal view controller
         connectRevealVC()
-        
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: BACKGROUND_IMAGE_LINK)!)
-    
-        
     }
     
     override func didReceiveMemoryWarning() {

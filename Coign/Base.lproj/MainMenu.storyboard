@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home Menu Controller-->
+        <!--Coign-->
         <scene sceneID="oHM-20-n4T">
             <objects>
-                <tableViewController id="8Rj-ln-A4g" customClass="HomeMenuController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Coign" id="8Rj-ln-A4g" customClass="HomeMenuController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="156" sectionHeaderHeight="28" sectionFooterHeight="28" id="ylc-gc-16r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
