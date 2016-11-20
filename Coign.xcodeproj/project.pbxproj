@@ -24,6 +24,8 @@
 		E20AF77C1DCF9BF700E6CB09 /* CrimsonText-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E20AF77B1DCF9AB300E6CB09 /* CrimsonText-Italic.ttf */; };
 		E20AF77D1DCF9BF700E6CB09 /* Khula-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E20AF77A1DCF9A4000E6CB09 /* Khula-ExtraBold.ttf */; };
 		E2212D2D1DDFDF880016E2C8 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2212D2C1DDFDF880016E2C8 /* StringExtensions.swift */; };
+		E2212D2F1DE135230016E2C8 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2212D2E1DE135230016E2C8 /* HeaderCell.swift */; };
+		E2212D311DE144510016E2C8 /* FooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2212D301DE144510016E2C8 /* FooterCell.swift */; };
 		E2360B0F1DDE629000DFE338 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2360B0E1DDE629000DFE338 /* JSONParser.swift */; };
 		E24214971DA8966400A5B080 /* VCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24214961DA8966400A5B080 /* VCExtensions.swift */; };
 		E24F77EA1D84FBB000936AAE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24F77E91D84FBB000936AAE /* SWRevealViewController.m */; };
@@ -119,6 +121,8 @@
 		E20AF77A1DCF9A4000E6CB09 /* Khula-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Khula-ExtraBold.ttf"; sourceTree = "<group>"; };
 		E20AF77B1DCF9AB300E6CB09 /* CrimsonText-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CrimsonText-Italic.ttf"; sourceTree = "<group>"; };
 		E2212D2C1DDFDF880016E2C8 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		E2212D2E1DE135230016E2C8 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		E2212D301DE144510016E2C8 /* FooterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterCell.swift; sourceTree = "<group>"; };
 		E2360B0E1DDE629000DFE338 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		E24214961DA8966400A5B080 /* VCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCExtensions.swift; sourceTree = "<group>"; };
 		E24F77E81D84FBB000936AAE /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -452,7 +456,9 @@
 			children = (
 				E2C397FC1D85CBE3000D35F4 /* MainMenu.storyboard */,
 				E2A7D5E01DDD427700D6D92A /* HomeMenuController.swift */,
+				E2212D2E1DE135230016E2C8 /* HeaderCell.swift */,
 				E2A7D5E21DDE12D600D6D92A /* PostCell.swift */,
+				E2212D301DE144510016E2C8 /* FooterCell.swift */,
 				E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */,
 			);
 			name = "Home Menu";
@@ -826,6 +832,7 @@
 				E24214971DA8966400A5B080 /* VCExtensions.swift in Sources */,
 				E20163E51D7B2F7100949826 /* LoginController.swift in Sources */,
 				E2A7D5E51DDE1B3C00D6D92A /* QueryExtensions.swift in Sources */,
+				E2212D2F1DE135230016E2C8 /* HeaderCell.swift in Sources */,
 				E2C397F01D85B9B4000D35F4 /* SettingsController.swift in Sources */,
 				E2E8FE141DD8F451003AB2D2 /* ImageExtensions.swift in Sources */,
 				E20163E31D7B2F7100949826 /* AppDelegate.swift in Sources */,
@@ -841,6 +848,7 @@
 				E2A7D5E11DDD427700D6D92A /* HomeMenuController.swift in Sources */,
 				E2E8FE1C1DD90F35003AB2D2 /* PostingExtensions.swift in Sources */,
 				E2E4E37C1DD56C86004522C9 /* NetworkGraph.swift in Sources */,
+				E2212D311DE144510016E2C8 /* FooterCell.swift in Sources */,
 				E259EB691DA6AC1D00EADC4C /* FirTree.swift in Sources */,
 				E2C397F61D85C098000D35F4 /* AboutUsController.swift in Sources */,
 				E2C397F41D85BDC3000D35F4 /* DonateController.swift in Sources */,

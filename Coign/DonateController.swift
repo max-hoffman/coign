@@ -22,10 +22,11 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     var currentUserLocation:CLLocationCoordinate2D? = nil
     var locationManager: CLLocationManager? = nil
     let MAX_POST_CHARACTERS: Int = 200
-    let ANIMATION_DURATION = 0.3
-    let MESSAGE_PLACEHOLDER_TEXT = "Insert message here: "
-    let DONATE_PLACEHOLDER_TEXT = "ex: Jane Doe"
-    let VERIFY_BUTTON_DELAY = 0.4
+    let ANIMATION_DURATION: TimeInterval = 0.3
+    let MESSAGE_PLACEHOLDER_TEXT: String = "Insert message here: "
+    let DONATE_PLACEHOLDER_TEXT: String = "ex: Jane Doe"
+    let VERIFY_BUTTON_DELAY: TimeInterval = 0.4
+    let BACKGROUND_IMAGE_LINK: String = "coign_background_02"
     
     //MARK: - Outlets
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -42,6 +43,8 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     @IBOutlet weak var dollarLabel: UILabel!
     @IBOutlet weak var dollarSlider: UISlider!
     
+    @IBOutlet weak var backgroundView: UIImageView!
+    @IBOutlet weak var vibrancyView: UIVisualEffectView!
     //MARK: - Post methods
     
     //TODO: This needs to go inside the plaid completion block
@@ -259,6 +262,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         dollarLabel.text = "$ 1.00"
     }
     
+    
     //MARK: - Superclass methods
     
     override func viewDidLoad() {
@@ -282,6 +286,10 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         
         //nav bar for reveal view controller
         connectRevealVC()
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: BACKGROUND_IMAGE_LINK)!)
+    
+        
     }
     
     override func didReceiveMemoryWarning() {

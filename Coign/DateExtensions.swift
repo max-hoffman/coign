@@ -52,11 +52,17 @@ extension Double {
         switch time {
             case 0..<60 :
                 return "\(Int(time)) min ago"
-            case 60..<1440 :
+            case 60..<120 :
+                return "\(Int(time/60)) hour ago"
+            case 120..<1440 :
                 return "\(Int(time/60)) hours ago"
-            case 1440..<10080 :
-                return "\(Int(time/60))) days ago"
-            case 10080..<40320 :
+            case 1440..<2880 :
+                return "\(Int(time/60/24)) day ago"
+            case 2880..<10080:
+                return "\(Int(time/60/24)) days ago"
+            case 10080..<20160 :
+                return "\(Int(time/60/24/7)) week ago"
+            case 20160..<40320 :
                 return "\(Int(time/60/24/7)) weeks ago"
             default:
                 return self.toDay

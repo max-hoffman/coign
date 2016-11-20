@@ -14,10 +14,13 @@ class HomeMenuController: UITableViewController {
     
     //MARK: - Constants
     let POST_CELL_IDENTIFIER = "post cell"
+    let HEADER_CELL_IDENTIFIER = "header cell"
+    let FOOTER_CELL_IDENTIFIER = "footer cell"
     
     //MARK: - User setup properties and outlets
-    var blurView: UIVisualEffectView?
-    var blurEffect: UIVisualEffect?
+    var blurView: UIVisualEffectView? = nil
+    var blurEffect: UIVisualEffect? = nil
+    var segmentedControl: UISegmentedControl? = nil
     var recentPosts: [Post]? {
         didSet {
             DispatchQueue.main.async{
@@ -54,6 +57,9 @@ class HomeMenuController: UITableViewController {
             self.recentPosts = postData
         }
         
+        //make ourselves the tableview delegate
+        tableView.delegate = self
+        
         // User setup delegation
         emailField.delegate = self
         phoneField.delegate = self
@@ -80,20 +86,28 @@ class HomeMenuController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        
+        if recentPosts != nil {
+                return recentPosts!.count
+            }
+            else {return 1}
     }
 
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return recentPosts?.count ?? 0
+//        if recentPosts != nil {
+//            return recentPosts!.count
+//        }
+//        else {return 1}
+        return 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: POST_CELL_IDENTIFIER, for: indexPath) as? PostCell,
-            let post = recentPosts?[indexPath.row] {
+            let post = recentPosts?[indexPath.section] {
             
             if let donor = post.donor, let charity = post.charity {
                 cell.header.text = "\(donor) → \(charity)"
@@ -110,6 +124,7 @@ class HomeMenuController: UITableViewController {
             if let recipient = post.recipient?.lowercased().removeWhitespace() {
                 if recipient != "" {
                     cell.recipientLabel.text = "@ \(recipient):"
+                    cell.recipientLabel.textColor = UIColor.blue
                 }
                 else {
                     cell.recipientLabel.isHidden = true
@@ -140,6 +155,59 @@ class HomeMenuController: UITableViewController {
         return UITableViewAutomaticDimension
     }
 
+    //MARK: - Header methods
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0, let  headerCell = tableView.dequeueReusableCell(withIdentifier: HEADER_CELL_IDENTIFIER) as? HeaderCell {
+                segmentedControl = headerCell.segmentedControl
+                return headerCell
+        }
+        else { return tableView.dequeueReusableCell(withIdentifier: FOOTER_CELL_IDENTIFIER) as? FooterCell}
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 60
+        }
+        else { return 15 }
+    }
+    
+    @IBAction func indexChanged(sender: UISegmentedControl) {
+        if sender == segmentedControl {
+            if let index = segmentedControl?.selectedSegmentIndex {
+                switch index {
+                    case 0:
+                        print("recent selected")
+                    //show popular view
+                    case 1:
+                        print("local selected")
+                    //show history view
+                    case 3:
+                        print("friends selected")
+                    default:
+                        break;
+                }
+            }
+        }
+    }
+    
+    //MARK: Footer methods
+    
+//    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        if let footerCell = tableView.dequeueReusableCell(withIdentifier: FOOTER_CELL_IDENTIFIER) as? FooterCell {
+//            return footerCell
+//        }
+//        else {
+//            return nil
+//        }
+////        return tableView.dequeueReusableCell(withIdentifier: FOOTER_CELL_IDENTIFIER) as? FooterCell
+//        
+//    }
+//    
+//    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return CGFloat(10)
+//    }
+//    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
