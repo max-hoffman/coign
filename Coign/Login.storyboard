@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Waw-fS-3NR">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Waw-fS-3NR">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,43 +23,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="mhd-Km-BII">
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0R-yz-Lsk">
-                                        <fontDescription key="fontDescription" type="system" pointSize="55"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eN5-ww-imz">
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A better way to thank friends," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmf-ru-p5T">
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="commend strangers," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4d-WN-k86">
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&amp; engage with communities." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwc-fA-mc7">
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOF-mT-Znc" customClass="FBSDKLoginButton">
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Login"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="coign_largelogo_01" translatesAutoresizingMaskIntoConstraints="NO" id="YNF-PG-P0L">
+                                <rect key="frame" x="16" y="248" width="343" height="171.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YNF-PG-P0L" secondAttribute="height" multiplier="2:1" id="Y9g-qg-SjZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The tangible social currency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmf-ru-p5T">
+                                <rect key="frame" x="16" y="427.5" width="343" height="31.5"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOF-mT-Znc" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="16" y="467" width="343" height="136"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Login"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mhd-Km-BII" firstAttribute="centerX" secondItem="L9T-EM-hpf" secondAttribute="centerX" id="JOa-tK-nPS"/>
-                            <constraint firstItem="mhd-Km-BII" firstAttribute="centerY" secondItem="L9T-EM-hpf" secondAttribute="centerY" id="rUI-As-VvX"/>
+                            <constraint firstItem="JZ0-yj-CCS" firstAttribute="top" secondItem="sOF-mT-Znc" secondAttribute="bottom" constant="64" id="22P-zr-JVh"/>
+                            <constraint firstItem="YNF-PG-P0L" firstAttribute="centerY" secondItem="L9T-EM-hpf" secondAttribute="centerY" id="78Q-SL-MQN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sOF-mT-Znc" secondAttribute="trailing" id="8j6-O7-37Q"/>
+                            <constraint firstItem="Cmf-ru-p5T" firstAttribute="top" secondItem="YNF-PG-P0L" secondAttribute="bottom" constant="8" symbolic="YES" id="FAY-1R-h9r"/>
+                            <constraint firstItem="YNF-PG-P0L" firstAttribute="leading" secondItem="L9T-EM-hpf" secondAttribute="leadingMargin" id="GVS-qA-Tyy"/>
+                            <constraint firstItem="sOF-mT-Znc" firstAttribute="top" secondItem="Cmf-ru-p5T" secondAttribute="bottom" constant="8" symbolic="YES" id="K1D-Wy-oZ7"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Cmf-ru-p5T" secondAttribute="leading" id="PtO-N7-TEx"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="sOF-mT-Znc" secondAttribute="leading" id="a76-15-Nzt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YNF-PG-P0L" secondAttribute="trailing" id="h6m-c5-KgT"/>
+                            <constraint firstItem="YNF-PG-P0L" firstAttribute="centerX" secondItem="L9T-EM-hpf" secondAttribute="centerX" id="jcd-8w-5Uo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cmf-ru-p5T" secondAttribute="trailing" id="tHC-lH-QiD"/>
                         </constraints>
                     </view>
                     <connections>
@@ -63,7 +62,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTm-vs-e3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="coign_largelogo_01" width="1024" height="1024"/>
+    </resources>
 </document>

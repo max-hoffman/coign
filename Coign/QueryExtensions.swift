@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import CoreLocation
 
 extension FirTree {
     
@@ -38,4 +39,9 @@ extension FirTree {
         })
 
     }
+    
+    class func queryFriendPosts (completionHandler: @escaping (_ postData: [Post]?) -> Void) {
+        
+    }
+    
 }

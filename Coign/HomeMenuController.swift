@@ -7,27 +7,57 @@
 //
 
 import UIKit
+import CoreLocation
 
-class HomeMenuController: UITableViewController {
+class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
 
-    //MARK: Maybe move the popover outlets into a separate view controller, and then change the present popover segue accordingly. Make a xib file, then load nib into this controller? Might not be necessary
+    //MARK: - Properties
     
-    //MARK: - Constants
+    //Constants
     let POST_CELL_IDENTIFIER = "post cell"
     let HEADER_CELL_IDENTIFIER = "header cell"
     let FOOTER_CELL_IDENTIFIER = "footer cell"
     
-    //MARK: - User setup properties and outlets
-    var blurView: UIVisualEffectView? = nil
-    var blurEffect: UIVisualEffect? = nil
+    //Menu properties
     var segmentedControl: UISegmentedControl? = nil
     var recentPosts: [Post]? {
         didSet {
-            DispatchQueue.main.async{
-                self.tableView.reloadData()
+            if segmentedControl?.selectedSegmentIndex == 0 {
+                DispatchQueue.main.async{
+                    self.tableView.reloadData()
+                }
             }
         }
     }
+    var localPosts: [Post]? {
+        didSet {
+            if segmentedControl?.selectedSegmentIndex == 1 {
+                DispatchQueue.main.async{
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    var friendsPosts: [Post]? {
+        didSet {
+            if segmentedControl?.selectedSegmentIndex == 2 {
+                DispatchQueue.main.async{
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    //TODO: could change the didset to selectedposts
+    var selectedPosts: [Post]?
+    
+    //Location properties
+    var locationManager: CLLocationManager? = nil
+    var currentUserLocation:CLLocationCoordinate2D? = nil
+    
+    //User setup properties and outlets
+    
+    var blurView: UIVisualEffectView? = nil
+    var blurEffect: UIVisualEffect? = nil
     
     //UI outlets and actions
     @IBOutlet weak var userSetupPopover: UIView!
@@ -41,24 +71,40 @@ class HomeMenuController: UITableViewController {
     @IBOutlet weak var charityPreferencePicker: UIPickerView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    //MARK: - Superview and load functions
+    //MARK: - Superview methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //TODO: pull in an array of posts to load into the post cells
-       //        let postArray = jsonPostArray.map {parseJSON(validJSONObject: $0)}
-//        print(postArray)
+        // Create a location manager object
+        locationManager = CLLocationManager()
+        
+        // ask for location authorization
+        locationManager?.requestAlwaysAuthorization()
+        
+        // Set the location delegate
+        locationManager?.delegate = self
+        
+        //get quick location update
+        requestLocationUpdate()
         
         //nav bar for reveal view controller
         connectRevealVC()
         
         //load recent posts
-        FirTree.queryRecentPosts() { postData in
-            self.recentPosts = postData
-        }
+        //MARK: can this fail?
+        loadSelectedPostView()
         
-        //make ourselves the tableview delegate
+        //MARK - handle pull to refresh
+        self.refreshControl?.addTarget(self, action: #selector(self.loadSelectedPostView(refreshControl:)), for: UIControlEvents.valueChanged)
+        self.refreshControl?.backgroundColor = UIColor.darkGray
+        self.refreshControl?.tintColor = UIColor.blue
+        
+        //set the tableview delegate
         tableView.delegate = self
+        
+        
+        //set background image
+        tableView.backgroundView = UIImageView(image: UIImage(named: "coign_background_02"))
         
         // User setup delegation
         emailField.delegate = self
@@ -66,48 +112,154 @@ class HomeMenuController: UITableViewController {
         nameField.delegate = self
         charityPreferencePicker.delegate = self
         charityPreferencePicker.dataSource = self
-        tableView.backgroundView = UIImageView(image: UIImage(named: "coign_background_02"))
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         
         //home page loading logic, automatically calls user setup popover if the last date was set to "new user"
         checkLastLoginDate()
         
-        //load recent posts
-        FirTree.queryRecentPosts() { postData in
-            self.recentPosts = postData
-        }
-
+        //load recent posts (table refreshed itself when array is updated
+//        FirTree.queryRecentPosts() { postData in
+//            self.recentPosts = postData
+//        }
     }
 
+    
+    //MARK: Segmented control methods
+    
+    /*
+     If the segment selection changes, call the proper loadPost method to reflect that change.
+     The flow of events is:
+     -event triggered
+     -load post called
+     -post array updated
+     -post array didSet calls a table refresh
+     */
+    @IBAction func indexChanged(sender: UISegmentedControl) {
+        if sender == segmentedControl {
+            loadSelectedPostView()
+        }
+    }
+    
+    /**
+     When the view appears, we want to refresh the table to show whichever segment is selected.
+     */
+    private func loadSelectedPostView() {
+        if let index = segmentedControl?.selectedSegmentIndex {
+            switch index {
+            case 0:
+                loadRecentPosts()
+            case 1:
+                loadLocalPosts()
+            case 2:
+                loadFriendsPosts()
+            default:
+                loadRecentPosts()
+            }
+        }
+        else {
+            loadRecentPosts()
+        }
+    }
+    
+    @objc private func loadSelectedPostView(refreshControl: UIRefreshControl) {
+        self.loadSelectedPostView()
+            }
+    
+    //TODO: - setup the load recent posts function
+    private func loadRecentPosts() {
+        
+        //refresh the recentPosts array of Posts
+        FirTree.queryRecentPosts() { postData in
+            self.recentPosts = postData
+            self.selectedPosts = self.recentPosts
+            self.endRefreshing()
+        }
+        
+    }
+    
+    private func loadLocalPosts() {
+        
+        if localPosts != nil {
+            selectedPosts = localPosts
+            endRefreshing()
+        }
+        else {
+            endRefreshing()
+        }
+    }
+    
+    private func loadFriendsPosts() {
+        
+        if friendsPosts != nil {
+            selectedPosts = friendsPosts
+            endRefreshing()
+        }
+        else {
+            endRefreshing()
+        }
+    }
+    
+    private func endRefreshing() {
+        if let refreshControl = self.refreshControl {
+            if refreshControl.isRefreshing {
+                refreshControl.endRefreshing()
+            }
+        }
+    }
+    
+    //MARK: - Location methods
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        //update users location
+        currentUserLocation = manager.location?.coordinate
+        
+        //local query, temporary to see if it works
+//        if currentUserLocation != nil {
+//            Geohash.queryLocalPosts(
+//                center: CLLocation(latitude: currentUserLocation!.latitude, longitude: currentUserLocation!.longitude),
+//                completionHandler: { keys in
+//                    print(keys ?? "keys array is nil")
+//            })
+//        }
+        
+        //turn off location updates, this app doesn't need an accurate location
+        locationManager?.stopUpdatingLocation()
+    }
+    
+    private func requestLocationUpdate() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager?.delegate = self
+            locationManager?.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+            locationManager?.startUpdatingLocation()
+        }
+    }
+
+    
     // MARK: - Table view data source
 
+    /*
+    The table is setup so that each post is in its own section -> made it easier to control the padding around each cell
+     
+     */
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        
         if recentPosts != nil {
-                return recentPosts!.count
+                return selectedPosts!.count
             }
             else {return 1}
     }
 
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-//        if recentPosts != nil {
-//            return recentPosts!.count
-//        }
-//        else {return 1}
         return 1
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: POST_CELL_IDENTIFIER, for: indexPath) as? PostCell,
-            let post = recentPosts?[indexPath.section] {
+            let post = selectedPosts?[indexPath.section] {
             
             if let donor = post.donor, let charity = post.charity {
                 cell.header.text = "\(donor) → \(charity)"
@@ -171,86 +323,4 @@ class HomeMenuController: UITableViewController {
         }
         else { return 15 }
     }
-    
-    @IBAction func indexChanged(sender: UISegmentedControl) {
-        if sender == segmentedControl {
-            if let index = segmentedControl?.selectedSegmentIndex {
-                switch index {
-                    case 0:
-                        print("recent selected")
-                    //show popular view
-                    case 1:
-                        print("local selected")
-                    //show history view
-                    case 3:
-                        print("friends selected")
-                    default:
-                        break;
-                }
-            }
-        }
-    }
-    
-    //MARK: Footer methods
-    
-//    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        if let footerCell = tableView.dequeueReusableCell(withIdentifier: FOOTER_CELL_IDENTIFIER) as? FooterCell {
-//            return footerCell
-//        }
-//        else {
-//            return nil
-//        }
-////        return tableView.dequeueReusableCell(withIdentifier: FOOTER_CELL_IDENTIFIER) as? FooterCell
-//        
-//    }
-//    
-//    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return CGFloat(10)
-//    }
-//    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
