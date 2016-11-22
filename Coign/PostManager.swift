@@ -67,8 +67,7 @@ class PostManager {
         }
     }
 
-    init (location: CLLocationCoordinate2D?, viewController: HomeMenuController, initialType: ViewablePostType) {
-        self.currentUserLocation = location
+    init (viewController: HomeMenuController, initialType: ViewablePostType) {
         self.viewController = viewController
         self.currentType = initialType
     }

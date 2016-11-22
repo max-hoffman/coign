@@ -22,25 +22,8 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     var segmentedControl: UISegmentedControl? = nil
     var postManager: PostManager!
     
-    var recentPostUIDs: [String] = []
-    var localPostUIDs: [String] = []
-    var friendsPostUIDs: [String] = []
-    
-    var recentPosts: [Post] = []
-    var localPosts: [Post] = []
-    var friendsPosts: [Post] = []
-    
-    var selectedPosts: [Post] = [] {
-        didSet {
-            DispatchQueue.main.async{
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
     //Location properties
     var locationManager: CLLocationManager? = nil
-    var currentUserLocation:CLLocationCoordinate2D? = nil
     
     //User setup properties and outlets
     
@@ -78,12 +61,8 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         //nav bar for reveal view controller
         connectRevealVC()
         
-        //load recent posts
-        //MARK: can this fail?
-        //loadSelectedPostView()
-        
-        //loadRecentPostUIDs()
-        postManager = PostManager(location: currentUserLocation, viewController: self, initialType: .Recent)
+        //instantiate post manager, call first posts to screen
+        postManager = PostManager(viewController: self, initialType: .Recent)
         postManager.loadPostUIDs()
         
         //MARK - handle pull to refresh
@@ -94,6 +73,11 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         //set the tableview delegate
         tableView.delegate = self
         
+        if let headerCell = tableView.dequeueReusableCell(withIdentifier: HEADER_CELL_IDENTIFIER) as? HeaderCell {
+            segmentedControl = headerCell.segmentedControl
+            
+            tableView.tableHeaderView = headerCell
+        }
         
         //set background image
         tableView.backgroundView = UIImageView(image: UIImage(named: "coign_background_02"))
@@ -111,14 +95,10 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         //home page loading logic, automatically calls user setup popover if the last date was set to "new user"
         checkLastLoginDate()
         
-        //load recent posts (table refreshed itself when array is updated
-//        FirTree.queryRecentPosts() { postData in
-//            self.recentPosts = postData
-//        }
     }
 
     
-    //MARK: Segmented control methods
+    //MARK: - Segmented control methods
     
     /*
      If the segment selection changes, call the proper loadPost method to reflect that change.
@@ -130,114 +110,18 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
      */
     @IBAction func indexChanged(sender: UISegmentedControl) {
         if sender == segmentedControl {
-            loadSelectedPostView()
+            switch sender.selectedSegmentIndex {
+            case 0: postManager.currentType = .Recent
+            case 1: postManager.currentType = .Local
+            case 2: postManager.currentType = .Friends
+            default: break
+            }
         }
     }
     
-    /**
-     When the view appears, we want to refresh the table to show whichever segment is selected.
-     */
-    private func loadSelectedPostView() {
-        
-        if let index = segmentedControl?.selectedSegmentIndex {
-            switch index {
-            case 0:
-                loadRecentPostUIDs()
-                
-            case 1:
-                loadLocalPostUIDs()
-                
-            case 2:
-                loadFriendsPostUIDs()
-                
-            default:
-                loadRecentPostUIDs()
-            }
-        }
-        else {
-            loadRecentPostUIDs()
-        }
-    }
     
     @objc private func loadSelectedPostView(refreshControl: UIRefreshControl) {
-        self.loadSelectedPostView()
-    }
-    
-    private func updateLocalPostArray() {
-        
-        let uidCount = localPostUIDs.count
-        let postCount = localPosts.count
-        let updateNumber = min(uidCount - postCount, 10)
-
-        if updateNumber != 0{
-            let postsToLoad: [String] = Array(localPostUIDs[postCount...postCount+updateNumber-1])
-            
-            FirTree.returnPostsFromUIDs(postUIDs: postsToLoad) {
-                newPosts in
-                
-                self.localPosts.append(contentsOf: newPosts)
-                self.selectedPosts = self.localPosts
-            }
-        }
-
-    }
-    
-    private func updateRecentPostArray() {
-        
-        let uidCount = recentPostUIDs.count
-        let postCount = recentPosts.count
-        let updateNumber = min(uidCount - postCount, 10)
-        
-        if updateNumber != 0{
-            let postsToLoad: [String] = Array(recentPostUIDs[postCount...postCount+updateNumber-1])
-            
-            FirTree.returnPostsFromUIDs(postUIDs: postsToLoad) {
-                newPosts in
-
-                self.recentPosts.append(contentsOf: newPosts)
-                self.selectedPosts = self.recentPosts
-            }
-        }
-    }
-    
-    private func loadRecentPostUIDs() {
-        
-        //refresh the recentPosts array of Posts
-        FirTree.queryRecentPosts(number: 100) { postUIDs in
-            if postUIDs != nil {
-                self.recentPostUIDs = postUIDs!
-                self.updateRecentPostArray()
-            }
-        }
-        
-    }
-
-    private func loadLocalPostUIDs() {
-        
-        if currentUserLocation != nil {
-            Geohash.queryLocalPosts(center: CLLocation(
-                latitude: currentUserLocation!.latitude,
-                longitude: currentUserLocation!.longitude),
-                completionHandler: { (keys) in
-                    self.localPostUIDs = keys!
-                    self.updateLocalPostArray()
-                    self.endRefreshing()
-            })
-        }
-        else {
-            endRefreshing()
-        }
-    }
-    
-    private func loadFriendsPostUIDs() {
-        
-        if friendsPosts != nil {
-            selectedPosts = friendsPosts
-            endRefreshing()
-        }
-        else {
-            endRefreshing()
-        }
+        postManager.loadPostUIDs()
     }
     
     private func endRefreshing() {
@@ -253,7 +137,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         //update users location
-        currentUserLocation = manager.location?.coordinate
+        postManager.currentUserLocation = manager.location?.coordinate
         
         //discontinue location update
         locationManager?.stopUpdatingLocation()
@@ -283,11 +167,10 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
+        /* This loads more cells if we reach the end. Should be changed to load when we hit the bottom of table view */
         if indexPath.section == postManager.currentPosts.count - 1 {
             
-            //TODO: should be the appropriate array
-            updateRecentPostArray()
             self.postManager.updatePostArray()
             
             //TODO: should be cell with loading image
@@ -343,20 +226,29 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
 
     //MARK: - Header methods
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0, let  headerCell = tableView.dequeueReusableCell(withIdentifier: HEADER_CELL_IDENTIFIER) as? HeaderCell {
-                segmentedControl = headerCell.segmentedControl
-                return headerCell
-        }
-        else { return tableView.dequeueReusableCell(withIdentifier: FOOTER_CELL_IDENTIFIER) as? FooterCell}
-    }
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        if section == 0, let  headerCell = tableView.dequeueReusableCell(withIdentifier: HEADER_CELL_IDENTIFIER) as? HeaderCell {
+//                headerCell.segmentedControl = self.segmentedControl
+//            
+//                return headerCell
+//        }
+//        else { return tableView.dequeueReusableCell(withIdentifier: FOOTER_CELL_IDENTIFIER) as? FooterCell}
+//    }
+//    
+//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        if section == 0 {
+//            return 60
+//        }
+//        else { return 15 }
+//    }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return 60
-        }
-        else { return 15 }
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return tableView.dequeueReusableCell(withIdentifier: FOOTER_CELL_IDENTIFIER) as? FooterCell
     }
-    
+
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+         return 15
+    }
+
     
 }

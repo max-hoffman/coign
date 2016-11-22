@@ -19,11 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="header cell" rowHeight="93" id="LMF-sl-QZ0" customClass="HeaderCell" customModule="Coign" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="93"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="header cell" rowHeight="70" id="LMF-sl-QZ0" customClass="HeaderCell" customModule="Coign" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LMF-sl-QZ0" id="pUu-jh-vtr">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NMf-1G-KdD">
@@ -54,7 +54,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="post cell" rowHeight="156" id="5Au-Aw-dUE" customClass="PostCell" customModule="Coign" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="121" width="375" height="156"/>
+                                <rect key="frame" x="0.0" y="98" width="375" height="156"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Au-Aw-dUE" id="JWz-jA-IR1">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
@@ -121,7 +121,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="footer cell" rowHeight="15" id="Swc-YR-Ly6" customClass="FooterCell" customModule="Coign" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="277" width="375" height="15"/>
+                                <rect key="frame" x="0.0" y="254" width="375" height="15"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Swc-YR-Ly6" id="Oq4-Jf-S7h">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="14"/>
