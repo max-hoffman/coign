@@ -176,6 +176,10 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
 //            return UITableViewCell()
 //        }
         
+        if indexPath.section == 2 {
+            self.endRefreshing()
+        }
+        
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: POST_CELL_IDENTIFIER, for: indexPath) as? PostCell{
                 let post = postManager.currentPosts[indexPath.section]
