@@ -124,7 +124,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         postManager.loadPostUIDs()
     }
     
-    private func endRefreshing() {
+    func endRefreshing() {
         if let refreshControl = self.refreshControl {
             if refreshControl.isRefreshing {
                 refreshControl.endRefreshing()
@@ -134,15 +134,6 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     
     //MARK: - Location methods
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        //update users location
-        postManager.currentUserLocation = manager.location?.coordinate
-        
-        //discontinue location update
-        locationManager?.stopUpdatingLocation()
-    }
-    
     private func requestLocationUpdate() {
         if CLLocationManager.locationServicesEnabled() {
             locationManager?.delegate = self
@@ -151,6 +142,14 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         }
     }
 
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        //update users location
+        postManager.currentUserLocation = manager.location?.coordinate
+        
+        //discontinue location update
+        locationManager?.stopUpdatingLocation()
+    }
     
     // MARK: - Table view data source
 
@@ -224,24 +223,8 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         return UITableViewAutomaticDimension
     }
 
-    //MARK: - Header methods
-    
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        if section == 0, let  headerCell = tableView.dequeueReusableCell(withIdentifier: HEADER_CELL_IDENTIFIER) as? HeaderCell {
-//                headerCell.segmentedControl = self.segmentedControl
-//            
-//                return headerCell
-//        }
-//        else { return tableView.dequeueReusableCell(withIdentifier: FOOTER_CELL_IDENTIFIER) as? FooterCell}
-//    }
-//    
-//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        if section == 0 {
-//            return 60
-//        }
-//        else { return 15 }
-//    }
-    
+    //MARK: - Footer methods
+
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return tableView.dequeueReusableCell(withIdentifier: FOOTER_CELL_IDENTIFIER) as? FooterCell
     }

@@ -64,6 +64,9 @@ class PostManager {
             if noCurrentUIDsLoaded {
                 loadPostUIDs()
             }
+            else {
+                viewController?.tableView.reloadData()
+            }
         }
     }
 
@@ -110,20 +113,6 @@ class PostManager {
         }
     }
     
-    
-    func updateCurrentPosts(withNewPosts newPosts: [Post], completionHandler: @escaping (_ success: Bool) -> Void) {
-        switch currentType {
-        case .Recent :
-            recentPosts.append(contentsOf: newPosts)
-        case .Local :
-            return localPosts.append(contentsOf: newPosts)
-        case .Friends :
-            return friendPosts.append(contentsOf: newPosts)
-        }
-        
-        completionHandler(true)
-    }
-    
     func updatePostArray() {
         
         let uidCount = currentUIDs.count
@@ -134,15 +123,22 @@ class PostManager {
             let postsToLoad: [String] = Array(currentUIDs[postCount...postCount+updateNumber-1])
             
             FirTree.returnPostsFromUIDs(postUIDs: postsToLoad) {
-                
                 newPosts in
 
-                self.updateCurrentPosts(withNewPosts: newPosts) { success in
-                    if success {
-                        self.viewController?.tableView.reloadData()
-                    }
-                }
+                self.updateCurrentPosts(withNewPosts: newPosts)
+                self.viewController?.tableView.reloadData()
             }
+        }
+    }
+    
+    func updateCurrentPosts(withNewPosts newPosts: [Post]) {
+        switch currentType {
+        case .Recent :
+            recentPosts.append(contentsOf: newPosts)
+        case .Local :
+            return localPosts.append(contentsOf: newPosts)
+        case .Friends :
+            return friendPosts.append(contentsOf: newPosts)
         }
     }
 }

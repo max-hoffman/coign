@@ -45,7 +45,7 @@ class Geohash {
         })
        
         circleQuery?.observeReady({
-            completionHandler(postData)
+            completionHandler(postData.sorted())
         })
     }
 
