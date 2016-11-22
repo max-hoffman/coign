@@ -28,6 +28,7 @@
 		E2212D311DE144510016E2C8 /* FooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2212D301DE144510016E2C8 /* FooterCell.swift */; };
 		E2360B0F1DDE629000DFE338 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2360B0E1DDE629000DFE338 /* JSONParser.swift */; };
 		E24214971DA8966400A5B080 /* VCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24214961DA8966400A5B080 /* VCExtensions.swift */; };
+		E24ACFF21DE4A6B100F09639 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24ACFF11DE4A6B100F09639 /* PostManager.swift */; };
 		E24F77EA1D84FBB000936AAE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24F77E91D84FBB000936AAE /* SWRevealViewController.m */; };
 		E25125A61DA9D92700AA4B09 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25125A51DA9D92700AA4B09 /* Constants.swift */; };
 		E259EB671DA55EDC00EADC4C /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB661DA55EDC00EADC4C /* DateExtensions.swift */; };
@@ -125,6 +126,7 @@
 		E2212D301DE144510016E2C8 /* FooterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterCell.swift; sourceTree = "<group>"; };
 		E2360B0E1DDE629000DFE338 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		E24214961DA8966400A5B080 /* VCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCExtensions.swift; sourceTree = "<group>"; };
+		E24ACFF11DE4A6B100F09639 /* PostManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		E24F77E81D84FBB000936AAE /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		E24F77E91D84FBB000936AAE /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		E24F77EB1D84FBDD00936AAE /* Coign-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coign-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 			children = (
 				E2C397FC1D85CBE3000D35F4 /* MainMenu.storyboard */,
 				E2A7D5E01DDD427700D6D92A /* HomeMenuController.swift */,
+				E24ACFF11DE4A6B100F09639 /* PostManager.swift */,
 				E2212D2E1DE135230016E2C8 /* HeaderCell.swift */,
 				E2A7D5E21DDE12D600D6D92A /* PostCell.swift */,
 				E2212D301DE144510016E2C8 /* FooterCell.swift */,
@@ -833,6 +836,7 @@
 				E20163E51D7B2F7100949826 /* LoginController.swift in Sources */,
 				E2A7D5E51DDE1B3C00D6D92A /* QueryExtensions.swift in Sources */,
 				E2212D2F1DE135230016E2C8 /* HeaderCell.swift in Sources */,
+				E24ACFF21DE4A6B100F09639 /* PostManager.swift in Sources */,
 				E2C397F01D85B9B4000D35F4 /* SettingsController.swift in Sources */,
 				E2E8FE141DD8F451003AB2D2 /* ImageExtensions.swift in Sources */,
 				E20163E31D7B2F7100949826 /* AppDelegate.swift in Sources */,

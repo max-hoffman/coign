@@ -20,7 +20,8 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     
     //Menu properties
     var segmentedControl: UISegmentedControl? = nil
-    var updatingTable: Bool = true
+    var postManager: PostManager!
+    
     var recentPostUIDs: [String] = []
     var localPostUIDs: [String] = []
     var friendsPostUIDs: [String] = []
@@ -33,7 +34,6 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         didSet {
             DispatchQueue.main.async{
                 self.tableView.reloadData()
-                self.updatingTable = false
             }
         }
     }
@@ -82,8 +82,9 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         //MARK: can this fail?
         //loadSelectedPostView()
         
-        loadRecentPostUIDs()
-        
+        //loadRecentPostUIDs()
+        postManager = PostManager(location: currentUserLocation, viewController: self, initialType: .Recent)
+        postManager.loadPostUIDs()
         
         //MARK - handle pull to refresh
         //self.refreshControl?.addTarget(self, action: #selector(self.loadSelectedPostView(refreshControl:)), for: UIControlEvents.valueChanged)
@@ -127,37 +128,40 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
      -post array updated
      -post array didSet calls a table refresh
      */
-//    @IBAction func indexChanged(sender: UISegmentedControl) {
-//        if sender == segmentedControl {
-//            loadSelectedPostView()
-//        }
-//    }
-//    
-//    /**
-//     When the view appears, we want to refresh the table to show whichever segment is selected.
-//     */
-//    private func loadSelectedPostView() {
-//        
-//        if let index = segmentedControl?.selectedSegmentIndex {
-//            switch index {
-//            case 0:
-//                loadRecentPosts()
-//            case 1:
-//                loadLocalPosts()
-//            case 2:
-//                loadFriendsPosts()
-//            default:
-//                loadRecentPostUIDs()
-//            }
-//        }
-//        else {
-//            loadRecentPostUIDs()
-//        }
-//    }
-//    
-//    @objc private func loadSelectedPostView(refreshControl: UIRefreshControl) {
-//        self.loadSelectedPostView()
-//            }
+    @IBAction func indexChanged(sender: UISegmentedControl) {
+        if sender == segmentedControl {
+            loadSelectedPostView()
+        }
+    }
+    
+    /**
+     When the view appears, we want to refresh the table to show whichever segment is selected.
+     */
+    private func loadSelectedPostView() {
+        
+        if let index = segmentedControl?.selectedSegmentIndex {
+            switch index {
+            case 0:
+                loadRecentPostUIDs()
+                
+            case 1:
+                loadLocalPostUIDs()
+                
+            case 2:
+                loadFriendsPostUIDs()
+                
+            default:
+                loadRecentPostUIDs()
+            }
+        }
+        else {
+            loadRecentPostUIDs()
+        }
+    }
+    
+    @objc private func loadSelectedPostView(refreshControl: UIRefreshControl) {
+        self.loadSelectedPostView()
+    }
     
     private func updateLocalPostArray() {
         
@@ -165,14 +169,17 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         let postCount = localPosts.count
         let updateNumber = min(uidCount - postCount, 10)
 
-        let postsToLoad: [String] = Array(localPostUIDs[postCount-1...postCount+updateNumber])
-        
-        FirTree.returnPostsFromUIDs(postUIDs: postsToLoad) {
-            newPosts in
+        if updateNumber != 0{
+            let postsToLoad: [String] = Array(localPostUIDs[postCount...postCount+updateNumber-1])
             
-            self.localPosts.append(contentsOf: newPosts)
-            self.selectedPosts = self.localPosts
+            FirTree.returnPostsFromUIDs(postUIDs: postsToLoad) {
+                newPosts in
+                
+                self.localPosts.append(contentsOf: newPosts)
+                self.selectedPosts = self.localPosts
+            }
         }
+
     }
     
     private func updateRecentPostArray() {
@@ -213,6 +220,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
                 longitude: currentUserLocation!.longitude),
                 completionHandler: { (keys) in
                     self.localPostUIDs = keys!
+                    self.updateLocalPostArray()
                     self.endRefreshing()
             })
         }
@@ -267,7 +275,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
      
      */
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return selectedPosts.count
+        return postManager.currentPosts.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -276,11 +284,11 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        if indexPath.section == selectedPosts.count - 1 && !updatingTable {
+        if indexPath.section == postManager.currentPosts.count - 1 {
             
             //TODO: should be the appropriate array
             updateRecentPostArray()
-            self.updatingTable = true
+            self.postManager.updatePostArray()
             
             //TODO: should be cell with loading image
             return UITableViewCell()
@@ -288,7 +296,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         
         else if let cell = tableView.dequeueReusableCell(
             withIdentifier: POST_CELL_IDENTIFIER, for: indexPath) as? PostCell{
-                let post = selectedPosts[indexPath.section]
+                let post = postManager.currentPosts[indexPath.section]
             
                 if let donor = post.donor, let charity = post.charity {
                     cell.header.text = "\(donor) → \(charity)"
@@ -349,4 +357,6 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         }
         else { return 15 }
     }
+    
+    
 }
