@@ -61,10 +61,12 @@ class PostManager {
 
     var currentType: ViewablePostType = .Recent {
         didSet{
-            if noCurrentUIDsLoaded {
+            
+            if noCurrentUIDsLoaded { //we don't know what posts to pull yet
                 loadPostUIDs()
             }
-            else {
+            
+            else { //we already know what posts should be in this table segment
                 viewController?.tableView.reloadData()
             }
         }

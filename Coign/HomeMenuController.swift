@@ -101,12 +101,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     //MARK: - Segmented control methods
     
     /*
-     If the segment selection changes, call the proper loadPost method to reflect that change.
-     The flow of events is:
-     -event triggered
-     -load post called
-     -post array updated
-     -post array didSet calls a table refresh
+     If the segment selection changes, we signal to the postManager that the view was changed. The didSet triggers an update of the 
      */
     @IBAction func indexChanged(sender: UISegmentedControl) {
         if sender == segmentedControl {
@@ -132,7 +127,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         }
     }
     
-    //MARK: - Location methods
+    //MARK: - Location manager methods
     
     private func requestLocationUpdate() {
         if CLLocationManager.locationServicesEnabled() {
@@ -165,57 +160,58 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         return 1
     }
 
+    /**
+     Fill cell with appropriate data. It's done per section, because that was the best way I could figure out to add padding between cells (in section footer).
+     */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        /* This loads more cells if we reach the end. Should be changed to load when we hit the bottom of table view */
-//        if indexPath.section == postManager.currentPosts.count - 1 {
-//            
-//            self.postManager.updatePostArray()
-//            
-//            //TODO: should be cell with loading image
-//            return UITableViewCell()
-//        }
-        
+        /* Discontinue refresher if we've started loading posts into table */
         if indexPath.section == 2 {
             self.endRefreshing()
         }
         
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: POST_CELL_IDENTIFIER, for: indexPath) as? PostCell{
-                let post = postManager.currentPosts[indexPath.section]
-            
-                if let donor = post.donor, let charity = post.charity {
-                    cell.header.text = "\(donor) → \(charity)"
-                }
-                
-                if let time = post.timeStamp {
-                    cell.timeStamp.text = Double(time).formatMillisecondsToCoherentTime
-                }
-                
-                //if let message = post.message {
-                cell.postBody.text = post.message
-                //}
-                
-                if let recipient = post.recipient?.lowercased().removeWhitespace() {
-                    if recipient != "" {
-                        cell.recipientLabel.text = "@ \(recipient):"
-                        cell.recipientLabel.textColor = UIColor.blue
-                    }
-                    else {
-                        cell.recipientLabel.isHidden = true
-                    }
-                }
-                
-                if let userID = post.donorUID {
-                    FirTree.returnImage(userID: userID, completionHandler: { (image) in
-                        cell.picture?.image = image
-                    })
-                }
-            return cell
+
+            return formattedPostCell(cell: cell, withPost: postManager.currentPosts[indexPath.section])
         }
         else {
             return UITableViewCell()
         }
+    }
+    
+    /**
+     Does the work of formatting and returnign a post cell. 
+     */
+    private func formattedPostCell(cell: PostCell, withPost post: Post) -> PostCell {
+        if let donor = post.donor, let charity = post.charity {
+            cell.header.text = "\(donor) → \(charity)"
+        }
+        
+        if let time = post.timeStamp {
+            cell.timeStamp.text = Double(time).formatMillisecondsToCoherentTime
+        }
+        
+        //if let message = post.message {
+        cell.postBody.text = post.message
+        //}
+        
+        if let recipient = post.recipient?.lowercased().removeWhitespace() {
+            if recipient != "" {
+                cell.recipientLabel.text = "@ \(recipient):"
+                cell.recipientLabel.textColor = UIColor.blue
+            }
+            else {
+                cell.recipientLabel.isHidden = true
+            }
+        }
+        
+        if let userID = post.donorUID {
+            FirTree.returnImage(userID: userID, completionHandler: { (image) in
+                cell.picture?.image = image
+            })
+        }
+        return cell
     }
     
     /* Make the cell height dynamic based on the amount of "answer" text. It was also necessary to relax the vertical compression of the dynamic cell in the storyboard. */
