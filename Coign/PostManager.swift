@@ -20,8 +20,8 @@ class PostManager {
     var friendPosts: [Post] = []
     
     var currentUserLocation:CLLocationCoordinate2D?
+    var postManagerIsFetchingData: Bool
     var currentUIDs: [String] {
-        
         get {
             switch currentType {
             case .Recent :
@@ -73,6 +73,7 @@ class PostManager {
     init (viewController: HomeMenuController, initialType: ViewablePostType) {
         self.viewController = viewController
         self.currentType = initialType
+        self.postManagerIsFetchingData = true
     }
     
     func loadPostUIDs() {
@@ -84,6 +85,8 @@ class PostManager {
         case .Friends :
             break
         }
+        
+        postManagerIsFetchingData = true
     }
     
     private func loadRecentPostUIDs() {
@@ -127,6 +130,7 @@ class PostManager {
 
                 self.updateCurrentPosts(withNewPosts: newPosts)
                 self.viewController?.tableView.reloadData()
+                self.postManagerIsFetchingData = false
             }
         }
     }

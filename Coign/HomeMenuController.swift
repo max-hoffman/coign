@@ -168,15 +168,15 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         /* This loads more cells if we reach the end. Should be changed to load when we hit the bottom of table view */
-        if indexPath.section == postManager.currentPosts.count - 1 {
-            
-            self.postManager.updatePostArray()
-            
-            //TODO: should be cell with loading image
-            return UITableViewCell()
-        }
+//        if indexPath.section == postManager.currentPosts.count - 1 {
+//            
+//            self.postManager.updatePostArray()
+//            
+//            //TODO: should be cell with loading image
+//            return UITableViewCell()
+//        }
         
-        else if let cell = tableView.dequeueReusableCell(
+        if let cell = tableView.dequeueReusableCell(
             withIdentifier: POST_CELL_IDENTIFIER, for: indexPath) as? PostCell{
                 let post = postManager.currentPosts[indexPath.section]
             
@@ -233,5 +233,18 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
          return 15
     }
 
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height;
+        
+        if !postManager.postManagerIsFetchingData && (maximumOffset - contentOffset <= 50) {
+            postManager.postManagerIsFetchingData = true
+            // Get more data - API call
+            postManager.updatePostArray()
+            
+            // Update UI
+            
+        }
+    }
     
 }
