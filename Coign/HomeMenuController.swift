@@ -20,35 +20,23 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     
     //Menu properties
     var segmentedControl: UISegmentedControl? = nil
-    var recentPosts: [Post]? {
+    var updatingTable: Bool = true
+    var recentPostUIDs: [String] = []
+    var localPostUIDs: [String] = []
+    var friendsPostUIDs: [String] = []
+    
+    var recentPosts: [Post] = []
+    var localPosts: [Post] = []
+    var friendsPosts: [Post] = []
+    
+    var selectedPosts: [Post] = [] {
         didSet {
-            if segmentedControl?.selectedSegmentIndex == 0 {
-                DispatchQueue.main.async{
-                    self.tableView.reloadData()
-                }
+            DispatchQueue.main.async{
+                self.tableView.reloadData()
+                self.updatingTable = false
             }
         }
     }
-    var localPosts: [Post]? {
-        didSet {
-            if segmentedControl?.selectedSegmentIndex == 1 {
-                DispatchQueue.main.async{
-                    self.tableView.reloadData()
-                }
-            }
-        }
-    }
-    var friendsPosts: [Post]? {
-        didSet {
-            if segmentedControl?.selectedSegmentIndex == 2 {
-                DispatchQueue.main.async{
-                    self.tableView.reloadData()
-                }
-            }
-        }
-    }
-    //TODO: could change the didset to selectedposts
-    var selectedPosts: [Post]?
     
     //Location properties
     var locationManager: CLLocationManager? = nil
@@ -92,10 +80,13 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         
         //load recent posts
         //MARK: can this fail?
-        loadSelectedPostView()
+        //loadSelectedPostView()
+        
+        loadRecentPostUIDs()
+        
         
         //MARK - handle pull to refresh
-        self.refreshControl?.addTarget(self, action: #selector(self.loadSelectedPostView(refreshControl:)), for: UIControlEvents.valueChanged)
+        //self.refreshControl?.addTarget(self, action: #selector(self.loadSelectedPostView(refreshControl:)), for: UIControlEvents.valueChanged)
         self.refreshControl?.backgroundColor = UIColor.darkGray
         self.refreshControl?.tintColor = UIColor.blue
         
@@ -136,61 +127,101 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
      -post array updated
      -post array didSet calls a table refresh
      */
-    @IBAction func indexChanged(sender: UISegmentedControl) {
-        if sender == segmentedControl {
-            loadSelectedPostView()
+//    @IBAction func indexChanged(sender: UISegmentedControl) {
+//        if sender == segmentedControl {
+//            loadSelectedPostView()
+//        }
+//    }
+//    
+//    /**
+//     When the view appears, we want to refresh the table to show whichever segment is selected.
+//     */
+//    private func loadSelectedPostView() {
+//        
+//        if let index = segmentedControl?.selectedSegmentIndex {
+//            switch index {
+//            case 0:
+//                loadRecentPosts()
+//            case 1:
+//                loadLocalPosts()
+//            case 2:
+//                loadFriendsPosts()
+//            default:
+//                loadRecentPostUIDs()
+//            }
+//        }
+//        else {
+//            loadRecentPostUIDs()
+//        }
+//    }
+//    
+//    @objc private func loadSelectedPostView(refreshControl: UIRefreshControl) {
+//        self.loadSelectedPostView()
+//            }
+    
+    private func updateLocalPostArray() {
+        
+        let uidCount = localPostUIDs.count
+        let postCount = localPosts.count
+        let updateNumber = min(uidCount - postCount, 10)
+
+        let postsToLoad: [String] = Array(localPostUIDs[postCount-1...postCount+updateNumber])
+        
+        FirTree.returnPostsFromUIDs(postUIDs: postsToLoad) {
+            newPosts in
+            
+            self.localPosts.append(contentsOf: newPosts)
+            self.selectedPosts = self.localPosts
         }
     }
     
-    /**
-     When the view appears, we want to refresh the table to show whichever segment is selected.
-     */
-    private func loadSelectedPostView() {
-        if let index = segmentedControl?.selectedSegmentIndex {
-            switch index {
-            case 0:
-                loadRecentPosts()
-            case 1:
-                loadLocalPosts()
-            case 2:
-                loadFriendsPosts()
-            default:
-                loadRecentPosts()
+    private func updateRecentPostArray() {
+        
+        let uidCount = recentPostUIDs.count
+        let postCount = recentPosts.count
+        let updateNumber = min(uidCount - postCount, 10)
+        
+        if updateNumber != 0{
+            let postsToLoad: [String] = Array(recentPostUIDs[postCount...postCount+updateNumber-1])
+            
+            FirTree.returnPostsFromUIDs(postUIDs: postsToLoad) {
+                newPosts in
+
+                self.recentPosts.append(contentsOf: newPosts)
+                self.selectedPosts = self.recentPosts
             }
-        }
-        else {
-            loadRecentPosts()
         }
     }
     
-    @objc private func loadSelectedPostView(refreshControl: UIRefreshControl) {
-        self.loadSelectedPostView()
-            }
-    
-    //TODO: - setup the load recent posts function
-    private func loadRecentPosts() {
+    private func loadRecentPostUIDs() {
         
         //refresh the recentPosts array of Posts
-        FirTree.queryRecentPosts() { postData in
-            self.recentPosts = postData
-            self.selectedPosts = self.recentPosts
-            self.endRefreshing()
+        FirTree.queryRecentPosts(number: 100) { postUIDs in
+            if postUIDs != nil {
+                self.recentPostUIDs = postUIDs!
+                self.updateRecentPostArray()
+            }
         }
         
     }
-    
-    private func loadLocalPosts() {
+
+    private func loadLocalPostUIDs() {
         
-        if localPosts != nil {
-            selectedPosts = localPosts
-            endRefreshing()
+        if currentUserLocation != nil {
+            Geohash.queryLocalPosts(center: CLLocation(
+                latitude: currentUserLocation!.latitude,
+                longitude: currentUserLocation!.longitude),
+                completionHandler: { (keys) in
+                    self.localPostUIDs = keys!
+                    self.endRefreshing()
+            })
         }
         else {
             endRefreshing()
         }
     }
     
-    private func loadFriendsPosts() {
+    private func loadFriendsPostUIDs() {
         
         if friendsPosts != nil {
             selectedPosts = friendsPosts
@@ -216,16 +247,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         //update users location
         currentUserLocation = manager.location?.coordinate
         
-        //local query, temporary to see if it works
-//        if currentUserLocation != nil {
-//            Geohash.queryLocalPosts(
-//                center: CLLocation(latitude: currentUserLocation!.latitude, longitude: currentUserLocation!.longitude),
-//                completionHandler: { keys in
-//                    print(keys ?? "keys array is nil")
-//            })
-//        }
-        
-        //turn off location updates, this app doesn't need an accurate location
+        //discontinue location update
         locationManager?.stopUpdatingLocation()
     }
     
@@ -245,10 +267,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
      
      */
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if recentPosts != nil {
-                return selectedPosts!.count
-            }
-            else {return 1}
+        return selectedPosts.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -256,46 +275,53 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if let cell = tableView.dequeueReusableCell(
-            withIdentifier: POST_CELL_IDENTIFIER, for: indexPath) as? PostCell,
-            let post = selectedPosts?[indexPath.section] {
-            
-            if let donor = post.donor, let charity = post.charity {
-                cell.header.text = "\(donor) → \(charity)"
-            }
-            
-            if let time = post.timeStamp {
-            cell.timeStamp.text = Double(time).formatMillisecondsToCoherentTime
-            }
-            
-            //if let message = post.message {
-                cell.postBody.text = post.message
-            //}
-            
-            if let recipient = post.recipient?.lowercased().removeWhitespace() {
-                if recipient != "" {
-                    cell.recipientLabel.text = "@ \(recipient):"
-                    cell.recipientLabel.textColor = UIColor.blue
-                }
-                else {
-                    cell.recipientLabel.isHidden = true
-                }
-            }
-            
-            if let userID = post.donorUID {
-                FirTree.returnImage(userID: userID, completionHandler: { (image) in
-                    cell.picture?.image = image
-                })
-            }
 
+        if indexPath.section == selectedPosts.count - 1 && !updatingTable {
+            
+            //TODO: should be the appropriate array
+            updateRecentPostArray()
+            self.updatingTable = true
+            
+            //TODO: should be cell with loading image
+            return UITableViewCell()
+        }
+        
+        else if let cell = tableView.dequeueReusableCell(
+            withIdentifier: POST_CELL_IDENTIFIER, for: indexPath) as? PostCell{
+                let post = selectedPosts[indexPath.section]
+            
+                if let donor = post.donor, let charity = post.charity {
+                    cell.header.text = "\(donor) → \(charity)"
+                }
+                
+                if let time = post.timeStamp {
+                    cell.timeStamp.text = Double(time).formatMillisecondsToCoherentTime
+                }
+                
+                //if let message = post.message {
+                cell.postBody.text = post.message
+                //}
+                
+                if let recipient = post.recipient?.lowercased().removeWhitespace() {
+                    if recipient != "" {
+                        cell.recipientLabel.text = "@ \(recipient):"
+                        cell.recipientLabel.textColor = UIColor.blue
+                    }
+                    else {
+                        cell.recipientLabel.isHidden = true
+                    }
+                }
+                
+                if let userID = post.donorUID {
+                    FirTree.returnImage(userID: userID, completionHandler: { (image) in
+                        cell.picture?.image = image
+                    })
+                }
             return cell
         }
         else {
             return UITableViewCell()
         }
-        
-
     }
     
     /* Make the cell height dynamic based on the amount of "answer" text. It was also necessary to relax the vertical compression of the dynamic cell in the storyboard. */

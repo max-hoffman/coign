@@ -30,18 +30,20 @@ class Geohash {
     
     class func queryLocalPosts (center: CLLocation, completionHandler: @escaping (_ postData: [String]?) -> Void) {
         
-        var postData: [String]?
-        
+        var postData: [String] = []
+       
         //set reference
         let geofireRef = FIRDatabase.database().reference().child("post locations")
         let geoFire = GeoFire(firebaseRef: geofireRef)
         
-        let circleQuery = geoFire?.query(at: center, withRadius: 15000)
+        let circleQuery = geoFire?.query(at: center, withRadius: 15)
         
         var _ = circleQuery?.observe(.keyEntered, with: { (key, location) in
-            print("Key '\(key)' entered the search area and is at location '\(location)'")
-            postData?.insert(key!, at: 0)
+            
+            
+            postData.insert(key!, at: 0)
         })
+       
         circleQuery?.observeReady({
             completionHandler(postData)
         })

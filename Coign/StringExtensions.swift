@@ -14,4 +14,13 @@ extension String {
         return self.replacingOccurrences(of: " ", with: "")
     }
     
+
+        
+    subscript (r: CountableClosedRange<Int>) -> String {
+        get {
+            let startIndex =  self.index(self.startIndex, offsetBy: r.lowerBound)
+            let endIndex = self.index(startIndex, offsetBy: r.upperBound - r.lowerBound)
+            return self[startIndex...endIndex]
+        }
+    }
 }
