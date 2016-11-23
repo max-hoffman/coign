@@ -18,9 +18,6 @@
         <array key="Khula-ExtraBold.ttf">
             <string>Khula-ExtraBold</string>
         </array>
-        <array key="Khula-Regular.ttf">
-            <string>Khula-Regular</string>
-        </array>
         <array key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
         </array>
@@ -42,7 +39,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dsY-jK-A2f">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Charity Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dsY-jK-A2f">
                                             <rect key="frame" x="15" y="0.0" width="325" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -66,226 +63,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0xU-UW-Ti6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1124" y="475.41229385307349"/>
-        </scene>
-        <!--Categories-->
-        <scene sceneID="bAZ-f1-GNz">
-            <objects>
-                <tableViewController title="Categories" id="wA1-dE-lKC" customClass="CharityInfoController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="xfl-ZA-L8e">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="hbp-n3-bsJ">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="LK0-X4-aXK" rowHeight="65" style="IBUITableViewCellStyleDefault" id="bsI-qW-p30">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bsI-qW-p30" id="oWx-ig-GFo">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Animals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LK0-X4-aXK">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="32M-kV-3hv" rowHeight="65" style="IBUITableViewCellStyleDefault" id="L02-D2-R4t" customClass="CharityCategoryCell" customModule="Coign" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="65" width="375" height="65"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L02-D2-R4t" id="Lk3-Oo-v5H">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Civil Rights" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="32M-kV-3hv">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="Kp7-lT-8Fx" rowHeight="65" style="IBUITableViewCellStyleDefault" id="176-ob-NhI" customClass="CharityCategoryCell" customModule="Coign" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="130" width="375" height="65"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="176-ob-NhI" id="VHy-hQ-9Qu">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Community Development" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kp7-lT-8Fx">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="ds9-rP-vUU" rowHeight="65" style="IBUITableViewCellStyleDefault" id="740-wX-rjw" customClass="CharityCategoryCell" customModule="Coign" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="195" width="375" height="65"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="740-wX-rjw" id="gFk-NW-rlQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Education" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ds9-rP-vUU">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="AeY-4W-R0k" rowHeight="65" style="IBUITableViewCellStyleDefault" id="Hnd-YJ-BF1" customClass="CharityCategoryCell" customModule="Coign" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="260" width="375" height="65"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hnd-YJ-BF1" id="Yqa-Rg-ayD">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Environment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AeY-4W-R0k">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="6pF-jl-bCe" rowHeight="65" style="IBUITableViewCellStyleDefault" id="8JI-QW-Cy5" customClass="CharityCategoryCell" customModule="Coign" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="325" width="375" height="65"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8JI-QW-Cy5" id="dPh-RJ-Fqb">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Health" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6pF-jl-bCe">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="mCI-EH-yK1" rowHeight="65" style="IBUITableViewCellStyleDefault" id="1Sb-k8-6Y2" customClass="CharityCategoryCell" customModule="Coign" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="390" width="375" height="65"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Sb-k8-6Y2" id="uQm-To-wO1">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Human Services" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mCI-EH-yK1">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="OMT-Ek-ry1" rowHeight="65" style="IBUITableViewCellStyleDefault" id="AjX-j5-vb7" customClass="CharityCategoryCell" customModule="Coign" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="455" width="375" height="65"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AjX-j5-vb7" id="aZi-w1-0l5">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="International" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OMT-Ek-ry1">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="category cell" textLabel="Kcf-jn-ZrB" rowHeight="65" style="IBUITableViewCellStyleDefault" id="mIH-jf-p1N" customClass="CharityCategoryCell" customModule="Coign" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="520" width="375" height="65"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mIH-jf-p1N" id="WWw-Pa-Mcq">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Religion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kcf-jn-ZrB">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="delegate" destination="wA1-dE-lKC" id="fM6-Zt-FaL"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="W1N-5u-JUl"/>
-                    <connections>
-                        <segue destination="TMj-ow-T4h" kind="show" identifier="show charity category segue" id="yEO-PT-tHX"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W0K-yZ-gTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2800.8000000000002" y="-133.5832083958021"/>
-        </scene>
-        <!--Charity Category Controller-->
-        <scene sceneID="E8w-jQ-5Ry">
-            <objects>
-                <tableViewController id="TMj-ow-T4h" customClass="CharityCategoryController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="28" sectionFooterHeight="28" id="dD7-2C-Cmu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="charity cell" textLabel="nXq-sN-obE" rowHeight="76" style="IBUITableViewCellStyleDefault" id="r2E-XN-IBg">
-                                <rect key="frame" x="0.0" y="28" width="375" height="76"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r2E-XN-IBg" id="gFA-QT-Kd7">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Individual Charity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nXq-sN-obE">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="75"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" name="Khula-Regular" family="Khula" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="TMj-ow-T4h" id="o2L-mK-3Eo"/>
-                            <outlet property="delegate" destination="TMj-ow-T4h" id="Noa-CO-wSs"/>
-                        </connections>
-                    </tableView>
-                    <connections>
-                        <segue destination="1oz-gp-gYj" kind="show" identifier="show charity detail segue" id="3jh-uc-KIc"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vtB-N4-PG9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3583.1999999999998" y="-134.48275862068968"/>
         </scene>
         <!--Charity Detail Controller-->
         <scene sceneID="IXc-Uk-spQ">
@@ -434,25 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V4h-QR-T9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4298.3999999999996" y="-134.48275862068968"/>
-        </scene>
-        <!--CharityInfo NC-->
-        <scene sceneID="3mU-14-uzi">
-            <objects>
-                <navigationController title="CharityInfo NC" automaticallyAdjustsScrollViewInsets="NO" id="be3-tR-WOu" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eEu-EU-ZMN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="wA1-dE-lKC" kind="relationship" relationship="rootViewController" id="feE-eT-nMW"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V3f-7c-kWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1861.5999999999999" y="-133.5832083958021"/>
+            <point key="canvasLocation" x="2074" y="475"/>
         </scene>
         <!--CharityInfo NC-->
         <scene sceneID="wWt-Ru-vg9">
@@ -476,7 +235,4 @@
     <resources>
         <image name="blue-stars-four" width="336" height="84"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="vVt-Rt-31c"/>
-    </inferredMetricsTieBreakers>
 </document>
