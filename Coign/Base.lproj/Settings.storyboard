@@ -172,13 +172,13 @@
                                                     <rect key="frame" x="8" y="8" width="326" height="28"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Default charity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpY-Ma-D81">
-                                                            <rect key="frame" x="0.0" y="0.0" width="186" height="28"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="186.5" height="28"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="American Red Cross" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vs4-RT-JC4">
-                                                            <rect key="frame" x="196" y="0.0" width="130" height="28"/>
+                                                            <rect key="frame" x="196.5" y="0.0" width="129.5" height="28"/>
                                                             <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -578,7 +578,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nTN-tg-5hl" userLabel="Context View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="723"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="721.5"/>
                                         <subviews>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6VT-dV-pHU">
                                                 <rect key="frame" x="20" y="0.0" width="335" height="188"/>
@@ -591,25 +591,25 @@
                                                 </connections>
                                             </pickerView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="joq-ni-LEq">
-                                                <rect key="frame" x="20" y="196" width="335" height="45"/>
+                                                <rect key="frame" x="20" y="196" width="335" height="44"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charity Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGY-gJ-Yjh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="212" height="45"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="213" height="44"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="XRa-pf-RcA">
-                                                        <rect key="frame" x="212" y="0.0" width="123" height="45"/>
+                                                        <rect key="frame" x="213" y="0.0" width="122" height="44"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAW-Gm-Obf">
-                                                                <rect key="frame" x="0.0" y="0.0" width="123" height="21"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="122" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvm-Kh-1is">
-                                                                <rect key="frame" x="0.0" y="24" width="123" height="21"/>
+                                                                <rect key="frame" x="0.0" y="23.5" width="122" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -619,7 +619,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZE-AL-vI3">
-                                                <rect key="frame" x="20" y="249" width="335" height="454"/>
+                                                <rect key="frame" x="20" y="248" width="335" height="453.5"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" staticText="YES" summaryElement="YES" notEnabled="YES" updatesFrequently="YES"/>
                                                 </accessibility>
@@ -678,7 +678,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aR3-Yw-lmN" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fKD-ui-BvL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fKD-ui-BvL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>Animals</string>
+	<string>Civil Rights</string>
+	<string>Community Development</string>
+	<string>Education</string>
+	<string>Environment</string>
+	<string>Health</string>
+	<string>Human Services</string>
+	<string>International</string>
+	<string>Religion</string>
+</array>
+</plist>

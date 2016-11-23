@@ -14,7 +14,7 @@ extension LoginController {
     //MARK: - Login function
     
     /**
-     Checks if the user is new or not; this is the bulk of the login work. The fetches from BF/FIR are asynchronous so the logic has to be nested. For some reason the FIR observation fires several times, so there's a guard to prevent the entire function from repeatedly being called.
+     Checks if the user is new or not; this is the bulk of the login work. The fetches from FB/FIR are asynchronous so the logic has to be nested
      //TODO: - make a loginFBSDKGraphRequest() func with completion handler that returns dictionary
      */
     func loginControlFlow() {
@@ -22,7 +22,7 @@ extension LoginController {
         //properties for calling and storing facebook fetch
         var jsonData: [String: Any]?
         let connection = FBSDKGraphRequestConnection()
-        let request = FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields": "id, name, picture.type(large)"])
+        let request = FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), friends"])
         
         //initiate facebook fetch
         connection.add(request, completionHandler: {
@@ -42,8 +42,8 @@ extension LoginController {
             if let facebookID = jsonData?["id"] as! String?,
                 let name = jsonData?["name"] as! String?,
                 let picture = jsonData?["picture"] as! [String: AnyObject]?,
-                let data = picture["data"] as! [String: AnyObject]?,
-                let pictureURL = data["url"] as! String?,
+                let pictureData = picture["data"] as! [String: AnyObject]?,
+                let pictureURL = pictureData["url"] as! String?,
                 let userID = FIRAuth.auth()?.currentUser?.uid {
                 
                 //start firbase fetch, see if the logged in user has signed up
@@ -62,35 +62,16 @@ extension LoginController {
                         /*fixes bug: user data does not load into settings after logout */
                         weakSelf?.existingUserLoggedIn(userID: userID,
                                                        firTreeDictionary: snapshot.value as! Dictionary<String, Any>)
-                        
-//                        let value: Dictionary<String,String> = snapshot.value as! Dictionary
-//                        UserDefaults.standard.set(value[FirTree.UserParameter.Birthday.rawValue], forKey: FirTree.UserParameter.Birthday.rawValue)
-//                        UserDefaults.standard.set(value[FirTree.UserParameter.Email.rawValue], forKey: FirTree.UserParameter.Email .rawValue)
-//                        UserDefaults.standard.set(value[FirTree.UserParameter.Phone.rawValue], forKey: FirTree.UserParameter.Phone .rawValue)
-//                        UserDefaults.standard.set(value[FirTree.UserParameter.Charity.rawValue], forKey: FirTree.UserParameter.Charity.rawValue)
-//                        UserDefaults.standard.set(userID, forKey: FirTree.UserParameter.UserUID.rawValue)
-//                        UserDefaults.standard.set(facebookID, forKey: FirTree.UserParameter.FacebookUID.rawValue)
-//                        UserDefaults.standard.set(name, forKey: FirTree.UserParameter.Name.rawValue)
-//                        UserDefaults.standard.set(pictureURL, forKey: FirTree.UserParameter.Picture.rawValue)
-//                        
-//                        //update last login time
-//                        let loginTime = Date().shortDate
-//                        FirTree.rootRef
-//                            .child(FirTree.Node.Users.rawValue)
-//                            .child(facebookID)
-//                            .updateChildValues([FirTree.UserParameter.MostRecentLoginDate.rawValue: loginTime])
-//                        UserDefaults.standard.set(
-//                            loginTime,
-//                            forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
-                        
                     }
                     else { //user is new
                         FirTree.createNewUserInFirebase(userID: userID, facebookID: facebookID, name: name, pictureURL: pictureURL)
                     }
                     
                     weakSelf?.setHomeMenuAsRootViewController()
-                   
                 })
+            }
+            else {
+                return
             }
         })
         connection.start()

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KeN-8y-Ppi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D47-yN-921">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,6 +26,47 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Charity Info Controller-->
+        <scene sceneID="thm-qh-3Oj">
+            <objects>
+                <tableViewController id="P3v-xR-Iad" customClass="CharityInfoController" customModule="Coign" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="k27-Uh-vIc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="charity cell" textLabel="dsY-jK-A2f" style="IBUITableViewCellStyleDefault" id="Ndy-q0-cZL">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ndy-q0-cZL" id="AGx-04-Ret">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dsY-jK-A2f">
+                                            <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="P3v-xR-Iad" id="Bm2-UN-rYD"/>
+                            <outlet property="delegate" destination="P3v-xR-Iad" id="OM5-dg-82y"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="iD6-nO-fOd"/>
+                    <connections>
+                        <segue destination="1oz-gp-gYj" kind="show" identifier="show charity detail segue" id="vVt-Rt-31c"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0xU-UW-Ti6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1124" y="475.41229385307349"/>
+        </scene>
         <!--Categories-->
         <scene sceneID="bAZ-f1-GNz">
             <objects>
@@ -204,7 +245,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0K-yZ-gTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="922.39999999999998" y="-133.5832083958021"/>
+            <point key="canvasLocation" x="2800.8000000000002" y="-133.5832083958021"/>
         </scene>
         <!--Charity Category Controller-->
         <scene sceneID="E8w-jQ-5Ry">
@@ -244,7 +285,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vtB-N4-PG9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1704.8" y="-134.48275862068968"/>
+            <point key="canvasLocation" x="3583.1999999999998" y="-134.48275862068968"/>
         </scene>
         <!--Charity Detail Controller-->
         <scene sceneID="IXc-Uk-spQ">
@@ -393,28 +434,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V4h-QR-T9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2420" y="-134.48275862068968"/>
+            <point key="canvasLocation" x="4298.3999999999996" y="-134.48275862068968"/>
         </scene>
-        <!--Charity NC-->
-        <scene sceneID="CfJ-9h-Kat">
+        <!--CharityInfo NC-->
+        <scene sceneID="3mU-14-uzi">
             <objects>
-                <navigationController title="Charity NC" automaticallyAdjustsScrollViewInsets="NO" id="KeN-8y-Ppi" sceneMemberID="viewController">
+                <navigationController title="CharityInfo NC" automaticallyAdjustsScrollViewInsets="NO" id="be3-tR-WOu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Ma4-B6-Co8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eEu-EU-ZMN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="wA1-dE-lKC" kind="relationship" relationship="rootViewController" id="uJ0-mX-P5p"/>
+                        <segue destination="wA1-dE-lKC" kind="relationship" relationship="rootViewController" id="feE-eT-nMW"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E7e-5P-0jj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V3f-7c-kWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-550" y="-188"/>
+            <point key="canvasLocation" x="1861.5999999999999" y="-133.5832083958021"/>
+        </scene>
+        <!--CharityInfo NC-->
+        <scene sceneID="wWt-Ru-vg9">
+            <objects>
+                <navigationController title="CharityInfo NC" automaticallyAdjustsScrollViewInsets="NO" id="D47-yN-921" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Kek-F8-y00">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="P3v-xR-Iad" kind="relationship" relationship="rootViewController" id="Vn2-fW-BOr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2RT-de-2MF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184.80000000000001" y="475.41229385307349"/>
         </scene>
     </scenes>
     <resources>
         <image name="blue-stars-four" width="336" height="84"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vVt-Rt-31c"/>
+    </inferredMetricsTieBreakers>
 </document>
