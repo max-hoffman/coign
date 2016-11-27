@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //connect to Firebase
         
-        #if DEBUG
+        #if DEVELOPMENT
             let filePath = Bundle.main.path(forResource: "GoogleService-Dev-Info", ofType:"plist")
             let options = FIROptions(contentsOfFile:filePath)
             FIRApp.configure(with: options!)

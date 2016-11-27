@@ -91,6 +91,39 @@ extension FirTree {
                 }.resume()
         }
     }
+    
+    class func updateUserDatabaseImage(userID: String) {
+        
+        //establish reference point for image
+        let userImageRef = FirTree.database.child("user profile images/\(userID)")
+        let metadata = FIRStorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        //pull data from the user's picture url
+        if let profileImageURL = UserDefaults.standard.object(forKey: FirTree.UserParameter.Picture.rawValue) as? String {
+            
+            URLSession.shared.dataTask(
+                with: URL(string: profileImageURL)!)
+            { (data, response, error) in
+                
+                //catch errors
+                if error != nil {
+                    print(error?.localizedDescription ?? "no image was found at the given url")
+                }
+                    
+                else if data != nil {
+                    
+                    //put data in google cloud bucket
+                    userImageRef.put(data!, metadata: metadata, completion: { (metadata, error) in
+                        if error != nil {
+                            print(error?.localizedDescription ?? "error uploading user image")
+                        }
+                    })
+                }
+                
+                }.resume()
+        }
+    }
 
     /**
      Gets an image given the user UID. 

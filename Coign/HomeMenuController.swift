@@ -166,7 +166,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         /* Discontinue refresher if we've started loading posts into table */
-        if indexPath.section == 2 {
+        if indexPath.section == 0 {
             self.endRefreshing()
         }
         

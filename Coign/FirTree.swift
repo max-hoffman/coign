@@ -121,7 +121,14 @@ class FirTree {
                                     FirTree.UserParameter.MostRecentLoginDate.rawValue: FirTree.UserParameter.NewUser.rawValue]
         
         //add date to new node
-        rootRef.child(Node.Users.rawValue).child(userID).updateChildValues(post)
+        rootRef.child(Node.Users.rawValue).child(userID).updateChildValues(post) {
+        (error, snapshot) in
+            
+            //add picture to
+            if error != nil {
+                updateUserDatabaseImage(userID: userID)
+            }
+        }
         
         //update user defaults
         //TODO: change this so that we don't need the "new user" intermediary
