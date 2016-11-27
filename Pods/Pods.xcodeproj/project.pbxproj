@@ -94,7 +94,7 @@
 		4D07D0151693228D6281EDB319B448C0 /* FBSDKViewImpressionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = D175D117D104219345E58273460FAE44 /* FBSDKViewImpressionTracker.m */; };
 		4DA130F813859583C3363088029A470E /* _FBSDKLoginRecoveryAttempter.h in Headers */ = {isa = PBXBuildFile; fileRef = E9EE309A3A2D79E674C77075B1EB6913 /* _FBSDKLoginRecoveryAttempter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4DCE84710050E8583735F97ADC84FCA7 /* BFAppLinkReturnToRefererController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE23210DEA553D811CAE445AE5595422 /* BFAppLinkReturnToRefererController.m */; };
-		4E8A10C69C5B6B7477C99B961D6A3FC9 /* Pods-CoignUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A35E63477D85FDAAC7888CD1AE473009 /* Pods-CoignUITests-dummy.m */; };
+		4E8A10C69C5B6B7477C99B961D6A3FC9 /* Pods-CoignUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AEAB4EC8E86017FC744F32C4B4F8B8 /* Pods-CoignUITests-dummy.m */; };
 		4EBCD6EC15EDFC23EAB49AEFD48644FA /* FBSDKGraphRequestConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8CEDEA68A19568ADA6D0684247F750 /* FBSDKGraphRequestConnection.m */; };
 		4FA93C7BE82E47E93B2186C08174D7F9 /* FBSDKAppEventsStateManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A7C310FCF5F6AC8F3E85ECDAE2D437EB /* FBSDKAppEventsStateManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		514B1324C72A235480C29BBC3AD1C250 /* BFAppLinkTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8EC16AA2B908CCF419162F3F391331 /* BFAppLinkTarget.m */; };
@@ -102,7 +102,7 @@
 		53DCAD2FF5018897F635A8F80D1B9A95 /* FBSDKWebDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A80097438CC958F6F581CAC5305198 /* FBSDKWebDialog.m */; };
 		5493E80E04D895A735853EA349C4AAE3 /* BFCancellationToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CF6E38D4D21FC6B16B385992426B102 /* BFCancellationToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54B55A60F4122485684FA7EC79C0FF32 /* FBSDKAccessTokenCaching.h in Headers */ = {isa = PBXBuildFile; fileRef = ABFAF48608336B8DA63788E322C56137 /* FBSDKAccessTokenCaching.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		551904D4A8570B0E748F8730BBE9360C /* Pods-CoignTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B72BAD10E4B8524E296B0C2A56F9C25F /* Pods-CoignTests-dummy.m */; };
+		551904D4A8570B0E748F8730BBE9360C /* Pods-CoignTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 41CD03B8960143AF4ED89C1F54A4E80C /* Pods-CoignTests-dummy.m */; };
 		56FF2E7748A9026DEECE6CB0007037FA /* FBSDKErrorConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F79070629330EFAC9FAD95E3C30DDC /* FBSDKErrorConfiguration.m */; };
 		57223DDD941FECB4AE83105F412AA598 /* FBSDKGraphRequestMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329A0F49FAFF54A260707B76B48E8C /* FBSDKGraphRequestMetadata.m */; };
 		591FC299A2D9A1B4ED34D81F3A5B3364 /* FBSDKServerConfigurationManager+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BF05964B86BE00585308B5FD0E27378 /* FBSDKServerConfigurationManager+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -122,6 +122,7 @@
 		652EE84BA55F2A6BD325768B753565D8 /* BFExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04A2C3DAAD72EE81A09EC45974C354 /* BFExecutor.m */; };
 		6548721272A6621436915353754710A7 /* FBSDKConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB04A4288DA3788DC4AF348AEF8B23E /* FBSDKConstants.m */; };
 		65866EFFD741914649CE881BDDC24F60 /* FBSDKWebDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = F97E5F88EC66A82B5CF543816B910C31 /* FBSDKWebDialogView.m */; };
+		674F5DBCFCCAEBAD1C2339558D4A8339 /* Pods-Coign Dev-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB083FFD798C8D6A69A11F86B5E345 /* Pods-Coign Dev-dummy.m */; };
 		6817DE148CDBD0D314AFC83255A645E4 /* FBSDKLoginTooltipView.h in Headers */ = {isa = PBXBuildFile; fileRef = AFBB0CB8B12533F4994E2B30090EF6E8 /* FBSDKLoginTooltipView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		683F00DC5BC8E350C511CB04D6489A61 /* FBSDKURLSessionTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 031715B4CDF1E8BEFA07F3055720A32F /* FBSDKURLSessionTask.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		683FC99BAEA8DDE9EBEE2EC93F949B36 /* FBSDKLoginManagerLoginResult+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 237FC10BA629773C78F124A3C7F46DE9 /* FBSDKLoginManagerLoginResult+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -152,7 +153,7 @@
 		79BE10093D731A2D4878DB7F8F46ADB3 /* FBSDKCloseIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 4608509933CAA3751730D1BA687FADB9 /* FBSDKCloseIcon.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7B0F099011442A12FE9794107B879B9C /* FBSDKAccessTokenCacheV3.m in Sources */ = {isa = PBXBuildFile; fileRef = D8870D14D5FAB7879CE7DB8CCCC67DC5 /* FBSDKAccessTokenCacheV3.m */; };
 		7BB98E50240143972C28AA9A13EBC3D5 /* BFAppLinkResolving.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EF2E655C826DA38082E40E456220C2B /* BFAppLinkResolving.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7BCC7D690216D2554533830D6DBAE8EA /* Pods-CoignTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B96E7CBCF64F8DB0C40E7021AF7583B4 /* Pods-CoignTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BCC7D690216D2554533830D6DBAE8EA /* Pods-CoignTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 29D626DABE513A286350B67D3CEB67D0 /* Pods-CoignTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C7E248D341E116E1A7B8C16A8F58C6B /* BFTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 836B427B87C2589568ACA8FA71EBED4A /* BFTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D6ED8A7FE3F654EEC63F134E383BBA7 /* GFBase32Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 89EF288A60A39D4B6CB91B6389D7110F /* GFBase32Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D71E19849D32B258191F32920CE8C74 /* FBSDKCoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A7AAAF2106D01E398B5199713FA4038F /* FBSDKCoreKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -164,7 +165,7 @@
 		835DEC134806538B138A8837B3D24F70 /* FBSDKBridgeAPIProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = D1D1846EE2AC8588028CCF29985DB392 /* FBSDKBridgeAPIProtocol.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		845719FAA2F09FF6781E7D43D3A6F5A3 /* FBSDKSettings+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 246F36A89F3DB370485E153CB4A9FF61 /* FBSDKSettings+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		85D97B96B98C541629F6C6866DAFC1A2 /* FBSDKBridgeAPIProtocolWebV1.h in Headers */ = {isa = PBXBuildFile; fileRef = 50FFA405110A528E3D1E09470F816283 /* FBSDKBridgeAPIProtocolWebV1.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		86825E52485A1552A7CEF9D50BDA92B5 /* Pods-CoignUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0341A29B5CBBD8463A48355DA4B2D0E4 /* Pods-CoignUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86825E52485A1552A7CEF9D50BDA92B5 /* Pods-CoignUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AE990B60E932B05CF9BA49774B60B78B /* Pods-CoignUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86C7B4DC7245C1E31565C74EBC34B5A8 /* FBSDKLoginManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 29F257FD5BF2E52E7D58CE6DD56A859C /* FBSDKLoginManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		879EDC2C7E8100C20DD5C06ACCF75467 /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864EA6CD5CFA356CB57CFDB229EBA2F4 /* IQKeyboardManagerConstantsInternal.swift */; };
 		89B59BD52908BA3B2EEED23398CF79E6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F56742A3D83BB2581939C53307D4F616 /* FBSDKCoreKit.framework */; };
@@ -192,13 +193,14 @@
 		9E82EB8CB75FC077C589F4C52A24095F /* FBSDKAccessTokenCacheV3_21.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBFDA095F2CA97948D519983C288B8F /* FBSDKAccessTokenCacheV3_21.m */; };
 		9ECB71F2FC66B85082C35CE4AEAAD509 /* FBSDKGraphRequestPiggybackManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 66BB3805A00C2E0A0B1B9544EB9F41A0 /* FBSDKGraphRequestPiggybackManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		9FE6105E7FF114DF7F9C43BF76A7B790 /* FBSDKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F982F79A63DAF36E53DC59B82F974F6 /* FBSDKButton.m */; };
+		A167A9CD41E04378EA1AF350488BEF78 /* Pods-Coign Dev-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 274AF258E7FE1BFA13798A4EB0020C32 /* Pods-Coign Dev-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2FF64B577CEAC43E765D9E4AF96F432 /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9765B3BEA6FBB64E43538C3701E54022 /* IQPreviousNextView.swift */; };
 		A3CE342B34D0DAA7BE2AA45BEF94CAFC /* BFAppLink_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D74ED605C27E7474A85E8088DC27528 /* BFAppLink_Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A3FAEF9CA01F3716E2B562F58AFAA046 /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B27CA3459C0C86F938C9C89E81AEEC6 /* IQKeyboardReturnKeyHandler.swift */; };
 		A411DDDACF2FE64E4123D2654049E331 /* BFMeasurementEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F38DEE54071B07CABC2CC45BA7FEB7 /* BFMeasurementEvent.m */; };
 		A4656AA37096D90C796730F3A274FA91 /* GeoFire.h in Headers */ = {isa = PBXBuildFile; fileRef = 931A90BDC3F395A429100E9468503914 /* GeoFire.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6437070CF1C249685D69D693BB130F5 /* FBSDKSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBE0339D31B40D5A053197AFFA0B245 /* FBSDKSettings.m */; };
-		A655F20362A7664687FD836B4D7F2A2C /* Pods-Coign-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95203F5190D0BBFC71B7464CEDC81320 /* Pods-Coign-dummy.m */; };
+		A655F20362A7664687FD836B4D7F2A2C /* Pods-Coign-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11475E7619BFFDDA75B97D6A606CB92B /* Pods-Coign-dummy.m */; };
 		A69128071A53DBC4882CC8DC76782334 /* FBSDKLoginTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC337A7EAB4E7BA318DADE3DD0E625BA /* FBSDKLoginTooltipView.m */; };
 		A73E5104E58344ECB5A8F7B162F4C988 /* FBSDKServerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A0FCB0D18983F28F810847D6F5FA6 /* FBSDKServerConfiguration.m */; };
 		A877EB9CF2930345DD962B4BC0D24959 /* BFTaskCompletionSource.h in Headers */ = {isa = PBXBuildFile; fileRef = A65750B85B46AC57083F770B18117D5F /* BFTaskCompletionSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -212,7 +214,7 @@
 		AEC88D8012A4396714B28985099C6EFF /* FBSDKAccessToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 21093453FD6EF7E7CB7CBB63D163E5FF /* FBSDKAccessToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AF53BABEF4555D0436B0D6DAB01F75D2 /* FBSDKURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C8538C460AD421A5FFE3073DB79DA3E1 /* FBSDKURLConnection.m */; };
 		B1709542A41A677BA835CEC032F4DB2D /* IQKeyboardManagerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 907F16A500FF83182A7858D2B3744A37 /* IQKeyboardManagerSwift-dummy.m */; };
-		B1FBC2D4BFD4988806D22BC6FD44C153 /* Pods-Coign-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 76CF139C4A3B95AA9AA082E225A50AFB /* Pods-Coign-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1FBC2D4BFD4988806D22BC6FD44C153 /* Pods-Coign-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BCF6E02B8897A84F4A1A584FC72A4F2D /* Pods-Coign-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B23C036B9C9FE3E152A6BC3FA8F9828D /* FBSDKCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = C130BB833810255AE84FAD59FC86668A /* FBSDKCrypto.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B3EF5F677DAF43756C055223BB16FC64 /* FBSDKAccessTokenCacheV4.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7E5C881765B4A68CE0617E40952340 /* FBSDKAccessTokenCacheV4.m */; };
 		B534C8C1D32294DB54F3C5CFFD5AAA9B /* FBSDKLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 16022023200F615E59A96CBBE1D9E08C /* FBSDKLoginButton.m */; };
@@ -252,6 +254,7 @@
 		D5A8CFF2C095ED6EEC148B7CC7465C2D /* SkyFloatingLabelTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F48A667A8862E7A3015D20ECB4DF17E /* SkyFloatingLabelTextField-dummy.m */; };
 		D5BA74145C0DD3D7C2146DB73A378CB5 /* FBSDKBoltsMeasurementEventListener.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B67BCBEA0B29E1968E0F680347F379 /* FBSDKBoltsMeasurementEventListener.m */; };
 		D80E3A1971AF7FDCE82F3241BA53B59B /* FBSDKLoginKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AB03432D8D608B28013F7C64DFA427B /* FBSDKLoginKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8E2D5C79D4B81809C183D760D9E11E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF43BD3C739E3A8A81CC1AA286A8EA02 /* Foundation.framework */; };
 		D8E3EF0B890201C0DD54E9CF5527F88C /* BFAppLinkTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = D0E69A66D066043F6E53AE7792442A97 /* BFAppLinkTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D9B2E2CE9E2DF615FE197377486BB214 /* BFCancellationTokenRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6015C2BD30011F3ADE2028A8002CCD /* BFCancellationTokenRegistration.m */; };
 		DD71FF7082841E53507DF58A816EF24A /* FBSDKAppEventsState.h in Headers */ = {isa = PBXBuildFile; fileRef = 27A89EAB021FEA201D350D95F190264C /* FBSDKAppEventsState.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -300,6 +303,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0021839301CD91E73A5EE26BDE2ED156 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7908849B370564D3342427B24CCD92B7;
+			remoteInfo = GeoFire;
+		};
 		42A25FDDD6184C89BE621D7807AEC6CA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -313,6 +323,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 7908849B370564D3342427B24CCD92B7;
 			remoteInfo = GeoFire;
+		};
+		5AAD3F489BBE8D8C59670997F2938E64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D0F2E5EA1B46A5D72FFD42B0B39DBBC;
+			remoteInfo = Bolts;
+		};
+		5F408AD1BD434C2923D7894141051E65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1520003FEBEC114D6C84F832AFEDB994;
+			remoteInfo = IQKeyboardManagerSwift;
+		};
+		616C69CCCD5D0DCD769E6826E47466BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E303C3CE7513908EE880D9CA833AFAE;
+			remoteInfo = FBSDKCoreKit;
 		};
 		73482FD9D29C882B0D9EB5D52AE4838F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -363,60 +394,81 @@
 			remoteGlobalIDString = 2E303C3CE7513908EE880D9CA833AFAE;
 			remoteInfo = FBSDKCoreKit;
 		};
+		F58902AC78BF576B4D743FB88856836A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 429DC2756A38312D9C02579AA70C21A3;
+			remoteInfo = SkyFloatingLabelTextField;
+		};
+		F5958F683E4560A00CCF106535BD51FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6EDC37F3FA92533C6AC3562458AA91F1;
+			remoteInfo = FBSDKLoginKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0110BD29751BBBAACDB6DF54D2536D87 /* Pods-CoignTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoignTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0139ECEF59415A9EC5B854C1B5D06045 /* FBSDKProfilePictureView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKProfilePictureView.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKProfilePictureView.h; sourceTree = "<group>"; };
 		015C39D7D101888B6416D540CF01CA33 /* IQUIViewController+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIViewController+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIViewController+Additions.swift"; sourceTree = "<group>"; };
+		01D57993BE56E6733C8B2CB03F81C0D9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01E1E72BB07E241AE2F0F584CCDF02F0 /* FBSDKAccessTokenCacheV4.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAccessTokenCacheV4.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCacheV4.h; sourceTree = "<group>"; };
 		02B2A05709EC872EAA3222776BD888D9 /* FBSDKAccessToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAccessToken.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAccessToken.m; sourceTree = "<group>"; };
 		031715B4CDF1E8BEFA07F3055720A32F /* FBSDKURLSessionTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKURLSessionTask.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKURLSessionTask.h; sourceTree = "<group>"; };
-		0341A29B5CBBD8463A48355DA4B2D0E4 /* Pods-CoignUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CoignUITests-umbrella.h"; sourceTree = "<group>"; };
 		040964C1BED2144E780AD93328D8EA21 /* FBSDKAppEvents.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAppEvents.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAppEvents.m; sourceTree = "<group>"; };
 		0522AC36C9A9A3513E136B5AC80F1A4F /* FBSDKTimeSpentData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKTimeSpentData.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKTimeSpentData.m; sourceTree = "<group>"; };
+		0635C8675FD1BA1B857F8BE9B826A6F9 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		075B1DDA6C06D00332A6189B8169F7E4 /* FBSDKBridgeAPIProtocolNativeV1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKBridgeAPIProtocolNativeV1.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/ProtocolVersions/FBSDKBridgeAPIProtocolNativeV1.h; sourceTree = "<group>"; };
+		076ED99EF2D3996D5A9B7335E5276104 /* Pods_CoignTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoignTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C43436396E65829E8E9AE48DCCA9EC /* FBSDKBridgeAPIProtocolWebV1.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKBridgeAPIProtocolWebV1.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/ProtocolVersions/FBSDKBridgeAPIProtocolWebV1.m; sourceTree = "<group>"; };
 		09B774A520CC0206306CB1C79BD15A15 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
+		0A2528134871E4409E2531AF315F24E3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AB03432D8D608B28013F7C64DFA427B /* FBSDKLoginKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLoginKit.h; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginKit.h; sourceTree = "<group>"; };
 		0AFADFC7B738AEEBF65C926C5C1C3F6B /* FBSDKAccessTokenCacheV3_17.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAccessTokenCacheV3_17.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCacheV3_17.h; sourceTree = "<group>"; };
+		0B1F2311F1956D8A13BED3027E4B68A1 /* GeoFire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GeoFire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BAB1F533A3F49D2CDAA296A7A58D258 /* FBSDKWebDialogView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKWebDialogView.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/WebDialog/FBSDKWebDialogView.h; sourceTree = "<group>"; };
-		0F5EFFD2E674640564F291C76F029386 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FAAA31B4237B71149F971F83AE45008 /* FBSDKLoginError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginError.m; path = FBSDKLoginKit/FBSDKLoginKit/Internal/FBSDKLoginError.m; sourceTree = "<group>"; };
 		0FF3470B3BCB0E6C8CEDFC22518AB23E /* FBSDKGraphRequestDataAttachment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGraphRequestDataAttachment.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequestDataAttachment.m; sourceTree = "<group>"; };
 		1057015CD425BECEE98C1D240636DD1C /* GFQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFQuery.m; path = GeoFire/Implementation/GFQuery.m; sourceTree = "<group>"; };
-		12DF39910A3B1B7A5BA54921E4BE295E /* Pods-CoignTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoignTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		12EC98D4BA5D667CBCF25BE82A5D9172 /* Pods-CoignTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoignTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		11475E7619BFFDDA75B97D6A606CB92B /* Pods-Coign-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Coign-dummy.m"; sourceTree = "<group>"; };
 		139460DDF59D3F11E4A8BC2C45572B98 /* FBSDKApplicationDelegate+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKApplicationDelegate+Internal.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKApplicationDelegate+Internal.h"; sourceTree = "<group>"; };
+		13B70011B8D4E8617ABCA3A38B1909D3 /* Pods-Coign Dev-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Coign Dev-resources.sh"; sourceTree = "<group>"; };
 		13C1C00A7AA691A5BF9B229834EE2FA8 /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstants.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
 		13F6A0ACB576A60FE2C7D9666A9DED89 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1490E01627889E1B1C96185796C60312 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
 		16022023200F615E59A96CBBE1D9E08C /* FBSDKLoginButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginButton.m; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginButton.m; sourceTree = "<group>"; };
 		16136619755BE734E7349ACBD77CD502 /* BFTask+Exceptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BFTask+Exceptions.h"; path = "Bolts/Common/BFTask+Exceptions.h"; sourceTree = "<group>"; };
-		1C3CD159AF7E561062C4A4A48B5D3A90 /* Pods-CoignTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoignTests.release.xcconfig"; sourceTree = "<group>"; };
+		18B1FC218B6393358069EF66CBD07D4D /* Pods-CoignUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CoignUITests.modulemap"; sourceTree = "<group>"; };
 		1C5CA8DCC7F7F63125002514598178B2 /* FBSDKMonotonicTime.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKMonotonicTime.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKMonotonicTime.m; sourceTree = "<group>"; };
+		1D23C8D8808085289BE92DF8D121125B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D5A926C0B39A48C01FADC813131C49C /* BFURL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFURL.h; path = Bolts/iOS/BFURL.h; sourceTree = "<group>"; };
 		1DEB85814787311BEF0B7ADDEE7A1DB8 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
 		1E96FBDE4CD5A25051FDF8D1027EDC1D /* FBSDKPaymentObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKPaymentObserver.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKPaymentObserver.h; sourceTree = "<group>"; };
-		1EADEF14312D2E11094F3FFD84D62FA3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2027F94EBE2B2CF7D103B6D18CC02FE3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2104FA9B4E07CA800546165AA0FF8905 /* FBSDKGraphRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequest.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequest.h; sourceTree = "<group>"; };
 		21093453FD6EF7E7CB7CBB63D163E5FF /* FBSDKAccessToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAccessToken.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAccessToken.h; sourceTree = "<group>"; };
 		211BFB61917F1093EF54AD92D635CBD6 /* Bolts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Bolts.m; path = Bolts/Common/Bolts.m; sourceTree = "<group>"; };
+		21C31BD2C545F5F62316783CDFCB78FA /* Pods-Coign-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Coign-frameworks.sh"; sourceTree = "<group>"; };
 		224D62A5AB35C0CEBFCE5F16771844C5 /* FBSDKUIUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKUIUtility.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKUIUtility.h; sourceTree = "<group>"; };
 		237FC10BA629773C78F124A3C7F46DE9 /* FBSDKLoginManagerLoginResult+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKLoginManagerLoginResult+Internal.h"; path = "FBSDKLoginKit/FBSDKLoginKit/Internal/FBSDKLoginManagerLoginResult+Internal.h"; sourceTree = "<group>"; };
 		23884862E8CC7813344DAD4866FC0BB0 /* FBSDKLoginManagerLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLoginManagerLogger.h; path = FBSDKLoginKit/FBSDKLoginKit/Internal/FBSDKLoginManagerLogger.h; sourceTree = "<group>"; };
 		246F36A89F3DB370485E153CB4A9FF61 /* FBSDKSettings+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKSettings+Internal.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKSettings+Internal.h"; sourceTree = "<group>"; };
-		24A49FEDAFD7E81D4898B763FBF331C3 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25A1B346E96F77C6D416ED3A7C33DB29 /* GFGeoHash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFGeoHash.m; path = GeoFire/Implementation/GFGeoHash.m; sourceTree = "<group>"; };
 		25C5FE6E5191499CBFBE88DC3D92E05B /* FBSDKCoreKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSDKCoreKit.xcconfig; sourceTree = "<group>"; };
+		274AF258E7FE1BFA13798A4EB0020C32 /* Pods-Coign Dev-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Coign Dev-umbrella.h"; sourceTree = "<group>"; };
 		279F41CAF06BEDA63769881F788EF8A0 /* FBSDKViewImpressionTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKViewImpressionTracker.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKViewImpressionTracker.h; sourceTree = "<group>"; };
 		27A89EAB021FEA201D350D95F190264C /* FBSDKAppEventsState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppEventsState.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKAppEventsState.h; sourceTree = "<group>"; };
 		27EDDB4EDB583098CD4B502E23561D88 /* SkyFloatingLabelTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SkyFloatingLabelTextField-umbrella.h"; sourceTree = "<group>"; };
 		282773BE124D91990F2E7F8E49B354F1 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
 		28D496F0E71A4F77F5022B5FC2CE4C0B /* GFGeoHashQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFGeoHashQuery.h; path = GeoFire/Implementation/GFGeoHashQuery.h; sourceTree = "<group>"; };
 		29959BAEF9E56BB371C2E9028284A5CE /* FBSDKAppLinkUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAppLinkUtility.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkUtility.m; sourceTree = "<group>"; };
+		29D626DABE513A286350B67D3CEB67D0 /* Pods-CoignTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CoignTests-umbrella.h"; sourceTree = "<group>"; };
 		29F257FD5BF2E52E7D58CE6DD56A859C /* FBSDKLoginManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLoginManager.h; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginManager.h; sourceTree = "<group>"; };
 		2A2E9B6EBE2AB38B3D7CED6729B2A90D /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkyFloatingLabelTextField.swift; path = Sources/SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
+		2D2C9177CA92FED779CAAEFD92595C1A /* Pods_Coign_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coign_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBD3220F6102981BDA57DA9BFF3CCD4 /* BFAppLinkNavigation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLinkNavigation.h; path = Bolts/iOS/BFAppLinkNavigation.h; sourceTree = "<group>"; };
 		2EDC448E4CA7B4BFF576F22A847D63AE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		2EF2E655C826DA38082E40E456220C2B /* BFAppLinkResolving.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLinkResolving.h; path = Bolts/iOS/BFAppLinkResolving.h; sourceTree = "<group>"; };
@@ -430,20 +482,24 @@
 		3B27CA3459C0C86F938C9C89E81AEEC6 /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardReturnKeyHandler.swift; path = IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
 		3CB5211D96323036D71FEA4DDA7FC2CD /* BFTaskCompletionSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTaskCompletionSource.m; path = Bolts/Common/BFTaskCompletionSource.m; sourceTree = "<group>"; };
 		3CF6E38D4D21FC6B16B385992426B102 /* BFCancellationToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationToken.h; path = Bolts/Common/BFCancellationToken.h; sourceTree = "<group>"; };
-		3F1A210C744FCCA7E7B28091B1E05294 /* Pods_CoignUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoignUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB5273B90710AAAFC591CBD9A9793D7 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
 		3FE08E70A8089A3BA271388650A09E78 /* BFMeasurementEvent_Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFMeasurementEvent_Internal.h; path = Bolts/iOS/Internal/BFMeasurementEvent_Internal.h; sourceTree = "<group>"; };
 		4035D8AD61E5D9D5132E54B931C2621A /* FBSDKBridgeAPIProtocolWebV2.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKBridgeAPIProtocolWebV2.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/ProtocolVersions/FBSDKBridgeAPIProtocolWebV2.m; sourceTree = "<group>"; };
+		40393FC064F001D0654947B1E86D0481 /* Pods-CoignUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoignUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		417A699521DEBE07E3FAE1DD3315D089 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		41CD03B8960143AF4ED89C1F54A4E80C /* Pods-CoignTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CoignTests-dummy.m"; sourceTree = "<group>"; };
 		42A3526590E850C0B0C9490814DBC1EE /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Analytics/Sources/Firebase.h; sourceTree = "<group>"; };
+		437ACE9B3E0D5ACD58F00C519973BF63 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkyFloatingLabelTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4554CBFF2A98F92A7CBCECEE6C9E7732 /* FBSDKGraphRequestBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequestBody.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestBody.h; sourceTree = "<group>"; };
 		456492229697E2E3FDE4994756219349 /* FBSDKAppEvents+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKAppEvents+Internal.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKAppEvents+Internal.h"; sourceTree = "<group>"; };
 		458AEC73BC05DD8979F8B49752D4F78A /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextField+fixCaretPosition.swift"; path = "Sources/UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		45E521A0949F40A0E671FCA7BB629F0E /* FBSDKColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKColor.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKColor.m; sourceTree = "<group>"; };
 		4608509933CAA3751730D1BA687FADB9 /* FBSDKCloseIcon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKCloseIcon.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKCloseIcon.h; sourceTree = "<group>"; };
+		46523C9F48CE813BDB6071F1A922A181 /* Pods-CoignTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoignTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		465605DD17928C1B658A0AE87B670504 /* FBSDKKeychainStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKKeychainStore.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKKeychainStore.h; sourceTree = "<group>"; };
 		4873DC4B45E706AE197C1C379896DBB7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48DB179788C78DCEAA592034DBB7D48C /* FBSDKLoginKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FBSDKLoginKit.modulemap; sourceTree = "<group>"; };
+		48ED3B136F2B7AE2A4D9F274127DCB05 /* Pods-CoignUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoignUITests-frameworks.sh"; sourceTree = "<group>"; };
 		49161FB43AFE4D84058DB87AA2AE7190 /* FBSDKURLOpening.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKURLOpening.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKURLOpening.h; sourceTree = "<group>"; };
 		4B4BCCABE9510B02C5402DF483E5BBCE /* FBSDKGraphRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGraphRequest.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequest.m; sourceTree = "<group>"; };
 		4B6BC933DCDC45D96B4F2DB28B9F2492 /* FBSDKCoreKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSDKCoreKit-umbrella.h"; sourceTree = "<group>"; };
@@ -454,12 +510,12 @@
 		4DE19EF08A412B41D3077964390572B0 /* FBSDKSystemAccountStoreAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKSystemAccountStoreAdapter.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKSystemAccountStoreAdapter.h; sourceTree = "<group>"; };
 		4F33A74C70AAC3AAEA01A3612BC85ADB /* FBSDKProfile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKProfile.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKProfile.m; sourceTree = "<group>"; };
 		4F44AAE12C0E6BDB2DDD5C64A84E586F /* FBSDKBase64.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKBase64.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Base64/FBSDKBase64.m; sourceTree = "<group>"; };
+		4F910D05795EAA96A85DBDCCB2B462F0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5013ED33AEF2CF1F9058320974101EB8 /* FBSDKError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKError.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKError.h; sourceTree = "<group>"; };
 		5087FB284E3CAD5B1255801AF9FB5958 /* FBSDKBridgeAPIProtocolNativeV1.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKBridgeAPIProtocolNativeV1.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/ProtocolVersions/FBSDKBridgeAPIProtocolNativeV1.m; sourceTree = "<group>"; };
+		50AB083FFD798C8D6A69A11F86B5E345 /* Pods-Coign Dev-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Coign Dev-dummy.m"; sourceTree = "<group>"; };
 		50B8BF35BDDFA3FF8F77C263232A01F9 /* FBSDKContainerViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKContainerViewController.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKContainerViewController.m; sourceTree = "<group>"; };
-		50E59949BB5CF6A525DEC35423EB7B70 /* Pods-CoignTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoignTests-frameworks.sh"; sourceTree = "<group>"; };
 		50FFA405110A528E3D1E09470F816283 /* FBSDKBridgeAPIProtocolWebV1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKBridgeAPIProtocolWebV1.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/ProtocolVersions/FBSDKBridgeAPIProtocolWebV1.h; sourceTree = "<group>"; };
-		51711878A303405EF8F640DA7F1152FE /* Pods-CoignTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoignTests-resources.sh"; sourceTree = "<group>"; };
 		527C64F340AEF7B6F4BBD8D90ED2FF12 /* FBSDKLoginManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginManager.m; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginManager.m; sourceTree = "<group>"; };
 		558D06F07AB1D9A2DCF1E84C968E422A /* SkyFloatingLabelTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SkyFloatingLabelTextField.xcconfig; sourceTree = "<group>"; };
 		56BF9A4A1BD213CD2DC77D1BCD42FB55 /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
@@ -471,6 +527,7 @@
 		5A6372362DCEEAE71B80C8C953822E9E /* FBSDKGraphRequestMetadata.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequestMetadata.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestMetadata.h; sourceTree = "<group>"; };
 		5BFDB0DD6FD3C1A0B03B83677F1E6BF8 /* FBSDKMath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKMath.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKMath.m; sourceTree = "<group>"; };
 		5C362165D11C07993C5DA1911A995FA8 /* FBSDKGraphRequestPiggybackManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGraphRequestPiggybackManager.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestPiggybackManager.m; sourceTree = "<group>"; };
+		5C99F44173F9FD7F3D44A9E3B821DED1 /* Pods-Coign Dev-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Coign Dev-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5D1C63ED72E2039C1F2E0CE17CABB9B3 /* FBSDKKeychainStoreViaBundleID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKKeychainStoreViaBundleID.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKKeychainStoreViaBundleID.h; sourceTree = "<group>"; };
 		5E55DB4A744D87CBC5B963D2EE6DE4B7 /* BFCancellationTokenSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationTokenSource.m; path = Bolts/Common/BFCancellationTokenSource.m; sourceTree = "<group>"; };
 		5E58DCF23FB5E72BAD06C2B810E6BAF8 /* FBSDKLoginManagerLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginManagerLogger.m; path = FBSDKLoginKit/FBSDKLoginKit/Internal/FBSDKLoginManagerLogger.m; sourceTree = "<group>"; };
@@ -479,31 +536,25 @@
 		5F1C4B046889D7975530B187374B03F7 /* FBSDKKeychainStoreViaBundleID.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKKeychainStoreViaBundleID.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKKeychainStoreViaBundleID.m; sourceTree = "<group>"; };
 		5F48A667A8862E7A3015D20ECB4DF17E /* SkyFloatingLabelTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SkyFloatingLabelTextField-dummy.m"; sourceTree = "<group>"; };
 		5F68734BF256BE31627D4DB80F09E643 /* FBSDKGraphErrorRecoveryProcessor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphErrorRecoveryProcessor.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphErrorRecoveryProcessor.h; sourceTree = "<group>"; };
-		5FDFC6E3B7C45AB0F54DC427D7288A34 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60665A17C90C595C6AFE8876AAF56181 /* SkyFloatingLabelTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SkyFloatingLabelTextField-prefix.pch"; sourceTree = "<group>"; };
 		62914E334AC2482EEA7449B1DE43D00C /* FBSDKBridgeAPIProtocolWebV2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKBridgeAPIProtocolWebV2.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/ProtocolVersions/FBSDKBridgeAPIProtocolWebV2.h; sourceTree = "<group>"; };
 		62934234788C3F409123C25DF0DD0122 /* GFCircleQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFCircleQuery.h; path = GeoFire/API/GFCircleQuery.h; sourceTree = "<group>"; };
 		62C16D067F6AC13F394F2F5F1134E807 /* FBSDKAppEventsUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAppEventsUtility.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKAppEventsUtility.m; sourceTree = "<group>"; };
 		62F38DEE54071B07CABC2CC45BA7FEB7 /* BFMeasurementEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFMeasurementEvent.m; path = Bolts/iOS/BFMeasurementEvent.m; sourceTree = "<group>"; };
 		639568D06106E5680D4197DFA204B7D0 /* FBSDKPaymentObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKPaymentObserver.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKPaymentObserver.m; sourceTree = "<group>"; };
-		6440232EF0125BE926C9BF1B45CCB112 /* Pods-Coign.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Coign.release.xcconfig"; sourceTree = "<group>"; };
 		6536D785A8207114765ED1CAB3BCA771 /* FBSDKLoginKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSDKLoginKit-umbrella.h"; sourceTree = "<group>"; };
 		65636D73644D580E9767159F87D506D1 /* GeoFire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GeoFire-prefix.pch"; sourceTree = "<group>"; };
-		65C31125F215FFD82F960D5BA3A2AA03 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkyFloatingLabelTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66BB3805A00C2E0A0B1B9544EB9F41A0 /* FBSDKGraphRequestPiggybackManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequestPiggybackManager.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestPiggybackManager.h; sourceTree = "<group>"; };
-		67951D48B2D473D411DA1DE9C76E13D1 /* Pods_Coign.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coign.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		682A8F7B24C32968595835CB3DB3B6C5 /* Pods-CoignTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoignTests-frameworks.sh"; sourceTree = "<group>"; };
 		694A53A98FD9EA9BDDC07D4CE552BCF4 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A75370E27283929B0084584AD43CF9A /* GeoFire.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GeoFire.m; path = GeoFire/Implementation/GeoFire.m; sourceTree = "<group>"; };
 		6AC5FDE71F42EF21C20C4468F26716C3 /* FBSDKAppEvents.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppEvents.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAppEvents.h; sourceTree = "<group>"; };
-		6B98D7E5A4A047BAC8C4B86EA725E0EA /* Pods-CoignUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoignUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6BF05964B86BE00585308B5FD0E27378 /* FBSDKServerConfigurationManager+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKServerConfigurationManager+Internal.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKServerConfigurationManager+Internal.h"; sourceTree = "<group>"; };
 		6C98640BB37FC32B5A163B25F7592328 /* FBSDKBoltsMeasurementEventListener.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKBoltsMeasurementEventListener.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppLink/FBSDKBoltsMeasurementEventListener.h; sourceTree = "<group>"; };
 		6CBFDA095F2CA97948D519983C288B8F /* FBSDKAccessTokenCacheV3_21.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAccessTokenCacheV3_21.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCacheV3_21.m; sourceTree = "<group>"; };
 		6CD61109881417B056763B47F03B7CC5 /* _FBSDKTemporaryErrorRecoveryAttempter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _FBSDKTemporaryErrorRecoveryAttempter.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ErrorRecovery/_FBSDKTemporaryErrorRecoveryAttempter.h; sourceTree = "<group>"; };
 		6CD9DFE6C60584607712A595DCDC50EA /* GeoFire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GeoFire.xcconfig; sourceTree = "<group>"; };
 		6E09532AF250F96A0997520BFB6DF953 /* GeoFire+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GeoFire+Private.h"; path = "GeoFire/Implementation/GeoFire+Private.h"; sourceTree = "<group>"; };
-		6E37DEA8E757CA40D1E54767853FD038 /* Pods-CoignUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoignUITests-resources.sh"; sourceTree = "<group>"; };
-		6F6C2FFA31F9093CCDD814E1DDEEBBB9 /* Pods-Coign-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Coign-resources.sh"; sourceTree = "<group>"; };
 		719CE1BE3617AD1D87E576C6635789C6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71FF51E90EDD6A5B49110522F54EF3D1 /* FBSDKButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKButton.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKButton.h; sourceTree = "<group>"; };
 		721655B04E9847B0F0FEE327DC003717 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
@@ -513,25 +564,29 @@
 		745A81E317581727D060B12F913D88FD /* FBSDKTypeUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKTypeUtility.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKTypeUtility.h; sourceTree = "<group>"; };
 		74DF3767C023A214488B01138EE16326 /* FBSDKTooltipView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKTooltipView.h; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKTooltipView.h; sourceTree = "<group>"; };
 		752B56D174CAC809FEFEE6D3031BCC4B /* FBSDKServerConfigurationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKServerConfigurationManager.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKServerConfigurationManager.m; sourceTree = "<group>"; };
-		76CF139C4A3B95AA9AA082E225A50AFB /* Pods-Coign-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Coign-umbrella.h"; sourceTree = "<group>"; };
 		76CFACCB18C6EDBD6D2F62DE20C39361 /* IQToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQToolbar.swift; path = IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift; sourceTree = "<group>"; };
+		779996F4ACFE8E6A156398432ABEC704 /* Pods-CoignUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoignUITests.release.xcconfig"; sourceTree = "<group>"; };
+		78339028BB0E84C8444820698B07D0CF /* Pods-CoignTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoignTests-resources.sh"; sourceTree = "<group>"; };
 		79C71C5D13CB5B3C7274D5968E8B4633 /* FBSDKCrypto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKCrypto.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Cryptography/FBSDKCrypto.m; sourceTree = "<group>"; };
 		79E797AD9B052589A262A5955D26C2B3 /* BFWebViewAppLinkResolver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFWebViewAppLinkResolver.m; path = Bolts/iOS/BFWebViewAppLinkResolver.m; sourceTree = "<group>"; };
 		7B5F4C43D2345B3B8D1B00356152F02E /* FBSDKGraphRequestBody.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGraphRequestBody.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestBody.m; sourceTree = "<group>"; };
 		7BB04A4288DA3788DC4AF348AEF8B23E /* FBSDKConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKConstants.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKConstants.m; sourceTree = "<group>"; };
 		7C7B9CF7AFEA76865077FC976965464F /* FBSDKApplicationDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKApplicationDelegate.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKApplicationDelegate.h; sourceTree = "<group>"; };
 		7D9DD72A319F8555C5D5CAD93F7DCEBC /* FBSDKAccessTokenCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAccessTokenCache.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCache.m; sourceTree = "<group>"; };
+		7E2F9320784F74FD472BAE16D095A48F /* Pods-CoignUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoignUITests-resources.sh"; sourceTree = "<group>"; };
 		7F30106AE4FCE30C778D2CD37D6578E5 /* FBSDKAppLinkUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppLinkUtility.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkUtility.h; sourceTree = "<group>"; };
 		7FC8C23D525FD329D8AC2C0D5DBDC2FE /* FBSDKMaleSilhouetteIcon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKMaleSilhouetteIcon.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKMaleSilhouetteIcon.h; sourceTree = "<group>"; };
 		804596D1C8BEBBDF00941526C836EFF8 /* FBSDKMonotonicTime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKMonotonicTime.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKMonotonicTime.h; sourceTree = "<group>"; };
 		8077C1FC6D95FBBEF7817340C755C48C /* FBSDKGraphRequestConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequestConnection.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequestConnection.h; sourceTree = "<group>"; };
 		811263414B17EC788E76181275F01F53 /* FBSDKAppEventsDeviceInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppEventsDeviceInfo.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKAppEventsDeviceInfo.h; sourceTree = "<group>"; };
 		8137F67F70AE84790CFDB8672048A46E /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		83623044447C041C719325A194B1D5FE /* Pods-CoignTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoignTests.debug.xcconfig"; sourceTree = "<group>"; };
 		836B427B87C2589568ACA8FA71EBED4A /* BFTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTask.h; path = Bolts/Common/BFTask.h; sourceTree = "<group>"; };
 		83F955E9083233F721346FA8C0646558 /* FBSDKBase64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKBase64.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Base64/FBSDKBase64.h; sourceTree = "<group>"; };
 		842719969F1C4B3DE194845B6DB32F30 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbar.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		8619F0DDE61055390CEA7AD64A7BBA0B /* FBSDKErrorRecoveryAttempter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKErrorRecoveryAttempter.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ErrorRecovery/FBSDKErrorRecoveryAttempter.m; sourceTree = "<group>"; };
 		864EA6CD5CFA356CB57CFDB229EBA2F4 /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
+		884C5C0C044ACD20BF9348928E33321E /* Pods-Coign-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Coign-acknowledgements.plist"; sourceTree = "<group>"; };
 		88A80097438CC958F6F581CAC5305198 /* FBSDKWebDialog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKWebDialog.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/WebDialog/FBSDKWebDialog.m; sourceTree = "<group>"; };
 		899D28401B4F6F14085EF674DFBD4ECB /* FBSDKCoreKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSDKCoreKit-prefix.pch"; sourceTree = "<group>"; };
 		89B793F251E9CCDD0CA55DCA7ABB4667 /* Bolts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Bolts.modulemap; sourceTree = "<group>"; };
@@ -542,7 +597,6 @@
 		8B69715C81B3724FE82700CD127AAF04 /* FBSDKConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKConstants.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKConstants.h; sourceTree = "<group>"; };
 		8B8EC16AA2B908CCF419162F3F391331 /* BFAppLinkTarget.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFAppLinkTarget.m; path = Bolts/iOS/BFAppLinkTarget.m; sourceTree = "<group>"; };
 		8D74ED605C27E7474A85E8088DC27528 /* BFAppLink_Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLink_Internal.h; path = Bolts/iOS/Internal/BFAppLink_Internal.h; sourceTree = "<group>"; };
-		8E0AC359F8B6DAF10B785018F3AA1875 /* Pods-Coign-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Coign-frameworks.sh"; sourceTree = "<group>"; };
 		8E5BCC3287FC70232E3D24632EC42816 /* FBSDKAudioResourceLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAudioResourceLoader.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKAudioResourceLoader.h; sourceTree = "<group>"; };
 		8FA00B0B5D96370453B1D842C9B5C4C6 /* BFAppLinkReturnToRefererController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLinkReturnToRefererController.h; path = Bolts/iOS/BFAppLinkReturnToRefererController.h; sourceTree = "<group>"; };
 		8FE5E234BDDC26FCD3A48E7E71FF212E /* FBSDKTypeUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKTypeUtility.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKTypeUtility.m; sourceTree = "<group>"; };
@@ -555,28 +609,24 @@
 		931A90BDC3F395A429100E9468503914 /* GeoFire.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GeoFire.h; path = GeoFire/API/GeoFire.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		950B361C90B7F12147DAEE2B15EE327D /* FBSDKLogo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLogo.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKLogo.h; sourceTree = "<group>"; };
-		95203F5190D0BBFC71B7464CEDC81320 /* Pods-Coign-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Coign-dummy.m"; sourceTree = "<group>"; };
 		9532096366D4B04B6C552FF22A9B6FE3 /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+Hierarchy.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
 		958F13C1DDCCFC9E7226185A014F1D66 /* SkyFloatingLabelTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SkyFloatingLabelTextField.modulemap; sourceTree = "<group>"; };
 		96421F3C52BD5D3FCAF0B73BF025F5BB /* FBSDKLoginKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBSDKLoginKit-dummy.m"; sourceTree = "<group>"; };
+		96939C5EA3338633A570DF77850363F6 /* Pods-Coign Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Coign Dev.release.xcconfig"; sourceTree = "<group>"; };
 		9765B3BEA6FBB64E43538C3701E54022 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQPreviousNextView.swift; path = IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift; sourceTree = "<group>"; };
 		979A7E7495135B662964A7821DCF8227 /* FBSDKLoginKit+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKLoginKit+Internal.h"; path = "FBSDKLoginKit/FBSDKLoginKit/Internal/FBSDKLoginKit+Internal.h"; sourceTree = "<group>"; };
 		97ED0D6AA37FB13F901D7E0B995D66A9 /* FBSDKCloseIcon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKCloseIcon.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKCloseIcon.m; sourceTree = "<group>"; };
-		995315953378AB81DFAE7D2E69559E58 /* Pods-Coign.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Coign.debug.xcconfig"; sourceTree = "<group>"; };
+		97F92F37D7BAA455F039824042F4923D /* Pods-Coign.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Coign.debug.xcconfig"; sourceTree = "<group>"; };
 		99F6DDE25EC33156E3759737D6ADD029 /* FBSDKSystemAccountStoreAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKSystemAccountStoreAdapter.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKSystemAccountStoreAdapter.m; sourceTree = "<group>"; };
 		9A73F7FE2570A09BD0C46F11CA7AE518 /* Bolts-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Bolts-dummy.m"; sourceTree = "<group>"; };
-		9A80817A871D6C970DD21D606041A0CE /* Pods-CoignTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoignTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B6565C8DCA30AD1D69BF1D6A2F41744 /* FBSDKAccessTokenCacheV3_17.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAccessTokenCacheV3_17.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCacheV3_17.m; sourceTree = "<group>"; };
 		9C1409528B8D2D7D2F25D5206C7809A6 /* FBSDKAppEventsUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppEventsUtility.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKAppEventsUtility.h; sourceTree = "<group>"; };
-		9D87335276A4F2F0F97CDE167BE86502 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DEBB24ED66653FC57EA1B67C9215651 /* FBSDKUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKUtility.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKUtility.m; sourceTree = "<group>"; };
-		9E00A00EBA6D1E878FFD4D5AE70F082C /* Pods-CoignUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoignUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F982F79A63DAF36E53DC59B82F974F6 /* FBSDKButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKButton.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKButton.m; sourceTree = "<group>"; };
 		9F9B68CC5E8C487437A2ED488A3B44AC /* FBSDKLoginButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLoginButton.h; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginButton.h; sourceTree = "<group>"; };
 		A132204797C534C764F2B77862890834 /* FBSDKErrorRecoveryConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKErrorRecoveryConfiguration.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKErrorRecoveryConfiguration.h; sourceTree = "<group>"; };
 		A336C026140CC2D185814D84C57A5E2C /* FBSDKTriStateBOOL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKTriStateBOOL.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKTriStateBOOL.m; sourceTree = "<group>"; };
 		A352DF52315F0ADB920AAF654C046FE6 /* GFQuery+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GFQuery+Private.h"; path = "GeoFire/Implementation/GFQuery+Private.h"; sourceTree = "<group>"; };
-		A35E63477D85FDAAC7888CD1AE473009 /* Pods-CoignUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CoignUITests-dummy.m"; sourceTree = "<group>"; };
 		A454F7F93C9D6F1233A73A82384F3CC6 /* GeoFire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GeoFire-umbrella.h"; sourceTree = "<group>"; };
 		A5327A7715C546DC0A6DD4B161C8E293 /* FBSDKDynamicFrameworkLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKDynamicFrameworkLoader.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKDynamicFrameworkLoader.h; sourceTree = "<group>"; };
 		A65750B85B46AC57083F770B18117D5F /* BFTaskCompletionSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTaskCompletionSource.h; path = Bolts/Common/BFTaskCompletionSource.h; sourceTree = "<group>"; };
@@ -586,32 +636,35 @@
 		A7C310FCF5F6AC8F3E85ECDAE2D437EB /* FBSDKAppEventsStateManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppEventsStateManager.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKAppEventsStateManager.h; sourceTree = "<group>"; };
 		A912F4431A5154F1BE7A3A486ABF3A36 /* BFTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTask.m; path = Bolts/Common/BFTask.m; sourceTree = "<group>"; };
 		A91A0FCB0D18983F28F810847D6F5FA6 /* FBSDKServerConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKServerConfiguration.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKServerConfiguration.m; sourceTree = "<group>"; };
+		A9FF60F5F19C967E0C2AA3E451FF74F8 /* Pods-CoignUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoignUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA28F5599CCBCA0B125137E972E7EA5A /* FBSDKErrorRecoveryAttempter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKErrorRecoveryAttempter.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ErrorRecovery/FBSDKErrorRecoveryAttempter.h; sourceTree = "<group>"; };
+		AADA6BA56302FAE24BD7B9F536A2D2BD /* Pods-Coign Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Coign Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		AB6F35762CEDFE2804675ADE637CFC61 /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
 		ABFAF48608336B8DA63788E322C56137 /* FBSDKAccessTokenCaching.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAccessTokenCaching.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCaching.h; sourceTree = "<group>"; };
 		AC300D46296C81F71FAE4773CA2B4AD6 /* BFAppLinkReturnToRefererView_Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLinkReturnToRefererView_Internal.h; path = Bolts/iOS/Internal/BFAppLinkReturnToRefererView_Internal.h; sourceTree = "<group>"; };
+		ACA979252973F1FD2A7DFDE68BEA1949 /* Pods-CoignTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CoignTests.modulemap"; sourceTree = "<group>"; };
 		ACAB6DC0492B3E7D384C0DC923D89DE5 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIScrollView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
 		AE1DAB4E6D2BFFDDCB57BCEF836C519A /* GFBase32Utils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFBase32Utils.m; path = GeoFire/Implementation/GFBase32Utils.m; sourceTree = "<group>"; };
 		AE3D53812AA3982FDB107A981093DC0B /* GFGeoHash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFGeoHash.h; path = GeoFire/Implementation/GFGeoHash.h; sourceTree = "<group>"; };
+		AE990B60E932B05CF9BA49774B60B78B /* Pods-CoignUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CoignUITests-umbrella.h"; sourceTree = "<group>"; };
 		AFBB0CB8B12533F4994E2B30090EF6E8 /* FBSDKLoginTooltipView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLoginTooltipView.h; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginTooltipView.h; sourceTree = "<group>"; };
 		B0959728A8F4AF1808927698C0A86202 /* IQUIWindow+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIWindow+Hierarchy.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIWindow+Hierarchy.swift"; sourceTree = "<group>"; };
+		B1A6E4A35502FA27C57A08C1C91B4E32 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2143B018A99EA1F8BF90B5D809BBFE9 /* FBSDKAppEventsState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAppEventsState.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKAppEventsState.m; sourceTree = "<group>"; };
 		B2901606456EB268E35D5E219587C1B3 /* FirebaseStorage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseStorage.framework; path = Frameworks/frameworks/FirebaseStorage.framework; sourceTree = "<group>"; };
-		B2DBB97797C8502B249093FC35F4786B /* Pods-CoignUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoignUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B2AEAB4EC8E86017FC744F32C4B4F8B8 /* Pods-CoignUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CoignUITests-dummy.m"; sourceTree = "<group>"; };
+		B35C7C2BA99E2506D3276CE7A1AF3DF9 /* Pods-Coign Dev-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Coign Dev-acknowledgements.plist"; sourceTree = "<group>"; };
 		B4A31A95949B97669FC87AABBADFCDFE /* FBSDKIcon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKIcon.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKIcon.h; sourceTree = "<group>"; };
 		B5F954E675DC7A4611FC0EA48D6E8017 /* FBSDKAccessTokenCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAccessTokenCache.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCache.h; sourceTree = "<group>"; };
 		B60C492E498F46F9A998B8D7CBF84C10 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
 		B6626FFE6351FDDFF6929CB62DEE9B3F /* FBSDKServerConfiguration+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKServerConfiguration+Internal.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKServerConfiguration+Internal.h"; sourceTree = "<group>"; };
-		B72BAD10E4B8524E296B0C2A56F9C25F /* Pods-CoignTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CoignTests-dummy.m"; sourceTree = "<group>"; };
 		B7D20DC7D9207FBE334121A7DF97953E /* FBSDKBridgeAPICrypto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKBridgeAPICrypto.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKBridgeAPICrypto.m; sourceTree = "<group>"; };
 		B7D8BC5204333E14D7B2DF1277CB3DBA /* FBSDKProfile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKProfile.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKProfile.h; sourceTree = "<group>"; };
 		B8F79070629330EFAC9FAD95E3C30DDC /* FBSDKErrorConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKErrorConfiguration.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKErrorConfiguration.m; sourceTree = "<group>"; };
 		B96E072F468525F193616EFC79B4BAE6 /* FBSDKTestUsersManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKTestUsersManager.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKTestUsersManager.m; sourceTree = "<group>"; };
-		B96E7CBCF64F8DB0C40E7021AF7583B4 /* Pods-CoignTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CoignTests-umbrella.h"; sourceTree = "<group>"; };
 		B9A0903B9740DAC9FFB01F82A6F7A583 /* FBSDKProfile+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKProfile+Internal.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKProfile+Internal.h"; sourceTree = "<group>"; };
-		BB75F85F0F4437275ACE05BD83DD0195 /* Pods-Coign.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Coign.modulemap"; sourceTree = "<group>"; };
-		BC6B1ECF4AA2595656645F6FFA133FC6 /* Pods_CoignTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoignTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC849EF88B3F0DCE4C35165EFB6DA86A /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTitleBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
+		BCF6E02B8897A84F4A1A584FC72A4F2D /* Pods-Coign-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Coign-umbrella.h"; sourceTree = "<group>"; };
 		BD15ACC69F4DAD56675C3E92EF4809AA /* FBSDKLoginCompletion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginCompletion.m; path = FBSDKLoginKit/FBSDKLoginKit/Internal/FBSDKLoginCompletion.m; sourceTree = "<group>"; };
 		BD6C5E82B24C184B538782E5858DE57D /* FBSDKLoginKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSDKLoginKit-prefix.pch"; sourceTree = "<group>"; };
 		BDA1EC927D8A975956924A02345E80F7 /* BFCancellationToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationToken.m; path = Bolts/Common/BFCancellationToken.m; sourceTree = "<group>"; };
@@ -620,27 +673,27 @@
 		BEBE0339D31B40D5A053197AFFA0B245 /* FBSDKSettings.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKSettings.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKSettings.m; sourceTree = "<group>"; };
 		BF8BDA44E002937CDE0643BC1A085400 /* FBSDKURLSessionTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKURLSessionTask.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKURLSessionTask.m; sourceTree = "<group>"; };
 		BF9F0912C78841F6679E414ABE6A55B6 /* FBSDKBridgeAPIResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKBridgeAPIResponse.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKBridgeAPIResponse.m; sourceTree = "<group>"; };
+		C0CE222F5CC73242ECB0DE47F01B34F0 /* Pods-Coign.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Coign.release.xcconfig"; sourceTree = "<group>"; };
 		C0EF6F28AFFFFDA15A0AF3488F4D7078 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C130BB833810255AE84FAD59FC86668A /* FBSDKCrypto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKCrypto.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Cryptography/FBSDKCrypto.h; sourceTree = "<group>"; };
-		C16D2FBC6DF3A9FE4BA06948A8A02641 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1BE8CBA817C267E56E14761A2CECACF /* FBSDKErrorRecoveryConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKErrorRecoveryConfiguration.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKErrorRecoveryConfiguration.m; sourceTree = "<group>"; };
 		C1BEE35513423522236B6205467FC9C4 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
 		C25478E29AC36A39812FE97D942AF4E9 /* FBSDKCopying.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKCopying.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKCopying.h; sourceTree = "<group>"; };
 		C2E4B2A691DD8C533E703471D207642A /* FBSDKLoginConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLoginConstants.h; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginConstants.h; sourceTree = "<group>"; };
 		C31C4F16908E699AB766FAC761F98EB2 /* FBSDKLogo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLogo.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKLogo.m; sourceTree = "<group>"; };
+		C45C551083F24E8AC635A502337A27AC /* Pods-CoignUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoignUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C57FE860BD4AA7B181E72339950C091F /* FBSDKErrorConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKErrorConfiguration.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKErrorConfiguration.h; sourceTree = "<group>"; };
 		C5925ECF56F6DFECCF0F61D17736639D /* FBSDKBridgeAPIRequest+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKBridgeAPIRequest+Private.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKBridgeAPIRequest+Private.h"; sourceTree = "<group>"; };
 		C61F35DF8772C52C80BAD38578875A64 /* FBSDKAudioResourceLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAudioResourceLoader.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKAudioResourceLoader.m; sourceTree = "<group>"; };
-		C74F1E37B06384EC48BFE1B8BEFE259D /* Pods-CoignTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CoignTests.modulemap"; sourceTree = "<group>"; };
-		C776A0AFB8B521AE18E77DFE08F52777 /* Pods-CoignUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoignUITests-frameworks.sh"; sourceTree = "<group>"; };
 		C8538C460AD421A5FFE3073DB79DA3E1 /* FBSDKURLConnection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKURLConnection.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKURLConnection.m; sourceTree = "<group>"; };
 		C9250419C09B78B99D09BBCBC17FE42F /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
 		CAD3FA1F53CC9BB33BBCD8FCAF3364BB /* FBSDKTestUsersManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKTestUsersManager.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKTestUsersManager.h; sourceTree = "<group>"; };
 		CAF5E327F79C5F63D7DAF98305CD2832 /* FBSDKInternalUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKInternalUtility.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKInternalUtility.h; sourceTree = "<group>"; };
+		CB54DA56500C23D524E4C28F7C3FBA97 /* Pods-Coign-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Coign-resources.sh"; sourceTree = "<group>"; };
 		CB5C15311B47E7346DBF3985998A21F6 /* FBSDKButton+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKButton+Subclass.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKButton+Subclass.h"; sourceTree = "<group>"; };
 		CB862759D29A81FFE9F0C01A79F75781 /* FBSDKCoreKit+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKCoreKit+Internal.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKCoreKit+Internal.h"; sourceTree = "<group>"; };
 		CC337A7EAB4E7BA318DADE3DD0E625BA /* FBSDKLoginTooltipView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginTooltipView.m; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginTooltipView.m; sourceTree = "<group>"; };
-		D0C22B2F3EC5BD24041478399C737FE3 /* Pods-Coign-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Coign-acknowledgements.plist"; sourceTree = "<group>"; };
+		CC8B169D3576C0D2F81F60618A245CA1 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0E69A66D066043F6E53AE7792442A97 /* BFAppLinkTarget.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLinkTarget.h; path = Bolts/iOS/BFAppLinkTarget.h; sourceTree = "<group>"; };
 		D175D117D104219345E58273460FAE44 /* FBSDKViewImpressionTracker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKViewImpressionTracker.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKViewImpressionTracker.m; sourceTree = "<group>"; };
 		D1D1846EE2AC8588028CCF29985DB392 /* FBSDKBridgeAPIProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKBridgeAPIProtocol.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKBridgeAPIProtocol.h; sourceTree = "<group>"; };
@@ -649,10 +702,11 @@
 		D4694793A63AF8CA16ACBF7E171520BE /* FBSDKLoginManagerLoginResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginManagerLoginResult.m; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginManagerLoginResult.m; sourceTree = "<group>"; };
 		D5B4EDBF34A2EF554D8DF1DC70601A7F /* FBSDKLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLogger.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKLogger.m; sourceTree = "<group>"; };
 		D60E65BFABDAA2281A11EA45A3D21F9B /* FBSDKProfilePictureView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKProfilePictureView.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKProfilePictureView.m; sourceTree = "<group>"; };
+		D62B2D7D286352D92DB8741655E4F90E /* Pods-Coign.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Coign.modulemap"; sourceTree = "<group>"; };
 		D6B67BCBEA0B29E1968E0F680347F379 /* FBSDKBoltsMeasurementEventListener.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKBoltsMeasurementEventListener.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppLink/FBSDKBoltsMeasurementEventListener.m; sourceTree = "<group>"; };
-		D82F1D53526B4B510277F1DA02249E52 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8870D14D5FAB7879CE7DB8CCCC67DC5 /* FBSDKAccessTokenCacheV3.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAccessTokenCacheV3.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCacheV3.m; sourceTree = "<group>"; };
 		D904D75C83927A07DCF40A831FD5F2F0 /* FBSDKUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKUtility.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKUtility.h; sourceTree = "<group>"; };
+		DA2A8225190B7C315EDC3710EFDB25B4 /* Pods-Coign Dev.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Coign Dev.modulemap"; sourceTree = "<group>"; };
 		DA9D6BB9B054F511865E173594FD0B0A /* BFCancellationTokenRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationTokenRegistration.h; path = Bolts/Common/BFCancellationTokenRegistration.h; sourceTree = "<group>"; };
 		DABF261A6DA81865FA5A27AEEC791BD2 /* FBSDKAppEventsDeviceInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAppEventsDeviceInfo.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKAppEventsDeviceInfo.m; sourceTree = "<group>"; };
 		DB196DD1A0D72AD1D64D77DCD9AF8C77 /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
@@ -669,6 +723,7 @@
 		E02A98E2FCC1D9DE29DD3D47742FEB8D /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
 		E1CAC8DEF80270CD1CFE1B42DD9930CF /* BFMeasurementEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFMeasurementEvent.h; path = Bolts/iOS/BFMeasurementEvent.h; sourceTree = "<group>"; };
 		E1F154472C0D5DF7CB6215B41FD3E7DA /* GeoFire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = GeoFire.modulemap; sourceTree = "<group>"; };
+		E45AFE550B73206312FDF70CC70384E6 /* Pods-Coign-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Coign-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E65D0F90C12E04C8B1D8D8685E18CEE2 /* FBSDKTimeSpentData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKTimeSpentData.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKTimeSpentData.h; sourceTree = "<group>"; };
 		E667FD5C95E4342CBA0BE76AA09AE71F /* FBSDKLoginConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginConstants.m; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginConstants.m; sourceTree = "<group>"; };
 		E80F980F3904EBEB2FB6E04673A8D69B /* BFWebViewAppLinkResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFWebViewAppLinkResolver.h; path = Bolts/iOS/BFWebViewAppLinkResolver.h; sourceTree = "<group>"; };
@@ -678,31 +733,33 @@
 		E9EE309A3A2D79E674C77075B1EB6913 /* _FBSDKLoginRecoveryAttempter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _FBSDKLoginRecoveryAttempter.h; path = FBSDKLoginKit/FBSDKLoginKit/Internal/_FBSDKLoginRecoveryAttempter.h; sourceTree = "<group>"; };
 		EA03870519B3DBB978BDAD37B2D12C6B /* FBSDKAccessTokenCacheV3_21.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAccessTokenCacheV3_21.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCacheV3_21.h; sourceTree = "<group>"; };
 		EA278D483BDE26B10AFA02E5FBADA594 /* GFRegionQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFRegionQuery.h; path = GeoFire/API/GFRegionQuery.h; sourceTree = "<group>"; };
+		EACE486495052E3E158FBA84915DC265 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD08624C471EFE0678BF752B3D92FE5 /* Bolts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Bolts.h; path = Bolts/Common/Bolts.h; sourceTree = "<group>"; };
 		EB4C2111F5044BF9638B576EE09C764A /* FBSDKGraphRequestDataAttachment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequestDataAttachment.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequestDataAttachment.h; sourceTree = "<group>"; };
 		EB8CEDEA68A19568ADA6D0684247F750 /* FBSDKGraphRequestConnection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGraphRequestConnection.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequestConnection.m; sourceTree = "<group>"; };
 		EBA9EB2318C9F12C705EC1F24613C6CA /* FBSDKLoginCompletion+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKLoginCompletion+Internal.h"; path = "FBSDKLoginKit/FBSDKLoginKit/Internal/FBSDKLoginCompletion+Internal.h"; sourceTree = "<group>"; };
 		EBB0C6D1552835D0FC26982AF9D4D5A7 /* IQKeyboardManagerSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-prefix.pch"; sourceTree = "<group>"; };
 		EBF43DD78AEC43C56F0E69418DE11532 /* FBSDKDialogConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKDialogConfiguration.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKDialogConfiguration.m; sourceTree = "<group>"; };
+		EC93E4E9EEA6CC2E2BFA60C35FADC4BF /* Pods_CoignUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoignUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECDD817E200F9E75135AD6565916863F /* GFGeoHashQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GFGeoHashQuery.m; path = GeoFire/Implementation/GFGeoHashQuery.m; sourceTree = "<group>"; };
-		ED399FD4E28421C3CC092719508F41DB /* GeoFire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GeoFire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3CFEBD636D69C8AB7A625E6B97A582 /* FBSDKCoreKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBSDKCoreKit-dummy.m"; sourceTree = "<group>"; };
+		EF4D9B23298BDB1F83A4A29D0C78D0DC /* Pods_Coign.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coign.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF5E0AC23358E9A0823EA51C8C67B261 /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
 		EF6990B8BDDB50449001F1D88CC68A73 /* BFExecutor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFExecutor.h; path = Bolts/Common/BFExecutor.h; sourceTree = "<group>"; };
 		EFE3D8F2F29FD050D53198F293FBA544 /* FBSDKBridgeAPIResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKBridgeAPIResponse.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKBridgeAPIResponse.h; sourceTree = "<group>"; };
 		F0BB1565728D97E1A08E2046F78BB5A0 /* Bolts-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bolts-prefix.pch"; sourceTree = "<group>"; };
-		F0BE7F4A838A25B766718F7CD47D004D /* Pods-CoignUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CoignUITests.modulemap"; sourceTree = "<group>"; };
 		F22A830449EC405E11C0C807F32D832C /* FBSDKAccessTokenCacheV3.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAccessTokenCacheV3.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCacheV3.h; sourceTree = "<group>"; };
+		F3BE739C7B7FFDE9BADAF7F52796E364 /* Pods-CoignTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoignTests.release.xcconfig"; sourceTree = "<group>"; };
 		F56742A3D83BB2581939C53307D4F616 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5EA9030FFBECDDFD6EC8F7608AE5BE7 /* BFAppLink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLink.h; path = Bolts/iOS/BFAppLink.h; sourceTree = "<group>"; };
 		F60F6C3708E0B5BFB14BFBBB61A2F74B /* FBSDKSettings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKSettings.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKSettings.h; sourceTree = "<group>"; };
 		F6293DBEC6C82E67474B33BF4C9C91FA /* FBSDKAppLinkResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppLinkResolver.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkResolver.h; sourceTree = "<group>"; };
-		F64A4A4D37A05AA76044A8C600FBB766 /* Pods-CoignUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoignUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F6C586B1863F4E3A0776FDA0741EC62B /* FBSDKIcon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKIcon.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKIcon.m; sourceTree = "<group>"; };
 		F740D7400734FA981BA3796CB22D4A93 /* FBSDKMaleSilhouetteIcon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKMaleSilhouetteIcon.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKMaleSilhouetteIcon.m; sourceTree = "<group>"; };
 		F86E7B0A75468799DCE3C4E55981B50A /* BFTask+Exceptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "BFTask+Exceptions.m"; path = "Bolts/Common/BFTask+Exceptions.m"; sourceTree = "<group>"; };
 		F97E5F88EC66A82B5CF543816B910C31 /* FBSDKWebDialogView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKWebDialogView.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/WebDialog/FBSDKWebDialogView.m; sourceTree = "<group>"; };
 		F9A842C3E3B0FB1289944AED3FF1D368 /* FBSDKInternalUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKInternalUtility.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKInternalUtility.m; sourceTree = "<group>"; };
+		FA8DD900F010B545C90C98340FF25352 /* Pods-Coign Dev-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Coign Dev-frameworks.sh"; sourceTree = "<group>"; };
 		FA8FB18C0AAF485173DA265CD5B2F5CC /* FBSDKTriStateBOOL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKTriStateBOOL.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKTriStateBOOL.h; sourceTree = "<group>"; };
 		FAE2762AB918D4D79D06EDC3405CE32C /* GFQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GFQuery.h; path = GeoFire/API/GFQuery.h; sourceTree = "<group>"; };
 		FB6984C44DF1174576433EE0CD5A3942 /* BFAppLinkNavigation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFAppLinkNavigation.m; path = Bolts/iOS/BFAppLinkNavigation.m; sourceTree = "<group>"; };
@@ -714,7 +771,6 @@
 		FE3F2E359C281D7D5F450CB4E571E79A /* FBSDKGraphRequest+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKGraphRequest+Internal.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequest+Internal.h"; sourceTree = "<group>"; };
 		FE6015C2BD30011F3ADE2028A8002CCD /* BFCancellationTokenRegistration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationTokenRegistration.m; path = Bolts/Common/BFCancellationTokenRegistration.m; sourceTree = "<group>"; };
 		FF43BD3C739E3A8A81CC1AA286A8EA02 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		FF53F3BBA07EB820612B422B64543DEF /* Pods-Coign-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Coign-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FFADB5DC8220251165704867C0FC3FCA /* FBSDKContainerViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKContainerViewController.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKContainerViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -787,6 +843,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E4E459ACBA9F07818E9F97AA32CC0136 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8E2D5C79D4B81809C183D760D9E11E9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FE01B5BC92977FB1F14A8C73D8F6D05C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -844,16 +908,6 @@
 			path = Firebase;
 			sourceTree = "<group>";
 		};
-		1F8353904B4EFA73A564F6BA7B530C5C /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E2A80993B71D0B1E241373DD6B106AF8 /* Pods-Coign */,
-				DE4CF14324E57E179A276A958A28CF86 /* Pods-CoignTests */,
-				54AB00B0082EC7DF60996BB1E40422CC /* Pods-CoignUITests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 		2088BE6258B7DDC9D7644E1F99EAC007 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -889,12 +943,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3F7CCB31FA654A38AC62BFFA24DA0C40 /* Pods-CoignUITests */ = {
+			isa = PBXGroup;
+			children = (
+				01D57993BE56E6733C8B2CB03F81C0D9 /* Info.plist */,
+				18B1FC218B6393358069EF66CBD07D4D /* Pods-CoignUITests.modulemap */,
+				C45C551083F24E8AC635A502337A27AC /* Pods-CoignUITests-acknowledgements.markdown */,
+				40393FC064F001D0654947B1E86D0481 /* Pods-CoignUITests-acknowledgements.plist */,
+				B2AEAB4EC8E86017FC744F32C4B4F8B8 /* Pods-CoignUITests-dummy.m */,
+				48ED3B136F2B7AE2A4D9F274127DCB05 /* Pods-CoignUITests-frameworks.sh */,
+				7E2F9320784F74FD472BAE16D095A48F /* Pods-CoignUITests-resources.sh */,
+				AE990B60E932B05CF9BA49774B60B78B /* Pods-CoignUITests-umbrella.h */,
+				A9FF60F5F19C967E0C2AA3E451FF74F8 /* Pods-CoignUITests.debug.xcconfig */,
+				779996F4ACFE8E6A156398432ABEC704 /* Pods-CoignUITests.release.xcconfig */,
+			);
+			name = "Pods-CoignUITests";
+			path = "Target Support Files/Pods-CoignUITests";
+			sourceTree = "<group>";
+		};
 		437325969DC727A4B5B81407EFDEC19C /* GoogleNetworkingUtilities */ = {
 			isa = PBXGroup;
 			children = (
 				C23C61414414A46CACFA5DB6B6721DA4 /* Frameworks */,
 			);
 			path = GoogleNetworkingUtilities;
+			sourceTree = "<group>";
+		};
+		4BA551DFC253CEBF84877C6E8A20A06B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6F5913B45C7D9A93C3D510E04203C4A1 /* Pods-Coign */,
+				EDD2A705BE3A789DD9869DB513D5B191 /* Pods-Coign Dev */,
+				E0936866CB2AA611328C7A7B05AE3F77 /* Pods-CoignTests */,
+				3F7CCB31FA654A38AC62BFFA24DA0C40 /* Pods-CoignUITests */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		51778E6BC099664BE2985F65DFAFFC0E /* iOS */ = {
@@ -906,24 +989,6 @@
 				311A1F7E9122D65E2229CAEACAE11D46 /* UIKit.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		54AB00B0082EC7DF60996BB1E40422CC /* Pods-CoignUITests */ = {
-			isa = PBXGroup;
-			children = (
-				0F5EFFD2E674640564F291C76F029386 /* Info.plist */,
-				F0BE7F4A838A25B766718F7CD47D004D /* Pods-CoignUITests.modulemap */,
-				B2DBB97797C8502B249093FC35F4786B /* Pods-CoignUITests-acknowledgements.markdown */,
-				F64A4A4D37A05AA76044A8C600FBB766 /* Pods-CoignUITests-acknowledgements.plist */,
-				A35E63477D85FDAAC7888CD1AE473009 /* Pods-CoignUITests-dummy.m */,
-				C776A0AFB8B521AE18E77DFE08F52777 /* Pods-CoignUITests-frameworks.sh */,
-				6E37DEA8E757CA40D1E54767853FD038 /* Pods-CoignUITests-resources.sh */,
-				0341A29B5CBBD8463A48355DA4B2D0E4 /* Pods-CoignUITests-umbrella.h */,
-				9E00A00EBA6D1E878FFD4D5AE70F082C /* Pods-CoignUITests.debug.xcconfig */,
-				6B98D7E5A4A047BAC8C4B86EA725E0EA /* Pods-CoignUITests.release.xcconfig */,
-			);
-			name = "Pods-CoignUITests";
-			path = "Target Support Files/Pods-CoignUITests";
 			sourceTree = "<group>";
 		};
 		5DA30A2EF4BD6BE15F0BD529C2EC498E /* Frameworks */ = {
@@ -1204,6 +1269,24 @@
 			name = Tasks;
 			sourceTree = "<group>";
 		};
+		6F5913B45C7D9A93C3D510E04203C4A1 /* Pods-Coign */ = {
+			isa = PBXGroup;
+			children = (
+				4F910D05795EAA96A85DBDCCB2B462F0 /* Info.plist */,
+				D62B2D7D286352D92DB8741655E4F90E /* Pods-Coign.modulemap */,
+				E45AFE550B73206312FDF70CC70384E6 /* Pods-Coign-acknowledgements.markdown */,
+				884C5C0C044ACD20BF9348928E33321E /* Pods-Coign-acknowledgements.plist */,
+				11475E7619BFFDDA75B97D6A606CB92B /* Pods-Coign-dummy.m */,
+				21C31BD2C545F5F62316783CDFCB78FA /* Pods-Coign-frameworks.sh */,
+				CB54DA56500C23D524E4C28F7C3FBA97 /* Pods-Coign-resources.sh */,
+				BCF6E02B8897A84F4A1A584FC72A4F2D /* Pods-Coign-umbrella.h */,
+				97F92F37D7BAA455F039824042F4923D /* Pods-Coign.debug.xcconfig */,
+				C0CE222F5CC73242ECB0DE47F01B34F0 /* Pods-Coign.release.xcconfig */,
+			);
+			name = "Pods-Coign";
+			path = "Target Support Files/Pods-Coign";
+			sourceTree = "<group>";
+		};
 		706008309EAC19056B83DD1710259702 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -1240,8 +1323,8 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				5DA30A2EF4BD6BE15F0BD529C2EC498E /* Frameworks */,
 				69B28EE5B3EBA05017B3005B5D6EA003 /* Pods */,
-				9CF1E5E8626414E26F7A6F489C3DAECA /* Products */,
-				1F8353904B4EFA73A564F6BA7B530C5C /* Targets Support Files */,
+				C54267C9F3F981CA5B06FA902890A5C9 /* Products */,
+				4BA551DFC253CEBF84877C6E8A20A06B /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1291,22 +1374,6 @@
 				8FF969BF0862271AEC30F8C2F5A9CA59 /* IQKeyboardManager.bundle */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		9CF1E5E8626414E26F7A6F489C3DAECA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				24A49FEDAFD7E81D4898B763FBF331C3 /* Bolts.framework */,
-				C16D2FBC6DF3A9FE4BA06948A8A02641 /* FBSDKCoreKit.framework */,
-				5FDFC6E3B7C45AB0F54DC427D7288A34 /* FBSDKLoginKit.framework */,
-				ED399FD4E28421C3CC092719508F41DB /* GeoFire.framework */,
-				9D87335276A4F2F0F97CDE167BE86502 /* IQKeyboardManagerSwift.framework */,
-				67951D48B2D473D411DA1DE9C76E13D1 /* Pods_Coign.framework */,
-				BC6B1ECF4AA2595656645F6FFA133FC6 /* Pods_CoignTests.framework */,
-				3F1A210C744FCCA7E7B28091B1E05294 /* Pods_CoignUITests.framework */,
-				65C31125F215FFD82F960D5BA3A2AA03 /* SkyFloatingLabelTextField.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		A1B6F29A4CBC1128CCB6BFD8E8F460F4 /* Support Files */ = {
@@ -1410,6 +1477,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C54267C9F3F981CA5B06FA902890A5C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1A6E4A35502FA27C57A08C1C91B4E32 /* Bolts.framework */,
+				0635C8675FD1BA1B857F8BE9B826A6F9 /* FBSDKCoreKit.framework */,
+				CC8B169D3576C0D2F81F60618A245CA1 /* FBSDKLoginKit.framework */,
+				0B1F2311F1956D8A13BED3027E4B68A1 /* GeoFire.framework */,
+				EACE486495052E3E158FBA84915DC265 /* IQKeyboardManagerSwift.framework */,
+				EF4D9B23298BDB1F83A4A29D0C78D0DC /* Pods_Coign.framework */,
+				2D2C9177CA92FED779CAAEFD92595C1A /* Pods_Coign_Dev.framework */,
+				076ED99EF2D3996D5A9B7335E5276104 /* Pods_CoignTests.framework */,
+				EC93E4E9EEA6CC2E2BFA60C35FADC4BF /* Pods_CoignUITests.framework */,
+				437ACE9B3E0D5ACD58F00C519973BF63 /* SkyFloatingLabelTextField.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CE5CC3C539968A8E17A0C0072B1352BA /* FirebaseStorage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1449,19 +1533,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DE4CF14324E57E179A276A958A28CF86 /* Pods-CoignTests */ = {
+		E0936866CB2AA611328C7A7B05AE3F77 /* Pods-CoignTests */ = {
 			isa = PBXGroup;
 			children = (
-				D82F1D53526B4B510277F1DA02249E52 /* Info.plist */,
-				C74F1E37B06384EC48BFE1B8BEFE259D /* Pods-CoignTests.modulemap */,
-				12DF39910A3B1B7A5BA54921E4BE295E /* Pods-CoignTests-acknowledgements.markdown */,
-				12EC98D4BA5D667CBCF25BE82A5D9172 /* Pods-CoignTests-acknowledgements.plist */,
-				B72BAD10E4B8524E296B0C2A56F9C25F /* Pods-CoignTests-dummy.m */,
-				50E59949BB5CF6A525DEC35423EB7B70 /* Pods-CoignTests-frameworks.sh */,
-				51711878A303405EF8F640DA7F1152FE /* Pods-CoignTests-resources.sh */,
-				B96E7CBCF64F8DB0C40E7021AF7583B4 /* Pods-CoignTests-umbrella.h */,
-				9A80817A871D6C970DD21D606041A0CE /* Pods-CoignTests.debug.xcconfig */,
-				1C3CD159AF7E561062C4A4A48B5D3A90 /* Pods-CoignTests.release.xcconfig */,
+				1D23C8D8808085289BE92DF8D121125B /* Info.plist */,
+				ACA979252973F1FD2A7DFDE68BEA1949 /* Pods-CoignTests.modulemap */,
+				0110BD29751BBBAACDB6DF54D2536D87 /* Pods-CoignTests-acknowledgements.markdown */,
+				46523C9F48CE813BDB6071F1A922A181 /* Pods-CoignTests-acknowledgements.plist */,
+				41CD03B8960143AF4ED89C1F54A4E80C /* Pods-CoignTests-dummy.m */,
+				682A8F7B24C32968595835CB3DB3B6C5 /* Pods-CoignTests-frameworks.sh */,
+				78339028BB0E84C8444820698B07D0CF /* Pods-CoignTests-resources.sh */,
+				29D626DABE513A286350B67D3CEB67D0 /* Pods-CoignTests-umbrella.h */,
+				83623044447C041C719325A194B1D5FE /* Pods-CoignTests.debug.xcconfig */,
+				F3BE739C7B7FFDE9BADAF7F52796E364 /* Pods-CoignTests.release.xcconfig */,
 			);
 			name = "Pods-CoignTests";
 			path = "Target Support Files/Pods-CoignTests";
@@ -1475,22 +1559,22 @@
 			path = FirebaseAuth;
 			sourceTree = "<group>";
 		};
-		E2A80993B71D0B1E241373DD6B106AF8 /* Pods-Coign */ = {
+		EDD2A705BE3A789DD9869DB513D5B191 /* Pods-Coign Dev */ = {
 			isa = PBXGroup;
 			children = (
-				1EADEF14312D2E11094F3FFD84D62FA3 /* Info.plist */,
-				BB75F85F0F4437275ACE05BD83DD0195 /* Pods-Coign.modulemap */,
-				FF53F3BBA07EB820612B422B64543DEF /* Pods-Coign-acknowledgements.markdown */,
-				D0C22B2F3EC5BD24041478399C737FE3 /* Pods-Coign-acknowledgements.plist */,
-				95203F5190D0BBFC71B7464CEDC81320 /* Pods-Coign-dummy.m */,
-				8E0AC359F8B6DAF10B785018F3AA1875 /* Pods-Coign-frameworks.sh */,
-				6F6C2FFA31F9093CCDD814E1DDEEBBB9 /* Pods-Coign-resources.sh */,
-				76CF139C4A3B95AA9AA082E225A50AFB /* Pods-Coign-umbrella.h */,
-				995315953378AB81DFAE7D2E69559E58 /* Pods-Coign.debug.xcconfig */,
-				6440232EF0125BE926C9BF1B45CCB112 /* Pods-Coign.release.xcconfig */,
+				0A2528134871E4409E2531AF315F24E3 /* Info.plist */,
+				DA2A8225190B7C315EDC3710EFDB25B4 /* Pods-Coign Dev.modulemap */,
+				5C99F44173F9FD7F3D44A9E3B821DED1 /* Pods-Coign Dev-acknowledgements.markdown */,
+				B35C7C2BA99E2506D3276CE7A1AF3DF9 /* Pods-Coign Dev-acknowledgements.plist */,
+				50AB083FFD798C8D6A69A11F86B5E345 /* Pods-Coign Dev-dummy.m */,
+				FA8DD900F010B545C90C98340FF25352 /* Pods-Coign Dev-frameworks.sh */,
+				13B70011B8D4E8617ABCA3A38B1909D3 /* Pods-Coign Dev-resources.sh */,
+				274AF258E7FE1BFA13798A4EB0020C32 /* Pods-Coign Dev-umbrella.h */,
+				AADA6BA56302FAE24BD7B9F536A2D2BD /* Pods-Coign Dev.debug.xcconfig */,
+				96939C5EA3338633A570DF77850363F6 /* Pods-Coign Dev.release.xcconfig */,
 			);
-			name = "Pods-Coign";
-			path = "Target Support Files/Pods-Coign";
+			name = "Pods-Coign Dev";
+			path = "Target Support Files/Pods-Coign Dev";
 			sourceTree = "<group>";
 		};
 		F3E5F6E57A8BD5715C6A6DDA212F4333 /* GoogleUtilities */ = {
@@ -1622,6 +1706,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB85B38B3BDC7E3983A35ACFBB666A48 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A167A9CD41E04378EA1AF350488BEF78 /* Pods-Coign Dev-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFDDBBCC04BB4CC8DC0A58249FAFDD93 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1744,7 +1836,7 @@
 			);
 			name = "Pods-CoignUITests";
 			productName = "Pods-CoignUITests";
-			productReference = 3F1A210C744FCCA7E7B28091B1E05294 /* Pods_CoignUITests.framework */;
+			productReference = EC93E4E9EEA6CC2E2BFA60C35FADC4BF /* Pods_CoignUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		1520003FEBEC114D6C84F832AFEDB994 /* IQKeyboardManagerSwift */ = {
@@ -1762,7 +1854,7 @@
 			);
 			name = IQKeyboardManagerSwift;
 			productName = IQKeyboardManagerSwift;
-			productReference = 9D87335276A4F2F0F97CDE167BE86502 /* IQKeyboardManagerSwift.framework */;
+			productReference = EACE486495052E3E158FBA84915DC265 /* IQKeyboardManagerSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		2E303C3CE7513908EE880D9CA833AFAE /* FBSDKCoreKit */ = {
@@ -1781,7 +1873,30 @@
 			);
 			name = FBSDKCoreKit;
 			productName = FBSDKCoreKit;
-			productReference = C16D2FBC6DF3A9FE4BA06948A8A02641 /* FBSDKCoreKit.framework */;
+			productReference = 0635C8675FD1BA1B857F8BE9B826A6F9 /* FBSDKCoreKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2E3683E5A3E842CE6FEBBB8B6F66CBB1 /* Pods-Coign Dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE5C21C11AC8FDA6782601CF8B95F49C /* Build configuration list for PBXNativeTarget "Pods-Coign Dev" */;
+			buildPhases = (
+				94C4B2487812B91F6E39C19F12BB261E /* Sources */,
+				E4E459ACBA9F07818E9F97AA32CC0136 /* Frameworks */,
+				CB85B38B3BDC7E3983A35ACFBB666A48 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16A9D578A61D5FD2C9C520664202EB61 /* PBXTargetDependency */,
+				37E0D3BABC1834594C4BF47D32BAFB41 /* PBXTargetDependency */,
+				265AEB4C245C65AFE862D793B402BCAE /* PBXTargetDependency */,
+				148A95688632D3E0150E57F16D5915B5 /* PBXTargetDependency */,
+				A20EAA7A44A322FA7935F2360B02DE04 /* PBXTargetDependency */,
+				B4ADF0C56B02EECF0A449F2BBBFC4981 /* PBXTargetDependency */,
+			);
+			name = "Pods-Coign Dev";
+			productName = "Pods-Coign Dev";
+			productReference = 2D2C9177CA92FED779CAAEFD92595C1A /* Pods_Coign_Dev.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		30CE133223E138401DB039D534E3407A /* Pods-CoignTests */ = {
@@ -1798,7 +1913,7 @@
 			);
 			name = "Pods-CoignTests";
 			productName = "Pods-CoignTests";
-			productReference = BC6B1ECF4AA2595656645F6FFA133FC6 /* Pods_CoignTests.framework */;
+			productReference = 076ED99EF2D3996D5A9B7335E5276104 /* Pods_CoignTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		429DC2756A38312D9C02579AA70C21A3 /* SkyFloatingLabelTextField */ = {
@@ -1815,7 +1930,7 @@
 			);
 			name = SkyFloatingLabelTextField;
 			productName = SkyFloatingLabelTextField;
-			productReference = 65C31125F215FFD82F960D5BA3A2AA03 /* SkyFloatingLabelTextField.framework */;
+			productReference = 437ACE9B3E0D5ACD58F00C519973BF63 /* SkyFloatingLabelTextField.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		65E34A050ABAB66A1EE91DCFE1C66C6A /* Pods-Coign */ = {
@@ -1838,7 +1953,7 @@
 			);
 			name = "Pods-Coign";
 			productName = "Pods-Coign";
-			productReference = 67951D48B2D473D411DA1DE9C76E13D1 /* Pods_Coign.framework */;
+			productReference = EF4D9B23298BDB1F83A4A29D0C78D0DC /* Pods_Coign.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6EDC37F3FA92533C6AC3562458AA91F1 /* FBSDKLoginKit */ = {
@@ -1857,7 +1972,7 @@
 			);
 			name = FBSDKLoginKit;
 			productName = FBSDKLoginKit;
-			productReference = 5FDFC6E3B7C45AB0F54DC427D7288A34 /* FBSDKLoginKit.framework */;
+			productReference = CC8B169D3576C0D2F81F60618A245CA1 /* FBSDKLoginKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7908849B370564D3342427B24CCD92B7 /* GeoFire */ = {
@@ -1874,7 +1989,7 @@
 			);
 			name = GeoFire;
 			productName = GeoFire;
-			productReference = ED399FD4E28421C3CC092719508F41DB /* GeoFire.framework */;
+			productReference = 0B1F2311F1956D8A13BED3027E4B68A1 /* GeoFire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9D0F2E5EA1B46A5D72FFD42B0B39DBBC /* Bolts */ = {
@@ -1891,7 +2006,7 @@
 			);
 			name = Bolts;
 			productName = Bolts;
-			productReference = 24A49FEDAFD7E81D4898B763FBF331C3 /* Bolts.framework */;
+			productReference = B1A6E4A35502FA27C57A08C1C91B4E32 /* Bolts.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1911,7 +2026,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 9CF1E5E8626414E26F7A6F489C3DAECA /* Products */;
+			productRefGroup = C54267C9F3F981CA5B06FA902890A5C9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -1921,6 +2036,7 @@
 				7908849B370564D3342427B24CCD92B7 /* GeoFire */,
 				1520003FEBEC114D6C84F832AFEDB994 /* IQKeyboardManagerSwift */,
 				65E34A050ABAB66A1EE91DCFE1C66C6A /* Pods-Coign */,
+				2E3683E5A3E842CE6FEBBB8B6F66CBB1 /* Pods-Coign Dev */,
 				30CE133223E138401DB039D534E3407A /* Pods-CoignTests */,
 				0F3946D6338EE88222747B1329362CBE /* Pods-CoignUITests */,
 				429DC2756A38312D9C02579AA70C21A3 /* SkyFloatingLabelTextField */,
@@ -2121,6 +2237,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		94C4B2487812B91F6E39C19F12BB261E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				674F5DBCFCCAEBAD1C2339558D4A8339 /* Pods-Coign Dev-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BB918F190BB6EC625C3F0B8B33E2C9CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2155,6 +2279,30 @@
 			target = 2E303C3CE7513908EE880D9CA833AFAE /* FBSDKCoreKit */;
 			targetProxy = ADA72A156896F50560E668314BF4C929 /* PBXContainerItemProxy */;
 		};
+		148A95688632D3E0150E57F16D5915B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GeoFire;
+			target = 7908849B370564D3342427B24CCD92B7 /* GeoFire */;
+			targetProxy = 0021839301CD91E73A5EE26BDE2ED156 /* PBXContainerItemProxy */;
+		};
+		16A9D578A61D5FD2C9C520664202EB61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Bolts;
+			target = 9D0F2E5EA1B46A5D72FFD42B0B39DBBC /* Bolts */;
+			targetProxy = 5AAD3F489BBE8D8C59670997F2938E64 /* PBXContainerItemProxy */;
+		};
+		265AEB4C245C65AFE862D793B402BCAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FBSDKLoginKit;
+			target = 6EDC37F3FA92533C6AC3562458AA91F1 /* FBSDKLoginKit */;
+			targetProxy = F5958F683E4560A00CCF106535BD51FB /* PBXContainerItemProxy */;
+		};
+		37E0D3BABC1834594C4BF47D32BAFB41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FBSDKCoreKit;
+			target = 2E303C3CE7513908EE880D9CA833AFAE /* FBSDKCoreKit */;
+			targetProxy = 616C69CCCD5D0DCD769E6826E47466BF /* PBXContainerItemProxy */;
+		};
 		4CE22CABA129BAE1348F4B36284D8127 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Bolts;
@@ -2167,11 +2315,23 @@
 			target = 7908849B370564D3342427B24CCD92B7 /* GeoFire */;
 			targetProxy = 55C2CC981FFE4575DA9EF47BF936A5B4 /* PBXContainerItemProxy */;
 		};
+		A20EAA7A44A322FA7935F2360B02DE04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IQKeyboardManagerSwift;
+			target = 1520003FEBEC114D6C84F832AFEDB994 /* IQKeyboardManagerSwift */;
+			targetProxy = 5F408AD1BD434C2923D7894141051E65 /* PBXContainerItemProxy */;
+		};
 		B286A71A348DAB0938E0AF148415689B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SkyFloatingLabelTextField;
 			target = 429DC2756A38312D9C02579AA70C21A3 /* SkyFloatingLabelTextField */;
 			targetProxy = 73482FD9D29C882B0D9EB5D52AE4838F /* PBXContainerItemProxy */;
+		};
+		B4ADF0C56B02EECF0A449F2BBBFC4981 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SkyFloatingLabelTextField;
+			target = 429DC2756A38312D9C02579AA70C21A3 /* SkyFloatingLabelTextField */;
+			targetProxy = F58902AC78BF576B4D743FB88856836A /* PBXContainerItemProxy */;
 		};
 		CCDA513A7386DE8A6E02FBEF3A371A0D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2232,9 +2392,9 @@
 			};
 			name = Debug;
 		};
-		0ADDF2F5C735B341D2678EE22D094D82 /* Debug */ = {
+		067DE5E5613AFFBED6E4E9DA1CA8ACF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E00A00EBA6D1E878FFD4D5AE70F082C /* Pods-CoignUITests.debug.xcconfig */;
+			baseConfigurationReference = 83623044447C041C719325A194B1D5FE /* Pods-CoignTests.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2247,13 +2407,48 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CoignTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CoignTests/Pods-CoignTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CoignTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		134AA9867B93B071FEB007FF2421B1AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 779996F4ACFE8E6A156398432ABEC704 /* Pods-CoignUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-CoignUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CoignUITests/Pods-CoignUITests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -2265,51 +2460,42 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		13E96A645A77DAD1FD4F541F18F5DDBF /* Debug */ = {
+		1635D7DDF5AE414949DA7AC8F48C8A73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0CE222F5CC73242ECB0DE47F01B34F0 /* Pods-Coign.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_DEBUG=1",
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Coign/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Coign/Pods-Coign.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Coign;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		199A803C881D04C21865A69D768D2BE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2343,6 +2529,41 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		23C9588ECBBF6DD3594403508757F25B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3BE739C7B7FFDE9BADAF7F52796E364 /* Pods-CoignTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CoignTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CoignTests/Pods-CoignTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CoignTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		27258FE17EEBAD355CCAF151448C1278 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2449,9 +2670,9 @@
 			};
 			name = Release;
 		};
-		485BB98A1F1E706BE4B0D33C9CB314AF /* Debug */ = {
+		4E4FBD66F8E64F181891E0E0FB123728 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 995315953378AB81DFAE7D2E69559E58 /* Pods-Coign.debug.xcconfig */;
+			baseConfigurationReference = AADA6BA56302FAE24BD7B9F536A2D2BD /* Pods-Coign Dev.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2464,18 +2685,18 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Coign/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Coign Dev/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Coign/Pods-Coign.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Coign Dev/Pods-Coign Dev.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Coign;
+				PRODUCT_NAME = Pods_Coign_Dev;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2485,15 +2706,15 @@
 			};
 			name = Debug;
 		};
-		4993D3C3AE571B58D50DBE5188F1E9CC /* Release */ = {
+		4F12AD32018FD478A06D6D32EDE253CB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B98D7E5A4A047BAC8C4B86EA725E0EA /* Pods-CoignUITests.release.xcconfig */;
+			baseConfigurationReference = A9FF60F5F19C967E0C2AA3E451FF74F8 /* Pods-CoignUITests.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -2502,11 +2723,11 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-CoignUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CoignUITests/Pods-CoignUITests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -2518,7 +2739,7 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		69906109BDEA70F30825AD476A775EDF /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2551,6 +2772,42 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		6C8E6605242CE7DBB505801C1005BD9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97F92F37D7BAA455F039824042F4923D /* Pods-Coign.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Coign/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Coign/Pods-Coign.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Coign;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		742313B9EEAB830DF20623608A94558A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2624,46 +2881,6 @@
 			};
 			name = Release;
 		};
-		862AF3139CD84E18D34FAF2F43CD0DA6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		A50DEFE3441C587BB4F7FC946E98BF3C /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 25C5FE6E5191499CBFBE88DC3D92E05B /* FBSDKCoreKit.xcconfig */;
@@ -2728,108 +2945,47 @@
 			};
 			name = Debug;
 		};
-		BB208C5166DFCE7784084401F27EAE48 /* Release */ = {
+		CACE7C8415F53E79F07C6BBE57F0F61D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6440232EF0125BE926C9BF1B45CCB112 /* Pods-Coign.release.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Coign/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Coign/Pods-Coign.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Coign;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C3D3BED97A4F68DF82C32E2F4DE7BF2E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C3CD159AF7E561062C4A4A48B5D3A90 /* Pods-CoignTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-CoignTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CoignTests/Pods-CoignTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_CoignTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CD84BCB4DDF21A9FD38BDB576DC93809 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A80817A871D6C970DD21D606041A0CE /* Pods-CoignTests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-CoignTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CoignTests/Pods-CoignTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_CoignTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
@@ -2897,6 +3053,81 @@
 			};
 			name = Debug;
 		};
+		ED4FC68AB2A4E06C718CFF338F6F156B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F334D0041CD0320DE6FC4FFF62D9E137 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96939C5EA3338633A570DF77850363F6 /* Pods-Coign Dev.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Coign Dev/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Coign Dev/Pods-Coign Dev.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Coign_Dev;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2912,8 +3143,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				13E96A645A77DAD1FD4F541F18F5DDBF /* Debug */,
-				862AF3139CD84E18D34FAF2F43CD0DA6 /* Release */,
+				CACE7C8415F53E79F07C6BBE57F0F61D /* Debug */,
+				ED4FC68AB2A4E06C718CFF338F6F156B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2930,8 +3161,8 @@
 		482B585347516D71A7C20F8D31732BFF /* Build configuration list for PBXNativeTarget "Pods-CoignTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CD84BCB4DDF21A9FD38BDB576DC93809 /* Debug */,
-				C3D3BED97A4F68DF82C32E2F4DE7BF2E /* Release */,
+				067DE5E5613AFFBED6E4E9DA1CA8ACF6 /* Debug */,
+				23C9588ECBBF6DD3594403508757F25B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2957,8 +3188,8 @@
 		9F5FD111CE58729319510DA2C08AE9B7 /* Build configuration list for PBXNativeTarget "Pods-Coign" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				485BB98A1F1E706BE4B0D33C9CB314AF /* Debug */,
-				BB208C5166DFCE7784084401F27EAE48 /* Release */,
+				6C8E6605242CE7DBB505801C1005BD9D /* Debug */,
+				1635D7DDF5AE414949DA7AC8F48C8A73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2975,8 +3206,8 @@
 		CF0D8D3CD593F7A2012CEB619E11AC19 /* Build configuration list for PBXNativeTarget "Pods-CoignUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0ADDF2F5C735B341D2678EE22D094D82 /* Debug */,
-				4993D3C3AE571B58D50DBE5188F1E9CC /* Release */,
+				4F12AD32018FD478A06D6D32EDE253CB /* Debug */,
+				134AA9867B93B071FEB007FF2421B1AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2986,6 +3217,15 @@
 			buildConfigurations = (
 				742313B9EEAB830DF20623608A94558A /* Debug */,
 				2A63EA29248856D3560D33035F542149 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE5C21C11AC8FDA6782601CF8B95F49C /* Build configuration list for PBXNativeTarget "Pods-Coign Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E4FBD66F8E64F181891E0E0FB123728 /* Debug */,
+				F334D0041CD0320DE6FC4FFF62D9E137 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

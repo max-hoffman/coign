@@ -9,6 +9,8 @@
 import Foundation
 import Firebase
 import CoreLocation
+import FirebaseDatabase
+import FirebaseStorage
 
 extension FirTree {
     

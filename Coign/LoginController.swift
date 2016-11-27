@@ -32,6 +32,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         
         //issue user a FB credential, auto signs them in the the FIR "user"
         let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        print(credential)
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
 
             //quit if FB request error

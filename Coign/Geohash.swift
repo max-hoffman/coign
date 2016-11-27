@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 import FirebaseStorage
 import GeoFire
+import FirebaseDatabase
 
 class Geohash {
     

@@ -25,7 +25,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         //connect to Firebase
-        FIRApp.configure()
+        
+        #if DEBUG
+            let filePath = Bundle.main.path(forResource: "GoogleService-Dev-Info", ofType:"plist")
+            let options = FIROptions(contentsOfFile:filePath)
+            FIRApp.configure(with: options!)
+            print("debug ran")
+        #else
+            let filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType:"plist")
+            let options = FIROptions(contentsOfFile:filePath)
+            FIRApp.configure(with: options!)
+            print("else rans")
+        #endif
         
         //connect keyboard manager
         IQKeyboardManager.sharedManager().enable = true
