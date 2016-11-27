@@ -80,9 +80,6 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
             tableView.tableHeaderView = headerCell
         }
         
-        //set background image
-        tableView.backgroundView = UIImageView(image: UIImage(named: "coign_background_02"))
-        
         // User setup delegation
         emailField.delegate = self
         phoneField.delegate = self
@@ -113,7 +110,6 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
             }
         }
     }
-    
     
     @objc private func refreshView(refreshControl: UIRefreshControl) {
         postManager.loadPostUIDs()

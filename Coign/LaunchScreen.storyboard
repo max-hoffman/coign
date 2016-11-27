@@ -21,16 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coign_largelogo_01" translatesAutoresizingMaskIntoConstraints="NO" id="DXz-Du-suY">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone6plus_1" translatesAutoresizingMaskIntoConstraints="NO" id="sm5-PY-H5k">
+                                <rect key="frame" x="20" y="0.0" width="335" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DXz-Du-suY" firstAttribute="top" secondItem="DNS-jR-Gqi" secondAttribute="top" id="9J4-Jl-kzh"/>
-                            <constraint firstItem="DXz-Du-suY" firstAttribute="leading" secondItem="DNS-jR-Gqi" secondAttribute="leading" id="ELn-33-HJH"/>
-                            <constraint firstAttribute="trailing" secondItem="DXz-Du-suY" secondAttribute="trailing" id="Po5-A2-fde"/>
-                            <constraint firstItem="DXz-Du-suY" firstAttribute="bottom" secondItem="Lte-OC-z3d" secondAttribute="top" id="TcM-L7-v4b"/>
+                            <constraint firstItem="sm5-PY-H5k" firstAttribute="top" secondItem="DNS-jR-Gqi" secondAttribute="top" id="8Ae-zR-l0S"/>
+                            <constraint firstItem="sm5-PY-H5k" firstAttribute="leading" secondItem="DNS-jR-Gqi" secondAttribute="leading" constant="20" symbolic="YES" id="CV9-gJ-Dgb"/>
+                            <constraint firstItem="sm5-PY-H5k" firstAttribute="bottom" secondItem="Lte-OC-z3d" secondAttribute="top" id="WI3-on-PxW"/>
+                            <constraint firstAttribute="trailing" secondItem="sm5-PY-H5k" secondAttribute="trailing" constant="20" symbolic="YES" id="jAG-gW-wQz"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="coign_largelogo_01" width="1024" height="1024"/>
+        <image name="iphone6plus_1" width="2208" height="1242"/>
     </resources>
 </document>
