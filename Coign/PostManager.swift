@@ -81,9 +81,11 @@ class PostManager {
     func loadPostUIDs() {
         switch currentType {
         case .Recent :
+            recentPosts.removeAll()
             loadRecentPostUIDs()
         case .Local :
             loadLocalPostUIDs()
+            localPosts.removeAll()
         case .Friends :
             break
         }

@@ -66,7 +66,8 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         postManager.loadPostUIDs()
         
         //MARK - handle pull to refresh
-        //self.refreshControl?.addTarget(self, action: #selector(self.loadSelectedPostView(refreshControl:)), for: UIControlEvents.valueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(self.refreshView(refreshControl:)), for: UIControlEvents.valueChanged)
+        
         self.refreshControl?.backgroundColor = UIColor.darkGray
         self.refreshControl?.tintColor = UIColor.blue
         
@@ -91,7 +92,6 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         //home page loading logic, automatically calls user setup popover if the last date was set to "new user"
         checkLastLoginDate()
         
@@ -115,7 +115,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     }
     
     
-    @objc private func loadSelectedPostView(refreshControl: UIRefreshControl) {
+    @objc private func refreshView(refreshControl: UIRefreshControl) {
         postManager.loadPostUIDs()
     }
     
