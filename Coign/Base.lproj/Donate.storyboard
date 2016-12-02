@@ -324,10 +324,10 @@
             </objects>
             <point key="canvasLocation" x="7111.1999999999998" y="1348.8755622188908"/>
         </scene>
-        <!--Donation NC-->
+        <!--Donation-->
         <scene sceneID="a04-CW-hoZ">
             <objects>
-                <navigationController storyboardIdentifier="Donate NC" title="Donation NC" automaticallyAdjustsScrollViewInsets="NO" id="6hD-sd-YP4" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Donate NC" title="Donation" automaticallyAdjustsScrollViewInsets="NO" id="6hD-sd-YP4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EHl-6R-c6q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

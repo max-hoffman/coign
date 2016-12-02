@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Social
 
 class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelegate, CLLocationManagerDelegate {
 
@@ -104,7 +105,11 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
             (action: UIAlertAction) -> Void in
             
             weakSelf?.createPost()
+            
+            weakSelf?.presentSharePopover()
+            
             weakSelf?.resetPage()
+            
         }))
         donationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {
             (action: UIAlertAction) -> Void in
@@ -112,6 +117,19 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         }))
         
         present(donationAlert, animated: true, completion: nil)
+    }
+    
+    
+    private func presentSharePopover() {
+        if(SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook)) {
+            print("available")
+            if let socialController = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
+                socialController.setInitialText("Hello World!")
+                socialController.add(URL(fileURLWithPath: "coign.co"))
+                self.present(socialController, animated: true, completion: nil)
+            }
+            
+        }
     }
     
     //MARK:- Switch methods
@@ -288,6 +306,13 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         connectRevealVC()
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        // Initialize Tab Bar Item
+        tabBarItem = UITabBarItem(title: "Give", image: UIImage(named: "co"), tag: 1)
+    }
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

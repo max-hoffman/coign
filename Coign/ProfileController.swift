@@ -106,6 +106,14 @@ class ProfileController: UIViewController {
         connectRevealVC()
     }
     
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        // Initialize Tab Bar Item
+        tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "profile"), tag: 2)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

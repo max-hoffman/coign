@@ -41,6 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //connect keyboard manager
         IQKeyboardManager.sharedManager().enable = true
         
+        //make status bar text white
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         //bypass login screen if user credential exists
         self.checkForAutoLogin()
         

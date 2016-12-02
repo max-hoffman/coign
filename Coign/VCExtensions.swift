@@ -26,7 +26,7 @@ extension UIViewController {
                 let navBar = navcon.navigationBar
                 
                 //add nav bar title
-                self.navigationItem.title = self.title
+                navcon.title = self.title
                 let titleAttributes = [
                     NSForegroundColorAttributeName: UIColor.white,
                     NSFontAttributeName: UIFont(name: "Helvetica", size: 20)!
@@ -39,7 +39,7 @@ extension UIViewController {
                 navBar.tintColor = UIColor.white
                 
                 //create menu button in navbar with pan recognizer
-                let menuButton = UIBarButtonItem(title: "Menu", style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
+                let menuButton = UIBarButtonItem(image: #imageLiteral(resourceName: "menu"), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
                 navigationItem.leftBarButtonItem = menuButton
                 self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             }

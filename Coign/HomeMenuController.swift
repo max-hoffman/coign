@@ -58,21 +58,18 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         //get quick location update
         requestLocationUpdate()
         
-        //nav bar for reveal view controller
-        connectRevealVC()
-        
         //instantiate post manager, call first posts to screen
         postManager = PostManager(viewController: self, initialType: .Recent)
         postManager.loadPostUIDs()
         
         //MARK - handle pull to refresh
         self.refreshControl?.addTarget(self, action: #selector(self.refreshView(refreshControl:)), for: UIControlEvents.valueChanged)
-        
-        self.refreshControl?.backgroundColor = UIColor.darkGray
-        self.refreshControl?.tintColor = UIColor.blue
+        self.refreshControl?.backgroundColor = UIColor.lightGray
+        self.refreshControl?.tintColor = UIColor.white
         
         //set the tableview delegate
         tableView.delegate = self
+        navigationController?.hidesBarsOnSwipe = true
         
         if let headerCell = tableView.dequeueReusableCell(withIdentifier: HEADER_CELL_IDENTIFIER) as? HeaderCell {
             segmentedControl = headerCell.segmentedControl
@@ -86,12 +83,27 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         nameField.delegate = self
         charityPreferencePicker.delegate = self
         charityPreferencePicker.dataSource = self
+        
+        //nav bar for reveal view controller
+        connectRevealVC()
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 35))
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.image = UIImage(named: "logo_inverse.png")
+        self.navigationItem.titleView = imageView
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        // Initialize Tab Bar Item
+        tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "home"), tag: 0)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         //home page loading logic, automatically calls user setup popover if the last date was set to "new user"
         checkLastLoginDate()
-        
     }
 
     

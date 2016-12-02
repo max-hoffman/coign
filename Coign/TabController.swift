@@ -18,6 +18,7 @@ class TabController: UITabBarController {
         
         //route to the correct tab view controller
         self.selectedIndex = segueDestinationIndex
+        connectRevealVC()
     }
 
     override func didReceiveMemoryWarning() {

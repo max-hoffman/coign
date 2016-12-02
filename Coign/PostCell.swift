@@ -24,6 +24,9 @@ class PostCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        picture.layer.borderColor = UIColor.lightGray.cgColor
+        picture.layer.borderWidth = 2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
