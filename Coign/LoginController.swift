@@ -15,8 +15,35 @@ import FBSDKCoreKit
 class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     
     //MARK: - properties
-    @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        let facebookLoginManager = FBSDKLoginManager()
+        facebookLoginManager.logIn(withReadPermissions: ["public_profile"], from: self, handler: { (result, error) in
+            
+            //if there's an error, cancel login
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            
+            //issue user a FB credential, auto signs them in the the FIR "user"
+            let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+            print(credential)
+            FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+                
+                //quit if FB request error
+                if error != nil {
+                    print(error!.localizedDescription)
+                    return
+                }
+                
+                //log the user in
+                self.loginControlFlow()
+            })
+        })
+
+    }
+
     //MARK: - facebook delegate functions
     
     /**
@@ -59,7 +86,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        facebookLoginButton.delegate = self
+        
     }
     
     override func didReceiveMemoryWarning() {
