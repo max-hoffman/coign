@@ -16,15 +16,28 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     
     //MARK: - properties
     
+    @IBOutlet weak var loginButton: UIButton!
+    
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         let facebookLoginManager = FBSDKLoginManager()
         facebookLoginManager.logIn(withReadPermissions: ["public_profile"], from: self, handler: { (result, error) in
             
             //if there's an error, cancel login
-            if error != nil {
+            if error != nil || result == nil {
                 print(error!.localizedDescription)
                 return
             }
+            
+            else if result!.isCancelled {
+                print("login canceled")
+                return
+            }
+            
+            else if result!.grantedPermissions.contains("public_profile") {
+                print("did not grant permissions")
+                return
+            }
+            
             
             //issue user a FB credential, auto signs them in the the FIR "user"
             let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
@@ -86,6 +99,12 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.layer.cornerRadius = 20
+    
+        loginButton.layer.cornerRadius = 10
+        loginButton.layer.borderWidth = 1
+        loginButton.layer.borderColor = UIColor.lightGray.cgColor
         
     }
     
