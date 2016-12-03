@@ -20,7 +20,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         let facebookLoginManager = FBSDKLoginManager()
-        facebookLoginManager.logIn(withReadPermissions: ["public_profile"], from: self, handler: { (result, error) in
+        facebookLoginManager.logIn(withReadPermissions: ["public_profile", "email", "user_friends"], from: self, handler: { (result, error) in
             
             //if there's an error, cancel login
             if error != nil || result == nil {
@@ -33,7 +33,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
                 return
             }
             
-            else if result!.grantedPermissions.contains("public_profile") {
+            else if !result!.grantedPermissions.contains("public_profile") {
                 print("did not grant permissions")
                 return
             }
