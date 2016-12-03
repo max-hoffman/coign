@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         //connect to Firebase
-        
         #if DEVELOPMENT
             let filePath = Bundle.main.path(forResource: "GoogleService-Dev-Info", ofType:"plist")
             let options = FIROptions(contentsOfFile:filePath)
@@ -43,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //make status bar text white
         UIApplication.shared.statusBarStyle = .lightContent
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: CustomColor.brandGreen], for: .selected)
         
         //bypass login screen if user credential exists
         self.checkForAutoLogin()

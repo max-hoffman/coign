@@ -310,7 +310,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         super.init(coder: aDecoder)
         
         // Initialize Tab Bar Item
-        tabBarItem = UITabBarItem(title: "Give", image: UIImage(named: "co"), tag: 1)
+        tabBarItem = UITabBarItem(title: "Give", image: #imageLiteral(resourceName: "co"), selectedImage: #imageLiteral(resourceName: "co_selected").withRenderingMode(.alwaysOriginal))
     }
    
     override func didReceiveMemoryWarning() {

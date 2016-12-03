@@ -98,7 +98,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         super.init(coder: aDecoder)
         
         // Initialize Tab Bar Item
-        tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "home"), tag: 0)
+        tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "home"), selectedImage: #imageLiteral(resourceName: "home_selected").withRenderingMode(.alwaysOriginal))
     }
     
     override func viewDidAppear(_ animated: Bool) {

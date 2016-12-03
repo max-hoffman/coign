@@ -26,7 +26,7 @@ extension UIViewController {
                 let navBar = navcon.navigationBar
                 
                 //add nav bar title
-                navcon.title = self.title
+                self.navigationController?.title = self.title
                 let titleAttributes = [
                     NSForegroundColorAttributeName: UIColor.white,
                     NSFontAttributeName: UIFont(name: "Helvetica", size: 20)!
@@ -35,7 +35,7 @@ extension UIViewController {
                 
                 
                 //color nav bar
-                navBar.barTintColor = CustomColor.darkGreen
+                navBar.barTintColor = CustomColor.brandGreen
                 navBar.tintColor = UIColor.white
                 
                 //create menu button in navbar with pan recognizer

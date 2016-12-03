@@ -22,6 +22,8 @@
 		E2212D2D1DDFDF880016E2C8 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2212D2C1DDFDF880016E2C8 /* StringExtensions.swift */; };
 		E2212D2F1DE135230016E2C8 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2212D2E1DE135230016E2C8 /* HeaderCell.swift */; };
 		E2212D311DE144510016E2C8 /* FooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2212D301DE144510016E2C8 /* FooterCell.swift */; };
+		E23203271DF25E6A00ECB463 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23203261DF25E6A00ECB463 /* ColorExtensions.swift */; };
+		E23203281DF25FB800ECB463 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23203261DF25E6A00ECB463 /* ColorExtensions.swift */; };
 		E2360B0F1DDE629000DFE338 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2360B0E1DDE629000DFE338 /* JSONParser.swift */; };
 		E24214971DA8966400A5B080 /* VCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24214961DA8966400A5B080 /* VCExtensions.swift */; };
 		E24ACFF21DE4A6B100F09639 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24ACFF11DE4A6B100F09639 /* PostManager.swift */; };
@@ -188,6 +190,7 @@
 		E2212D2C1DDFDF880016E2C8 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		E2212D2E1DE135230016E2C8 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		E2212D301DE144510016E2C8 /* FooterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterCell.swift; sourceTree = "<group>"; };
+		E23203261DF25E6A00ECB463 /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		E2360B0E1DDE629000DFE338 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		E24214961DA8966400A5B080 /* VCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCExtensions.swift; sourceTree = "<group>"; };
 		E24ACFF11DE4A6B100F09639 /* PostManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
@@ -462,6 +465,7 @@
 			isa = PBXGroup;
 			children = (
 				E259EB661DA55EDC00EADC4C /* DateExtensions.swift */,
+				E23203261DF25E6A00ECB463 /* ColorExtensions.swift */,
 				E24214961DA8966400A5B080 /* VCExtensions.swift */,
 				E2360B0E1DDE629000DFE338 /* JSONParser.swift */,
 				E2212D2C1DDFDF880016E2C8 /* StringExtensions.swift */,
@@ -575,8 +579,8 @@
 			isa = PBXGroup;
 			children = (
 				E2C397FA1D85CBB0000D35F4 /* Profile.storyboard */,
-				E2E4E37D1DD6423A004522C9 /* ProfileDetailController.swift */,
 				E2C397F11D85BCE1000D35F4 /* ProfileController.swift */,
+				E2E4E37D1DD6423A004522C9 /* ProfileDetailController.swift */,
 				E2E4E37B1DD56C86004522C9 /* NetworkGraph.swift */,
 			);
 			name = Profile;
@@ -1045,6 +1049,7 @@
 				E2360B0F1DDE629000DFE338 /* JSONParser.swift in Sources */,
 				E2F0A8DB1DC3AA7800ABDC4F /* CharityPickerController.swift in Sources */,
 				E2212D2D1DDFDF880016E2C8 /* StringExtensions.swift in Sources */,
+				E23203271DF25E6A00ECB463 /* ColorExtensions.swift in Sources */,
 				E2D877201D8EFEDC00BAAB46 /* SideViewTableController.swift in Sources */,
 				E2A7D5E11DDD427700D6D92A /* HomeMenuController.swift in Sources */,
 				E2E8FE1C1DD90F35003AB2D2 /* PostingExtensions.swift in Sources */,
@@ -1105,6 +1110,7 @@
 				E26353401DE9F5FF006787A6 /* JSONParser.swift in Sources */,
 				E26353411DE9F5FF006787A6 /* CharityPickerController.swift in Sources */,
 				E26353421DE9F5FF006787A6 /* StringExtensions.swift in Sources */,
+				E23203281DF25FB800ECB463 /* ColorExtensions.swift in Sources */,
 				E26353431DE9F5FF006787A6 /* SideViewTableController.swift in Sources */,
 				E26353441DE9F5FF006787A6 /* HomeMenuController.swift in Sources */,
 				E26353451DE9F5FF006787A6 /* PostingExtensions.swift in Sources */,

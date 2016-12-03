@@ -25,6 +25,7 @@ extension UIColor {
 enum CustomColor {
 //    static let darkGreen = UIColor(red: 0, green: 0.5569, blue: 0.0824, alpha: 1.0)
     static let darkGreen = UIColor(netHex:0x005000)
+    static let brandGreen = UIColor(red:0.01, green:0.56, blue:0.00, alpha:1.0)
 }
 
 
