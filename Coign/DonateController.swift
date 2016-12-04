@@ -9,8 +9,9 @@
 import UIKit
 import CoreLocation
 import Social
+import SkyFloatingLabelTextField
 
-class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelegate, CLLocationManagerDelegate {
+class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate {
 
     //MARK: - Constants 
     var charities: [String]? {
@@ -31,8 +32,8 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     
     //MARK: - Outlets
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    @IBOutlet weak var defaultCharitySwitch: UISwitch!
-    @IBOutlet weak var shareToFacebookSwitch: UISwitch!
+
+
     @IBOutlet weak var anonymousSwitch: UISwitch!
     @IBOutlet weak var donateMessage: UITextView!
     @IBOutlet weak var donateFor: UITextField!
@@ -42,11 +43,12 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     @IBOutlet weak var verifyView: UIView!
     @IBOutlet weak var verifyButton: UIButton!
     @IBOutlet weak var dollarLabel: UILabel!
-    @IBOutlet weak var dollarSlider: UISlider!
+    @IBOutlet weak var selectCustomArrow: UILabel!
+    @IBOutlet weak var customCharityView: UIView!
+    @IBOutlet weak var selectCustomView: UIView!
+    @IBOutlet weak var customCharityTextField: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var backgroundView: UIImageView!
-    @IBOutlet weak var vibrancyView: UIVisualEffectView!
-    //MARK: - Post methods
+    @IBOutlet var headlines: [UILabel]!
     
     //TODO: This needs to go inside the plaid completion block
     private func createPost() {
@@ -54,8 +56,8 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         if let userUID = UserDefaults.standard.object(forKey: FirTree.UserParameter.UserUID.rawValue) as? String, let recipient = donateFor.text, let name = UserDefaults.standard.object(forKey: FirTree.UserParameter.Name.rawValue) {
 
             var charity: String? = nil
-            if defaultCharitySwitch.isOn {
-                charity = UserDefaults.standard.object(forKey: FirTree.UserParameter.Charity.rawValue) as! String?
+            if !customCharityView.isHidden {
+                charity = customCharityTextField.text
             }
             else {
                 charity = charities?[charityPicker.selectedRow(inComponent: 0)]
@@ -69,9 +71,8 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
                 FirTree.PostParameter.Charity.rawValue : charity!,
                 FirTree.PostParameter.RecipientName.rawValue : recipient,
                 FirTree.PostParameter.Message.rawValue : donateMessage.text,
-                FirTree.PostParameter.DonationAmount.rawValue : dollarSlider.value,
+                FirTree.PostParameter.DonationAmount.rawValue : 1,
                 FirTree.PostParameter.TimeStamp.rawValue : Date.timeIntervalSinceReferenceDate,
-                FirTree.PostParameter.SharedToFacebook.rawValue : shareToFacebookSwitch.isOn,
                 FirTree.PostParameter.Anonymous.rawValue : anonymousSwitch.isOn
             ]
             
@@ -132,41 +133,31 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         }
     }
     
-    //MARK:- Switch methods
+    //MARK: - View manipulation methods
     
-    @IBAction private func didSelectSwitch(_ sender: UISwitch) {
-        if let id = sender.accessibilityIdentifier {
-            switch id {
-                case "default switch": defaultSwitchPressed(isOn: sender.isOn)
-                case "anonymous switch": anonymousSwitchPressed(isOn: sender.isOn)
-                default: print("Switch not identified")
-            }
-        }
-    }
-    
-    private func defaultSwitchPressed(isOn: Bool) {
-        UIView.animate(withDuration: 0.3, animations: {
-            if isOn {
-                //hide the picker view
-                self.charityPickerView.isHidden = true
-            }
-            else {
+    @objc private func toggleCharityView(_: UITapGestureRecognizer) {
+        if self.charityPickerView.isHidden {
+            UIView.animate(withDuration: 0.3, animations: {
+                //hide custom text
+                self.customCharityView.isHidden = true
+                self.customCharityView.alpha = 0
+                self.selectCustomArrow.text = "→"
+                _ = self.customCharityTextField.resignFirstResponder()
+                
                 //show the picker view
                 self.charityPickerView.isHidden = false
-            }
-        })
-    }
-    
-    private func anonymousSwitchPressed(isOn: Bool) {
-        if isOn {
-            //turn the share switch off
-            shareToFacebookSwitch.isOn = false
-            shareToFacebookSwitch.isEnabled = false
+                self.charityPickerView.alpha = 1
+            })
         }
         else {
-            //turn the share switch on
-            shareToFacebookSwitch.isOn = true
-            shareToFacebookSwitch.isEnabled = true
+            UIView.animate(withDuration: 0.3, animations: {
+                //hide the picker view, show custom text
+                self.charityPickerView.isHidden = true
+                self.charityPickerView.alpha = 0
+                self.customCharityView.isHidden = false
+                self.customCharityView.alpha = 1
+                self.selectCustomArrow.text = "⇣"
+            })
         }
     }
     
@@ -256,27 +247,45 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     //MARK: - View did load preperation methods
     
     private func prepDonationSubviews() {
-        //hide the picker view
+        //det delegates
         donateMessage.delegate = self
         charityPicker.delegate = self
         
-        charityPickerView.isHidden = true
+        //hide/shape views
+        customCharityView.isHidden = true
+        customCharityView.alpha = 0
         donateMessage.layer.cornerRadius = 8
         verifyButton.layer.cornerRadius = 15
         verifyView.isHidden = true
         donateMessage.placeholderText = MESSAGE_PLACEHOLDER_TEXT
+        
+        //select sustom tap recognizer
+        let tap = UITapGestureRecognizer(target: self, action: #selector(toggleCharityView(_:)))
+        tap.delegate = self
+        selectCustomView.addGestureRecognizer(tap)
+        
+        //underline headlines
+        
+        let attributes : [String : Any] = [
+            NSFontAttributeName : UIFont.systemFont(ofSize: 20.0),
+            NSForegroundColorAttributeName : UIColor.black,
+            NSUnderlineStyleAttributeName : 1]
+        
+        headlines.forEach({ $0.attributedText = NSAttributedString(string: $0.text!, attributes: attributes) })
+        
+        //set the picker view selection to the default
+        if let defaultCharity = UserDefaults.standard.object(forKey: FirTree.UserParameter.Charity.rawValue) as? String, let defaultIndex = charities?.index(of: defaultCharity) {
+            print("should have set charity picker")
+            charityPicker.selectRow(defaultIndex, inComponent: 0, animated: false)
+        }
     }
     
     private func resetPage() {
-        charityPickerView.isHidden = true
+        customCharityView.isHidden = true
         verifyView.isHidden = true
-        defaultCharitySwitch.isOn = true
         donateFor.text = nil
         donateMessage.text = MESSAGE_PLACEHOLDER_TEXT
         anonymousSwitch.isOn = false
-        shareToFacebookSwitch.isOn = true
-        shareToFacebookSwitch.isEnabled = true
-        dollarSlider.value = 1.00
         dollarLabel.text = "$ 1.00"
     }
     
