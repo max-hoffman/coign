@@ -275,18 +275,18 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         
         //set the picker view selection to the default
         if let defaultCharity = UserDefaults.standard.object(forKey: FirTree.UserParameter.Charity.rawValue) as? String, let defaultIndex = charities?.index(of: defaultCharity) {
-            print("should have set charity picker")
+            
             charityPicker.selectRow(defaultIndex, inComponent: 0, animated: false)
         }
     }
     
     private func resetPage() {
         customCharityView.isHidden = true
+        charityPickerView.isHidden = true
         verifyView.isHidden = true
         donateFor.text = nil
         donateMessage.text = MESSAGE_PLACEHOLDER_TEXT
         anonymousSwitch.isOn = false
-        dollarLabel.text = "$ 1.00"
     }
     
     
