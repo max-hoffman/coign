@@ -14,6 +14,8 @@ import FirebaseDatabase
 
 extension FirTree {
     
+    //TODO: change this to update the recipient and user networks of impact -> array with charity and count
+    
     /**
      Post donation to FIR tree; update "users" nodes and "donations" nodes
      */
@@ -39,24 +41,25 @@ extension FirTree {
         //record that donation event in the user's donation node (array of ID's)
         FirTree.rootRef.child(Node.Users.rawValue).child(userID).child(UserParameter.Posts.rawValue).updateChildValues([postRef.key: true])
         
+        //TODO: change to network of impact
         //increment user outgoing post counter
-        FirTree.rootRef.child(Node.Users.rawValue).child(userID).child(FirTree.UserParameter.OutgoingCoigns.rawValue).runTransactionBlock({ (currentData: FIRMutableData) -> FIRTransactionResult in
-            if var outgoingCount = currentData.value as? Int {
-                
-                //update the count
-                outgoingCount += 1
-                
-                // Set value and report transaction success
-                currentData.value = outgoingCount
-                
-                return FIRTransactionResult.success(withValue: currentData)
-            }
-            return FIRTransactionResult.success(withValue: currentData)
-        }) { (error, committed, snapshot) in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-        }
+//        FirTree.rootRef.child(Node.Users.rawValue).child(userID).child(FirTree.UserParameter.OutgoingCoigns.rawValue).runTransactionBlock({ (currentData: FIRMutableData) -> FIRTransactionResult in
+//            if var outgoingCount = currentData.value as? Int {
+//                
+//                //update the count
+//                outgoingCount += 1
+//                
+//                // Set value and report transaction success
+//                currentData.value = outgoingCount
+//                
+//                return FIRTransactionResult.success(withValue: currentData)
+//            }
+//            return FIRTransactionResult.success(withValue: currentData)
+//        }) { (error, committed, snapshot) in
+//            if let error = error {
+//                print(error.localizedDescription)
+//            }
+//        }
         
         //MARK: Recipient data
 
@@ -65,26 +68,27 @@ extension FirTree {
             //record that donation event in the recipient's donation node
             FirTree.rootRef.child(Node.Users.rawValue).child(recipientID!).child(UserParameter.Posts.rawValue).setValue(postRef)
             
+            //TODO: change to network of impact
             //increment user outgoing post counter
-            FirTree.rootRef.child(Node.Users.rawValue).child(userID).child(FirTree.UserParameter.IncomingCoigns.rawValue).runTransactionBlock({ (currentData: FIRMutableData) -> FIRTransactionResult in
-
-                
-                if var incomingCount = currentData.value as? Int  {
-                    
-                    //update the count
-                    incomingCount += 1
-                    
-                    // Set value and report transaction success
-                    currentData.value = incomingCount
-                    
-                    return FIRTransactionResult.success(withValue: currentData)
-                }
-                return FIRTransactionResult.success(withValue: currentData)
-            }) { (error, committed, snapshot) in
-                if let error = error {
-                    print(error.localizedDescription)
-                }
-            }
+//            FirTree.rootRef.child(Node.Users.rawValue).child(userID).child(FirTree.UserParameter.IncomingCoigns.rawValue).runTransactionBlock({ (currentData: FIRMutableData) -> FIRTransactionResult in
+//
+//                
+//                if var incomingCount = currentData.value as? Int  {
+//                    
+//                    //update the count
+//                    incomingCount += 1
+//                    
+//                    // Set value and report transaction success
+//                    currentData.value = incomingCount
+//                    
+//                    return FIRTransactionResult.success(withValue: currentData)
+//                }
+//                return FIRTransactionResult.success(withValue: currentData)
+//            }) { (error, committed, snapshot) in
+//                if let error = error {
+//                    print(error.localizedDescription)
+//                }
+//            }
         }
     }
     

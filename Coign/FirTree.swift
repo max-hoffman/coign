@@ -47,8 +47,7 @@ class FirTree {
         case UserUID = "user uid"
         case Posts = "posts"
         case Charity = "charity preference"
-        case IncomingCoigns = "incoming"
-        case OutgoingCoigns = "outgoing"
+        case NetworkOfImpact = "network of impact"
     }
 
     enum PostParameter: String {
@@ -68,6 +67,7 @@ class FirTree {
         case CommentCount = "comment count"
         case ReCoignCount = "recoign count"
         case RootPostId = "root post"
+        case Proxy = "proxy"
     }
     
     enum NotificationParameter: String {
@@ -115,8 +115,7 @@ class FirTree {
         //TODO: make the "new user" node unnecessary by calling the
         let post: [String : Any] = [FirTree.UserParameter.Name.rawValue : name,
                                     FirTree.UserParameter.Picture.rawValue : pictureURL,
-                                    FirTree.UserParameter.OutgoingCoigns.rawValue: 0,
-                                    FirTree.UserParameter.IncomingCoigns.rawValue: 0,
+                                    FirTree.UserParameter.NetworkOfImpact.rawValue : [],
                                     FirTree.UserParameter.FacebookUID.rawValue: facebookID,
                                     FirTree.UserParameter.MostRecentLoginDate.rawValue: FirTree.UserParameter.NewUser.rawValue]
         

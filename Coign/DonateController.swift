@@ -31,8 +31,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     let BACKGROUND_IMAGE_LINK: String = "coign_background_02"
     
     //MARK: - Outlets
-    @IBOutlet weak var menuButton: UIBarButtonItem!
-
+    //@IBOutlet weak var menuButton: UIBarButtonItem!
 
     @IBOutlet weak var anonymousSwitch: UISwitch!
     @IBOutlet weak var donateMessage: UITextView!
@@ -47,8 +46,12 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     @IBOutlet weak var customCharityView: UIView!
     @IBOutlet weak var selectCustomView: UIView!
     @IBOutlet weak var customCharityTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var primaryDonorSwitch: UISwitch!
     
     @IBOutlet var headlines: [UILabel]!
+    
+    
+    //MARK: - Posting methods
     
     //TODO: This needs to go inside the plaid completion block
     private func createPost() {
@@ -63,17 +66,19 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
                 charity = charities?[charityPicker.selectedRow(inComponent: 0)]
             }
             
-            //TODO: need a function to find if we can update the specified user, for now it's just whatever name is passed in
+            //TODO: need to pass in the recipient ID if it exists
                 
             let post : [String: Any] = [
                 FirTree.PostParameter.DonorName.rawValue: name,
                 FirTree.PostParameter.DonorUID.rawValue : userUID,
                 FirTree.PostParameter.Charity.rawValue : charity!,
                 FirTree.PostParameter.RecipientName.rawValue : recipient,
+                //FirTree.PostParameter.RecipientUID.rawValue :
                 FirTree.PostParameter.Message.rawValue : donateMessage.text,
                 FirTree.PostParameter.DonationAmount.rawValue : 1,
                 FirTree.PostParameter.TimeStamp.rawValue : Date.timeIntervalSinceReferenceDate,
-                FirTree.PostParameter.Anonymous.rawValue : anonymousSwitch.isOn
+                FirTree.PostParameter.Anonymous.rawValue : anonymousSwitch.isOn,
+                FirTree.PostParameter.Proxy.rawValue : primaryDonorSwitch.isOn
             ]
             
             //complete the post by updating the FirTree
@@ -81,7 +86,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         }
     }
 
-    //button color returned to normal after the popover appears
+    //button color returns to normal after the popover appears
     @IBAction func verifyButtonPressed(_ sender: UIButton) {
         verifyButton.backgroundColor = CustomColor.darkGreen.withAlphaComponent(0.5)
         presentVerifyPopover()
@@ -94,7 +99,6 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     @IBAction func verifyButtonReleased(_ sender: UIButton) {
         verifyButton.backgroundColor = CustomColor.darkGreen.withAlphaComponent(1.0)
     }
-    
     
     private func presentVerifyPopover() {
         //TODO: This is where the stripe/plaid verification needs to go
@@ -120,7 +124,6 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         present(donationAlert, animated: true, completion: nil)
     }
     
-    
     private func presentSharePopover() {
         if(SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook)) {
             print("available")
@@ -131,6 +134,15 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
             }
             
         }
+    }
+    
+    private func resetPage() {
+        customCharityView.isHidden = true
+        charityPickerView.isHidden = true
+        verifyView.isHidden = true
+        donateFor.text = nil
+        donateMessage.text = MESSAGE_PLACEHOLDER_TEXT
+        anonymousSwitch.isOn = false
     }
     
     //MARK: - View manipulation methods
@@ -204,30 +216,6 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         return charities?.count ?? 0
     }
 
-    
-    //MARK: - Slider methods
-    
-    /* Handle slider event / limit to discrete values */
-    @IBAction private func sliderValueChanged(_ sender: Any) {
-        if let slider = sender as? UISlider {
-            
-            //discrete slider values
-            switch slider.value {
-                case 0..<0.13 : slider.value = 0.10
-                case 0.13..<0.38 : slider.value = 0.25
-                case 0.38..<0.63 : slider.value = 0.50
-                case 0.63..<0.88 : slider.value = 0.75
-                case 0.88..<1.13 : slider.value = 1.00
-                case 1.13..<1.38 : slider.value = 1.25
-                case 1.38...1.50 : slider.value = 1.50
-                default: break
-            }
-            
-            //update label to reflect the change
-            dollarLabel.text = "$ \(slider.value)"
-        }
-    }
-    
     //MARK: - Location methods
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -247,9 +235,6 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     //MARK: - View did load preperation methods
     
     private func prepDonationSubviews() {
-        //det delegates
-        donateMessage.delegate = self
-        charityPicker.delegate = self
         
         //hide/shape views
         customCharityView.isHidden = true
@@ -259,36 +244,30 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         verifyView.isHidden = true
         donateMessage.placeholderText = MESSAGE_PLACEHOLDER_TEXT
         
-        //select sustom tap recognizer
+        //select custom tap recognizer
         let tap = UITapGestureRecognizer(target: self, action: #selector(toggleCharityView(_:)))
         tap.delegate = self
         selectCustomView.addGestureRecognizer(tap)
-        
-        //underline headlines
-        
+    
+
+    }
+    
+    private func underlineHeadlines() {
         let attributes : [String : Any] = [
             NSFontAttributeName : UIFont.systemFont(ofSize: 20.0),
             NSForegroundColorAttributeName : UIColor.black,
             NSUnderlineStyleAttributeName : 1]
         
         headlines.forEach({ $0.attributedText = NSAttributedString(string: $0.text!, attributes: attributes) })
-        
+    }
+    
+    private func selectDefault() {
         //set the picker view selection to the default
         if let defaultCharity = UserDefaults.standard.object(forKey: FirTree.UserParameter.Charity.rawValue) as? String, let defaultIndex = charities?.index(of: defaultCharity) {
             
             charityPicker.selectRow(defaultIndex, inComponent: 0, animated: false)
         }
     }
-    
-    private func resetPage() {
-        customCharityView.isHidden = true
-        charityPickerView.isHidden = true
-        verifyView.isHidden = true
-        donateFor.text = nil
-        donateMessage.text = MESSAGE_PLACEHOLDER_TEXT
-        anonymousSwitch.isOn = false
-    }
-    
     
     //MARK: - Superclass methods
     
@@ -297,6 +276,8 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         
         //hide pickerview/verify subview/set delegates
         prepDonationSubviews()
+        underlineHeadlines()
+        selectDefault()
 
         // Create a location manager object
         locationManager = CLLocationManager()
@@ -304,9 +285,10 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         // ask for location authorization
         locationManager?.requestAlwaysAuthorization()
         
-        // Set the delegate
+        // set delegates
         locationManager?.delegate = self
-        
+        donateMessage.delegate = self
+        charityPicker.delegate = self
         
         //get quick location update
         requestLocationUpdate()
