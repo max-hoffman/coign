@@ -94,7 +94,7 @@ class FirTree {
     /**
      Update user setting(s). Access valid parameters in FirTree.UserParameters or FirTree.DonationParameters enums.
      */
-    class func updateUser(withNewSettings: [String: Any]) -> Void {
+    class func updateUser(_ withNewSettings: [String: Any]) -> Void {
         //retrieve facebookID
         if  let userID = UserDefaults.standard.string(forKey: UserParameter.UserUID.rawValue) {
             
@@ -109,7 +109,7 @@ class FirTree {
     /**
      Adds a node to the "users" branch of the FIR tree - indexed by the user's facebook ID; used to create new user in "users" branch of FIR tree during loginControlFlow().
      */
-    class func createNewUserInFirebase(userID: String, facebookID: String, name: String, pictureURL: String) {
+    class func createNewUserInFirebase(_ userID: String, facebookID: String, name: String, pictureURL: String) {
 
         //prep data
         //TODO: make the "new user" node unnecessary somehowww
@@ -126,7 +126,7 @@ class FirTree {
             
             //add picture to
             if error != nil {
-                updateUserDatabaseImage(userID: userID)
+                updateUserDatabaseImage(userID)
             }
         }
         
@@ -146,7 +146,7 @@ class FirTree {
         UserDefaults.standard.set(userID, forKey: FirTree.UserParameter.UserUID.rawValue)
     }
     
-    class func updateUserFriends(friends: [[String:AnyObject]]) {
+    class func updateUserFriends(_ friends: [[String:AnyObject]]) {
 
         var fireFriendDict = [String: String]()
         let group = DispatchGroup()
@@ -171,7 +171,7 @@ class FirTree {
         
         group.notify(queue: DispatchQueue.main) {
             //put the friends array in userdefaults for convenience
-            self.updateUser(withNewSettings: [UserParameter.Friends.rawValue: fireFriendDict])
+            self.updateUser([UserParameter.Friends.rawValue: fireFriendDict])
             print(fireFriendDict)
         }
         

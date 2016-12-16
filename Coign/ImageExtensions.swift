@@ -16,7 +16,7 @@ extension FirTree {
     /**
      Pull user image from their image url, store in the Firebase storage database.
      */
-    class func returnCurrentUserImage(completionHandler: @escaping (_ image: UIImage?) -> Void) {
+    class func returnCurrentUserImage(_ completionHandler: @escaping (_ image: UIImage?) -> Void) {
         
         //vars needed
         let userID = UserDefaults.standard.object(forKey: FirTree.UserParameter.UserUID.rawValue) as! String
@@ -32,7 +32,7 @@ extension FirTree {
             if error != nil {
                 print(error?.localizedDescription ?? "no image was found at the given url")
                 
-                FirTree.updateUserDatabaseImage(userID: userID, completionHandler: { (image) in
+                FirTree.updateUserDatabaseImage(userID, completionHandler: { (image) in
                     completionHandler(image)
                 })
             }
@@ -50,7 +50,7 @@ extension FirTree {
      Updates the firebase storage image given the current url in defaults.
      */
     //TODO: This should probably be changed so that we make a facebook query to update the defaults and FirTree before updating FIR storage.
-    class func updateUserDatabaseImage(userID: String, completionHandler: @escaping (_ image: UIImage?) -> Void) {
+    class func updateUserDatabaseImage(_ userID: String, completionHandler: @escaping (_ image: UIImage?) -> Void) {
         
         //vars needed
         var image:UIImage? = nil
@@ -92,7 +92,7 @@ extension FirTree {
         }
     }
     
-    class func updateUserDatabaseImage(userID: String) {
+    class func updateUserDatabaseImage(_ userID: String) {
         
         //establish reference point for image
         let userImageRef = FirTree.database.child("user profile images/\(userID)")
@@ -130,7 +130,7 @@ extension FirTree {
      
      //TODO: - Overloaded method that takes URL might be a good idea in the future.
     */
-    class func returnImage(userID: String, completionHandler: @escaping (_ image: UIImage) -> Void) {
+    class func returnImage(_ userID: String, completionHandler: @escaping (_ image: UIImage) -> Void) {
         
         //establish reference point for image
         let userImageRef = FirTree.database.child("user profile images/\(userID)")

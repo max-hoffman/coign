@@ -35,7 +35,10 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
 
     @IBOutlet weak var anonymousSwitch: UISwitch!
     @IBOutlet weak var donateMessage: UITextView!
-    @IBOutlet weak var donateFor: UITextField!
+
+    
+    @IBOutlet weak var donateFor: AutoCompleteTextField!
+    
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var charityPicker: UIPickerView!
     @IBOutlet weak var charityPickerView: UIView!
@@ -54,7 +57,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     //MARK: - Posting methods
     
     //TODO: This needs to go inside the plaid completion block
-    private func createPost() {
+    fileprivate func createPost() {
         
         if let userUID = UserDefaults.standard.object(forKey: FirTree.UserParameter.UserUID.rawValue) as? String, let recipient = donateFor.text, let name = UserDefaults.standard.object(forKey: FirTree.UserParameter.Name.rawValue) {
 
@@ -82,7 +85,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
             ]
             
             //complete the post by updating the FirTree
-            FirTree.newPost(post: post, location: currentUserLocation, userID: userUID, recipientID: nil)
+            FirTree.newPost(post, location: currentUserLocation, userID: userUID, recipientID: nil)
         }
     }
 
@@ -100,7 +103,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         verifyButton.backgroundColor = CustomColor.darkGreen.withAlphaComponent(1.0)
     }
     
-    private func presentVerifyPopover() {
+    fileprivate func presentVerifyPopover() {
         //TODO: This is where the stripe/plaid verification needs to go
         
         //for now just have a donation alert
@@ -124,7 +127,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         present(donationAlert, animated: true, completion: nil)
     }
     
-    private func presentSharePopover() {
+    fileprivate func presentSharePopover() {
         if(SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook)) {
             print("available")
             if let socialController = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
@@ -136,7 +139,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         }
     }
     
-    private func resetPage() {
+    fileprivate func resetPage() {
         customCharityView.isHidden = true
         charityPickerView.isHidden = true
         verifyView.isHidden = true
@@ -147,7 +150,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     
     //MARK: - View manipulation methods
     
-    @objc private func toggleCharityView(_: UITapGestureRecognizer) {
+    @objc fileprivate func toggleCharityView(_: UITapGestureRecognizer) {
         if self.charityPickerView.isHidden {
             UIView.animate(withDuration: 0.3, animations: {
                 //hide custom text
@@ -173,6 +176,33 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         }
     }
     
+    //MARK: - Autocomplete methods
+    private func configureTextField() {
+        donateFor.autoCompleteTextColor = UIColor(red: 128.0/255.0, green: 128.0/255.0, blue: 128.0/255.0, alpha: 1.0)
+        donateFor.autoCompleteTextFont = UIFont(name: "HelveticaNeue-Light", size: 12.0)!
+        donateFor.autoCompleteCellHeight = 35.0
+        donateFor.maximumAutoCompleteCount = 20
+        donateFor.hidesWhenSelected = true
+        donateFor.hidesWhenEmpty = true
+        donateFor.enableAttributedText = true
+        var attributes = [String:AnyObject]()
+        attributes[NSForegroundColorAttributeName] = UIColor.blackColor()
+        attributes[NSFontAttributeName] = UIFont(name: "HelveticaNeue-Bold", size: 12.0)
+        donateFor.autoCompleteAttributes = attributes
+    }
+    
+    private func handleTExtFieldInterfaces() {
+        donateFor.onTextChange = {[weak self] text in 
+            if !text.isEmpty {
+                //want to filter and update the autocomplete results
+            }
+        }
+        
+        donateFor.onSelect = {[weak self] text,indexPath in
+            
+        }
+    }
+    
     //MARK:- Textview methods
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -193,7 +223,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     }
 
     /* Limits the number of characters in a post */
-    private func textView(textView: UITextView, shouldChangeTextInRange range: Range<String.Index>, replacementText text: String) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextInRange range: Range<String.Index>, replacementText text: String) -> Bool {
         let newText = textView.text.replacingCharacters(in: range as Range<String.Index>, with: text)
         let numberOfChars = newText.characters.count
         return numberOfChars < MAX_POST_CHARACTERS;
@@ -224,7 +254,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         locationManager?.stopUpdatingLocation()
     }
     
-    private func requestLocationUpdate() {
+    func requestLocationUpdate() {
         if CLLocationManager.locationServicesEnabled() {
             locationManager?.delegate = self
             locationManager?.desiredAccuracy = kCLLocationAccuracyThreeKilometers
@@ -234,7 +264,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     
     //MARK: - View did load preperation methods
     
-    private func prepDonationSubviews() {
+    func prepDonationSubviews() {
         
         //hide/shape views
         customCharityView.isHidden = true
@@ -252,7 +282,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
 
     }
     
-    private func underlineHeadlines() {
+    func underlineHeadlines() {
         let attributes : [String : Any] = [
             NSFontAttributeName : UIFont.systemFont(ofSize: 20.0),
             NSForegroundColorAttributeName : UIColor.black,
@@ -261,7 +291,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         headlines.forEach({ $0.attributedText = NSAttributedString(string: $0.text!, attributes: attributes) })
     }
     
-    private func selectDefault() {
+    func selectDefault() {
         //set the picker view selection to the default
         if let defaultCharity = UserDefaults.standard.object(forKey: FirTree.UserParameter.Charity.rawValue) as? String, let defaultIndex = charities?.index(of: defaultCharity) {
             

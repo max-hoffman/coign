@@ -19,7 +19,7 @@ extension FirTree {
     /**
      Post donation to FIR tree; update "users" nodes and "donations" nodes
      */
-    class func newPost(post: [String: Any], location: CLLocationCoordinate2D?, userID: String, recipientID: String?) {
+    class func newPost(_ post: [String: Any], location: CLLocationCoordinate2D?, userID: String, recipientID: String?) {
         
         //MARK: Post data
         
@@ -35,7 +35,7 @@ extension FirTree {
         //MARK: Geohash data
         
         //set geohash with that ID reference
-        Geohash.setGeohash(location: location, postUID: postRef.key)
+        Geohash.setGeohash(location, postUID: postRef.key)
         
         //MARK: User data
         //record that donation event in the user's donation node (array of ID's)
@@ -95,7 +95,7 @@ extension FirTree {
     /**
      Update donation message text.
      */
-    func updateDonationMessage(messageID: String, newMessage newValue: String) {
+    func updateDonationMessage(_ messageID: String, newMessage newValue: String) {
         
     }
 }

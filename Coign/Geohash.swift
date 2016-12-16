@@ -14,7 +14,7 @@ import FirebaseDatabase
 
 class Geohash {
     
-    class func setGeohash(location: CLLocationCoordinate2D?, postUID: String) {
+    class func setGeohash(_ location: CLLocationCoordinate2D?, postUID: String) {
         
         if  location != nil {
             let postLocation = CLLocation(latitude: location!.latitude, longitude: location!.longitude)
@@ -29,7 +29,7 @@ class Geohash {
     }
     
     
-    class func queryLocalPosts (center: CLLocation, completionHandler: @escaping (_ postData: [String]?) -> Void) {
+    class func queryLocalPosts (_ center: CLLocation, completionHandler: @escaping (_ postData: [String]?) -> Void) {
         
         var postData: [String] = []
        

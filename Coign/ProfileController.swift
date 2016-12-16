@@ -47,7 +47,7 @@ class ProfileController: UIViewController {
 //        }
 //    }
     
-    private func prepareUserLabels() {
+    fileprivate func prepareUserLabels() {
         self.name.text = UserDefaults.standard.object(forKey: FirTree.UserParameter.Name.rawValue) as? String ?? "name error"
     }
     

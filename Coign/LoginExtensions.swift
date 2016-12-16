@@ -36,7 +36,7 @@ extension LoginController {
             }
             
             //parse the json result
-            jsonData = weakSelf?.parseJSON(validJSONObject: result)
+            jsonData = weakSelf?.parseJSON(result)
             
             //check for expected fetch data before proceeding
             if let facebookID = jsonData?["id"] as! String?,
@@ -56,11 +56,11 @@ extension LoginController {
                         
                         //extract FirTree data to update user defaults
                         /*fixes bug: user data does not load into settings after logout */
-                        weakSelf?.existingUserLoggedIn(userID: userID,
+                        weakSelf?.existingUserLoggedIn(userID,
                                                        firTreeDictionary: snapshot.value as! Dictionary<String, Any>)
                     }
                     else { //user is new
-                        FirTree.createNewUserInFirebase(userID: userID,
+                        FirTree.createNewUserInFirebase(userID,
                                                         facebookID: facebookID,
                                                         name: name,
                                                         pictureURL: pictureURL)
@@ -68,7 +68,7 @@ extension LoginController {
                     
                     //need the userID to be loaded into defaults first
                     if friendsArray != nil {
-                        FirTree.updateUserFriends(friends: friendsArray!)
+                        FirTree.updateUserFriends(friendsArray!)
                     }
                     
                     weakSelf?.setHomeMenuAsRootViewController()
@@ -82,7 +82,7 @@ extension LoginController {
     }
     
     
-    private func setHomeMenuAsRootViewController() {
+    fileprivate func setHomeMenuAsRootViewController() {
         //set home menu as root VC
         let mainStoryBoard = UIStoryboard(name: Storyboard.MainApp.rawValue, bundle: .main)
         let revealViewController = mainStoryBoard.instantiateViewController(withIdentifier: "RevealVC")
@@ -91,7 +91,7 @@ extension LoginController {
     }
     
     
-    private func existingUserLoggedIn(userID: String, firTreeDictionary value: Dictionary<String, Any>) {
+    fileprivate func existingUserLoggedIn(_ userID: String, firTreeDictionary value: Dictionary<String, Any>) {
         //extract FirTree data to update user defaults
         /*fixes bug: user data does not load into settings after logout */
         

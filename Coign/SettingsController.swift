@@ -41,7 +41,7 @@ class SettingsController: UITableViewController {
         }
     }
     
-    private func changeableSetting(setting: String) -> Bool {
+    fileprivate func changeableSetting(_ setting: String) -> Bool {
         return Settings.Changeable.init(rawValue: setting) != nil
     }
     
@@ -71,7 +71,7 @@ class SettingsController: UITableViewController {
     
         //MARK: - Need to be able to verify phone number
         //show setting detail page, can update account info
-        else if changeableSetting(setting: cellIdentifier) {
+        else if changeableSetting(cellIdentifier) {
             performSegue(withIdentifier: "show setting detail", sender: indexPath)
         }
         tableView.deselectRow(at: indexPath, animated: true)
@@ -93,7 +93,7 @@ class SettingsController: UITableViewController {
         }
     }
     
-    private func updateUserSettingsValues() {
+    fileprivate func updateUserSettingsValues() {
         nameValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Name.rawValue)
         birthdayValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Birthday.rawValue)
         emailValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Email.rawValue)
@@ -101,7 +101,7 @@ class SettingsController: UITableViewController {
         charityValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Charity.rawValue)
     }
     
-    private func tryLogout() {
+    fileprivate func tryLogout() {
         let logoutAlert = UIAlertController(title: "Logout", message: "Are you sure you want to log out?", preferredStyle: UIAlertControllerStyle.alert)
         logoutAlert.addAction(UIAlertAction(title: "Logout", style: .default, handler: {
             [weak weakSelf = self]
@@ -117,7 +117,7 @@ class SettingsController: UITableViewController {
         present(logoutAlert, animated: true, completion: nil)
     }
     
-    private func logoutOfUser() {
+    fileprivate func logoutOfUser() {
         
         //logout of firebase/facebook
         FBSDKLoginManager().logOut()
@@ -147,7 +147,7 @@ class SettingsController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    private func clearDefaults() {
+    fileprivate func clearDefaults() {
         /* TODO: figure out how to have this loop through the user parameters. Maybe need to change my enums in FirData, which would require changing every reference to that parameter in the entire project */
         //clear user defaults
         UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.UserUID.rawValue)

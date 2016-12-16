@@ -27,22 +27,22 @@ extension Date {
 
 extension Double {
     
-    private func formatType(form: String) -> DateFormatter {
+    fileprivate func formatType(_ form: String) -> DateFormatter {
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US") as Locale!
+        dateFormatter.locale = Locale(identifier: "en_US") as Locale!
         dateFormatter.dateFormat = form
         return dateFormatter
     }
     
-    var dateFull: NSDate {
-        return NSDate(timeIntervalSinceReferenceDate: Double(self))
+    var dateFull: Date {
+        return Date(timeIntervalSinceReferenceDate: Double(self))
     }
     var toHour: String {
-        return formatType(form: "HH:mm").string(from: dateFull as Date)
+        return formatType("HH:mm").string(from: dateFull as Date)
     }
     
     var toDay: String {
-        return formatType(form: "MM/dd/yyyy").string(from: dateFull as Date)
+        return formatType("MM/dd/yyyy").string(from: dateFull as Date)
     }
     
     var formatMillisecondsToCoherentTime: String {

@@ -42,7 +42,7 @@ class CharityDetailController: UIViewController {
     @IBAction func updateDefault(_ sender: UIButton) {
         if name != nil {
             UserDefaults.standard.set(name, forKey: FirTree.UserParameter.Charity.rawValue)
-            FirTree.updateUser(withNewSettings: [FirTree.UserParameter.Charity.rawValue: name!])
+            FirTree.updateUser([FirTree.UserParameter.Charity.rawValue: name!])
             
             lockDefaultButton()
         }
@@ -55,7 +55,7 @@ class CharityDetailController: UIViewController {
      
      //TODO: The charity rating image is not set. Need to make photoshop images that we would set in here based on the "rating" property.
      */
-    private func setOutlets() {
+    fileprivate func setOutlets() {
         nameLabel.text = name
         missionLabel.text = mission
         categoryLabel.text = category
@@ -69,7 +69,7 @@ class CharityDetailController: UIViewController {
         }
     }
     
-    private func lockDefaultButton() {
+    fileprivate func lockDefaultButton() {
         makeDefaultButton.backgroundColor = .clear
         makeDefaultButton.layer.cornerRadius = 15
         makeDefaultButton.layer.borderWidth = 2
@@ -80,7 +80,7 @@ class CharityDetailController: UIViewController {
     /*
      This method is responsible for presenting the alert before a user exits the app to informational link of the charity's page.
      */
-    private func tryCharityHyperlink() {
+    fileprivate func tryCharityHyperlink() {
         let hyperlinkAlert = UIAlertController(title: "Hyperlink to \"\(name!)\" Details", message: "Exit Coign and open Safari?", preferredStyle: UIAlertControllerStyle.alert)
         hyperlinkAlert.addAction(UIAlertAction(title: "Open", style: .default, handler: {
             [weak weakSelf = self]
@@ -101,7 +101,7 @@ class CharityDetailController: UIViewController {
      
      TODO: All of the links are the same outside of the last few integers, which represents the charity ID number. It would be a good idea to have the CharityInfo.plist contain the ID number, and the rest of the 90% of the link to just be a literal in this function.
     */
-    private func presentCharityHyperlink() {
+    fileprivate func presentCharityHyperlink() {
         if let url = URL(string: self.url!) {
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url, options: [:])

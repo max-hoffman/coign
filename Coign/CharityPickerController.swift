@@ -32,7 +32,7 @@ class CharityPickerController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         let row = charityPreferencePicker.selectedRow(inComponent: 0)
         let charityValue = Charities.list[row]
-        FirTree.updateUser(withNewSettings: [FirTree.UserParameter.Charity.rawValue: charityValue])
+        FirTree.updateUser([FirTree.UserParameter.Charity.rawValue: charityValue])
         UserDefaults.standard.set(charityValue, forKey: FirTree.UserParameter.Charity.rawValue)
     }
 }

@@ -24,11 +24,11 @@ class PostManager {
     var currentUIDs: [String] {
         get {
             switch currentType {
-            case .Recent :
+            case .recent :
                 return recentPostUIDs
-            case .Local :
+            case .local :
                 return localPostUIDs
-            case .Friends :
+            case .friends :
                 return friendPostUIDs
             }
         }
@@ -37,11 +37,11 @@ class PostManager {
         
         get{
             switch currentType {
-            case .Recent :
+            case .recent :
                 return recentPosts
-            case .Local :
+            case .local :
                 return localPosts
-            case .Friends :
+            case .friends :
                 return friendPosts
             }
         }
@@ -54,12 +54,12 @@ class PostManager {
     }
     
     enum ViewablePostType {
-        case Recent
-        case Local
-        case Friends
+        case recent
+        case local
+        case friends
     }
 
-    var currentType: ViewablePostType = .Recent {
+    var currentType: ViewablePostType = .recent {
         didSet{
             
             if noCurrentUIDsLoaded { //we don't know what posts to pull yet
@@ -80,23 +80,23 @@ class PostManager {
     
     func loadPostUIDs() {
         switch currentType {
-        case .Recent :
+        case .recent :
             recentPosts.removeAll()
             loadRecentPostUIDs()
-        case .Local :
+        case .local :
             loadLocalPostUIDs()
             localPosts.removeAll()
-        case .Friends :
+        case .friends :
             break
         }
         
         postManagerIsFetchingData = true
     }
     
-    private func loadRecentPostUIDs() {
+    fileprivate func loadRecentPostUIDs() {
         
         //refresh the recentPosts array of Posts
-        FirTree.queryRecentPosts(number: 100) { postUIDs in
+        FirTree.queryRecentPosts(100) { postUIDs in
             if postUIDs != nil {
                 self.recentPostUIDs = postUIDs!
                 self.updatePostArray()
@@ -105,10 +105,10 @@ class PostManager {
         
     }
     
-    private func loadLocalPostUIDs() {
+    fileprivate func loadLocalPostUIDs() {
         
         if currentUserLocation != nil {
-            Geohash.queryLocalPosts(center: CLLocation(
+            Geohash.queryLocalPosts(CLLocation(
                 latitude: currentUserLocation!.latitude,
                 longitude: currentUserLocation!.longitude),
                 completionHandler: {
@@ -129,7 +129,7 @@ class PostManager {
         if updateNumber != 0{
             let postsToLoad: [String] = Array(currentUIDs[postCount...postCount+updateNumber-1])
             
-            FirTree.returnPostsFromUIDs(postUIDs: postsToLoad) {
+            FirTree.returnPostsFromUIDs(postsToLoad) {
                 newPosts in
 
                 self.updateCurrentPosts(withNewPosts: newPosts)
@@ -141,11 +141,11 @@ class PostManager {
     
     func updateCurrentPosts(withNewPosts newPosts: [Post]) {
         switch currentType {
-        case .Recent :
+        case .recent :
             recentPosts.append(contentsOf: newPosts)
-        case .Local :
+        case .local :
             return localPosts.append(contentsOf: newPosts)
-        case .Friends :
+        case .friends :
             return friendPosts.append(contentsOf: newPosts)
         }
     }

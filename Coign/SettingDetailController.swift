@@ -48,7 +48,7 @@ class SettingDetailController: UITableViewController, UITextFieldDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         if let newValue = cell?.propertyTextField.text, defaultsKey != nil {
             let newSetting: [String: Any] = [defaultsKey! : newValue]
-            FirTree.updateUser(withNewSettings: newSetting)
+            FirTree.updateUser(newSetting)
             UserDefaults.standard.set(newValue, forKey: defaultsKey!)
         }
     }

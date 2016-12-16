@@ -47,7 +47,7 @@ class AboutUsController: UIViewController {
     //MARK: - Handle a button press
     
     /* One of the buttons was pressed; either show the detail or segue to FAQs */
-    @IBAction func viewSelected(sender: UIButton) {
+    @IBAction func viewSelected(_ sender: UIButton) {
         if let index = aboutButtons.index(of: sender) {
             
             //reroute to FAQ section, stay in this navigation controller
@@ -60,10 +60,10 @@ class AboutUsController: UIViewController {
             
             //button was pressed and it's detail is not already showing -> show that detail
             else if !self.textViews[index].isHidden {
-                expandViewToHideDetail(index: index)
+                expandViewToHideDetail(index)
             }
             else { //detail was showing -> show all buttons and hide detail
-                collapseViewToShowDetail(index: index)
+                collapseViewToShowDetail(index)
             }
         }
     }
@@ -73,7 +73,7 @@ class AboutUsController: UIViewController {
     /*
      A button was selected, and we want to show only that title and its detail. This hides all of the other views in the stackview, which includes a nice animation.
      */
-    private func collapseViewToShowDetail(index: Array<UIButton>.Index) {
+    fileprivate func collapseViewToShowDetail(_ index: Array<UIButton>.Index) {
         UIView.animate(withDuration: 0.3, animations: {
             
             //hide buttons
@@ -91,7 +91,7 @@ class AboutUsController: UIViewController {
     /*
      We want to hide a detail and show the rest of the stack view buttons in the about us section.
      */
-    private func expandViewToHideDetail(index: Array<UIButton>.Index) {
+    fileprivate func expandViewToHideDetail(_ index: Array<UIButton>.Index) {
         //hide text, show buttons
         self.textViews[index].isHidden = true
         UIView.animate(withDuration: 0.3, animations: {

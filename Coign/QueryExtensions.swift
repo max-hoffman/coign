@@ -17,7 +17,7 @@ extension FirTree {
     /**
      This function gets an array of strings, and should return an array of postsin a completion handler.
      */
-    class func returnPostsFromUIDs(postUIDs: [String], completionHandler: @escaping (_ newPosts: [Post]) -> Void) {
+    class func returnPostsFromUIDs(_ postUIDs: [String], completionHandler: @escaping (_ newPosts: [Post]) -> Void) {
        
     let firstGroup = DispatchGroup()
         
@@ -57,7 +57,7 @@ extension FirTree {
     /**
      Return an array of recent post UID's, that are converted to posts as needed.
      */
-    class func queryRecentPosts(number: Int, completionHandler: @escaping (_ recentPostUIDs: [String]?) -> Void) {
+    class func queryRecentPosts(_ number: Int, completionHandler: @escaping (_ recentPostUIDs: [String]?) -> Void) {
         
         var recentPosts: [String] = []
         
@@ -65,7 +65,7 @@ extension FirTree {
                 
             for item in snapshot.children {
                 if let child = item as? FIRDataSnapshot, let post = child.value,
-                    let postDict = JSONParser.parseJSON(validJSONObject: post),
+                    let postDict = JSONParser.parseJSON(post),
                     let postUID = postDict[FirTree.PostParameter.PostUID.rawValue] as? String {
                         recentPosts.insert(postUID, at: 0)
                 }
@@ -78,7 +78,7 @@ extension FirTree {
     /**
      Return an array of friend post UID's sorted by time, to be fed into retrunPostFromUID as needed.
      */
-    class func queryFriendPosts (completionHandler: @escaping (_ postUIDs: [String]?) -> Void) {
+    class func queryFriendPosts (_ completionHandler: @escaping (_ postUIDs: [String]?) -> Void) {
         
     }
 }

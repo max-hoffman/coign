@@ -21,7 +21,7 @@ class SideViewTableController: UITableViewController {
     }
     
     enum DestinationIndex: Int {
-        case Home = 0, Donation, Profile
+        case home = 0, donation, profile
     }
     
     override func viewDidLoad() {
@@ -39,9 +39,9 @@ class SideViewTableController: UITableViewController {
         if let tabVC = segue.destination as? TabController, let  identifier = segue.identifier {
 
             switch identifier {
-                case Segue.Home.rawValue: tabVC.segueDestinationIndex = DestinationIndex.Home.rawValue
-                case Segue.Donate.rawValue: tabVC.segueDestinationIndex = DestinationIndex.Donation.rawValue
-                case Segue.Profile.rawValue: tabVC.segueDestinationIndex = DestinationIndex.Profile.rawValue
+                case Segue.Home.rawValue: tabVC.segueDestinationIndex = DestinationIndex.home.rawValue
+                case Segue.Donate.rawValue: tabVC.segueDestinationIndex = DestinationIndex.donation.rawValue
+                case Segue.Profile.rawValue: tabVC.segueDestinationIndex = DestinationIndex.profile.rawValue
                 default: print("unidentifiable segue name")
             }
         }

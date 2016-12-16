@@ -59,11 +59,11 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         requestLocationUpdate()
         
         //instantiate post manager, call first posts to screen
-        postManager = PostManager(viewController: self, initialType: .Recent)
+        postManager = PostManager(viewController: self, initialType: .recent)
         postManager.loadPostUIDs()
         
         //MARK - handle pull to refresh
-        self.refreshControl?.addTarget(self, action: #selector(self.refreshView(refreshControl:)), for: UIControlEvents.valueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(refreshView(_:)), for: UIControlEvents.valueChanged)
         self.refreshControl?.backgroundColor = UIColor.lightGray
         self.refreshControl?.tintColor = UIColor.white
         
@@ -112,18 +112,18 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     /*
      If the segment selection changes, we signal to the postManager that the view was changed. The didSet triggers an update of the 
      */
-    @IBAction func indexChanged(sender: UISegmentedControl) {
+    @IBAction func indexChanged(_ sender: UISegmentedControl) {
         if sender == segmentedControl {
             switch sender.selectedSegmentIndex {
-            case 0: postManager.currentType = .Recent
-            case 1: postManager.currentType = .Local
-            case 2: postManager.currentType = .Friends
+            case 0: postManager.currentType = .recent
+            case 1: postManager.currentType = .local
+            case 2: postManager.currentType = .friends
             default: break
             }
         }
     }
     
-    @objc private func refreshView(refreshControl: UIRefreshControl) {
+    func refreshView(_ refreshControl: UIRefreshControl) {
         postManager.loadPostUIDs()
     }
     
@@ -137,7 +137,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     
     //MARK: - Location manager methods
     
-    private func requestLocationUpdate() {
+    fileprivate func requestLocationUpdate() {
         if CLLocationManager.locationServicesEnabled() {
             locationManager?.delegate = self
             locationManager?.desiredAccuracy = kCLLocationAccuracyThreeKilometers
@@ -181,7 +181,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: POST_CELL_IDENTIFIER, for: indexPath) as? PostCell{
 
-            return formattedPostCell(cell: cell, withPost: postManager.currentPosts[indexPath.section])
+            return formattedPostCell(cell, withPost: postManager.currentPosts[indexPath.section])
         }
         else {
             return UITableViewCell()
@@ -191,7 +191,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     /**
      Does the work of formatting and returnign a post cell. 
      */
-    private func formattedPostCell(cell: PostCell, withPost post: Post) -> PostCell {
+    fileprivate func formattedPostCell(_ cell: PostCell, withPost post: Post) -> PostCell {
         if let donor = post.donor, let charity = post.charity {
             cell.header.text = "\(donor) → \(charity)"
         }
@@ -215,7 +215,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         }
         
         if let userID = post.donorUID {
-            FirTree.returnImage(userID: userID, completionHandler: { (image) in
+            FirTree.returnImage(userID, completionHandler: { (image) in
                 cell.picture?.image = image
             })
         }

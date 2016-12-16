@@ -751,6 +751,7 @@
 					};
 					E263532D1DE9F5FF006787A6 = {
 						DevelopmentTeam = U93CAA7FV6;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};

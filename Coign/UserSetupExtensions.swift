@@ -114,7 +114,7 @@ extension HomeMenuController: UITextFieldDelegate, UIPickerViewDelegate, UIPicke
                         FirTree.UserParameter.Charity.rawValue: charityPreference]
         
         //save data to firebase
-        FirTree.updateUser(withNewSettings: settings)
+        FirTree.updateUser(settings)
         
         //save data to defaults
         UserDefaults.standard.set(charityPreference, forKey: FirTree.UserParameter.Charity.rawValue)
@@ -124,8 +124,7 @@ extension HomeMenuController: UITextFieldDelegate, UIPickerViewDelegate, UIPicke
         
         //complete new user login by setting most recent login time (trigger for popover showing)
         let loginTime = Date().shortDate
-        FirTree.updateUser(withNewSettings:
-            [FirTree.UserParameter.MostRecentLoginDate.rawValue: loginTime])
+        FirTree.updateUser([FirTree.UserParameter.MostRecentLoginDate.rawValue: loginTime])
         UserDefaults.standard.set(loginTime, forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
 
     }

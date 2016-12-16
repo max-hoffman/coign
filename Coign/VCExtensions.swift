@@ -51,7 +51,7 @@ extension UIViewController {
      - param validJSONObject: takes the result from FBSDK Graph request
      - returns: JSON dictionary
      */
-    func parseJSON(validJSONObject: Any?) -> [String : Any]? {
+    func parseJSON(_ validJSONObject: Any?) -> [String : Any]? {
         
         var jsonDict: [String: Any]?
         
