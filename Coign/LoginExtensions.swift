@@ -44,17 +44,13 @@ extension LoginController {
                 let picture = jsonData?["picture"] as! [String: AnyObject]?,
                 let pictureData = picture["data"] as! [String: AnyObject]?,
                 let pictureURL = pictureData["url"] as! String?,
-                let userID = FIRAuth.auth()?.currentUser?.uid {
+                let userID = FIRAuth.auth()?.currentUser?.uid,
+                let friends = jsonData?["friends"] as? [String: AnyObject]?,
+                let friendsArray = friends?["data"] as? [[String:AnyObject]]? {
                 
                 //start firbase fetch, see if the logged in user has signed up
                 FirTree.rootRef.child(FirTree.Node.Users.rawValue).child(userID).observeSingleEvent(of: .value, with: {
                     snapshot in
-                    
-                    //TODO: this should be deprecated
-                    if UserDefaults.standard.object(forKey: "most recent login date") != nil {
-                        print("firebase observation self-activated")
-                        return
-                    }
                     
                     if snapshot.exists()  { //user node exists
                         
@@ -64,7 +60,15 @@ extension LoginController {
                                                        firTreeDictionary: snapshot.value as! Dictionary<String, Any>)
                     }
                     else { //user is new
-                        FirTree.createNewUserInFirebase(userID: userID, facebookID: facebookID, name: name, pictureURL: pictureURL)
+                        FirTree.createNewUserInFirebase(userID: userID,
+                                                        facebookID: facebookID,
+                                                        name: name,
+                                                        pictureURL: pictureURL)
+                    }
+                    
+                    //need the userID to be loaded into defaults first
+                    if friendsArray != nil {
+                        FirTree.updateUserFriends(friends: friendsArray!)
                     }
                     
                     weakSelf?.setHomeMenuAsRootViewController()

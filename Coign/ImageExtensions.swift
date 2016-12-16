@@ -121,7 +121,7 @@ extension FirTree {
                     })
                 }
                 
-                }.resume()
+            }.resume()
         }
     }
 

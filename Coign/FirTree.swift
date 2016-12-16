@@ -32,6 +32,7 @@ class FirTree {
         case Comments = "comments"
         case ReCoigns = "recoigns"
         case Notifications = "notifications"
+        case FacebookIDs = "facebook ids"
     }
 
     enum UserParameter: String {
@@ -61,7 +62,6 @@ class FirTree {
         case Message = "message"
         case TimeStamp = "time stamp"
         case Location = "location"
-        case SharedToFacebook = "shared to facebook"
         case Anonymous = "anonymous"
         case LikeCount = "like count"
         case CommentCount = "comment count"
@@ -101,7 +101,7 @@ class FirTree {
             rootRef.child(Node.Users.rawValue).child(userID).updateChildValues(withNewSettings)
         }
         else {
-            print("did not find facebook ID value in user defaults")
+            print("did not find user ID value in user defaults")
         }
     }
     
@@ -110,14 +110,15 @@ class FirTree {
      Adds a node to the "users" branch of the FIR tree - indexed by the user's facebook ID; used to create new user in "users" branch of FIR tree during loginControlFlow().
      */
     class func createNewUserInFirebase(userID: String, facebookID: String, name: String, pictureURL: String) {
-        
+
         //prep data
-        //TODO: make the "new user" node unnecessary by calling the
+        //TODO: make the "new user" node unnecessary somehowww
         let post: [String : Any] = [FirTree.UserParameter.Name.rawValue : name,
                                     FirTree.UserParameter.Picture.rawValue : pictureURL,
                                     FirTree.UserParameter.NetworkOfImpact.rawValue : [],
                                     FirTree.UserParameter.FacebookUID.rawValue: facebookID,
-                                    FirTree.UserParameter.MostRecentLoginDate.rawValue: FirTree.UserParameter.NewUser.rawValue]
+                                    FirTree.UserParameter.MostRecentLoginDate.rawValue: FirTree.UserParameter.NewUser.rawValue,
+                                    FirTree.UserParameter.Friends.rawValue : []]
         
         //add date to new node
         rootRef.child(Node.Users.rawValue).child(userID).updateChildValues(post) {
@@ -129,6 +130,12 @@ class FirTree {
             }
         }
         
+        //add user to facebookID's list
+        rootRef.child(Node.FacebookIDs.rawValue).child(facebookID).updateChildValues([
+            UserParameter.UserUID.rawValue: userID,
+            UserParameter.Name.rawValue: name
+        ])
+        
         //update user defaults
         //TODO: change this so that we don't need the "new user" intermediary
         UserDefaults.standard.set(FirTree.UserParameter.NewUser.rawValue, forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
@@ -138,6 +145,35 @@ class FirTree {
         UserDefaults.standard.set(pictureURL, forKey: FirTree.UserParameter.Picture.rawValue)
         UserDefaults.standard.set(userID, forKey: FirTree.UserParameter.UserUID.rawValue)
     }
+    
+    class func updateUserFriends(friends: [[String:AnyObject]]) {
 
-
+        var fireFriendDict = [String: String]()
+        let group = DispatchGroup()
+        
+        friends.forEach({ (friend) in
+            
+            group.enter()
+            
+            if let friendFBUID = friend["id"] as? String, let friendName = friend["name"] as? String {
+                
+                self.rootRef.child(Node.FacebookIDs.rawValue).child(friendFBUID).observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    if let friendNode = snapshot.value as? [String : String],
+                        let friendUID = friendNode[UserParameter.UserUID.rawValue]
+                    {
+                        fireFriendDict[friendName] = friendUID
+                        group.leave()
+                    }
+                })
+            }
+        })
+        
+        group.notify(queue: DispatchQueue.main) {
+            //put the friends array in userdefaults for convenience
+            self.updateUser(withNewSettings: [UserParameter.Friends.rawValue: fireFriendDict])
+            print(fireFriendDict)
+        }
+        
+    }
 }

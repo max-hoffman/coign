@@ -29,12 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let filePath = Bundle.main.path(forResource: "GoogleService-Dev-Info", ofType:"plist")
             let options = FIROptions(contentsOfFile:filePath)
             FIRApp.configure(with: options!)
-            print("debug ran")
+            print("debug running")
         #else
             let filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType:"plist")
             let options = FIROptions(contentsOfFile:filePath)
             FIRApp.configure(with: options!)
-            print("else rans")
+            print("production running")
         #endif
         
         //connect keyboard manager

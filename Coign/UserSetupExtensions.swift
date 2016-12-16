@@ -105,7 +105,7 @@ extension HomeMenuController: UITextFieldDelegate, UIPickerViewDelegate, UIPicke
         let name = nameField.text!
         let phoneNumber = phoneField.text!
         let email = emailField.text!
-        let charityPreference = Charities.list[charityPreferencePicker.selectedRow(inComponent: 0)-1] //displace default by 1 to get correct charity
+        let charityPreference = charities?[charityPreferencePicker.selectedRow(inComponent: 0)-1] //displace default by 1 to get correct charity
         
         //prep data
         let settings = [FirTree.UserParameter.Name.rawValue: name,
