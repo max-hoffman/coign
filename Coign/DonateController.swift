@@ -13,7 +13,7 @@ import SkyFloatingLabelTextField
 
 class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate {
 
-    //MARK: - Constants 
+    //MARK: - Constants (or vars that are set once)
     var charities: [String]? {
         if let path = Bundle.main.path(forResource: "CharityList", ofType: "plist") {
             return NSArray(contentsOfFile: path) as? [String]
@@ -21,6 +21,11 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
             return nil
         }
     }
+
+    var friendsDictionary: [String:String] = [:]
+    var communityDictionary: [String:String] = [:]
+    var proxyArray: [String] = []
+    var selectedProxyIndex: Int?
     var currentUserLocation:CLLocationCoordinate2D? = nil
     var locationManager: CLLocationManager? = nil
     let MAX_POST_CHARACTERS: Int = 200
@@ -36,6 +41,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     @IBOutlet weak var anonymousSwitch: UISwitch!
     @IBOutlet weak var donateMessage: UITextView!
 
+    @IBOutlet weak var donateForView: UIView!
     
     @IBOutlet weak var donateFor: AutoCompleteTextField!
     
@@ -61,22 +67,23 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         
         if let userUID = UserDefaults.standard.object(forKey: FirTree.UserParameter.UserUID.rawValue) as? String, let recipient = donateFor.text, let name = UserDefaults.standard.object(forKey: FirTree.UserParameter.Name.rawValue) {
 
-            var charity: String? = nil
-            if !customCharityView.isHidden {
-                charity = customCharityTextField.text
-            }
-            else {
-                charity = charities?[charityPicker.selectedRow(inComponent: 0)]
+            var charity: String {
+                if !customCharityView.isHidden {
+                    return customCharityTextField.text!
+                }
+                else {
+                    return (charities?[charityPicker.selectedRow(inComponent: 0)])!
+                }
             }
             
-            //TODO: need to pass in the recipient ID if it exists
+            let (proxyUID, proxyIsAFriend) = extractProxyUID(name: donateFor.text)
                 
             let post : [String: Any] = [
                 FirTree.PostParameter.DonorName.rawValue: name,
                 FirTree.PostParameter.DonorUID.rawValue : userUID,
-                FirTree.PostParameter.Charity.rawValue : charity!,
+                FirTree.PostParameter.Charity.rawValue : charity,
                 FirTree.PostParameter.RecipientName.rawValue : recipient,
-                //FirTree.PostParameter.RecipientUID.rawValue :
+                FirTree.PostParameter.RecipientUID.rawValue : proxyUID,
                 FirTree.PostParameter.Message.rawValue : donateMessage.text,
                 FirTree.PostParameter.DonationAmount.rawValue : 1,
                 FirTree.PostParameter.TimeStamp.rawValue : Date.timeIntervalSinceReferenceDate,
@@ -84,23 +91,39 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
                 FirTree.PostParameter.Proxy.rawValue : primaryDonorSwitch.isOn
             ]
             
-            //complete the post by updating the FirTree
-            FirTree.newPost(post, location: currentUserLocation, userID: userUID, recipientID: nil)
+            //complete the post by updating the FirTree and reloading autofill array
+            FirTree.newPost(post, location: currentUserLocation, userID: userUID, proxyUID: proxyUID, proxyIsAFriend: proxyIsAFriend)
+            loadAutofillProxies()
+        }
+    }
+    
+    private func extractProxyUID(name: String?) -> (uid: String, friend: Bool) {
+        if name == nil {
+            return ("", false)
+        }
+        else {
+            if let friendUID = friendsDictionary[name!] {
+                return (uid: friendUID, friend: true)
+            } else if let communityID = communityDictionary[name!] {
+                return (uid: communityID, friend: false)
+            } else {
+                return (uid: FirTree.newCommunityProxy(name: name!), friend: false)
+            }
         }
     }
 
     //button color returns to normal after the popover appears
     @IBAction func verifyButtonPressed(_ sender: UIButton) {
-        verifyButton.backgroundColor = CustomColor.darkGreen.withAlphaComponent(0.5)
+        verifyButton.backgroundColor = CustomColor.brandGreen.withAlphaComponent(0.5)
         presentVerifyPopover()
         let _ = Timer.scheduledTimer(withTimeInterval: VERIFY_BUTTON_DELAY, repeats: false) {timer in
-            self.verifyButton.backgroundColor = CustomColor.darkGreen.withAlphaComponent(1.0)
+            self.verifyButton.backgroundColor = CustomColor.brandGreen.withAlphaComponent(1.0)
             timer.invalidate()
         }
     }
     
     @IBAction func verifyButtonReleased(_ sender: UIButton) {
-        verifyButton.backgroundColor = CustomColor.darkGreen.withAlphaComponent(1.0)
+        verifyButton.backgroundColor = CustomColor.brandGreen.withAlphaComponent(1.0)
     }
     
     fileprivate func presentVerifyPopover() {
@@ -177,6 +200,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     }
     
     //MARK: - Autocomplete methods
+    
     private func configureTextField() {
         donateFor.autoCompleteTextColor = UIColor(red: 128.0/255.0, green: 128.0/255.0, blue: 128.0/255.0, alpha: 1.0)
         donateFor.autoCompleteTextFont = UIFont(name: "HelveticaNeue-Light", size: 12.0)!
@@ -186,20 +210,20 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         donateFor.hidesWhenEmpty = true
         donateFor.enableAttributedText = true
         var attributes = [String:AnyObject]()
-        attributes[NSForegroundColorAttributeName] = UIColor.blackColor()
+        attributes[NSForegroundColorAttributeName] = UIColor.black
         attributes[NSFontAttributeName] = UIFont(name: "HelveticaNeue-Bold", size: 12.0)
         donateFor.autoCompleteAttributes = attributes
     }
     
-    private func handleTExtFieldInterfaces() {
-        donateFor.onTextChange = {[weak self] text in 
+    private func handleTextFieldInterfaces() {
+        donateFor.onTextChange = {[weak self] text in
             if !text.isEmpty {
-                //want to filter and update the autocomplete results
+                self?.donateFor.autoCompleteStrings = self?.proxyArray.filter{$0.range(of: text) != nil }
             }
         }
         
         donateFor.onSelect = {[weak self] text,indexPath in
-            
+            self?.selectedProxyIndex = indexPath.row
         }
     }
     
@@ -223,7 +247,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     }
 
     /* Limits the number of characters in a post */
-    func textView(_ textView: UITextView, shouldChangeTextInRange range: Range<String.Index>, replacementText text: String) -> Bool {
+    private func textView(_ textView: UITextView, shouldChangeTextInRange range: Range<String.Index>, replacementText text: String) -> Bool {
         let newText = textView.text.replacingCharacters(in: range as Range<String.Index>, with: text)
         let numberOfChars = newText.characters.count
         return numberOfChars < MAX_POST_CHARACTERS;
@@ -282,6 +306,35 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
 
     }
     
+    func loadAutofillProxies() {
+        
+        let dispatchThread = DispatchGroup()
+        
+        dispatchThread.enter()
+        FirTree.queryFriends { [weak self]
+            array, dictionary in
+            
+            if array != nil {
+                self?.proxyArray += array!
+                dictionary?.forEach { self?.friendsDictionary[$0] = $1 }
+                dispatchThread.leave()
+            }
+        }
+        
+        dispatchThread.notify(queue: DispatchQueue.main) {
+            FirTree.queryCommunityProxies { [weak self]
+                array, dictionary in
+                
+                if array != nil {
+                    self?.proxyArray += array!
+                    dictionary?.forEach { self?.communityDictionary[$1] = $0 }
+                }
+            }
+        }
+        
+        
+    }
+    
     func underlineHeadlines() {
         let attributes : [String : Any] = [
             NSFontAttributeName : UIFont.systemFont(ofSize: 20.0),
@@ -322,6 +375,11 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         
         //get quick location update
         requestLocationUpdate()
+        
+        //friends autocomplete config
+        loadAutofillProxies()
+        handleTextFieldInterfaces()
+        configureTextField()
         
         //nav bar for reveal view controller
         connectRevealVC()

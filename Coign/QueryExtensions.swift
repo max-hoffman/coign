@@ -61,7 +61,7 @@ extension FirTree {
         
         var recentPosts: [String] = []
         
-        rootRef.child("posts").queryLimited(toFirst: UInt(number)).observe( .value, with: { snapshot in
+        rootRef.child(Node.Posts.rawValue).queryLimited(toFirst: UInt(number)).observe( .value, with: { snapshot in
                 
             for item in snapshot.children {
                 if let child = item as? FIRDataSnapshot, let post = child.value,
@@ -81,4 +81,53 @@ extension FirTree {
     class func queryFriendPosts (_ completionHandler: @escaping (_ postUIDs: [String]?) -> Void) {
         
     }
+    
+    class func queryFriends(completionHandler: @escaping (_ friends: [String]?, _ friendsDict: [String:String]?) -> Void) {
+        var friendsArray: [String]?
+        var friendsDict: [String: String]?
+        let dispatchThread = DispatchGroup()
+        
+        if let userID = UserDefaults.standard.object(forKey: UserParameter.UserUID.rawValue) as? String {
+        
+            dispatchThread.enter()
+            rootRef.child(Node.Users.rawValue).child(userID).child(UserParameter.Friends.rawValue).observeSingleEvent(of: .value, with: {
+                snapshot in
+                
+                if let friends = snapshot.value as? [String: String] {
+                    friendsArray = friends.map{$0.key}
+                    friendsDict = friends
+                }
+                
+                dispatchThread.leave()
+            })
+            
+            dispatchThread.notify(queue: DispatchQueue.main) {
+                completionHandler(friendsArray, friendsDict)
+            }
+        }
+    }
+    
+    class func queryCommunityProxies(completionHandler: @escaping (_ proxyArray: [String]?, _ proxyDict: [String:String]?) -> Void) {
+        var proxyArray: [String]?
+        var proxyDict: [String: String]?
+        let dispatchThread = DispatchGroup()
+        
+        dispatchThread.enter()
+        rootRef.child(Node.CommunityProxies.rawValue).observeSingleEvent(of: .value, with: {
+            snapshot in
+            
+            if let proxies = snapshot.value as? [String:String] {
+                proxyArray = proxies.map{$1}
+                proxyDict = proxies
+            }
+            
+            dispatchThread.leave()
+        })
+        
+        dispatchThread.notify(queue: DispatchQueue.main) {
+            completionHandler(proxyArray, proxyDict)
+        }
+    
+    }
+
 }

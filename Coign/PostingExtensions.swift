@@ -19,7 +19,7 @@ extension FirTree {
     /**
      Post donation to FIR tree; update "users" nodes and "donations" nodes
      */
-    class func newPost(_ post: [String: Any], location: CLLocationCoordinate2D?, userID: String, recipientID: String?) {
+    class func newPost(_ post: [String: Any], location: CLLocationCoordinate2D?, userID: String, proxyUID: String?, proxyIsAFriend: Bool) {
         
         //MARK: Post data
         
@@ -64,9 +64,9 @@ extension FirTree {
         //MARK: Recipient data
 
         //update the recipient node if necessary
-        if recipientID != nil {
+        if proxyUID != nil {
             //record that donation event in the recipient's donation node
-            FirTree.rootRef.child(Node.Users.rawValue).child(recipientID!).child(UserParameter.Posts.rawValue).setValue(postRef)
+            //FirTree.rootRef.child(Node.Users.rawValue).child(proxyUID!).child(UserParameter.Posts.rawValue).setValue(postRef.key: true)
             
             //TODO: change to network of impact
             //increment user outgoing post counter

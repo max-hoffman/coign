@@ -33,6 +33,7 @@ class FirTree {
         case ReCoigns = "recoigns"
         case Notifications = "notifications"
         case FacebookIDs = "facebook ids"
+        case CommunityProxies = "community proxies"
     }
 
     enum UserParameter: String {
@@ -148,7 +149,7 @@ class FirTree {
     
     class func updateUserFriends(_ friends: [[String:AnyObject]]) {
 
-        var fireFriendDict = [String: String]()
+        var fireFriendsDict = [String: String]()
         let group = DispatchGroup()
         
         friends.forEach({ (friend) in
@@ -162,7 +163,7 @@ class FirTree {
                     if let friendNode = snapshot.value as? [String : String],
                         let friendUID = friendNode[UserParameter.UserUID.rawValue]
                     {
-                        fireFriendDict[friendName] = friendUID
+                        fireFriendsDict[friendName] = friendUID
                         group.leave()
                     }
                 })
@@ -171,9 +172,17 @@ class FirTree {
         
         group.notify(queue: DispatchQueue.main) {
             //put the friends array in userdefaults for convenience
-            self.updateUser([UserParameter.Friends.rawValue: fireFriendDict])
-            print(fireFriendDict)
+            self.updateUser([UserParameter.Friends.rawValue: fireFriendsDict])
+            print(fireFriendsDict)
         }
         
+    }
+    
+    class func newCommunityProxy(name: String) -> String {
+        let newUID = UUID().uuidString
+        rootRef.child(Node.CommunityProxies.rawValue).updateChildValues([
+            newUID: name])
+        
+        return newUID
     }
 }

@@ -87,6 +87,8 @@ open class AutoCompleteTextField:UITextField {
     }
     
     fileprivate func setupAutocompleteTable(_ view:UIView){
+        self.superview?.layoutIfNeeded()
+        self.layoutIfNeeded()
         let screenSize = UIScreen.main.bounds.size
         let tableView = UITableView(frame: CGRect(x: self.frame.origin.x, y: self.frame.origin.y + self.frame.height, width: screenSize.width - (self.frame.origin.x * 2), height: 30.0))
         tableView.dataSource = self
@@ -95,7 +97,6 @@ open class AutoCompleteTextField:UITextField {
         tableView.isHidden = hidesWhenEmpty ?? true
         view.addSubview(tableView)
         autoCompleteTableView = tableView
-        
         autoCompleteTableHeight = 100.0
     }
     
