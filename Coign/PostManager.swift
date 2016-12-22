@@ -114,8 +114,10 @@ class PostManager {
                 completionHandler: {
                     (keys) in
                     
-                    self.localPostUIDs = keys!
-                    self.updatePostArray()
+                    if keys != nil {
+                        self.localPostUIDs = keys!
+                        self.updatePostArray()
+                    }
             })
         }
     }
