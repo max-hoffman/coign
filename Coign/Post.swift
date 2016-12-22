@@ -9,9 +9,9 @@
 import Foundation
 
 struct Post {
-    let donor: String?
-    let donorUID:String?
-    let recipient: String?
+    let poster: String?
+    let posterUID:String?
+    let proxy: String?
     let message: String?
     let timeStamp: Int?
     let charity: String?

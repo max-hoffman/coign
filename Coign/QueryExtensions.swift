@@ -15,7 +15,7 @@ import FirebaseStorage
 extension FirTree {
     
     /**
-     This function gets an array of strings, and should return an array of postsin a completion handler.
+     This function recieives an array of strings, and should return an array of posts in a completion handler.
      */
     class func returnPostsFromUIDs(_ postUIDs: [String], completionHandler: @escaping (_ newPosts: [Post]) -> Void) {
        
@@ -33,9 +33,9 @@ extension FirTree {
                 if let post = snapshot.value as? [String: Any] {
                     
                     newPost = Post(
-                        donor: post[FirTree.PostParameter.DonorName.rawValue] as? String,
-                        donorUID: post[FirTree.PostParameter.DonorUID.rawValue] as? String,
-                        recipient: post[FirTree.PostParameter.RecipientName.rawValue] as? String,
+                        poster: post[FirTree.PostParameter.DonorName.rawValue] as? String,
+                        posterUID: post[FirTree.PostParameter.DonorUID.rawValue] as? String,
+                        proxy: post[FirTree.PostParameter.RecipientName.rawValue] as? String,
                         message: post[FirTree.PostParameter.Message.rawValue] as? String,
                         timeStamp: post[FirTree.PostParameter.TimeStamp.rawValue] as? Int,
                         charity: post[FirTree.PostParameter.Charity.rawValue] as? String,
@@ -55,7 +55,7 @@ extension FirTree {
     }
     
     /**
-     Return an array of recent post UID's, that are converted to posts as needed.
+     Return an array of recent post UID's, that are converted to posts as needed by the above function.
      */
     class func queryRecentPosts(_ number: Int, completionHandler: @escaping (_ recentPostUIDs: [String]?) -> Void) {
         

@@ -22,6 +22,12 @@ extension Date {
     var shortDate: String {
         return Formatter.shortDate.string(from: self)
     }
+    var monthYear: String {
+        let myFormatter = DateFormatter()
+        myFormatter.locale = Locale(identifier: "en_US") 
+        myFormatter.dateFormat = "MM,yyyy"
+        return myFormatter.string(from: self)
+    }
 }
 
 

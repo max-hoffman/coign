@@ -30,10 +30,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yeu-JT-KAn" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1083"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1093"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="occ-vf-44b">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1083"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1093"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3oX-IW-vWY" userLabel="Donate To View">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
@@ -141,11 +141,14 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTP-J1-9IJ" userLabel="For View">
-                                                        <rect key="frame" x="0.0" y="535" width="375" height="130"/>
+                                                        <rect key="frame" x="0.0" y="535" width="375" height="140"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. donny drumpf" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Zv-So-gki" customClass="AutoCompleteTextField" customModule="Coign" customModuleProvider="target">
-                                                                <rect key="frame" x="20" y="0.0" width="335" height="30"/>
+                                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. donny drumpf" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Zv-So-gki" customClass="AutoCompleteTextField" customModule="Coign" customModuleProvider="target">
+                                                                <rect key="frame" x="20" y="0.0" width="335" height="40"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="UI7-hv-Y6q"/>
+                                                                </constraints>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
@@ -160,7 +163,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Xk-M4-Pog" userLabel="Comments View">
-                                                        <rect key="frame" x="0.0" y="665" width="375" height="64"/>
+                                                        <rect key="frame" x="0.0" y="675" width="375" height="64"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nF-5C-ZrK">
                                                                 <rect key="frame" x="20" y="20" width="335" height="24"/>
@@ -178,9 +181,9 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="MTk-t6-EVH" userLabel="TextView">
-                                                        <rect key="frame" x="0.0" y="729" width="375" height="78"/>
+                                                        <rect key="frame" x="0.0" y="739" width="375" height="78"/>
                                                         <subviews>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" scrollEnabled="NO" text="Insert message here: " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VNv-CP-ove">
+                                                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" scrollEnabled="NO" text="Insert message here: " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VNv-CP-ove">
                                                                 <rect key="frame" x="20" y="0.0" width="335" height="58"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -200,7 +203,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="pz9-Km-Nfd" userLabel="Anon View">
-                                                        <rect key="frame" x="0.0" y="807" width="375" height="94"/>
+                                                        <rect key="frame" x="0.0" y="817" width="375" height="94"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fh7-U6-4iN">
                                                                 <rect key="frame" x="96.5" y="20" width="182" height="31"/>
@@ -241,7 +244,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="1QM-D9-F0f" userLabel="Amount View">
-                                                        <rect key="frame" x="0.0" y="901" width="375" height="94"/>
+                                                        <rect key="frame" x="0.0" y="911" width="375" height="94"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 1.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfV-4O-AkB">
                                                                 <rect key="frame" x="20" y="20" width="335" height="54"/>
@@ -259,7 +262,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JdA-bF-1Oe" userLabel="Verify View">
-                                                        <rect key="frame" x="0.0" y="995" width="375" height="88"/>
+                                                        <rect key="frame" x="0.0" y="1005" width="375" height="88"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gu-Fl-ovk">
                                                                 <rect key="frame" x="20" y="20" width="335" height="48"/>

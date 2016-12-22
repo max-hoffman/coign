@@ -19,7 +19,7 @@ extension FirTree {
     /**
      Post donation to FIR tree; update "users" nodes and "donations" nodes
      */
-    class func newPost(_ post: [String: Any], location: CLLocationCoordinate2D?, userID: String, proxyUID: String?, proxyIsAFriend: Bool) {
+    class func newPost(_ post: [String: Any], location: CLLocationCoordinate2D?, userID: String, charity: String, proxyUID: String?, proxyIsAFriend: Bool) {
         
         //MARK: Post data
         
@@ -38,58 +38,61 @@ extension FirTree {
         Geohash.setGeohash(location, postUID: postRef.key)
         
         //MARK: User data
+        
+        updateUserNetworkOfImpact(userID: userID, charity: charity)
+        
         //record that donation event in the user's donation node (array of ID's)
         FirTree.rootRef.child(Node.Users.rawValue).child(userID).child(UserParameter.Posts.rawValue).updateChildValues([postRef.key: true])
         
-        //TODO: change to network of impact
-        //increment user outgoing post counter
-//        FirTree.rootRef.child(Node.Users.rawValue).child(userID).child(FirTree.UserParameter.OutgoingCoigns.rawValue).runTransactionBlock({ (currentData: FIRMutableData) -> FIRTransactionResult in
-//            if var outgoingCount = currentData.value as? Int {
-//                
-//                //update the count
-//                outgoingCount += 1
-//                
-//                // Set value and report transaction success
-//                currentData.value = outgoingCount
-//                
-//                return FIRTransactionResult.success(withValue: currentData)
-//            }
-//            return FIRTransactionResult.success(withValue: currentData)
-//        }) { (error, committed, snapshot) in
-//            if let error = error {
-//                print(error.localizedDescription)
-//            }
-//        }
         
         //MARK: Recipient data
 
         //update the recipient node if necessary
         if proxyUID != nil {
-            //record that donation event in the recipient's donation node
-            //FirTree.rootRef.child(Node.Users.rawValue).child(proxyUID!).child(UserParameter.Posts.rawValue).setValue(postRef.key: true)
             
-            //TODO: change to network of impact
-            //increment user outgoing post counter
-//            FirTree.rootRef.child(Node.Users.rawValue).child(userID).child(FirTree.UserParameter.IncomingCoigns.rawValue).runTransactionBlock({ (currentData: FIRMutableData) -> FIRTransactionResult in
-//
-//                
-//                if var incomingCount = currentData.value as? Int  {
-//                    
-//                    //update the count
-//                    incomingCount += 1
-//                    
-//                    // Set value and report transaction success
-//                    currentData.value = incomingCount
-//                    
-//                    return FIRTransactionResult.success(withValue: currentData)
-//                }
-//                return FIRTransactionResult.success(withValue: currentData)
-//            }) { (error, committed, snapshot) in
-//                if let error = error {
-//                    print(error.localizedDescription)
-//                }
-//            }
+            updateUserNetworkOfImpact(userID: proxyUID!, charity: charity)
+            
+            //record that donation event in the recipient's donation node
+            FirTree.rootRef.child(Node.Users.rawValue).child(proxyUID!).child(UserParameter.Posts.rawValue).setValue(postRef.key)
         }
+        
+        //MARK: Update monthly chart
+        recordPostInMonthlyChart(charity: charity)
+    }
+    
+    class func recordPostInMonthlyChart(charity: String) {
+        
+        rootRef.child(Node.MonthlyTally.rawValue).child(Date().monthYear).child(charity).runTransactionBlock({ (currentData: FIRMutableData) -> FIRTransactionResult in
+            
+            let currentCount = currentData.value as? Int ?? 0
+            currentData.value = currentCount + 1
+            return FIRTransactionResult.success(withValue: currentData)
+            
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    class func updateUserNetworkOfImpact(userID: String, charity: String) {
+        
+        FirTree.rootRef.child(Node.Users.rawValue).child(userID).child(FirTree.UserParameter.NetworkOfImpact.rawValue).child(charity).runTransactionBlock({ (currentData: FIRMutableData) -> FIRTransactionResult in
+            
+            let currentCount = currentData.value as? Int ?? 0
+            currentData.value = currentCount + 1
+            return FIRTransactionResult.success(withValue: currentData)
+            
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+
+    }
+    
+    func recordDonation(charity: String) {
+        
     }
     
     /**

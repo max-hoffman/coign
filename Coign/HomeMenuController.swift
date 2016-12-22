@@ -192,30 +192,31 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
      Does the work of formatting and returnign a post cell. 
      */
     fileprivate func formattedPostCell(_ cell: PostCell, withPost post: Post) -> PostCell {
-        if let donor = post.donor, let charity = post.charity {
-            cell.header.text = "\(donor) → \(charity)"
-        }
+            cell.proxy.text = post.proxy ?? post.poster
         
         if let time = post.timeStamp {
             cell.timeStamp.text = Double(time).formatMillisecondsToCoherentTime
         }
-        
-        //if let message = post.message {
-        cell.postBody.text = post.message
-        //}
-        
-        if let recipient = post.recipient?.lowercased().removeWhitespace() {
-            if recipient != "" {
-                cell.recipientLabel.text = "@ \(recipient):"
-                cell.recipientLabel.textColor = UIColor.blue
-            }
-            else {
-                cell.recipientLabel.isHidden = true
-            }
+        else {
+            cell.timeStamp.isHidden = true
         }
         
-        if let userID = post.donorUID {
-            FirTree.returnImage(userID, completionHandler: { (image) in
+        if let message = post.message {
+        cell.postBody.text = message
+        }
+        else {
+            cell.postBody.isHidden = true
+        }
+        
+        if let charity = post.charity {
+            cell.charity.text = charity
+        }
+        else {
+            cell.charity.text = "Coign"
+        }
+
+        if let posterID = post.posterUID {
+            FirTree.returnImage(posterID, completionHandler: { (image) in
                 cell.picture?.image = image
             })
         }

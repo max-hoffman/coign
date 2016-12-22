@@ -34,6 +34,7 @@ class FirTree {
         case Notifications = "notifications"
         case FacebookIDs = "facebook ids"
         case CommunityProxies = "community proxies"
+        case MonthlyTally = "monthly tally"
     }
 
     enum UserParameter: String {

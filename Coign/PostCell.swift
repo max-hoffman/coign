@@ -12,12 +12,13 @@ class PostCell: UITableViewCell {
     
     //MARK: - Outlets
     
-    @IBOutlet weak var recipientLabel: UILabel!
-    @IBOutlet weak var header: UILabel!
+    //@IBOutlet weak var recipientLabel: UILabel!
+    @IBOutlet weak var proxy: UILabel!
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var timeStamp: UILabel!
     @IBOutlet weak var postBody: UILabel!
     
+    @IBOutlet weak var charity: UILabel!
     
     //MARK: - Superclass methods
     

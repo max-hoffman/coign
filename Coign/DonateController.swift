@@ -92,7 +92,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
             ]
             
             //complete the post by updating the FirTree and reloading autofill array
-            FirTree.newPost(post, location: currentUserLocation, userID: userUID, proxyUID: proxyUID, proxyIsAFriend: proxyIsAFriend)
+            FirTree.newPost(post, location: currentUserLocation, userID: userUID, charity: charity, proxyUID: proxyUID, proxyIsAFriend: proxyIsAFriend)
             loadAutofillProxies()
         }
     }
