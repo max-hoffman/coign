@@ -9,8 +9,9 @@
 import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
+import MessageUI
 
-class SettingsController: UITableViewController {
+class SettingsController: UITableViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
@@ -74,6 +75,11 @@ class SettingsController: UITableViewController {
         else if changeableSetting(cellIdentifier) {
             performSegue(withIdentifier: "show setting detail", sender: indexPath)
         }
+        
+        else if cellIdentifier == Settings.Static.Feedback.rawValue {
+            sendEmail()
+        }
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -93,7 +99,32 @@ class SettingsController: UITableViewController {
         }
     }
     
-    fileprivate func updateUserSettingsValues() {
+    func sendEmail() {
+        if !MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["maximilian.wolfgang1@gmail.com"])
+            mail.setSubject("Coign Feedback")
+            mail.setMessageBody("<p>Hi Coign Team,</p>", isHTML: true)
+            
+            present(mail, animated: true)
+        } else {
+            // show failure alert
+            let mailFailure = UIAlertController(title: "Email Failure", message: "Set up email on device to send feedback", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Ok", style: .default) {
+                action in
+                mailFailure.dismiss(animated: true, completion: nil
+                )}
+            mailFailure.addAction(ok)
+            present(mailFailure, animated: true, completion: nil)
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+    
+    private func updateUserSettingsValues() {
         nameValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Name.rawValue)
         birthdayValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Birthday.rawValue)
         emailValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Email.rawValue)
@@ -101,7 +132,7 @@ class SettingsController: UITableViewController {
         charityValue.text = UserDefaults.standard.string(forKey: FirTree.UserParameter.Charity.rawValue)
     }
     
-    fileprivate func tryLogout() {
+    private func tryLogout() {
         let logoutAlert = UIAlertController(title: "Logout", message: "Are you sure you want to log out?", preferredStyle: UIAlertControllerStyle.alert)
         logoutAlert.addAction(UIAlertAction(title: "Logout", style: .default, handler: {
             [weak weakSelf = self]

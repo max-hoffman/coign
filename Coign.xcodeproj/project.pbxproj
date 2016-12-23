@@ -105,6 +105,8 @@
 		E27020071E0D6C2E00C5B3CE /* NetworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27020051E0D6C2E00C5B3CE /* NetworkCell.swift */; };
 		E27020091E0D704600C5B3CE /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27020081E0D704600C5B3CE /* ProfileTableViewController.swift */; };
 		E270200A1E0D704600C5B3CE /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27020081E0D704600C5B3CE /* ProfileTableViewController.swift */; };
+		E270200C1E0D9DE300C5B3CE /* termsAndConditions.html in Resources */ = {isa = PBXBuildFile; fileRef = E270200B1E0D9DE300C5B3CE /* termsAndConditions.html */; };
+		E270200D1E0D9DE300C5B3CE /* termsAndConditions.html in Resources */ = {isa = PBXBuildFile; fileRef = E270200B1E0D9DE300C5B3CE /* termsAndConditions.html */; };
 		E28C6BDB1D8DD7180020EAA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */; };
 		E2A04A8B1DCA63110082EF1E /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A04A8A1DCA63110082EF1E /* TabController.swift */; };
 		E2A04AAE1DCBE47E0082EF1E /* CrimsonText-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A04AAC1DCBE47E0082EF1E /* CrimsonText-Roman.ttf */; };
@@ -222,6 +224,7 @@
 		E27020021E0D6B3200C5B3CE /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
 		E27020051E0D6C2E00C5B3CE /* NetworkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCell.swift; sourceTree = "<group>"; };
 		E27020081E0D704600C5B3CE /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		E270200B1E0D9DE300C5B3CE /* termsAndConditions.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = termsAndConditions.html; sourceTree = "<group>"; };
 		E28C6BDA1D8DD7180020EAA3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2A04A8A1DCA63110082EF1E /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		E2A04AA51DCBC2AC0082EF1E /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
@@ -494,6 +497,7 @@
 			children = (
 				E2A04ABA1DCCE7990082EF1E /* CharityInfo.plist */,
 				E2E4E3791DD413CF004522C9 /* CharityList.plist */,
+				E270200B1E0D9DE300C5B3CE /* termsAndConditions.html */,
 				E24ACFF31DE5FD4800F09639 /* CharityCategories.plist */,
 				E2A04AC01DCD06180082EF1E /* FAQ.plist */,
 			);
@@ -804,6 +808,7 @@
 				E263532A1DE609D5006787A6 /* CharityInfo.storyboard in Resources */,
 				E2A04AC11DCD06180082EF1E /* FAQ.plist in Resources */,
 				E20164221D7B653A00949826 /* MainApp.storyboard in Resources */,
+				E270200C1E0D9DE300C5B3CE /* termsAndConditions.html in Resources */,
 				E2A04AAF1DCBE47E0082EF1E /* CrimsonText-Semibold.ttf in Resources */,
 				E24ACFF41DE5FD4800F09639 /* CharityCategories.plist in Resources */,
 				E2C398031D85CD24000D35F4 /* AboutUs.storyboard in Resources */,
@@ -847,6 +852,7 @@
 				E26353641DE9F5FF006787A6 /* CharityInfo.storyboard in Resources */,
 				E26353651DE9F5FF006787A6 /* FAQ.plist in Resources */,
 				E26353661DE9F5FF006787A6 /* MainApp.storyboard in Resources */,
+				E270200D1E0D9DE300C5B3CE /* termsAndConditions.html in Resources */,
 				E26353671DE9F5FF006787A6 /* CrimsonText-Semibold.ttf in Resources */,
 				E26353681DE9F5FF006787A6 /* CharityCategories.plist in Resources */,
 				E26353691DE9F5FF006787A6 /* AboutUs.storyboard in Resources */,
