@@ -71,11 +71,13 @@ open class AutoCompleteTextField:UITextField {
         setupAutocompleteTable(superview!)
     }
     
+    /* This crashes the app for some reason.
     open override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         commonInit()
         setupAutocompleteTable(newSuperview!)
     }
+    */
     
     fileprivate func commonInit(){
         hidesWhenEmpty = true

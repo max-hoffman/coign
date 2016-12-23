@@ -75,11 +75,11 @@ class ProfileTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let networkCell = tableView.dequeueReusableCell(withIdentifier: NETWORK_CELL_IDENTIFIER, for: indexPath)
-        networkCell.textLabel?.text = networkOfImpact[indexPath.row].charity
+        networkCell.textLabel?.text = "\(networkOfImpact[indexPath.row].charity):"
         networkCell.detailTextLabel?.text = networkOfImpact[indexPath.row].number
         
         
-        return networkCell 
+        return networkCell
     }
  
 
