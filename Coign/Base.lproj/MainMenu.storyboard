@@ -37,7 +37,7 @@
                                             </segments>
                                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <action selector="indexChangedWithSender:" destination="8Rj-ln-A4g" eventType="valueChanged" id="ENb-gi-GRE"/>
+                                                <action selector="indexChanged:" destination="8Rj-ln-A4g" eventType="valueChanged" id="671-XI-pIe"/>
                                             </connections>
                                         </segmentedControl>
                                     </subviews>
