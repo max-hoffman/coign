@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Je-fX-Cha">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Je-fX-Cha">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,7 +43,7 @@
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="viewSelectedWithSender:" destination="43W-33-Gzp" eventType="touchUpInside" id="qmn-hP-u4I"/>
+                                                    <action selector="viewSelected:" destination="43W-33-Gzp" eventType="touchUpInside" id="1oO-iF-u0W"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -83,7 +83,7 @@
                                                     <color key="titleColor" red="0.017969632950000002" green="0.35247328369999997" blue="0.0043098790859999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="viewSelectedWithSender:" destination="43W-33-Gzp" eventType="touchUpInside" id="Ewv-nA-1Pc"/>
+                                                    <action selector="viewSelected:" destination="43W-33-Gzp" eventType="touchUpInside" id="xQn-dr-zw4"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -123,7 +123,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="viewSelectedWithSender:" destination="43W-33-Gzp" eventType="touchUpInside" id="Mdi-pS-zTz"/>
+                                                    <action selector="viewSelected:" destination="43W-33-Gzp" eventType="touchUpInside" id="91a-md-iUq"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -163,7 +163,7 @@
                                                     <color key="titleColor" red="0.017969632950000002" green="0.35247328369999997" blue="0.0043098790859999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="viewSelectedWithSender:" destination="43W-33-Gzp" eventType="touchUpInside" id="xgT-A3-enQ"/>
+                                                    <action selector="viewSelected:" destination="43W-33-Gzp" eventType="touchUpInside" id="jW3-6C-r8Z"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -203,7 +203,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="viewSelectedWithSender:" destination="43W-33-Gzp" eventType="touchUpInside" id="u8e-Aa-tyN"/>
+                                                    <action selector="viewSelected:" destination="43W-33-Gzp" eventType="touchUpInside" id="V7p-w2-H0V"/>
                                                 </connections>
                                             </button>
                                         </subviews>
