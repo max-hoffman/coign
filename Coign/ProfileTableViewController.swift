@@ -8,9 +8,13 @@
 
 import UIKit
 
+/**
+ Shows the user's picture and name at top, and "network of impact" below. The network of impact is just a table combining the total to/from charities and donations. If there are no to/from donations, then the table is just empty.
+ */
 class ProfileTableViewController: UITableViewController {
 
-    //MARK: - Properties
+    // MARK: - Properties
+    
     let HEADER_CELL_IDENTIFIER = "header cell"
     let NETWORK_CELL_IDENTIFIER = "network cell"
     let NO_DONATION_CELL_IDENTIFIER = "no donations cell"
@@ -21,25 +25,11 @@ class ProfileTableViewController: UITableViewController {
         }
     }
     
+    //MARK: - Config methods
     
-    //MARK: - Refresh view methods
-    @objc private func refreshView(_ refreshControl: UIRefreshControl) {
-        configureNetworkOfImpact()
-    }
-    
-    @objc private func endRefreshing() {
-        if let refreshControl = self.refreshControl {
-            if refreshControl.isRefreshing {
-                Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
-                    refreshControl.endRefreshing()
-                    timer.invalidate()
-                }
-            }
-        }
-    }
-    
-    //MARK: Config methods
-    
+    /**
+     Puts the image/name in the table header.
+     */
     private func configureHeader() {
         if let headerCell = tableView.dequeueReusableCell(withIdentifier: HEADER_CELL_IDENTIFIER) as? ProfileHeaderCell {
             
@@ -55,6 +45,9 @@ class ProfileTableViewController: UITableViewController {
         }
     }
     
+    /**
+     Loads in the "network of impact" data as an array of tuples.
+     */
     private func configureNetworkOfImpact() {
         if let userID = UserDefaults.standard.object(forKey: FirTree.UserParameter.UserUID.rawValue) as? String {
             FirTree.queryNetworkOfImpact(userID: userID) { [weak self] networkTuple in
@@ -65,6 +58,9 @@ class ProfileTableViewController: UITableViewController {
         }
     }
 
+    /**
+     Adds the refresh control to the table view. Matches that in the home page.
+     */
     private func configureRefreshControl() {
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: #selector(refreshView(_:)), for: UIControlEvents.valueChanged)
@@ -83,7 +79,9 @@ class ProfileTableViewController: UITableViewController {
         return networkOfImpact.count > 0 ? networkOfImpact.count : 1
     }
 
-    
+    /**
+     Loads the network cells or the "no donations to show" cell. The first cell load triggers ending the page refreshing animation.
+     */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //end refreshing on first pass
@@ -99,7 +97,10 @@ class ProfileTableViewController: UITableViewController {
             return formattedNetworkCell(indexPath: indexPath)
         }
     }
-
+    
+    /**
+     Convenience method to fill network impact cells; draw from the array of tuples depending on the row index.
+     */
     private func formattedNetworkCell(indexPath: IndexPath) -> NetworkCell {
         if let networkCell = tableView.dequeueReusableCell(withIdentifier: NETWORK_CELL_IDENTIFIER, for: indexPath) as? NetworkCell {
             networkCell.title?.text = "\(networkOfImpact[indexPath.row].charity):"
@@ -111,14 +112,37 @@ class ProfileTableViewController: UITableViewController {
         }
     }
     
-    //MARK: - Superview methods
+    // MARK: - Refresh view methods
+    
+    /**
+     This is kind of an unnecessary method, but the naming is convenient for the action.
+     */
+    @objc private func refreshView(_ refreshControl: UIRefreshControl) {
+        configureNetworkOfImpact()
+    }
+    
+    /**
+     End the refreshing animation after a comfortable one-second pause.
+     */
+    @objc private func endRefreshing() {
+        if let refreshControl = self.refreshControl {
+            if refreshControl.isRefreshing {
+                Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
+                    refreshControl.endRefreshing()
+                    timer.invalidate()
+                }
+            }
+        }
+    }
+    
+    // MARK: - Superview methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // configure
         configureHeader()
-        //configureNetworkOfImpact()
+        configureNetworkOfImpact()
         configureRefreshControl()
         
         // side-bar
@@ -134,5 +158,4 @@ class ProfileTableViewController: UITableViewController {
         // Initialize Tab Bar Item
         tabBarItem = UITabBarItem(title: "Profile", image: #imageLiteral(resourceName: "profile"), selectedImage: #imageLiteral(resourceName: "profile_selected").withRenderingMode(.alwaysOriginal))
     }
-
 }
