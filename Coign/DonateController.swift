@@ -347,21 +347,22 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     func selectDefault() {
         //set the picker view selection to the default
         if let defaultCharity = UserDefaults.standard.object(forKey: FirTree.UserParameter.Charity.rawValue) as? String, let defaultIndex = charities?.index(of: defaultCharity) {
-            
             charityPicker.selectRow(defaultIndex, inComponent: 0, animated: false)
         }
     }
     
     //MARK: - Superclass methods
     
+    override func viewDidAppear(_ animated: Bool) {
+        selectDefault()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //hide pickerview/verify subview/set delegates
         prepDonationSubviews()
         underlineHeadlines()
-        selectDefault()
-
+        
         // Create a location manager object
         locationManager = CLLocationManager()
         

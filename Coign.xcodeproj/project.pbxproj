@@ -40,7 +40,6 @@
 		E26353291DE608BF006787A6 /* CharityInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26353251DE608BF006787A6 /* CharityInfoController.swift */; };
 		E263532A1DE609D5006787A6 /* CharityInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E263532C1DE609D5006787A6 /* CharityInfo.storyboard */; };
 		E26353301DE9F5FF006787A6 /* CharityCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26353221DE608BF006787A6 /* CharityCategoryController.swift */; };
-		E26353311DE9F5FF006787A6 /* ProfileDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4E37D1DD6423A004522C9 /* ProfileDetailController.swift */; };
 		E26353321DE9F5FF006787A6 /* LoginExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8C9451DC52BCA00C0DDDB /* LoginExtensions.swift */; };
 		E26353331DE9F5FF006787A6 /* VCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24214961DA8966400A5B080 /* VCExtensions.swift */; };
 		E26353341DE9F5FF006787A6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20163E41D7B2F7100949826 /* LoginController.swift */; };
@@ -61,7 +60,6 @@
 		E26353431DE9F5FF006787A6 /* SideViewTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8771F1D8EFEDC00BAAB46 /* SideViewTableController.swift */; };
 		E26353441DE9F5FF006787A6 /* HomeMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7D5E01DDD427700D6D92A /* HomeMenuController.swift */; };
 		E26353451DE9F5FF006787A6 /* PostingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E8FE1B1DD90F35003AB2D2 /* PostingExtensions.swift */; };
-		E26353461DE9F5FF006787A6 /* NetworkGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4E37B1DD56C86004522C9 /* NetworkGraph.swift */; };
 		E26353471DE9F5FF006787A6 /* FooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2212D301DE144510016E2C8 /* FooterCell.swift */; };
 		E26353481DE9F5FF006787A6 /* FirTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259EB681DA6AC1D00EADC4C /* FirTree.swift */; };
 		E26353491DE9F5FF006787A6 /* AboutUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C397F51D85C098000D35F4 /* AboutUsController.swift */; };
@@ -74,7 +72,6 @@
 		E26353501DE9F5FF006787A6 /* CharityInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26353251DE608BF006787A6 /* CharityInfoController.swift */; };
 		E26353511DE9F5FF006787A6 /* UserSetupExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */; };
 		E26353521DE9F5FF006787A6 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A04A8A1DCA63110082EF1E /* TabController.swift */; };
-		E26353531DE9F5FF006787A6 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C397F11D85BCE1000D35F4 /* ProfileController.swift */; };
 		E26353541DE9F5FF006787A6 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7D5E21DDE12D600D6D92A /* PostCell.swift */; };
 		E26353561DE9F5FF006787A6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E8FE171DD90314003AB2D2 /* CoreLocation.framework */; };
 		E263535C1DE9F5FF006787A6 /* CrimsonText-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E20AF77B1DCF9AB300E6CB09 /* CrimsonText-Italic.ttf */; };
@@ -123,6 +120,8 @@
 		E2A7D5E71DDE52DB00D6D92A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7D5E61DDE52DB00D6D92A /* Post.swift */; };
 		E2A8C9441DC52B0200C0DDDB /* UserSetupExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */; };
 		E2A8C9461DC52BCA00C0DDDB /* LoginExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A8C9451DC52BCA00C0DDDB /* LoginExtensions.swift */; };
+		E2AE1C061E0F122200FBD23B /* NoDonationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE1C051E0F122200FBD23B /* NoDonationsCell.swift */; };
+		E2AE1C071E0F122200FBD23B /* NoDonationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE1C051E0F122200FBD23B /* NoDonationsCell.swift */; };
 		E2BECEFE1DEA1650007C8820 /* Pods_Coign_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA6B4CC5AE47BBA0021DE27 /* Pods_Coign_Dev.framework */; };
 		E2BECF041DEA16BE007C8820 /* Pods_Coign.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25C36132C40D08F2AE81A0C /* Pods_Coign.framework */; };
 		E2BECF071DEA16E8007C8820 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E94FF51D8E1A8E00DC3ACC /* FBSDKCoreKit.framework */; };
@@ -131,7 +130,6 @@
 		E2C397EA1D850220000D35F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */; };
 		E2C397EC1D850D8D000D35F4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397EB1D850D8D000D35F4 /* Login.storyboard */; };
 		E2C397F01D85B9B4000D35F4 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C397EF1D85B9B4000D35F4 /* SettingsController.swift */; };
-		E2C397F21D85BCE1000D35F4 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C397F11D85BCE1000D35F4 /* ProfileController.swift */; };
 		E2C397F41D85BDC3000D35F4 /* DonateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C397F31D85BDC3000D35F4 /* DonateController.swift */; };
 		E2C397F61D85C098000D35F4 /* AboutUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C397F51D85C098000D35F4 /* AboutUsController.swift */; };
 		E2C397F91D85CB69000D35F4 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C397F71D85CB69000D35F4 /* Settings.storyboard */; };
@@ -142,8 +140,6 @@
 		E2C7B39D1E02F91200D60F1F /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7B39C1E02F91200D60F1F /* Friend.swift */; };
 		E2D877201D8EFEDC00BAAB46 /* SideViewTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8771F1D8EFEDC00BAAB46 /* SideViewTableController.swift */; };
 		E2E4E37A1DD413CF004522C9 /* CharityList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2E4E3791DD413CF004522C9 /* CharityList.plist */; };
-		E2E4E37C1DD56C86004522C9 /* NetworkGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4E37B1DD56C86004522C9 /* NetworkGraph.swift */; };
-		E2E4E37E1DD6423A004522C9 /* ProfileDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4E37D1DD6423A004522C9 /* ProfileDetailController.swift */; };
 		E2E8FE141DD8F451003AB2D2 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E8FE131DD8F451003AB2D2 /* ImageExtensions.swift */; };
 		E2E8FE181DD90314003AB2D2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E8FE171DD90314003AB2D2 /* CoreLocation.framework */; };
 		E2E8FE1A1DD904E7003AB2D2 /* Geohash.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E8FE191DD904E7003AB2D2 /* Geohash.swift */; };
@@ -247,10 +243,10 @@
 		E2A7D5E61DDE52DB00D6D92A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		E2A8C9431DC52B0200C0DDDB /* UserSetupExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetupExtensions.swift; sourceTree = "<group>"; };
 		E2A8C9451DC52BCA00C0DDDB /* LoginExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginExtensions.swift; sourceTree = "<group>"; };
+		E2AE1C051E0F122200FBD23B /* NoDonationsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDonationsCell.swift; sourceTree = "<group>"; };
 		E2C397E91D850220000D35F4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2C397EB1D850D8D000D35F4 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E2C397EF1D85B9B4000D35F4 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
-		E2C397F11D85BCE1000D35F4 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		E2C397F31D85BDC3000D35F4 /* DonateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonateController.swift; sourceTree = "<group>"; };
 		E2C397F51D85C098000D35F4 /* AboutUsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsController.swift; sourceTree = "<group>"; };
 		E2C397F81D85CB69000D35F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
@@ -261,8 +257,6 @@
 		E2C7B39C1E02F91200D60F1F /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		E2D8771F1D8EFEDC00BAAB46 /* SideViewTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewTableController.swift; sourceTree = "<group>"; };
 		E2E4E3791DD413CF004522C9 /* CharityList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CharityList.plist; sourceTree = "<group>"; };
-		E2E4E37B1DD56C86004522C9 /* NetworkGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkGraph.swift; sourceTree = "<group>"; };
-		E2E4E37D1DD6423A004522C9 /* ProfileDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailController.swift; sourceTree = "<group>"; };
 		E2E8FE131DD8F451003AB2D2 /* ImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
 		E2E8FE151DD90205003AB2D2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E2E8FE171DD90314003AB2D2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -600,12 +594,10 @@
 			isa = PBXGroup;
 			children = (
 				E2C397FA1D85CBB0000D35F4 /* Profile.storyboard */,
+				E27020081E0D704600C5B3CE /* ProfileTableViewController.swift */,
+				E2AE1C051E0F122200FBD23B /* NoDonationsCell.swift */,
 				E27020051E0D6C2E00C5B3CE /* NetworkCell.swift */,
 				E27020021E0D6B3200C5B3CE /* ProfileHeaderCell.swift */,
-				E2C397F11D85BCE1000D35F4 /* ProfileController.swift */,
-				E27020081E0D704600C5B3CE /* ProfileTableViewController.swift */,
-				E2E4E37D1DD6423A004522C9 /* ProfileDetailController.swift */,
-				E2E4E37B1DD56C86004522C9 /* NetworkGraph.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -1060,7 +1052,6 @@
 				E26353261DE608BF006787A6 /* CharityCategoryController.swift in Sources */,
 				E27020031E0D6B3200C5B3CE /* ProfileHeaderCell.swift in Sources */,
 				E24E756E1E0372C1002B4073 /* AutoCompleteTextField.swift in Sources */,
-				E2E4E37E1DD6423A004522C9 /* ProfileDetailController.swift in Sources */,
 				E2A8C9461DC52BCA00C0DDDB /* LoginExtensions.swift in Sources */,
 				E24214971DA8966400A5B080 /* VCExtensions.swift in Sources */,
 				E20163E51D7B2F7100949826 /* LoginController.swift in Sources */,
@@ -1078,12 +1069,12 @@
 				E2360B0F1DDE629000DFE338 /* JSONParser.swift in Sources */,
 				E2F0A8DB1DC3AA7800ABDC4F /* CharityPickerController.swift in Sources */,
 				E2212D2D1DDFDF880016E2C8 /* StringExtensions.swift in Sources */,
+				E2AE1C061E0F122200FBD23B /* NoDonationsCell.swift in Sources */,
 				E23203271DF25E6A00ECB463 /* ColorExtensions.swift in Sources */,
 				E27020061E0D6C2E00C5B3CE /* NetworkCell.swift in Sources */,
 				E2D877201D8EFEDC00BAAB46 /* SideViewTableController.swift in Sources */,
 				E2A7D5E11DDD427700D6D92A /* HomeMenuController.swift in Sources */,
 				E2E8FE1C1DD90F35003AB2D2 /* PostingExtensions.swift in Sources */,
-				E2E4E37C1DD56C86004522C9 /* NetworkGraph.swift in Sources */,
 				E2C7B39D1E02F91200D60F1F /* Friend.swift in Sources */,
 				E2212D311DE144510016E2C8 /* FooterCell.swift in Sources */,
 				E259EB691DA6AC1D00EADC4C /* FirTree.swift in Sources */,
@@ -1098,7 +1089,6 @@
 				E26353291DE608BF006787A6 /* CharityInfoController.swift in Sources */,
 				E2A8C9441DC52B0200C0DDDB /* UserSetupExtensions.swift in Sources */,
 				E2A04A8B1DCA63110082EF1E /* TabController.swift in Sources */,
-				E2C397F21D85BCE1000D35F4 /* ProfileController.swift in Sources */,
 				E2A7D5E31DDE12D600D6D92A /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1126,7 +1116,6 @@
 				E26353301DE9F5FF006787A6 /* CharityCategoryController.swift in Sources */,
 				E27020041E0D6B3200C5B3CE /* ProfileHeaderCell.swift in Sources */,
 				E24E756F1E0372C1002B4073 /* AutoCompleteTextField.swift in Sources */,
-				E26353311DE9F5FF006787A6 /* ProfileDetailController.swift in Sources */,
 				E26353321DE9F5FF006787A6 /* LoginExtensions.swift in Sources */,
 				E26353331DE9F5FF006787A6 /* VCExtensions.swift in Sources */,
 				E26353341DE9F5FF006787A6 /* LoginController.swift in Sources */,
@@ -1144,12 +1133,12 @@
 				E26353401DE9F5FF006787A6 /* JSONParser.swift in Sources */,
 				E26353411DE9F5FF006787A6 /* CharityPickerController.swift in Sources */,
 				E26353421DE9F5FF006787A6 /* StringExtensions.swift in Sources */,
+				E2AE1C071E0F122200FBD23B /* NoDonationsCell.swift in Sources */,
 				E23203281DF25FB800ECB463 /* ColorExtensions.swift in Sources */,
 				E27020071E0D6C2E00C5B3CE /* NetworkCell.swift in Sources */,
 				E26353431DE9F5FF006787A6 /* SideViewTableController.swift in Sources */,
 				E26353441DE9F5FF006787A6 /* HomeMenuController.swift in Sources */,
 				E26353451DE9F5FF006787A6 /* PostingExtensions.swift in Sources */,
-				E26353461DE9F5FF006787A6 /* NetworkGraph.swift in Sources */,
 				E24E756C1E02FDCD002B4073 /* Friend.swift in Sources */,
 				E26353471DE9F5FF006787A6 /* FooterCell.swift in Sources */,
 				E26353481DE9F5FF006787A6 /* FirTree.swift in Sources */,
@@ -1164,7 +1153,6 @@
 				E26353501DE9F5FF006787A6 /* CharityInfoController.swift in Sources */,
 				E26353511DE9F5FF006787A6 /* UserSetupExtensions.swift in Sources */,
 				E26353521DE9F5FF006787A6 /* TabController.swift in Sources */,
-				E26353531DE9F5FF006787A6 /* ProfileController.swift in Sources */,
 				E26353541DE9F5FF006787A6 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
