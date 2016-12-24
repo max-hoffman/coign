@@ -127,15 +127,15 @@ extension FirTree {
         dispatchThread.notify(queue: DispatchQueue.main) { completionHandler(proxyArray, proxyDict) }
     }
     
-    class func queryNetworkOfImpact(userID: String, completionHandler: @escaping (_ networkCounts: [(String, String)]?) -> Void) {
+    class func queryNetworkOfImpact(userID: String, completionHandler: @escaping (_ networkCounts: [(String, Int)]?) -> Void) {
         
-        var networkOfImpact: [(charity: String, number: String)]?
+        var networkOfImpact: [(charity: String, number: Int)]?
         let dispatchThread = DispatchGroup()
         
         dispatchThread.enter()
         rootRef.child(Node.Users.rawValue).child(userID).child(UserParameter.NetworkOfImpact.rawValue).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            if let networkNode = snapshot.value as? [String: String] {
+
+            if let networkNode = snapshot.value as? [String: Int] {
                 networkOfImpact = networkNode.map { ($0, $1) }
             }
             dispatchThread.leave()

@@ -9,7 +9,9 @@
 import UIKit
 
 class NetworkCell: UITableViewCell {
+    @IBOutlet weak var title: UILabel!
 
+    @IBOutlet weak var number: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -57,29 +57,40 @@
                                     <outlet property="profileImage" destination="a23-VG-8Gg" id="wgC-P1-0Fc"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="network cell" textLabel="MOZ-1I-4Jt" detailTextLabel="d01-CU-Hs9" style="IBUITableViewCellStyleValue2" id="xdG-3N-DEH">
-                                <rect key="frame" x="0.0" y="216" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="network cell" rowHeight="56" id="xdG-3N-DEH" customClass="NetworkCell" customModule="Coign" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="216" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xdG-3N-DEH" id="WLW-Q4-IH0">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="MOZ-1I-4Jt">
-                                            <rect key="frame" x="15" y="14" width="91" height="16"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="d01-CU-Hs9">
-                                            <rect key="frame" x="112" y="14" width="35" height="16"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Paf-Yo-EOg">
+                                            <rect key="frame" x="138" y="19.5" width="100.5" height="17"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CY4-Cp-JNn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="28.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.3528173575129534" green="0.3528173575129534" blue="0.3528173575129534" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ge-Ob-cTb">
+                                                    <rect key="frame" x="48.5" y="0.0" width="52" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.3528173575129534" green="0.3528173575129534" blue="0.3528173575129534" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Paf-Yo-EOg" firstAttribute="centerY" secondItem="WLW-Q4-IH0" secondAttribute="centerY" id="IPo-XL-zOq"/>
+                                        <constraint firstItem="Paf-Yo-EOg" firstAttribute="centerX" secondItem="WLW-Q4-IH0" secondAttribute="centerX" id="Z0E-2p-U82"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="number" destination="8Ge-Ob-cTb" id="HD6-9t-cSU"/>
+                                    <outlet property="title" destination="CY4-Cp-JNn" id="Fna-I7-QJt"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -441,7 +452,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhB-T0-JhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3804" y="1602.5487256371816"/>
+            <point key="canvasLocation" x="4178" y="1603"/>
         </scene>
     </scenes>
 </document>

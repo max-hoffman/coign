@@ -14,9 +14,10 @@ class ProfileTableViewController: UITableViewController {
     let HEADER_CELL_IDENTIFIER = "header cell"
     let NETWORK_CELL_IDENTIFIER = "network cell"
     
-    var networkOfImpact = [(charity: String, number: String)]() {
+    var networkOfImpact = [(charity: String, number: Int)]() {
         didSet {
             self.tableView.reloadData()
+            print("should reload data")
         }
     }
     
@@ -26,6 +27,7 @@ class ProfileTableViewController: UITableViewController {
         configureHeader()
         configureNetworkOfImpact()
         connectRevealVC()
+        self.tableView.separatorStyle = .none
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -64,22 +66,24 @@ class ProfileTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return networkOfImpact.count
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return networkOfImpact.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let networkCell = tableView.dequeueReusableCell(withIdentifier: NETWORK_CELL_IDENTIFIER, for: indexPath)
-        networkCell.textLabel?.text = "\(networkOfImpact[indexPath.row].charity):"
-        networkCell.detailTextLabel?.text = networkOfImpact[indexPath.row].number
-        
-        
-        return networkCell
+        if let networkCell = tableView.dequeueReusableCell(withIdentifier: NETWORK_CELL_IDENTIFIER, for: indexPath) as? NetworkCell {
+            networkCell.title?.text = "\(networkOfImpact[indexPath.row].charity):"
+            networkCell.number?.text = String(networkOfImpact[indexPath.row].number)
+            return networkCell
+        }
+        else {
+            return UITableViewCell()
+        }
     }
  
 
