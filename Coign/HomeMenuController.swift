@@ -87,6 +87,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         //nav bar for reveal view controller
         connectRevealVC()
         
+        //logo at top
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 35))
         imageView.contentMode = UIViewContentMode.scaleAspectFit
         imageView.image = UIImage(named: "logo_inverse.png")
@@ -175,7 +176,10 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         
         /* Discontinue refresher if we've started loading posts into table */
         if indexPath.section == 0 {
-            self.endRefreshing()
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
+                self.endRefreshing()
+                timer.invalidate()
+            }
         }
         
         if let cell = tableView.dequeueReusableCell(
@@ -250,9 +254,6 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
             postManager.postManagerIsFetchingData = true
             // Get more data - API call
             postManager.updatePostArray()
-            
-            // Update UI
-            
         }
     }
     

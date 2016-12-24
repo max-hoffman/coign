@@ -21,21 +21,20 @@ class ProfileTableViewController: UITableViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        configureHeader()
+    //MARK: - Refresh view methods
+    @objc private func refreshView(_ refreshControl: UIRefreshControl) {
         configureNetworkOfImpact()
-        connectRevealVC()
-        self.tableView.separatorStyle = .none
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        // Initialize Tab Bar Item
-        tabBarItem = UITabBarItem(title: "Profile", image: #imageLiteral(resourceName: "profile"), selectedImage: #imageLiteral(resourceName: "profile_selected").withRenderingMode(.alwaysOriginal))
+    @objc private func endRefreshing() {
+        if let refreshControl = self.refreshControl {
+            if refreshControl.isRefreshing {
+                refreshControl.endRefreshing()
+            }
+        }
     }
+    
+    //MARK: Config methods
     
     private func configureHeader() {
         if let headerCell = tableView.dequeueReusableCell(withIdentifier: HEADER_CELL_IDENTIFIER) as? ProfileHeaderCell {
@@ -57,6 +56,7 @@ class ProfileTableViewController: UITableViewController {
             FirTree.queryNetworkOfImpact(userID: userID) { [weak self] networkTuple in
                 if networkTuple != nil {
                     self?.networkOfImpact = networkTuple!
+                    _ = networkTuple?.sorted{ $1.1 > $0.1 }
                 }
             }
         }
@@ -76,6 +76,13 @@ class ProfileTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.row == 0 {
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
+                self.endRefreshing()
+                timer.invalidate()
+            }
+        }
         if let networkCell = tableView.dequeueReusableCell(withIdentifier: NETWORK_CELL_IDENTIFIER, for: indexPath) as? NetworkCell {
             networkCell.title?.text = "\(networkOfImpact[indexPath.row].charity):"
             networkCell.number?.text = String(networkOfImpact[indexPath.row].number)
@@ -85,16 +92,29 @@ class ProfileTableViewController: UITableViewController {
             return UITableViewCell()
         }
     }
- 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: - Superview methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureHeader()
+        configureNetworkOfImpact()
+        connectRevealVC()
+        self.tableView.separatorStyle = .none
+        
+        // handle pull to refresh
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(refreshView(_:)), for: UIControlEvents.valueChanged)
+        self.refreshControl?.backgroundColor = UIColor.lightGray
+        self.refreshControl?.tintColor = UIColor.white
+        
     }
-    */
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        // Initialize Tab Bar Item
+        tabBarItem = UITabBarItem(title: "Profile", image: #imageLiteral(resourceName: "profile"), selectedImage: #imageLiteral(resourceName: "profile_selected").withRenderingMode(.alwaysOriginal))
+    }
 
 }
