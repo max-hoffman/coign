@@ -93,6 +93,8 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         imageView.image = UIImage(named: "logo_inverse.png")
         self.navigationItem.titleView = imageView
         
+        //remove separator lines
+        self.tableView.separatorStyle = .none
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -131,7 +133,11 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     func endRefreshing() {
         if let refreshControl = self.refreshControl {
             if refreshControl.isRefreshing {
-                refreshControl.endRefreshing()
+                Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
+                    refreshControl.endRefreshing()
+                    timer.invalidate()
+                }
+                
             }
         }
     }
@@ -162,7 +168,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
      
      */
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return postManager.currentPosts.count
+        return postManager.currentPosts.count > 0 ? postManager.currentPosts.count : 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -176,19 +182,22 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
         
         /* Discontinue refresher if we've started loading posts into table */
         if indexPath.section == 0 {
-            Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
-                self.endRefreshing()
-                timer.invalidate()
-            }
+            endRefreshing()
         }
         
-        if let cell = tableView.dequeueReusableCell(
-            withIdentifier: POST_CELL_IDENTIFIER, for: indexPath) as? PostCell{
-
-            return formattedPostCell(cell, withPost: postManager.currentPosts[indexPath.section])
+        if postManager.currentPosts.count == 0 {
+            //return a special cell that says "no ... posts" based on what the selected segmented control is
+            return tableView.dequeueReusableCell(withIdentifier: "no posts cell") ?? UITableViewCell()
         }
         else {
-            return UITableViewCell()
+            if let cell = tableView.dequeueReusableCell(
+                withIdentifier: POST_CELL_IDENTIFIER, for: indexPath) as? PostCell{
+
+                return formattedPostCell(cell, withPost: postManager.currentPosts[indexPath.section])
+            }
+            else {
+                return UITableViewCell()
+            }
         }
     }
     
@@ -233,7 +242,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return postManager.currentPosts.count > 0 ? UITableViewAutomaticDimension : 100
     }
 
     //MARK: - Footer methods
@@ -243,7 +252,7 @@ class HomeMenuController: UITableViewController, CLLocationManagerDelegate {
     }
 
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-         return 15
+        return postManager.currentPosts.count > 0 ? 15 : 0
     }
 
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

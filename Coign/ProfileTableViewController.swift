@@ -91,7 +91,7 @@ class ProfileTableViewController: UITableViewController {
         
         //either show the "no donations" text, or fill the cells
         if networkOfImpact.count == 0 {
-            return tableView.dequeueReusableCell(withIdentifier: NO_DONATION_CELL_IDENTIFIER)!
+            return tableView.dequeueReusableCell(withIdentifier: NO_DONATION_CELL_IDENTIFIER) ?? UITableViewCell()
         }
         else {
             return formattedNetworkCell(indexPath: indexPath)

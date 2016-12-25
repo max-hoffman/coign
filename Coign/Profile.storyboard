@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="188"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JQa-RU-Zy9" id="f13-X5-qjR">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="187.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="187"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lio-4O-8Qh">
@@ -61,7 +61,7 @@
                                 <rect key="frame" x="0.0" y="216" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xdG-3N-DEH" id="WLW-Q4-IH0">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Paf-Yo-EOg">
@@ -92,28 +92,25 @@
                                     <outlet property="title" destination="CY4-Cp-JNn" id="Fna-I7-QJt"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="no donations cell" rowHeight="56" id="feV-5X-muy" customClass="NoDonationsCell" customModule="Coign" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="no donations cell" rowHeight="56" id="feV-5X-muy">
                                 <rect key="frame" x="0.0" y="272" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="feV-5X-muy" id="dEW-bV-qbm">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No donations to show!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXk-ki-gzs">
-                                            <rect key="frame" x="115" y="19" width="145" height="17"/>
+                                            <rect key="frame" x="115" y="30.5" width="145" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.35281735749999998" green="0.35281735749999998" blue="0.35281735749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="XXk-ki-gzs" firstAttribute="centerY" secondItem="dEW-bV-qbm" secondAttribute="centerY" id="asM-JR-dYI"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="XXk-ki-gzs" secondAttribute="bottom" id="5eS-DK-fco"/>
                                         <constraint firstItem="XXk-ki-gzs" firstAttribute="centerX" secondItem="dEW-bV-qbm" secondAttribute="centerX" id="vdV-9B-TTD"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="title" destination="XXk-ki-gzs" id="9jc-tm-Mxq"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

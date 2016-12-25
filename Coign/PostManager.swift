@@ -101,6 +101,10 @@ class PostManager {
                 self.recentPostUIDs = postUIDs!
                 self.updatePostArray()
             }
+            else {
+                //no recent posts
+                print("no recent posts")
+            }
         }
         
     }
@@ -118,6 +122,12 @@ class PostManager {
                         self.localPostUIDs = keys!
                         self.updatePostArray()
                     }
+                    else {
+                        //no local posts
+                        print("no local posts")
+                        self.localPostUIDs = []
+                        self.viewController?.tableView.reloadData()
+                    }
             })
         }
     }
@@ -128,7 +138,7 @@ class PostManager {
         let postCount = currentPosts.count
         let updateNumber = min(uidCount - postCount, 10)
         
-        if updateNumber != 0{
+        if updateNumber != 0 {
             let postsToLoad: [String] = Array(currentUIDs[postCount...postCount+updateNumber-1])
             
             FirTree.returnPostsFromUIDs(postsToLoad) {
