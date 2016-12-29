@@ -19,7 +19,7 @@ extension FirTree {
     /**
      Post donation to FIR tree; update "users" nodes and "donations" nodes
      */
-    class func newPost(_ post: [String: Any], location: CLLocationCoordinate2D?, userID: String, charity: String, proxyUID: String?, proxyIsAFriend: Bool) {
+    class func newPost(_ post: [String: Any], location: CLLocationCoordinate2D?, userID: String, charity: String, proxyUID: String?, proxyIsAFriend: Bool, completionHandler: (_ postID: String) -> ()) {
         
         //MARK: Post data
         
@@ -58,6 +58,9 @@ extension FirTree {
         
         //MARK: Update monthly chart
         recordPostInMonthlyChart(charity: charity)
+        
+        //
+        completionHandler(postRef.key)
     }
     
     class func recordPostInMonthlyChart(charity: String) {

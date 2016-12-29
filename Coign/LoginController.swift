@@ -100,7 +100,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.layer.cornerRadius = 20
+        //self.view.layer.cornerRadius = 20
     
         loginButton.layer.cornerRadius = 10
         loginButton.layer.borderWidth = 1

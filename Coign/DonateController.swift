@@ -92,7 +92,12 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
             ]
             
             //complete the post by updating the FirTree and reloading autofill array
-            FirTree.newPost(post, location: currentUserLocation, userID: userUID, charity: charity, proxyUID: proxyUID, proxyIsAFriend: proxyIsAFriend)
+            FirTree.newPost(post, location: currentUserLocation, userID: userUID, charity: charity, proxyUID: proxyUID, proxyIsAFriend: proxyIsAFriend) {
+                [weak self] postID in
+                self?.presentShareURL(postID: postID)
+            }
+            
+            //refresh proxies
             loadAutofillProxies()
         }
     }
@@ -137,7 +142,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
             
             weakSelf?.createPost()
             
-            weakSelf?.presentSharePopover()
+            //weakSelf?.presentFBSharePopover()
             
             weakSelf?.resetPage()
             
@@ -150,7 +155,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         present(donationAlert, animated: true, completion: nil)
     }
     
-    fileprivate func presentSharePopover() {
+    fileprivate func presentFBSharePopover() {
         if(SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook)) {
             print("available")
             if let socialController = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
@@ -160,6 +165,36 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
             }
             
         }
+    }
+    
+    private func presentShareURL(postID: String) {
+        let shareURLSheet = UIAlertController(title: "Want To Share?", message: "Copy/paste post into social media/comment forums." + "\n" + "www.coign.co/\(postID)", preferredStyle: UIAlertControllerStyle.actionSheet)
+        shareURLSheet.addAction(UIAlertAction(title: "Copy", style: .default , handler: {
+            (action: UIAlertAction) -> Void in
+            
+            //copy coign.co/id link
+            UIPasteboard.general.string = "https:www.coign.co/" + postID
+            
+        }))
+        shareURLSheet.addAction(UIAlertAction(title: "See For Yourself", style: .default , handler: {
+            (action: UIAlertAction) -> Void in
+            
+            if let url = URL(string: "https:www.coign.co/" + postID) {
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:])
+                } else {
+                    // Fallback on earlier versions
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }))
+        shareURLSheet.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: {
+            (action: UIAlertAction) -> Void in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        present(shareURLSheet, animated: true, completion: nil)
+
     }
     
     fileprivate func resetPage() {

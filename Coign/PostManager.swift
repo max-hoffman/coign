@@ -126,6 +126,7 @@ class PostManager {
                         //no local posts
                         print("no local posts")
                         self.localPostUIDs = []
+                        self.localPosts = []
                         self.viewController?.tableView.reloadData()
                     }
             })
