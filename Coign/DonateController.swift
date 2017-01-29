@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import Social
 import SkyFloatingLabelTextField
+import Stripe
 
 class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate {
 
@@ -120,7 +121,15 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     //button color returns to normal after the popover appears
     @IBAction func verifyButtonPressed(_ sender: UIButton) {
         verifyButton.backgroundColor = CustomColor.brandGreen.withAlphaComponent(0.5)
-        presentVerifyPopover()
+        //presentVerifyPopover()
+        let settings = Settings(theme: .default(), additionalPaymentMethods: .all, requiredBillingAddressFields: .zip, smsAutofillEnabled: true)
+        let checkoutViewController = CheckoutController(product: "Donation for xyz",
+                                                            price: 1000,
+                                                            settings: settings)
+        
+        
+        self.navigationController?.pushViewController(checkoutViewController, animated: true)
+        
         let _ = Timer.scheduledTimer(withTimeInterval: VERIFY_BUTTON_DELAY, repeats: false) {timer in
             self.verifyButton.backgroundColor = CustomColor.brandGreen.withAlphaComponent(1.0)
             timer.invalidate()
@@ -155,17 +164,17 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         present(donationAlert, animated: true, completion: nil)
     }
     
-    fileprivate func presentFBSharePopover() {
-        if(SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook)) {
-            print("available")
-            if let socialController = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
-                socialController.setInitialText("Hello World!")
-                socialController.add(URL(fileURLWithPath: "coign.co"))
-                self.present(socialController, animated: true, completion: nil)
-            }
-            
-        }
-    }
+//    fileprivate func presentFBSharePopover() {
+//        if(SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook)) {
+//            print("available")
+//            if let socialController = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
+//                socialController.setInitialText("Hello World!")
+//                socialController.add(URL(fileURLWithPath: "coign.co"))
+//                self.present(socialController, animated: true, completion: nil)
+//            }
+//            
+//        }
+//    }
     
     private func presentShareURL(postID: String) {
         let shareURLSheet = UIAlertController(title: "Want To Share?", message: "Copy/paste post into social media/comment forums." + "\n" + "www.coign.co/\(postID)", preferredStyle: UIAlertControllerStyle.actionSheet)
@@ -173,7 +182,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
             (action: UIAlertAction) -> Void in
             
             //copy coign.co/id link
-            UIPasteboard.general.string = "https:www.coign.co/" + postID
+            UIPasteboard.general.string = "https//:www.coign.co/" + postID
             
         }))
         shareURLSheet.addAction(UIAlertAction(title: "See For Yourself", style: .default , handler: {
@@ -205,6 +214,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         donateMessage.text = MESSAGE_PLACEHOLDER_TEXT
         anonymousSwitch.isOn = false
     }
+
     
     //MARK: - View manipulation methods
     

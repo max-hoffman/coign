@@ -35,6 +35,7 @@ class FirTree {
         case FacebookIDs = "facebook ids"
         case CommunityProxies = "community proxies"
         case MonthlyTally = "monthly tally"
+        case StripeID = "stripeID"
     }
 
     enum UserParameter: String {
@@ -51,6 +52,7 @@ class FirTree {
         case Posts = "posts"
         case Charity = "charity preference"
         case NetworkOfImpact = "network of impact"
+        case StripeID = "stripe ID"
     }
 
     enum PostParameter: String {

@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseAuth
+import Alamofire
 
 extension LoginController {
     
@@ -26,7 +27,7 @@ extension LoginController {
         
         //initiate facebook fetch
         connection.add(request, completionHandler: {
-            [weak weakSelf = self]
+            [weakSelf = self]
             (connection, result, error) in
             
             //facebook fetch failed, exit flow
@@ -36,7 +37,7 @@ extension LoginController {
             }
             
             //parse the json result
-            jsonData = weakSelf?.parseJSON(result)
+            jsonData = weakSelf.parseJSON(result)
             
             //check for expected fetch data before proceeding
             if let facebookID = jsonData?["id"] as! String?,
@@ -56,7 +57,7 @@ extension LoginController {
                         
                         //extract FirTree data to update user defaults
                         /*fixes bug: user data does not load into settings after logout */
-                        weakSelf?.existingUserLoggedIn(userID,
+                        weakSelf.existingUserLoggedIn(userID,
                                                        firTreeDictionary: snapshot.value as! Dictionary<String, Any>)
                     }
                     else { //user is new
@@ -64,6 +65,7 @@ extension LoginController {
                                                         facebookID: facebookID,
                                                         name: name,
                                                         pictureURL: pictureURL)
+                        //weakSelf.createStripeCustomer(userID: userID)
                     }
                     
                     //need the userID to be loaded into defaults first
@@ -71,7 +73,7 @@ extension LoginController {
                         FirTree.updateUserFriends(friendsArray!)
                     }
                     
-                    weakSelf?.setHomeMenuAsRootViewController()
+                    weakSelf.setHomeMenuAsRootViewController()
                 })
             }
             else {
@@ -81,6 +83,21 @@ extension LoginController {
         connection.start()
     }
     
+//    private func createStripeCustomer(userID: String) {
+//        let parameters: Parameters = [
+//            "new": "true",
+//            "userID" : userID
+//        ]
+//        
+//        // POST request
+//        Alamofire.request("https://coign.co/api/customer", parameters: parameters, encoding: JSONEncoding.default).response { (response) in
+//            print(response)
+//            
+//            //parse json respone, pick out stripe ID
+//            
+//            //push stripe ID to FIRTree
+//        }
+//    }
     
     fileprivate func setHomeMenuAsRootViewController() {
         //set home menu as root VC
@@ -89,7 +106,6 @@ extension LoginController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController = revealViewController
     }
-    
     
     fileprivate func existingUserLoggedIn(_ userID: String, firTreeDictionary value: Dictionary<String, Any>) {
         //extract FirTree data to update user defaults

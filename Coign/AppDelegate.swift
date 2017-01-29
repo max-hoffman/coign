@@ -11,7 +11,8 @@ import CoreData
 import Firebase
 import FBSDKCoreKit
 import IQKeyboardManagerSwift
-
+import Stripe
+ 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -29,16 +30,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let filePath = Bundle.main.path(forResource: "GoogleService-Dev-Info", ofType:"plist")
             let options = FIROptions(contentsOfFile:filePath)
             FIRApp.configure(with: options!)
+            let stripePublishableKey = "pk_test_3B1oZdZk9OHFdMbnBQi5Vh37"
             print("debug running")
         #else
             let filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType:"plist")
             let options = FIROptions(contentsOfFile:filePath)
             FIRApp.configure(with: options!)
+            let stripePublishableKEy = "pk_live_rYx6Uu8iVAJOYZ3KA66107qc"
             print("production running")
         #endif
         
         //connect keyboard manager
         IQKeyboardManager.sharedManager().enable = true
+        
+        //enable stripe
+        Stripe.setDefaultPublishableKey(stripePublishableKey)
+        let config = STPPaymentConfiguration.shared()
+        config.companyName = "Coign"
+        config.requiredBillingAddressFields = .zip
+        config.additionalPaymentMethods = .all
+        config.smsAutofillDisabled = false
         
         //make status bar text white
         UIApplication.shared.statusBarStyle = .lightContent

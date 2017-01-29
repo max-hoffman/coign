@@ -5,3 +5,4 @@
 #import "SWRevealViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <Stripe/Stripe.h>

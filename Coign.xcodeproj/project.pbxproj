@@ -137,6 +137,18 @@
 		E2C398031D85CD24000D35F4 /* AboutUs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C398021D85CD24000D35F4 /* AboutUs.storyboard */; };
 		E2C7B39D1E02F91200D60F1F /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7B39C1E02F91200D60F1F /* Friend.swift */; };
 		E2D877201D8EFEDC00BAAB46 /* SideViewTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8771F1D8EFEDC00BAAB46 /* SideViewTableController.swift */; };
+		E2DE823D1E3B9C1000B195C1 /* CheckoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE823C1E3B9C1000B195C1 /* CheckoutController.swift */; };
+		E2DE823E1E3B9C1000B195C1 /* CheckoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE823C1E3B9C1000B195C1 /* CheckoutController.swift */; };
+		E2DE82401E3BAE0A00B195C1 /* StripeNetworkingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE823F1E3BAE0A00B195C1 /* StripeNetworkingExtensions.swift */; };
+		E2DE82411E3BAE0A00B195C1 /* StripeNetworkingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE823F1E3BAE0A00B195C1 /* StripeNetworkingExtensions.swift */; };
+		E2DE82431E3BAE7A00B195C1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE82421E3BAE7A00B195C1 /* APIClient.swift */; };
+		E2DE82441E3BAE7A00B195C1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE82421E3BAE7A00B195C1 /* APIClient.swift */; };
+		E2DE82471E3BF0DA00B195C1 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE82461E3BF0DA00B195C1 /* Buttons.swift */; };
+		E2DE82481E3BF0DA00B195C1 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE82461E3BF0DA00B195C1 /* Buttons.swift */; };
+		E2DE824A1E3BF1C100B195C1 /* CheckoutRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE82491E3BF1C100B195C1 /* CheckoutRowView.swift */; };
+		E2DE824B1E3BF1C100B195C1 /* CheckoutRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE82491E3BF1C100B195C1 /* CheckoutRowView.swift */; };
+		E2DE824D1E3D135A00B195C1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE824C1E3D135A00B195C1 /* Settings.swift */; };
+		E2DE824E1E3D135A00B195C1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE824C1E3D135A00B195C1 /* Settings.swift */; };
 		E2E4E37A1DD413CF004522C9 /* CharityList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2E4E3791DD413CF004522C9 /* CharityList.plist */; };
 		E2E8FE141DD8F451003AB2D2 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E8FE131DD8F451003AB2D2 /* ImageExtensions.swift */; };
 		E2E8FE181DD90314003AB2D2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E8FE171DD90314003AB2D2 /* CoreLocation.framework */; };
@@ -253,6 +265,12 @@
 		E2C398021D85CD24000D35F4 /* AboutUs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AboutUs.storyboard; sourceTree = "<group>"; };
 		E2C7B39C1E02F91200D60F1F /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		E2D8771F1D8EFEDC00BAAB46 /* SideViewTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewTableController.swift; sourceTree = "<group>"; };
+		E2DE823C1E3B9C1000B195C1 /* CheckoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutController.swift; sourceTree = "<group>"; };
+		E2DE823F1E3BAE0A00B195C1 /* StripeNetworkingExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeNetworkingExtensions.swift; sourceTree = "<group>"; };
+		E2DE82421E3BAE7A00B195C1 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		E2DE82461E3BF0DA00B195C1 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		E2DE82491E3BF1C100B195C1 /* CheckoutRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutRowView.swift; sourceTree = "<group>"; };
+		E2DE824C1E3D135A00B195C1 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E2E4E3791DD413CF004522C9 /* CharityList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CharityList.plist; sourceTree = "<group>"; };
 		E2E8FE131DD8F451003AB2D2 /* ImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
 		E2E8FE151DD90205003AB2D2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -539,6 +557,7 @@
 				E20AF76D1DCE8ECB00E6CB09 /* Static Data */,
 				E25125A51DA9D92700AA4B09 /* Constants.swift */,
 				E20AF76B1DCE8E9700E6CB09 /* Networking */,
+				E2DE82451E3BF09700B195C1 /* Stripe */,
 				E20AF76C1DCE8EB000E6CB09 /* Extensions */,
 			);
 			name = Models;
@@ -583,6 +602,7 @@
 			children = (
 				E2C397FF1D85CD04000D35F4 /* Donate.storyboard */,
 				E2C397F31D85BDC3000D35F4 /* DonateController.swift */,
+				E2DE823C1E3B9C1000B195C1 /* CheckoutController.swift */,
 			);
 			name = "Donate ";
 			sourceTree = "<group>";
@@ -619,6 +639,18 @@
 				E2F0A8D81DC2AF9F00ABDC4F /* SettingDetailCell.swift */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		E2DE82451E3BF09700B195C1 /* Stripe */ = {
+			isa = PBXGroup;
+			children = (
+				E2DE82461E3BF0DA00B195C1 /* Buttons.swift */,
+				E2DE82491E3BF1C100B195C1 /* CheckoutRowView.swift */,
+				E2DE82421E3BAE7A00B195C1 /* APIClient.swift */,
+				E2DE824C1E3D135A00B195C1 /* Settings.swift */,
+				E2DE823F1E3BAE0A00B195C1 /* StripeNetworkingExtensions.swift */,
+			);
+			name = Stripe;
 			sourceTree = "<group>";
 		};
 		E2E94FFB1D8E1A9800DC3ACC /* Facebook */ = {
@@ -1048,8 +1080,12 @@
 				E26353261DE608BF006787A6 /* CharityCategoryController.swift in Sources */,
 				E27020031E0D6B3200C5B3CE /* ProfileHeaderCell.swift in Sources */,
 				E24E756E1E0372C1002B4073 /* AutoCompleteTextField.swift in Sources */,
+				E2DE82471E3BF0DA00B195C1 /* Buttons.swift in Sources */,
 				E2A8C9461DC52BCA00C0DDDB /* LoginExtensions.swift in Sources */,
+				E2DE82431E3BAE7A00B195C1 /* APIClient.swift in Sources */,
+				E2DE823D1E3B9C1000B195C1 /* CheckoutController.swift in Sources */,
 				E24214971DA8966400A5B080 /* VCExtensions.swift in Sources */,
+				E2DE824D1E3D135A00B195C1 /* Settings.swift in Sources */,
 				E20163E51D7B2F7100949826 /* LoginController.swift in Sources */,
 				E2A7D5E51DDE1B3C00D6D92A /* QueryExtensions.swift in Sources */,
 				E2212D2F1DE135230016E2C8 /* HeaderCell.swift in Sources */,
@@ -1057,6 +1093,7 @@
 				E2C397F01D85B9B4000D35F4 /* SettingsController.swift in Sources */,
 				E2E8FE141DD8F451003AB2D2 /* ImageExtensions.swift in Sources */,
 				E20163E31D7B2F7100949826 /* AppDelegate.swift in Sources */,
+				E2DE82401E3BAE0A00B195C1 /* StripeNetworkingExtensions.swift in Sources */,
 				E25125A61DA9D92700AA4B09 /* Constants.swift in Sources */,
 				E2A04AB71DCC23250082EF1E /* FAQController.swift in Sources */,
 				E2A7D5E71DDE52DB00D6D92A /* Post.swift in Sources */,
@@ -1069,6 +1106,7 @@
 				E27020061E0D6C2E00C5B3CE /* NetworkCell.swift in Sources */,
 				E2D877201D8EFEDC00BAAB46 /* SideViewTableController.swift in Sources */,
 				E2A7D5E11DDD427700D6D92A /* HomeMenuController.swift in Sources */,
+				E2DE824A1E3BF1C100B195C1 /* CheckoutRowView.swift in Sources */,
 				E2E8FE1C1DD90F35003AB2D2 /* PostingExtensions.swift in Sources */,
 				E2C7B39D1E02F91200D60F1F /* Friend.swift in Sources */,
 				E2212D311DE144510016E2C8 /* FooterCell.swift in Sources */,
@@ -1111,8 +1149,12 @@
 				E26353301DE9F5FF006787A6 /* CharityCategoryController.swift in Sources */,
 				E27020041E0D6B3200C5B3CE /* ProfileHeaderCell.swift in Sources */,
 				E24E756F1E0372C1002B4073 /* AutoCompleteTextField.swift in Sources */,
+				E2DE82481E3BF0DA00B195C1 /* Buttons.swift in Sources */,
 				E26353321DE9F5FF006787A6 /* LoginExtensions.swift in Sources */,
+				E2DE82441E3BAE7A00B195C1 /* APIClient.swift in Sources */,
+				E2DE823E1E3B9C1000B195C1 /* CheckoutController.swift in Sources */,
 				E26353331DE9F5FF006787A6 /* VCExtensions.swift in Sources */,
+				E2DE824E1E3D135A00B195C1 /* Settings.swift in Sources */,
 				E26353341DE9F5FF006787A6 /* LoginController.swift in Sources */,
 				E26353351DE9F5FF006787A6 /* QueryExtensions.swift in Sources */,
 				E26353361DE9F5FF006787A6 /* HeaderCell.swift in Sources */,
@@ -1120,6 +1162,7 @@
 				E26353381DE9F5FF006787A6 /* SettingsController.swift in Sources */,
 				E26353391DE9F5FF006787A6 /* ImageExtensions.swift in Sources */,
 				E263533A1DE9F5FF006787A6 /* AppDelegate.swift in Sources */,
+				E2DE82411E3BAE0A00B195C1 /* StripeNetworkingExtensions.swift in Sources */,
 				E263533B1DE9F5FF006787A6 /* Constants.swift in Sources */,
 				E263533C1DE9F5FF006787A6 /* FAQController.swift in Sources */,
 				E263533D1DE9F5FF006787A6 /* Post.swift in Sources */,
@@ -1132,6 +1175,7 @@
 				E27020071E0D6C2E00C5B3CE /* NetworkCell.swift in Sources */,
 				E26353431DE9F5FF006787A6 /* SideViewTableController.swift in Sources */,
 				E26353441DE9F5FF006787A6 /* HomeMenuController.swift in Sources */,
+				E2DE824B1E3BF1C100B195C1 /* CheckoutRowView.swift in Sources */,
 				E26353451DE9F5FF006787A6 /* PostingExtensions.swift in Sources */,
 				E24E756C1E02FDCD002B4073 /* Friend.swift in Sources */,
 				E26353471DE9F5FF006787A6 /* FooterCell.swift in Sources */,

@@ -192,6 +192,7 @@ class SettingsController: UITableViewController, MFMailComposeViewControllerDele
         UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
         UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Posts.rawValue)
         UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.Charity.rawValue)
+        UserDefaults.standard.removeObject(forKey: FirTree.UserParameter.StripeID.rawValue)
     }
     
 }

@@ -14,7 +14,8 @@ target 'Coign' do
   pod 'SkyFloatingLabelTextField', git: "https://github.com/MLSDev/SkyFloatingLabelTextField.git", branch: "swift3"
   pod 'IQKeyboardManagerSwift'
   pod 'GeoFire', :git => 'https://github.com/firebase/geofire-objc.git'
-  # pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
+  pod 'Stripe'
+  pod 'Alamofire'
   
   # this was necessary to link the firebase database to geofire, copy pasted from the geofire github
   post_install do |installer|
@@ -41,9 +42,8 @@ target 'Coign' do
       pod 'SkyFloatingLabelTextField', git: "https://github.com/MLSDev/SkyFloatingLabelTextField.git", branch: "swift3"
       pod 'IQKeyboardManagerSwift'
       pod 'GeoFire', :git => 'https://github.com/firebase/geofire-objc.git'
-      # pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
-      
-      # this was necessary to link the firebase database to geofire, copy pasted from the geofire github
+      pod 'Stripe'
+      pod 'Alamofire'
       
 
   end
