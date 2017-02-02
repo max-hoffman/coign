@@ -130,10 +130,10 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         
         self.navigationController?.pushViewController(checkoutViewController, animated: true)
         
-        let _ = Timer.scheduledTimer(withTimeInterval: VERIFY_BUTTON_DELAY, repeats: false) {timer in
-            self.verifyButton.backgroundColor = CustomColor.brandGreen.withAlphaComponent(1.0)
-            timer.invalidate()
-        }
+//        let _ = Timer.scheduledTimer(withTimeInterval: VERIFY_BUTTON_DELAY, repeats: false) {timer in
+//            self.verifyButton.backgroundColor = CustomColor.brandGreen.withAlphaComponent(1.0)
+//            timer.invalidate()
+//        }
     }
     
     @IBAction func verifyButtonReleased(_ sender: UIButton) {

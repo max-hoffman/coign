@@ -11,12 +11,13 @@
 
 import Foundation
 import Stripe
+import Alamofire
 
 class APIClient: NSObject, STPBackendAPIAdapter {
     
     static let sharedClient = APIClient()
     let session: URLSession
-    var baseURLString: String? = nil
+    let baseURLString = "https://www.coign.co/api/"
     var defaultSource: STPCard? = nil
     var sources: [STPCard] = []
     
@@ -32,11 +33,12 @@ class APIClient: NSObject, STPBackendAPIAdapter {
             , httpResponse.statusCode != 200 {
             return error ?? NSError.networkingError(httpResponse.statusCode)
         }
+        print(error)
         return error
     }
     
     func completeCharge(_ result: STPPaymentResult, amount: Int, completion: @escaping STPErrorBlock) {
-        guard let baseURLString = baseURLString, let baseURL = URL(string: baseURLString) else {
+        guard let baseURL = URL(string: baseURLString) else {
             let error = NSError(domain: StripeDomain, code: 50, userInfo: [
                 NSLocalizedDescriptionKey: "Please set baseURLString to your API URL in CheckoutViewController.swift"
                 ])
@@ -49,6 +51,7 @@ class APIClient: NSObject, STPBackendAPIAdapter {
             "source": result.source.stripeID as AnyObject,
             "amount": amount as AnyObject
         ]
+       
         let request = URLRequest.request(url, method: .POST, params: params)
         let task = self.session.dataTask(with: request) { (data, urlResponse, error) in
             DispatchQueue.main.async {
@@ -70,7 +73,7 @@ class APIClient: NSObject, STPBackendAPIAdapter {
             completion(nil, error)
             return
         }
-        guard let baseURLString = baseURLString, let baseURL = URL(string: baseURLString) else {
+        guard let baseURL = URL(string: baseURLString) else {
             let error = NSError(domain: StripeDomain, code: 50, userInfo: [
                 NSLocalizedDescriptionKey: "Please set baseURLString to your API URL in CheckoutViewController.swift"
                 ])
@@ -91,24 +94,54 @@ class APIClient: NSObject, STPBackendAPIAdapter {
                       "new" : true as AnyObject]
         }
         
-        let url = baseURL.appendingPathComponent(path)
-        let request = URLRequest.request(url, method: .POST, params: params)
-        let task = self.session.dataTask(with: request) { (data, urlResponse, error) in
-            DispatchQueue.main.async {
-                let deserializer = STPCustomerDeserializer(data: data, urlResponse: urlResponse, error: error)
-                if let error = deserializer.error {
-                    completion(nil, error)
-                    return
-                } else if let customer = deserializer.customer {
-                    completion(customer, nil)
-                }
+        //let url = baseURL.appendingPathComponent(path)
+        //let request = URLRequest.request(url, method: .POST, params: params)
+        
+        let request = Alamofire.request(baseURLString + path, method: .post, parameters: params, encoding: JSONEncoding.default)
+        request.responseJSON() {
+            response in
+            
+            let parser = JSONParser()
+            let data = parser.parseJSON(response.result.value)
+            let deserializer = STPCustomerDeserializer(jsonResponse: response.result.value)
+            
+//            print("response: \(response)")
+//            print("result: \(response.result)")
+//            print("value: \(response.result.value as! NSDictionary)")
+
+            if let error = deserializer.error {
+                completion(nil, error)
+                print(error)
+                return
+            } else if let customer = deserializer.customer {
+                completion(customer, nil)
             }
         }
-        task.resume()
+
+//        let task = self.session.dataTask(with: request) { (data, urlResponse, error) in
+//            DispatchQueue.main.async {
+//                
+//                //this data isn't being parsed correctly
+//                print(NSData(data: data!))
+//                //let parser = JSONParser()
+//                //print(parser.parseJSON(data))
+//                
+//                let deserializer = STPCustomerDeserializer(data: data, urlResponse: urlResponse, error: error)
+//                if let error = deserializer.error {
+//                    completion(nil, error)
+//                    print(error)
+//                    return
+//                } else if let customer = deserializer.customer {
+//                    print(error)
+//                    completion(customer, nil)
+//                }
+//            }
+//        }
+//        task.resume()
     }
     
     @objc func selectDefaultCustomerSource(_ source: STPSource, completion: @escaping STPErrorBlock) {
-        guard let baseURLString = baseURLString, let baseURL = URL(string: baseURLString) else {
+        guard let baseURL = URL(string: baseURLString) else {
             if let token = source as? STPToken {
                 self.defaultSource = token.card
             }
@@ -134,7 +167,7 @@ class APIClient: NSObject, STPBackendAPIAdapter {
     }
     
     @objc func attachSource(toCustomer source: STPSource, completion: @escaping STPErrorBlock) {
-        guard let baseURLString = baseURLString, let baseURL = URL(string: baseURLString) else {
+        guard let baseURL = URL(string: baseURLString) else {
             if let token = source as? STPToken, let card = token.card {
                 self.sources.append(card)
                 self.defaultSource = card

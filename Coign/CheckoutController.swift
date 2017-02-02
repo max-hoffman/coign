@@ -14,7 +14,7 @@ import Stripe
 
 class CheckoutController: UIViewController, STPPaymentContextDelegate {
     
-    let backendBaseURL: String? = "https://coign.co/"
+    let backendBaseURL: String? = "https://www.coign.co/"
     
     // These values will be shown to the user when they purchase with Apple Pay.
     let companyName = "Emoji Apparel"
@@ -51,12 +51,10 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
     init(product: String, price: Int, settings: Settings) {
         
         let stripePublishableKey = Stripe.defaultPublishableKey
-        let backendBaseURL = self.backendBaseURL
-        
+
         self.product = product
         self.productImage.text = product
         self.theme = settings.theme
-        APIClient.sharedClient.baseURLString = self.backendBaseURL
         
         let paymentContext = STPPaymentContext(apiAdapter: APIClient.sharedClient,
                                                configuration: STPPaymentConfiguration.shared(),

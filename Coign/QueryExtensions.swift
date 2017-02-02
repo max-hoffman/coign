@@ -62,10 +62,11 @@ extension FirTree {
         var recentPosts: [String] = []
         
         rootRef.child(Node.Posts.rawValue).queryLimited(toFirst: UInt(number)).observe( .value, with: { snapshot in
-                
+            let parser = JSONParser()
             for item in snapshot.children {
                 if let child = item as? FIRDataSnapshot, let post = child.value,
-                    let postDict = JSONParser.parseJSON(post),
+                    
+                    let postDict = parser.parseJSON(post),
                     let postUID = postDict[FirTree.PostParameter.PostUID.rawValue] as? String {
                         recentPosts.insert(postUID, at: 0)
                 }
