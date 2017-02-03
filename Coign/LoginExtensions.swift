@@ -129,6 +129,10 @@ extension LoginController {
         UserDefaults.standard.set(
             loginTime,
             forKey: FirTree.UserParameter.MostRecentLoginDate.rawValue)
+        
+        //grab the user's stripeID
+        FirTree.getExistingStripeCustomer(userID: userID)
+        
     }
     
     //MARK: - New user function
