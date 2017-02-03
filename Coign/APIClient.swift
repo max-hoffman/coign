@@ -216,7 +216,8 @@ class APIClient: NSObject, STPBackendAPIAdapter {
         let path = "add-source"
         let url = baseURL.appendingPathComponent(path)
         let params = [
-            "source": source.stripeID
+            "source": source.stripeID,
+            "stripeID" : UserDefaults.standard.value(forKey: FirTree.UserParameter.StripeID.rawValue)
             ]
         
         let request = Alamofire.request(baseURLString + path, method: .post, parameters: params, encoding: JSONEncoding.default)
