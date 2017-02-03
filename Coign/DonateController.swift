@@ -22,6 +22,15 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
             return nil
         }
     }
+    
+    var selectedCharity: String {
+        if !customCharityView.isHidden {
+            return customCharityTextField.text!
+        }
+        else {
+            return (charities?[charityPicker.selectedRow(inComponent: 0)])!
+        }
+    }
 
     var friendsDictionary: [String:String] = [:]
     var communityDictionary: [String:String] = [:]
@@ -120,11 +129,11 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
 
     //button color returns to normal after the popover appears
     @IBAction func verifyButtonPressed(_ sender: UIButton) {
-        verifyButton.backgroundColor = CustomColor.brandGreen.withAlphaComponent(0.5)
+        //verifyButton.backgroundColor = CustomColor.brandGreen.withAlphaComponent(0.5)
         //presentVerifyPopover()
         let settings = Settings(theme: .default(), additionalPaymentMethods: .all, requiredBillingAddressFields: .zip, smsAutofillEnabled: true)
-        let checkoutViewController = CheckoutController(product: "Donation for xyz",
-                                                            price: 1000,
+        let checkoutViewController = CheckoutController(product: selectedCharity,
+                                                            price: 100,
                                                             settings: settings)
         
         

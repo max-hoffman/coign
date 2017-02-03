@@ -33,7 +33,6 @@ class APIClient: NSObject, STPBackendAPIAdapter {
             , httpResponse.statusCode != 200 {
             return error ?? NSError.networkingError(httpResponse.statusCode)
         }
-        print(error)
         return error
     }
     
@@ -52,17 +51,30 @@ class APIClient: NSObject, STPBackendAPIAdapter {
             "amount": amount as AnyObject
         ]
        
-        let request = URLRequest.request(url, method: .POST, params: params)
-        let task = self.session.dataTask(with: request) { (data, urlResponse, error) in
-            DispatchQueue.main.async {
-                if let error = self.decodeResponse(urlResponse, error: error as NSError?) {
-                    completion(error)
-                    return
-                }
-                completion(nil)
+        let request = Alamofire.request(baseURLString + path, method: .post, parameters: params, encoding: JSONEncoding.default)
+        request.responseJSON() {
+            response in
+            
+            switch response.result {
+            case .success :
+                return completion(nil)
+            case .failure (let error):
+                return completion(error)
             }
         }
-        task.resume()
+
+        
+//        let request = URLRequest.request(url, method: .POST, params: params)
+//        let task = self.session.dataTask(with: request) { (data, urlResponse, error) in
+//            DispatchQueue.main.async {
+//                if let error = self.decodeResponse(urlResponse, error: error as NSError?) {
+//                    completion(error)
+//                    return
+//                }
+//                completion(nil)
+//            }
+//        }
+//        task.resume()
     }
     
     @objc func retrieveCustomer(_ completion: @escaping STPCustomerCompletionBlock) {
@@ -83,12 +95,14 @@ class APIClient: NSObject, STPBackendAPIAdapter {
         
         var path: String = ""
         var params: [String : AnyObject] = [:]
+        var newCustomer = false
         
         if let stripeID = UserDefaults.standard.string(forKey: FirTree.UserParameter.StripeID.rawValue) {
             path = "retrieve-customer"
             params = ["stripeID" : stripeID as AnyObject]
         }
         else if let userID = UserDefaults.standard.string(forKey: FirTree.UserParameter.UserUID.rawValue){
+            newCustomer = true
             path = "create-customer"
             params = ["userID" : userID as AnyObject,
                       "new" : true as AnyObject]
@@ -101,21 +115,30 @@ class APIClient: NSObject, STPBackendAPIAdapter {
         request.responseJSON() {
             response in
             
-            let parser = JSONParser()
-            let data = parser.parseJSON(response.result.value)
-            let deserializer = STPCustomerDeserializer(jsonResponse: response.result.value)
-            
-//            print("response: \(response)")
-//            print("result: \(response.result)")
-//            print("value: \(response.result.value as! NSDictionary)")
 
-            if let error = deserializer.error {
-                completion(nil, error)
-                print(error)
-                return
-            } else if let customer = deserializer.customer {
-                completion(customer, nil)
+            switch response.result {
+            case .success :
+                if let customerData = response.result.value {
+                    let deserializer = STPCustomerDeserializer(jsonResponse: customerData)
+                    
+                    if let error = deserializer.error {
+                        completion(nil, error)
+                        return
+                    } else if let customer = deserializer.customer {
+                        if newCustomer {
+                            FirTree.newStripeCustomer(stripeID: customer.stripeID)
+                        }
+                        
+                        completion(customer, nil)
+                    }
+                }
+
+            case .failure (let error):
+                return completion(nil, error)
             }
+        
+
+            
         }
 
 //        let task = self.session.dataTask(with: request) { (data, urlResponse, error) in
@@ -153,17 +176,32 @@ class APIClient: NSObject, STPBackendAPIAdapter {
         let params = [
             "source": source.stripeID,
             ]
-        let request = URLRequest.request(url, method: .POST, params: params as [String : AnyObject])
-        let task = self.session.dataTask(with: request) { (data, urlResponse, error) in
-            DispatchQueue.main.async {
-                if let error = self.decodeResponse(urlResponse, error: error as NSError?) {
-                    completion(error)
-                    return
-                }
-                completion(nil)
+        
+        
+        let request = Alamofire.request(baseURLString + path, method: .post, parameters: params, encoding: JSONEncoding.default)
+        request.responseJSON() {
+            response in
+            
+            switch response.result {
+            case .success :
+                return completion(nil)
+            case .failure (let error):
+                return completion(error)
             }
         }
-        task.resume()
+
+        
+//        let request = URLRequest.request(url, method: .POST, params: params as [String : AnyObject])
+//        let task = self.session.dataTask(with: request) { (data, urlResponse, error) in
+//            DispatchQueue.main.async {
+//                if let error = self.decodeResponse(urlResponse, error: error as NSError?) {
+//                    completion(error)
+//                    return
+//                }
+//                completion(nil)
+//            }
+//        }
+//        task.resume()
     }
     
     @objc func attachSource(toCustomer source: STPSource, completion: @escaping STPErrorBlock) {
@@ -180,17 +218,17 @@ class APIClient: NSObject, STPBackendAPIAdapter {
         let params = [
             "source": source.stripeID
             ]
-        let request = URLRequest.request(url, method: .POST, params: params as [String : AnyObject])
-        let task = self.session.dataTask(with: request) { (data, urlResponse, error) in
-            DispatchQueue.main.async {
-                if let error = self.decodeResponse(urlResponse, error: error as NSError?) {
-                    completion(error)
-                    return
-                }
-                completion(nil)
+        
+        let request = Alamofire.request(baseURLString + path, method: .post, parameters: params, encoding: JSONEncoding.default)
+        request.responseJSON() {
+            response in
+            
+            switch response.result {
+            case .success :
+                return completion(nil)
+            case .failure (let error):
+                return completion(error)
             }
         }
-        task.resume()
     }
-    
 }

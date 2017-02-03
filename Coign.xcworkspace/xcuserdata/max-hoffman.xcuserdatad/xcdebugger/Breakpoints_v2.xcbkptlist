@@ -19,5 +19,66 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coign/CheckoutController.swift"
+            timestampString = "507766456.700515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coign_Dev.CheckoutController.__deallocating_deinit"
+                  moduleName = "Coign Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/max-hoffman/Documents/coign/Coign/CheckoutController.swift"
+                  timestampString = "507835225.450732"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coign_Dev.CheckoutController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Coign_Dev.CheckoutController"
+                  moduleName = "Coign Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/max-hoffman/Documents/coign/Coign/CheckoutController.swift"
+                  timestampString = "507835225.453602"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coign_Dev.CheckoutController.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Coign_Dev.CheckoutController"
+                  moduleName = "Coign Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/max-hoffman/Documents/coign/Coign/CheckoutController.swift"
+                  timestampString = "507835225.455817"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

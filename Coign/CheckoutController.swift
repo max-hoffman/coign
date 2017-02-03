@@ -14,7 +14,19 @@ import Stripe
 
 class CheckoutController: UIViewController, STPPaymentContextDelegate {
     
-    let backendBaseURL: String? = "https://www.coign.co/"
+    // 1) To get started with this demo, first head to https://dashboard.stripe.com/account/apikeys
+    // and copy your "Test Publishable Key" (it looks like pk_test_abcdef) into the line below.
+    let stripePublishableKey = "pk_test_3B1oZdZk9OHFdMbnBQi5Vh37"
+    
+    // 2) Next, optionally, to have this demo save your user's payment details, head to
+    // https://github.com/stripe/example-ios-backend , click "Deploy to Heroku", and follow
+    // the instructions (don't worry, it's free). Replace nil on the line below with your
+    // Heroku URL (it looks like https://blazing-sunrise-1234.herokuapp.com ).
+    let backendBaseURL: String? = nil
+    
+    // 3) Optionally, to enable Apple Pay, follow the instructions at https://stripe.com/docs/mobile/apple-pay
+    // to create an Apple Merchant ID. Replace nil on the line below with it (it looks like merchant.com.yourappname).
+    let appleMerchantID: String? = nil
     
     // These values will be shown to the user when they purchase with Apple Pay.
     let companyName = "Emoji Apparel"
@@ -24,12 +36,14 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
     
     let theme: STPTheme
     let paymentRow: CheckoutRowView
+    let shippingRow: CheckoutRowView
     let totalRow: CheckoutRowView
     let buyButton: BuyButton
     let rowHeight: CGFloat = 44
     let productImage = UILabel()
     let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     let numberFormatter: NumberFormatter
+    let shippingString: String
     var product = ""
     var paymentInProgress: Bool = false {
         didSet {
@@ -50,15 +64,26 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
     
     init(product: String, price: Int, settings: Settings) {
         
-        let stripePublishableKey = Stripe.defaultPublishableKey
-
+        let stripePublishableKey = self.stripePublishableKey
+        let backendBaseURL = self.backendBaseURL
+        
         self.product = product
         self.productImage.text = product
         self.theme = settings.theme
         
+        // This code is included here for the sake of readability, but in your application you should set up your configuration and theme earlier, preferably in your App Delegate.
+        let config = STPPaymentConfiguration.shared()
+        config.publishableKey = self.stripePublishableKey
+        config.appleMerchantIdentifier = self.appleMerchantID
+        config.companyName = self.companyName
+        config.requiredBillingAddressFields = settings.requiredBillingAddressFields
+        
+        config.additionalPaymentMethods = settings.additionalPaymentMethods
+        config.smsAutofillDisabled = !settings.smsAutofillEnabled
+        
         let paymentContext = STPPaymentContext(apiAdapter: APIClient.sharedClient,
-                                               configuration: STPPaymentConfiguration.shared(),
-                                               theme: theme)
+                                               configuration: config,
+                                               theme: settings.theme)
         let userInformation = STPUserInformation()
         paymentContext.prefilledInformation = userInformation
         paymentContext.paymentAmount = price
@@ -67,7 +92,12 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
         
         self.paymentRow = CheckoutRowView(title: "Payment", detail: "Select Payment",
                                           theme: settings.theme)
+        var shippingString = "Contact"
         
+        self.shippingString = shippingString
+        self.shippingRow = CheckoutRowView(title: self.shippingString,
+                                           detail: "Enter \(self.shippingString) Info",
+            theme: settings.theme)
         self.totalRow = CheckoutRowView(title: "Total", detail: "", tappable: false,
                                         theme: settings.theme)
         self.buyButton = BuyButton(enabled: true, theme: settings.theme)
@@ -96,11 +126,12 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
         var red: CGFloat = 0
         self.theme.primaryBackgroundColor.getRed(&red, green: nil, blue: nil, alpha: nil)
         self.activityIndicator.activityIndicatorViewStyle = red < 0.5 ? .white : .gray
-        self.navigationItem.title = "Coign Donation"
+        self.navigationItem.title = "Emoji Apparel"
         
-        self.productImage.font = UIFont.systemFont(ofSize: 70)
+        self.productImage.font = UIFont.systemFont(ofSize: 40)
         self.view.addSubview(self.totalRow)
         self.view.addSubview(self.paymentRow)
+        self.view.addSubview(self.shippingRow)
         self.view.addSubview(self.productImage)
         self.view.addSubview(self.buyButton)
         self.view.addSubview(self.activityIndicator)
@@ -110,17 +141,23 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
         self.paymentRow.onTap = { [weak self] _ in
             self?.paymentContext.pushPaymentMethodsViewController()
         }
+        self.shippingRow.onTap = { [weak self] _ in
+            //self?.paymentContext.pushShippingViewController()
+        }
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let width = self.view.bounds.width
         self.productImage.sizeToFit()
+        let navBarHeight = self.navigationController?.navigationBar.frame.height ?? 0
         self.productImage.center = CGPoint(x: width/2.0,
-                                           y: self.productImage.bounds.height/2.0 + rowHeight)
+                                           y: self.productImage.bounds.height/2.0 + rowHeight + navBarHeight)
         self.paymentRow.frame = CGRect(x: 0, y: self.productImage.frame.maxY + rowHeight,
                                        width: width, height: rowHeight)
-        self.totalRow.frame = CGRect(x: 0, y: self.self.paymentRow.frame.maxY,
+        self.shippingRow.frame = CGRect(x: 0, y: self.paymentRow.frame.maxY,
+                                        width: width, height: rowHeight)
+        self.totalRow.frame = CGRect(x: 0, y: self.shippingRow.frame.maxY,
                                      width: width, height: rowHeight)
         self.buyButton.frame = CGRect(x: 0, y: 0, width: 88, height: 44)
         self.buyButton.center = CGPoint(x: width/2.0, y: self.totalRow.frame.maxY + rowHeight*1.5)
@@ -167,6 +204,12 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
         else {
             self.paymentRow.detail = "Select Payment"
         }
+        if let shippingMethod = paymentContext.selectedPaymentMethod {
+            self.shippingRow.detail = shippingMethod.label
+        }
+        else {
+            self.shippingRow.detail = "Enter \(self.shippingString) Info"
+        }
         self.totalRow.detail = self.numberFormatter.string(from: NSNumber(value: Float(self.paymentContext.paymentAmount)/100))!
     }
     
@@ -189,5 +232,37 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
         self.present(alertController, animated: true, completion: nil)
     }
     
-
+//    func paymentContext(_ paymentContext: STPPaymentContext, didUpdateShippingAddress address: STPAddress, completion: @escaping STPShippingMethodsCompletionBlock) {
+//        let upsGround = PKShippingMethod()
+//        upsGround.amount = 0
+//        upsGround.label = "UPS Ground"
+//        upsGround.detail = "Arrives in 3-5 days"
+//        upsGround.identifier = "ups_ground"
+//        let upsWorldwide = PKShippingMethod()
+//        upsWorldwide.amount = 10.99
+//        upsWorldwide.label = "UPS Worldwide Express"
+//        upsWorldwide.detail = "Arrives in 1-3 days"
+//        upsWorldwide.identifier = "ups_worldwide"
+//        let fedEx = PKShippingMethod()
+//        fedEx.amount = 5.99
+//        fedEx.label = "FedEx"
+//        fedEx.detail = "Arrives tomorrow"
+//        fedEx.identifier = "fedex"
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+//            if address.country == nil || address.country == "US" {
+//                completion(.valid, nil, [upsGround, fedEx], fedEx)
+//            }
+//            else if address.country == "AQ" {
+//                let error = NSError(domain: "ShippingError", code: 123, userInfo: [NSLocalizedDescriptionKey: "Invalid Shipping Address",
+//                                                                                   NSLocalizedFailureReasonErrorKey: "We can't ship to this country."])
+//                completion(.invalid, error, nil, nil)
+//            }
+//            else {
+//                fedEx.amount = 20.99
+//                completion(.valid, nil, [upsWorldwide, fedEx], fedEx)
+//            }
+//        }
+//    }
+    
 }

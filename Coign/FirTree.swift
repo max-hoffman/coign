@@ -188,4 +188,27 @@ class FirTree {
         
         return newUID
     }
+    
+    class func newStripeCustomer(stripeID: String) {
+        if let userID = UserDefaults.standard.value(forKey: UserParameter.UserUID.rawValue) as? String {
+            rootRef.child(Node.StripeID.rawValue).child(userID).updateChildValues([UserParameter.StripeID.rawValue : stripeID])
+            
+            UserDefaults.standard.set(stripeID, forKey: UserParameter.StripeID.rawValue)
+        }
+    }
+    
+    class func getExistingStripeCustomer(userID: String) {
+        rootRef.child(Node.StripeID.rawValue).child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+
+            if let stripeDict = snapshot.value as? [String: String] {
+                let customerID = stripeDict[UserParameter.StripeID.rawValue]
+                UserDefaults.standard.set(customerID, forKey: UserParameter.StripeID.rawValue)
+                return
+            } else {
+                print("stripe customer not found")
+                return
+            }
+            
+        })
+    }
 }
