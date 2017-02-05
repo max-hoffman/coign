@@ -19,48 +19,56 @@ extension FirTree {
     /**
      Post donation to FIR tree; update "users" nodes and "donations" nodes
      */
-    class func newPost(_ post: [String: Any], location: CLLocationCoordinate2D?, userID: String, charity: String, proxyUID: String?, proxyIsAFriend: Bool, completionHandler: (_ postID: String) -> ()) {
+    class func newPost(_ post: [String: Any], location: CLLocationCoordinate2D?, completionHandler: (_ postID: String?) -> ()) {
         
-        //MARK: Post data
-        
-        //create donation node with a unique ID
-        let postRef = FirTree.rootRef.child(Node.Posts.rawValue).childByAutoId()
-        
-        //add the donation info to that node
-        postRef.updateChildValues(post)
-        
-        //TODO: this is lazy af, need to make this nicer. the fix is to probably pass in a bunch of parameters to this funciton and assemble the post inside
-        postRef.updateChildValues([FirTree.PostParameter.PostUID.rawValue: postRef.key])
-        
-        //MARK: Geohash data
-        
-        //set geohash with that ID reference
-        Geohash.setGeohash(location, postUID: postRef.key)
-        
-        //MARK: User data
-        
-        updateUserNetworkOfImpact(userID: userID, charity: charity)
-        
-        //record that donation event in the user's donation node (array of ID's)
-        FirTree.rootRef.child(Node.Users.rawValue).child(userID).child(UserParameter.Posts.rawValue).updateChildValues([postRef.key: true])
-        
-        
-        //MARK: Recipient data
+        if let userID = post[PostParameter.DonorUID.rawValue] as? String, let charity = post[PostParameter.Charity.rawValue] as? String {
+            let proxyUID = post[PostParameter.RecipientUID.rawValue] as? String
+            let proxyIsAFriend = post[PostParameter.ProxyIsFriend.rawValue] as? String
+            
+            //MARK: Post data
+            
+            //create donation node with a unique ID
+            let postRef = FirTree.rootRef.child(Node.Posts.rawValue).childByAutoId()
+            
+            //add the donation info to that node
+            postRef.updateChildValues(post)
+            
+            //TODO: this is lazy af, need to make this nicer. the fix is to probably pass in a bunch of parameters to this funciton and assemble the post inside
+            postRef.updateChildValues([FirTree.PostParameter.PostUID.rawValue: postRef.key])
+            
+            //MARK: Geohash data
+            
+            //set geohash with that ID reference
+            Geohash.setGeohash(location, postUID: postRef.key)
+            
+            //MARK: User data
+            
+            updateUserNetworkOfImpact(userID: userID, charity: charity)
+            
+            //record that donation event in the user's donation node (array of ID's)
+            FirTree.rootRef.child(Node.Users.rawValue).child(userID).child(UserParameter.Posts.rawValue).updateChildValues([postRef.key: true])
+            
+            
+            //MARK: Recipient data
 
-        //update the recipient node if necessary
-        if proxyUID != nil {
+            //update the recipient node if necessary
+            if proxyUID != nil {
+                
+                updateUserNetworkOfImpact(userID: proxyUID!, charity: charity)
+                
+                //record that donation event in the recipient's donation node
+                FirTree.rootRef.child(Node.Users.rawValue).child(proxyUID!).child(UserParameter.Posts.rawValue).setValue(postRef.key)
+            }
             
-            updateUserNetworkOfImpact(userID: proxyUID!, charity: charity)
+            //MARK: Update monthly chart
+            recordPostInMonthlyChart(charity: charity)
             
-            //record that donation event in the recipient's donation node
-            FirTree.rootRef.child(Node.Users.rawValue).child(proxyUID!).child(UserParameter.Posts.rawValue).setValue(postRef.key)
+            //
+            completionHandler(postRef.key)
+            return
         }
-        
-        //MARK: Update monthly chart
-        recordPostInMonthlyChart(charity: charity)
-        
-        //
-        completionHandler(postRef.key)
+        completionHandler(nil)
+        return
     }
     
     class func recordPostInMonthlyChart(charity: String) {

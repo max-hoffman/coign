@@ -72,6 +72,7 @@ class FirTree {
         case ReCoignCount = "recoign count"
         case RootPostId = "root post"
         case Proxy = "proxy"
+        case ProxyIsFriend = "proxy is a friend"
     }
     
     enum NotificationParameter: String {

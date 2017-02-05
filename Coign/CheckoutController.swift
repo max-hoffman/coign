@@ -11,6 +11,7 @@
 
 import UIKit
 import Stripe
+import CoreLocation
 
 class CheckoutController: UIViewController, STPPaymentContextDelegate {
     
@@ -22,7 +23,6 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
     // https://github.com/stripe/example-ios-backend , click "Deploy to Heroku", and follow
     // the instructions (don't worry, it's free). Replace nil on the line below with your
     // Heroku URL (it looks like https://blazing-sunrise-1234.herokuapp.com ).
-    let backendBaseURL: String? = nil
     
     // 3) Optionally, to enable Apple Pay, follow the instructions at https://stripe.com/docs/mobile/apple-pay
     // to create an Apple Merchant ID. Replace nil on the line below with it (it looks like merchant.com.yourappname).
@@ -33,6 +33,8 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
     let paymentCurrency = "usd"
     
     let paymentContext: STPPaymentContext
+    var post: [String: Any]?
+    var currentUserLocation: CLLocationCoordinate2D?
     
     let theme: STPTheme
     let paymentRow: CheckoutRowView
@@ -62,14 +64,13 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
         }
     }
     
-    init(product: String, price: Int, settings: Settings) {
-        
-        let stripePublishableKey = self.stripePublishableKey
-        let backendBaseURL = self.backendBaseURL
+    init(product: String, price: Int, settings: Settings, post: [String: Any]?, currentUserLocation: CLLocationCoordinate2D?) {
         
         self.product = product
         self.productImage.text = product
         self.theme = settings.theme
+        self.post = post
+        self.currentUserLocation = currentUserLocation
         
         // This code is included here for the sake of readability, but in your application you should set up your configuration and theme earlier, preferably in your App Delegate.
         let config = STPPaymentConfiguration.shared()
@@ -186,7 +187,21 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
             message = error?.localizedDescription ?? ""
         case .success:
             title = "Success"
-            message = "You bought a \(self.product)!"
+            message = "Copy and paste your donation into social media!"
+            
+            //submit post to firebase
+            if post != nil {
+                FirTree.newPost(post!, location: currentUserLocation) {
+                    [weak self] postID in
+                    
+                    if postID != nil {
+                        //MARK: need to fix
+                        //show the link to page
+                        //dismiss controller when you press anything
+                        //self?.presentShareURL(postID: postID)
+                    }
+                }
+            }
         case .userCancellation:
             return
         }

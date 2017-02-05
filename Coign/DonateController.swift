@@ -43,7 +43,6 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     let MESSAGE_PLACEHOLDER_TEXT: String = "Insert message here: "
     let DONATE_PLACEHOLDER_TEXT: String = "ex: Jane Doe"
     let VERIFY_BUTTON_DELAY: TimeInterval = 0.4
-    let BACKGROUND_IMAGE_LINK: String = "coign_background_02"
     
     //MARK: - Outlets
     //@IBOutlet weak var menuButton: UIBarButtonItem!
@@ -59,7 +58,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     @IBOutlet weak var charityPicker: UIPickerView!
     @IBOutlet weak var charityPickerView: UIView!
     @IBOutlet weak var verifyView: UIView!
-    @IBOutlet weak var verifyButton: UIButton!
+    @IBOutlet weak var verifyButton: HighlightingButton!
     @IBOutlet weak var dollarLabel: UILabel!
     @IBOutlet weak var selectCustomArrow: UILabel!
     @IBOutlet weak var customCharityView: UIView!
@@ -98,18 +97,50 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
                 FirTree.PostParameter.DonationAmount.rawValue : 1,
                 FirTree.PostParameter.TimeStamp.rawValue : Date.timeIntervalSinceReferenceDate,
                 FirTree.PostParameter.Anonymous.rawValue : anonymousSwitch.isOn,
-                FirTree.PostParameter.Proxy.rawValue : primaryDonorSwitch.isOn
+                FirTree.PostParameter.Proxy.rawValue : primaryDonorSwitch.isOn,
+                FirTree.PostParameter.ProxyIsFriend.rawValue : proxyIsAFriend
             ]
             
             //complete the post by updating the FirTree and reloading autofill array
-            FirTree.newPost(post, location: currentUserLocation, userID: userUID, charity: charity, proxyUID: proxyUID, proxyIsAFriend: proxyIsAFriend) {
-                [weak self] postID in
-                self?.presentShareURL(postID: postID)
-            }
+//            FirTree.newPost(post, location: currentUserLocation, userID: userUID, charity: charity, proxyUID: proxyUID, proxyIsAFriend: proxyIsAFriend) {
+//                [weak self] postID in
+//                self?.presentShareURL(postID: postID)
+//            }
             
             //refresh proxies
             loadAutofillProxies()
         }
+    }
+    
+    private func collectPost() -> [String : Any]? {
+        var post : [String: Any]?
+        if let userUID = UserDefaults.standard.object(forKey: FirTree.UserParameter.UserUID.rawValue) as? String, let recipient = donateFor.text, let name = UserDefaults.standard.object(forKey: FirTree.UserParameter.Name.rawValue) {
+            
+            var charity: String {
+                if !customCharityView.isHidden {
+                    return customCharityTextField.text!
+                }
+                else {
+                    return (charities?[charityPicker.selectedRow(inComponent: 0)])!
+                }
+            }
+            
+            let (proxyUID, proxyIsAFriend) = extractProxyUID(name: donateFor.text)
+            
+            post = [
+                FirTree.PostParameter.DonorName.rawValue: name,
+                FirTree.PostParameter.DonorUID.rawValue : userUID,
+                FirTree.PostParameter.Charity.rawValue : charity,
+                FirTree.PostParameter.RecipientName.rawValue : recipient,
+                FirTree.PostParameter.RecipientUID.rawValue : proxyUID,
+                FirTree.PostParameter.Message.rawValue : donateMessage.text,
+                FirTree.PostParameter.DonationAmount.rawValue : 1,
+                FirTree.PostParameter.TimeStamp.rawValue : Date.timeIntervalSinceReferenceDate,
+                FirTree.PostParameter.Anonymous.rawValue : anonymousSwitch.isOn,
+                FirTree.PostParameter.Proxy.rawValue : primaryDonorSwitch.isOn
+            ]
+        }
+        return post
     }
     
     private func extractProxyUID(name: String?) -> (uid: String, friend: Bool) {
@@ -129,25 +160,19 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
 
     //button color returns to normal after the popover appears
     @IBAction func verifyButtonPressed(_ sender: UIButton) {
-        //verifyButton.backgroundColor = CustomColor.brandGreen.withAlphaComponent(0.5)
         //presentVerifyPopover()
         let settings = Settings(theme: .default(), additionalPaymentMethods: .all, requiredBillingAddressFields: .zip, smsAutofillEnabled: true)
         let checkoutViewController = CheckoutController(product: selectedCharity,
                                                             price: 100,
-                                                            settings: settings)
+                                                            settings: settings, post: collectPost(), currentUserLocation: currentUserLocation)
         
         
         self.navigationController?.pushViewController(checkoutViewController, animated: true)
-        
-//        let _ = Timer.scheduledTimer(withTimeInterval: VERIFY_BUTTON_DELAY, repeats: false) {timer in
-//            self.verifyButton.backgroundColor = CustomColor.brandGreen.withAlphaComponent(1.0)
-//            timer.invalidate()
-//        }
     }
     
-    @IBAction func verifyButtonReleased(_ sender: UIButton) {
-        verifyButton.backgroundColor = CustomColor.brandGreen.withAlphaComponent(1.0)
-    }
+//    @IBAction func verifyButtonReleased(_ sender: UIButton) {
+//        verifyButton.backgroundColor = CustomColor.brandGreen.withAlphaComponent(1.0)
+//    }
     
     fileprivate func presentVerifyPopover() {
         //TODO: This is where the stripe/plaid verification needs to go
@@ -385,8 +410,6 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
                 }
             }
         }
-        
-        
     }
     
     func underlineHeadlines() {

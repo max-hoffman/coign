@@ -37,24 +37,19 @@ class APIClient: NSObject, STPBackendAPIAdapter {
     }
     
     func completeCharge(_ result: STPPaymentResult, amount: Int, completion: @escaping STPErrorBlock) {
-        guard let baseURL = URL(string: baseURLString) else {
-            let error = NSError(domain: StripeDomain, code: 50, userInfo: [
-                NSLocalizedDescriptionKey: "Please set baseURLString to your API URL in CheckoutViewController.swift"
-                ])
-            completion(error)
-            return
-        }
+        
         let path = "charge"
-        let url = baseURL.appendingPathComponent(path)
         let params: [String: AnyObject] = [
-            "source": result.source.stripeID as AnyObject,
-            "amount": amount as AnyObject
+            "source" : result.source.stripeID as AnyObject,
+            "amount" : amount as AnyObject,
+            "userID" : UserDefaults.standard.value(forKey: FirTree.UserParameter.UserUID.rawValue) as AnyObject,
+            "customerID" : UserDefaults.standard.value(forKey: FirTree.UserParameter.StripeID.rawValue) as AnyObject
         ]
        
         let request = Alamofire.request(baseURLString + path, method: .post, parameters: params, encoding: JSONEncoding.default)
         request.responseJSON() {
             response in
-            
+            print(response)
             switch response.result {
             case .success :
                 return completion(nil)
@@ -62,19 +57,6 @@ class APIClient: NSObject, STPBackendAPIAdapter {
                 return completion(error)
             }
         }
-
-        
-//        let request = URLRequest.request(url, method: .POST, params: params)
-//        let task = self.session.dataTask(with: request) { (data, urlResponse, error) in
-//            DispatchQueue.main.async {
-//                if let error = self.decodeResponse(urlResponse, error: error as NSError?) {
-//                    completion(error)
-//                    return
-//                }
-//                completion(nil)
-//            }
-//        }
-//        task.resume()
     }
     
     @objc func retrieveCustomer(_ completion: @escaping STPCustomerCompletionBlock) {
@@ -98,6 +80,7 @@ class APIClient: NSObject, STPBackendAPIAdapter {
         var newCustomer = false
         
         if let stripeID = UserDefaults.standard.string(forKey: FirTree.UserParameter.StripeID.rawValue) {
+            print(stripeID)
             path = "retrieve-customer"
             params = ["stripeID" : stripeID as AnyObject]
         }
@@ -107,9 +90,6 @@ class APIClient: NSObject, STPBackendAPIAdapter {
             params = ["userID" : userID as AnyObject,
                       "new" : true as AnyObject]
         }
-        
-        //let url = baseURL.appendingPathComponent(path)
-        //let request = URLRequest.request(url, method: .POST, params: params)
         
         let request = Alamofire.request(baseURLString + path, method: .post, parameters: params, encoding: JSONEncoding.default)
         request.responseJSON() {
@@ -128,7 +108,6 @@ class APIClient: NSObject, STPBackendAPIAdapter {
                         if newCustomer {
                             FirTree.newStripeCustomer(stripeID: customer.stripeID)
                         }
-                        
                         completion(customer, nil)
                     }
                 }
@@ -136,48 +115,16 @@ class APIClient: NSObject, STPBackendAPIAdapter {
             case .failure (let error):
                 return completion(nil, error)
             }
-        
-
-            
         }
-
-//        let task = self.session.dataTask(with: request) { (data, urlResponse, error) in
-//            DispatchQueue.main.async {
-//                
-//                //this data isn't being parsed correctly
-//                print(NSData(data: data!))
-//                //let parser = JSONParser()
-//                //print(parser.parseJSON(data))
-//                
-//                let deserializer = STPCustomerDeserializer(data: data, urlResponse: urlResponse, error: error)
-//                if let error = deserializer.error {
-//                    completion(nil, error)
-//                    print(error)
-//                    return
-//                } else if let customer = deserializer.customer {
-//                    print(error)
-//                    completion(customer, nil)
-//                }
-//            }
-//        }
-//        task.resume()
     }
     
     @objc func selectDefaultCustomerSource(_ source: STPSource, completion: @escaping STPErrorBlock) {
-        guard let baseURL = URL(string: baseURLString) else {
-            if let token = source as? STPToken {
-                self.defaultSource = token.card
-            }
-            completion(nil)
-            return
-        }
+    
         let path = "change-default-source"
-        let url = baseURL.appendingPathComponent(path)
         let params = [
             "source": source.stripeID,
             "stripeID" : UserDefaults.standard.value(forKey: FirTree.UserParameter.StripeID.rawValue)
             ]
-        
         
         let request = Alamofire.request(baseURLString + path, method: .post, parameters: params, encoding: JSONEncoding.default)
         request.responseJSON() {
@@ -190,19 +137,6 @@ class APIClient: NSObject, STPBackendAPIAdapter {
                 return completion(error)
             }
         }
-
-        
-//        let request = URLRequest.request(url, method: .POST, params: params as [String : AnyObject])
-//        let task = self.session.dataTask(with: request) { (data, urlResponse, error) in
-//            DispatchQueue.main.async {
-//                if let error = self.decodeResponse(urlResponse, error: error as NSError?) {
-//                    completion(error)
-//                    return
-//                }
-//                completion(nil)
-//            }
-//        }
-//        task.resume()
     }
     
     @objc func attachSource(toCustomer source: STPSource, completion: @escaping STPErrorBlock) {
@@ -215,7 +149,6 @@ class APIClient: NSObject, STPBackendAPIAdapter {
             return
         }
         let path = "add-source"
-        let url = baseURL.appendingPathComponent(path)
         let params = [
             "source": source.stripeID,
             "stripeID" : UserDefaults.standard.value(forKey: FirTree.UserParameter.StripeID.rawValue)
