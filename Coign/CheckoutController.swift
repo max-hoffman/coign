@@ -177,6 +177,38 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
                                                 completion: completion)
     }
     
+    private func presentShareURL(postID: String) {
+        if let url = URL(string: "https://www.coign.co/posts/" + postID) {
+            let shareURLSheet = UIAlertController(title: "Want To Share?", message: "Copy/paste post into social media/comment forums." + "\n" + "www.coign.co/\(postID)", preferredStyle: UIAlertControllerStyle.actionSheet)
+            
+            shareURLSheet.addAction(UIAlertAction(title: "Copy", style: .default , handler: {
+                (action: UIAlertAction) -> Void in
+                
+                //copy coign.co/id link
+                UIPasteboard.general.string = url.absoluteString
+            }))
+            shareURLSheet.addAction(UIAlertAction(title: "See For Yourself", style: .default , handler: {
+                (action: UIAlertAction) -> Void in
+                
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:])
+                } else {
+                    // Fallback on earlier versions
+                    UIApplication.shared.openURL(url)
+                }
+            }))
+            shareURLSheet.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: {
+                (action: UIAlertAction) -> Void in
+                self.dismiss(animated: true) {
+                    _ = self.navigationController?.popViewController(animated: true)
+                }
+            }))
+            
+            present(shareURLSheet, animated: true, completion: nil)
+        }
+        
+    }
+    
     func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
         self.paymentInProgress = false
         let title: String
@@ -198,7 +230,7 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
                         //MARK: need to fix
                         //show the link to page
                         //dismiss controller when you press anything
-                        //self?.presentShareURL(postID: postID)
+                        self?.presentShareURL(postID: postID!)
                     }
                 }
             }

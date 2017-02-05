@@ -274,7 +274,6 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="verifyButtonPressed:" destination="Rlo-Te-RmQ" eventType="touchUpInside" id="Mk3-W4-0ed"/>
-                                                                    <action selector="verifyButtonReleased:" destination="Rlo-Te-RmQ" eventType="touchDown" id="iWE-Q1-oZb"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -363,7 +362,7 @@
             <objects>
                 <navigationController storyboardIdentifier="Donate NC" title="Donation" automaticallyAdjustsScrollViewInsets="NO" id="6hD-sd-YP4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EHl-6R-c6q">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EHl-6R-c6q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
