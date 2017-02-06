@@ -145,7 +145,19 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
         self.shippingRow.onTap = { [weak self] _ in
             //self?.paymentContext.pushShippingViewController()
         }
+        
+        //add notification observers
+        let nc = NotificationCenter.default
+        nc.addObserver(forName: .successfulPayment, object: nil, queue: nil) { [weak self] _ in
+            print("notification recieved")
+            self?.navigationController?.popViewController(animated: true) }
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -177,15 +189,21 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
                                                 completion: completion)
     }
     
+    /**
+     Show the action sheet to copy/paste donation.
+    */
     private func presentShareURL(postID: String) {
+        
+        let nc = NotificationCenter.default
+        
         if let url = URL(string: "https://www.coign.co/posts/" + postID) {
             let shareURLSheet = UIAlertController(title: "Want To Share?", message: "Copy/paste post into social media/comment forums." + "\n" + "www.coign.co/\(postID)", preferredStyle: UIAlertControllerStyle.actionSheet)
             
             shareURLSheet.addAction(UIAlertAction(title: "Copy", style: .default , handler: {
                 (action: UIAlertAction) -> Void in
-                
-                //copy coign.co/id link
+
                 UIPasteboard.general.string = url.absoluteString
+                nc.post(name: .successfulPayment, object: nil)
             }))
             shareURLSheet.addAction(UIAlertAction(title: "See For Yourself", style: .default , handler: {
                 (action: UIAlertAction) -> Void in
@@ -196,17 +214,17 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
                     // Fallback on earlier versions
                     UIApplication.shared.openURL(url)
                 }
+                
+                nc.post(name: .successfulPayment, object: nil)
             }))
             shareURLSheet.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: {
                 (action: UIAlertAction) -> Void in
-                self.dismiss(animated: true) {
-                    _ = self.navigationController?.popViewController(animated: true)
-                }
+                                
+                nc.post(name: .successfulPayment, object: nil)
             }))
             
             present(shareURLSheet, animated: true, completion: nil)
         }
-        
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
@@ -221,11 +239,13 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
             title = "Success"
             message = "Copy and paste your donation into social media!"
             
+            
             //submit post to firebase
             if post != nil {
+                
                 FirTree.newPost(post!, location: currentUserLocation) {
                     [weak self] postID in
-                    
+                    print(postID)
                     if postID != nil {
                         //MARK: need to fix
                         //show the link to page
@@ -240,7 +260,7 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(action)
-        self.present(alertController, animated: true, completion: nil)
+        //self.present(alertController, animated: true, completion: nil)
     }
     
     func paymentContextDidChange(_ paymentContext: STPPaymentContext) {

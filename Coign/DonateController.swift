@@ -170,10 +170,6 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         self.navigationController?.pushViewController(checkoutViewController, animated: true)
     }
     
-//    @IBAction func verifyButtonReleased(_ sender: UIButton) {
-//        verifyButton.backgroundColor = CustomColor.brandGreen.withAlphaComponent(1.0)
-//    }
-    
     fileprivate func presentVerifyPopover() {
         //TODO: This is where the stripe/plaid verification needs to go
         
@@ -461,6 +457,14 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         
         //nav bar for reveal view controller
         connectRevealVC()
+        
+        //add notification observers
+        let nc = NotificationCenter.default
+        nc.addObserver(forName: .successfulPayment, object: nil, queue: nil) { [weak self] _ in self?.resetPage() }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     required init?(coder aDecoder: NSCoder) {

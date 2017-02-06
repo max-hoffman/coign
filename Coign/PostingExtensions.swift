@@ -20,11 +20,11 @@ extension FirTree {
      Post donation to FIR tree; update "users" nodes and "donations" nodes
      */
     class func newPost(_ post: [String: Any], location: CLLocationCoordinate2D?, completionHandler: (_ postID: String?) -> ()) {
-        
+
         if let userID = post[PostParameter.DonorUID.rawValue] as? String, let charity = post[PostParameter.Charity.rawValue] as? String {
             let proxyUID = post[PostParameter.RecipientUID.rawValue] as? String
             let proxyIsAFriend = post[PostParameter.ProxyIsFriend.rawValue] as? String
-            
+
             //MARK: Post data
             
             //create donation node with a unique ID
@@ -63,7 +63,6 @@ extension FirTree {
             //MARK: Update monthly chart
             recordPostInMonthlyChart(charity: charity)
             
-            //
             completionHandler(postRef.key)
             return
         }
