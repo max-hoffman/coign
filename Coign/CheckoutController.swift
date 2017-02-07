@@ -127,7 +127,7 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
         var red: CGFloat = 0
         self.theme.primaryBackgroundColor.getRed(&red, green: nil, blue: nil, alpha: nil)
         self.activityIndicator.activityIndicatorViewStyle = red < 0.5 ? .white : .gray
-        self.navigationItem.title = "Emoji Apparel"
+        self.navigationItem.title = "Coign Donation"
         
         self.productImage.font = UIFont.systemFont(ofSize: 40)
         self.view.addSubview(self.totalRow)
@@ -149,15 +149,12 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
         //add notification observers
         let nc = NotificationCenter.default
         nc.addObserver(forName: .successfulPayment, object: nil, queue: nil) { [weak self] _ in
-            print("notification recieved")
             self?.navigationController?.popViewController(animated: true) }
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
-    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -245,7 +242,7 @@ class CheckoutController: UIViewController, STPPaymentContextDelegate {
                 
                 FirTree.newPost(post!, location: currentUserLocation) {
                     [weak self] postID in
-                    print(postID)
+
                     if postID != nil {
                         //MARK: need to fix
                         //show the link to page

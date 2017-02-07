@@ -143,7 +143,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTP-J1-9IJ" userLabel="For View">
                                                         <rect key="frame" x="0.0" y="536" width="375" height="140"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. donny drumpf" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Zv-So-gki" customClass="AutoCompleteTextField" customModule="Coign" customModuleProvider="target">
+                                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. yourself, a friend, public figure" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Zv-So-gki" customClass="AutoCompleteTextField" customModule="Coign" customModuleProvider="target">
                                                                 <rect key="frame" x="20" y="0.0" width="335" height="40"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                                 <constraints>
@@ -151,7 +151,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -202,7 +202,7 @@
                                                             <constraint firstItem="VNv-CP-ove" firstAttribute="leading" secondItem="MTk-t6-EVH" secondAttribute="leading" priority="750" constant="20" symbolic="YES" id="pxx-IQ-OBE"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="pz9-Km-Nfd" userLabel="Anon View">
+                                                    <view hidden="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="pz9-Km-Nfd" userLabel="Anon View">
                                                         <rect key="frame" x="0.0" y="818" width="375" height="94"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fh7-U6-4iN">
@@ -264,7 +264,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JdA-bF-1Oe" userLabel="Verify View">
                                                         <rect key="frame" x="0.0" y="1006" width="375" height="88"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gu-Fl-ovk" customClass="HighlightingButton" customModule="Coign" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gu-Fl-ovk">
                                                                 <rect key="frame" x="20" y="20" width="335" height="48"/>
                                                                 <color key="backgroundColor" red="0.0050193867649999998" green="0.55850249529999996" blue="0.0057775070890000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="30"/>

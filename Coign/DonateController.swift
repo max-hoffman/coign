@@ -116,9 +116,9 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
         var post : [String: Any]?
         if let userUID = UserDefaults.standard.object(forKey: FirTree.UserParameter.UserUID.rawValue) as? String, let recipient = donateFor.text, let name = UserDefaults.standard.object(forKey: FirTree.UserParameter.Name.rawValue) {
             
-            var charity: String {
+            var charity: String? {
                 if !customCharityView.isHidden {
-                    return customCharityTextField.text!
+                    return customCharityTextField.text
                 }
                 else {
                     return (charities?[charityPicker.selectedRow(inComponent: 0)])!
@@ -160,7 +160,10 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
 
     //button color returns to normal after the popover appears
     @IBAction func verifyButtonPressed(_ sender: UIButton) {
-        //presentVerifyPopover()
+        let post = collectPost()
+        
+        
+        
         let settings = Settings(theme: .default(), additionalPaymentMethods: .all, requiredBillingAddressFields: .zip, smsAutofillEnabled: true)
         let checkoutViewController = CheckoutController(product: selectedCharity,
                                                             price: 100,
@@ -238,7 +241,7 @@ class DonateController: UIViewController, UITextViewDelegate, UIPickerViewDelega
     
     fileprivate func resetPage() {
         customCharityView.isHidden = true
-        charityPickerView.isHidden = true
+        charityPickerView.isHidden = false
         verifyView.isHidden = true
         donateFor.text = nil
         donateMessage.text = MESSAGE_PLACEHOLDER_TEXT
